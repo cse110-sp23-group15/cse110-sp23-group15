@@ -1,2 +1,3 @@
 # cse110-sp23-group15
-Team 15 Main Repo
+
+[Meet the Team](./admin/team.md)
