@@ -1,4 +1,4 @@
-# Meeting Minuites XX/XX/XXXX
+# Tasty Noodles Meeting Minuites XX/XX/XXXX
 
 ## Meeting Details
 
