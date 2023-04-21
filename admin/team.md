@@ -1,5 +1,7 @@
 # Tasty Noodles (Team 15)
 
+![branding](../admin/branding/tasty-noodles-icon.png)
+
 ## Meet The Team
 
 - Mark Lucernas *Team Co-Lead* [GitHub](https://github.com/marklcrns)
