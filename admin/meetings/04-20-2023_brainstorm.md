@@ -23,27 +23,16 @@
 
 ### Brainstorming Goal
 
-1. Group Logal Ideas
+1. Group Logo Ideas
 2. Magic 8-Ball Ideas
 
 ### Brainstorming
 
-- Goal 1:
-    - Option 1:
-        - Pros:
-            - Pro 1
-            - Pro 2
-        - Cons:
-            - Con 1
-            - Con 2
-    - Option 2:
-        - Pros:
-            - Pro 1
-            - Pro 2
-        - Cons:
-            - Con 1
-            - Con 2
-- Goal 2:
+- Group Logo Ideas:
+    - Idea 1: ![Image](../branding/)
+    - Idea 2: ![Image](../branding/)
+
+- Magic 8-Ball Ideas:
     - ![Options for Goal 2](../specs/brainstorming/brainstorming1.png)
 
 ## Voting
@@ -69,13 +58,8 @@
     - [ ] Holly Zhu
     - [ ] Aaron Kann
 
-- Goal 2:
-    - Option 1: (5/9)
-    - Option 2: (1/9)
-    - Option 3: (9/9)
-
 ### Voting Results
 
-- Goal 1: Option 1
-- Goal 2: Option 3
+- Goal 1: Idea 1
+- Goal 2: Idea 1
 
