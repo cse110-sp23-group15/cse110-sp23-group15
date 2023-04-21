@@ -29,8 +29,7 @@
 ### Brainstorming
 
 - Group Logo Ideas:
-    - Idea 1: ![Image](../branding/)
-    - Idea 2: ![Image](../branding/)
+    - Idea 1: ![Image](../branding/tasty-noodles-icon)
 
 - Magic 8-Ball Ideas:
     - ![Options for Goal 2](../specs/brainstorming/brainstorming1.png)
@@ -38,25 +37,15 @@
 ## Voting
 
 - In favor of Option 1 for Goal 1:
-    - [ ] Mark Lucernas
-    - [ ] Hieu Pham
-    - [ ] Darren Yu
-    - [ ] Runhui Wang
-    - [ ] Xinle Yu
-    - [ ] Anthony Yao
-    - [ ] Yue(Steve) Yin
-    - [ ] Holly Zhu
-    - [ ] Aaron Kann
-- In favor of Option 2 for Goal 1:
-    - [ ] Mark Lucernas
-    - [ ] Hieu Pham
-    - [ ] Darren Yu
-    - [ ] Runhui Wang
-    - [ ] Xinle Yu
-    - [ ] Anthony Yao
-    - [ ] Yue(Steve) Yin
-    - [ ] Holly Zhu
-    - [ ] Aaron Kann
+    - [x] Mark Lucernas
+    - [x] Hieu Pham
+    - [x] Darren Yu
+    - [x] Runhui Wang
+    - [x] Xinle Yu
+    - [x] Anthony Yao
+    - [x] Yue(Steve) Yin
+    - [x] Holly Zhu
+    - [x] Aaron Kann
 
 ### Voting Results
 
