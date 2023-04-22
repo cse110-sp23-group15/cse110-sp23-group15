@@ -26,9 +26,8 @@
     - I like e-Boarding and playing video games.
 
 - Runhui Wang *Developer* [GitHub](https://github.com/RHansonWang)
-    - 
-    - 
-    - 
+    - Second Year Math-CS Major
+    - Ramen
 
 - Aaron Kann *Developer* [Github](https://github.com/akann0)
     - Second Year Math-CS Major
@@ -67,8 +66,4 @@
 
 ## About Us
 
-We love good food, especially noodles.
-
-## TODO
-
-- [ ] Hanson
+We love good food, especially **noodles**.
