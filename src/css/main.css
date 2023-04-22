@@ -1,0 +1,31 @@
+  .header {
+    text-align: center;
+  }
+  
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
+    #question {
+      padding: 12px 24px;
+    }
+
+    #ask-button {
+      margin-top: 24px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: beige;
+      color: black;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    #ask-button:hover {
+      background-color: darkgoldenrod;
+    }
+    
