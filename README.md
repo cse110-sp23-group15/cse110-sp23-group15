@@ -75,19 +75,9 @@ a new file `./src/js/testUtils.js`.
 **Make sure to include the following lines at the top of your test file:**
 
 ```js
-import { strictEqual, ok } from 'assert';
-
-// Helper function to test functions
-const it = (desc, fn) => {
-  try {
-    fn();
-    console.log('\x1b[32m%s\x1b[0m', `\u2714 ${desc}`);
-  } catch (error) {
-    console.log('\n');
-    console.log('\x1b[31m%s\x1b[0m', `\u2718 ${desc}`);
-    console.error(error);
-  }
-};
+// Test imports
+import { strictEqual, ok } from 'node:assert';
+import { it } from './helper.js';
 ```
 
 > **Note:** Use ES6 `import` instead of CommonJS `require`.
@@ -95,7 +85,7 @@ const it = (desc, fn) => {
 Then, you can write your test cases using `assert` and `it`:
 
 ```js
-// Import the file you want to test
+// Import functions to test
 import { getRandomInt } from '../utils.js';
 
 // Test getRandomInt
