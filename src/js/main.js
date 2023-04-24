@@ -22,6 +22,7 @@ const responses = [
   
   const magic8Ball = document.querySelector(".magic-8-ball");
   const shakeButton = document.querySelector(".shake-button");
+  const textInput = document.getElementById("question");
   
   //function to retrieve random response from responses
   function getRandomResponse() {
@@ -36,7 +37,11 @@ const responses = [
    */
   function shakeMagic8Ball() {
     const response = getRandomResponse();
-    magic8Ball.textContent = response;
+    if (textInput.value==""){
+      alert("Please enter a value");
+    }else{
+      magic8Ball.textContent = response;
+    }
   }
   
   shakeButton.addEventListener("click", shakeMagic8Ball);
