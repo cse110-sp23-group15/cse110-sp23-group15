@@ -3,8 +3,8 @@ const shakeButton = document.querySelector(".shake-button");
 const textInput = document.getElementById("question");
 import { getRandomResponse } from "./magic8Ball.js";
 import { getRandomInt } from "./utils.js";
-const min_time = 200;
-const max_time = 500;
+const min_time = 300;
+const max_time = 600;
   
 
 /**
@@ -14,6 +14,7 @@ const max_time = 500;
   */
 function shakeMagic8Ball() {
   const response = getRandomResponse();
+  // it might be best if it shakes for a differing amount of time
   const timeout = getRandomInt(min_time, max_time);
   if (textInput.value=="") {
     alert("Our noodle doesn't know what you want to ask if you don't enter anything");
