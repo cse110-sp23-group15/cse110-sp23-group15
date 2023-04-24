@@ -1,6 +1,6 @@
-const { getRandomInt } = require("./utils.js");
+import { getRandomInt } from "./utils.js";
 
-const responses = [
+export const responses = [
   "It is certain.",
   "It is decidedly so.",
   "Without a doubt.",
@@ -25,8 +25,7 @@ const responses = [
 /**
  * @returns {string} Random response from the responses array
  */
-function getRandomResponse() {
+export function getRandomResponse() {
   return responses[getRandomInt(0, responses.length)];
 }
 
-module.exports = { responses, getRandomResponse };

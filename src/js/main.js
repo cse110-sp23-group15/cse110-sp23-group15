@@ -1,7 +1,7 @@
 const magic8Ball = document.querySelector(".magic-8-ball");
 const shakeButton = document.querySelector(".shake-button");
 const textInput = document.getElementById("question");
-const { getRandomResponse } = require('./magic8Ball.js');
+import { getRandomResponse } from "./magic8Ball.js";
   
 
 /**
