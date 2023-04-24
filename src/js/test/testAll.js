@@ -1,18 +1,18 @@
 // Test all files in the js/test directory prepended with 'test'
 
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
+import { readdirSync } from 'fs';
+import { dirname as _dirname, basename } from 'path';
+import { exec } from 'child_process';
 
 // Get absolute path to test directory
-const dirname = path.dirname(__filename);
+const dirname = _dirname(new URL(import.meta.url).pathname);
 
 // Get all files in the test directory that start with 'test' excluding this file
-const testFiles = fs.readdirSync(dirname)
+const testFiles = readdirSync(dirname)
   .filter(
     file => file.startsWith('test') &&
     file.endsWith('.js') &&
-    file !== path.basename(__filename)
+    file !== basename(new URL(import.meta.url).pathname)
   );
 
 console.log('Test files:');

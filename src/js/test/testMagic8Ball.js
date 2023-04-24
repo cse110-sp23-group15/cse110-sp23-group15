@@ -1,6 +1,6 @@
 // Test for the magic8Ball.js file
 
-const assert = require('assert');
+import { strictEqual, ok } from 'assert';
 
 // Helper function to test functions
 const it = (desc, fn) => {
@@ -14,17 +14,17 @@ const it = (desc, fn) => {
   }
 };
 
-const { responses, getRandomResponse } = require('../magic8Ball.js');
+import { responses, getRandomResponse } from '../magic8Ball.js';
 
 // Test getRandomResponse
 it('getRandomResponse() returns a random response from the responses array', () => {
   // Make response is a string
-  assert.strictEqual(typeof getRandomResponse(), 'string');
+  strictEqual(typeof getRandomResponse(), 'string');
 
   // Make sure its a valid response by generating 1000 responses and making sure
   // they are all in the responses array
   for (let i = 0; i < 1000; i++) {
-    assert.ok(responses.includes(getRandomResponse()));
+    ok(responses.includes(getRandomResponse()));
   }
 });
 
