@@ -38,7 +38,7 @@ const responses = [
   function shakeMagic8Ball() {
     const response = getRandomResponse();
     if (textInput.value==""){
-      alert("Please enter a value");
+      alert("Our noodle doesn't know what you want to ask if you don't enter anything");
     }else{
       magic8Ball.textContent = response;
     }
