@@ -75,7 +75,7 @@ a new file `./src/js/testUtils.js`.
 **Make sure to include the following lines at the top of your test file:**
 
 ```js
-const assert = require('assert');
+import { strictEqual, ok } from 'assert';
 
 // Helper function to test functions
 const it = (desc, fn) => {
@@ -90,11 +90,13 @@ const it = (desc, fn) => {
 };
 ```
 
+> **Note:** Use ES6 `import` instead of CommonJS `require`.
+
 Then, you can write your test cases using `assert` and `it`:
 
 ```js
 // Import the file you want to test
-const { getRandomInt } = require('../utils.js');
+import { getRandomInt } from '../utils.js';
 
 // Test getRandomInt
 it('getRandomInt Should return random integer between min (inclusive) and max (exclusive)', () => {
