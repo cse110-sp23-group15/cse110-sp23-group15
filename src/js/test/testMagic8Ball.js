@@ -1,6 +1,5 @@
 // Test for the magic8Ball.js file
 
-const { responses, getRandomResponse } = require('./magic8Ball.js');
 const assert = require('assert');
 
 // Helper function to test functions
@@ -14,6 +13,8 @@ const it = (desc, fn) => {
     console.error(error);
   }
 };
+
+const { responses, getRandomResponse } = require('../magic8Ball.js');
 
 // Test getRandomResponse
 it('getRandomResponse() returns a random response from the responses array', () => {

@@ -1,6 +1,5 @@
 // Test for the main.js file
 
-const { getRandomInt } = require('./utils.js');
 const assert = require('assert');
 
 // Helper function to test functions
@@ -14,6 +13,8 @@ const it = (desc, fn) => {
     console.error(error);
   }
 };
+
+const { getRandomInt } = require('../utils.js');
 
 // Test getRandomInt
 it('getRandomInt Should return random integer between min (inclusive) and max (exclusive)', () => {
