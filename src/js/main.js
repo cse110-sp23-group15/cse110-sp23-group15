@@ -7,8 +7,9 @@ const min_time = 300;
 const max_time = 600;
 const speed = 50;
 const opacity_interval = 0.01;
-const opacity_speed = 20;
+const opacity_speed = 12;
 const wait_before_clear = 350;
+const wait_before_return = 150;
 
 
 /*
@@ -18,8 +19,6 @@ const wait_before_clear = 350;
 function clearPrompt() {
   // clear the button 
   shakeButton.style.opacity = 0;
-
-
   magic8Ball.style.opacity = 0;
   // change the background color of the prompt box to that of the background
   textInput.style.backgroundColor = "wheat";
@@ -38,9 +37,39 @@ function clearPrompt() {
   setTimeout(function () {
     magic8Ball.textContent = "";
     magic8Ball.style.opacity = 1;
-  }, opacity_speed * i + wait_before_clear);
+  }, opacity_speed * i + wait_before_return);
 }
 
+/*
+ * Puts the prompt box and button back to normal
+ */
+function returnPrompt(i) {
+  setTimeout(function () { 
+    shakeButton.style.opacity = 1;
+    textInput.style.opacity = 1;
+    textInput.style.backgroundColor = "white";
+    textInput.style.border = "2px solid black";
+    // make the textbox empty
+    textInput.value = "";
+  }, speed * i + wait_before_clear);
+}
+
+/*
+  * This function makes the letters appear one by one
+  * in the prompt box
+  * @param {string} response The response that the magic 8 ball will give
+  * @returns {null} returns nothing
+  */
+function lettersAppear(response) {
+  var i = 0;
+  while (i < response.length) {
+    const interval = i;
+    setTimeout(function () {
+      magic8Ball.textContent += response[interval];
+    }, speed * interval);
+    i++;
+  }
+}
 
 
 /**
@@ -56,26 +85,9 @@ function shakeMagic8Ball() {
     alert("Our noodle doesn't know what you want to ask if you don't enter anything");
   } else {
     clearPrompt();
-    // I couldn't get the typing effect as a seperate function to work, this is kind of a mess, should be fixed later
     setTimeout(function () {
-      var i = 0;
-      while (i < response.length) {
-        const iteration = i; // this is needed to make sure iteration is the correct value when the function is called
-        setTimeout(function () {
-          magic8Ball.textContent += response.charAt(iteration);
-        }, speed * iteration);
-        i++;
-      } // end of while loop
-
-      // put the prompt box back to normal
-      setTimeout(function () { 
-        shakeButton.style.opacity = 1;
-        textInput.style.opacity = 1;
-        textInput.style.backgroundColor = "white";
-        textInput.style.border = "2px solid black";
-        // make the textbox empty
-        textInput.value = "";
-      }, speed * i);
+      lettersAppear(response);
+      returnPrompt(response.length);
     }, timeout);
   }
 }
