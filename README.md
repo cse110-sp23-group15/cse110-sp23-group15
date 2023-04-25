@@ -70,7 +70,7 @@ node ./src/js/test/testAll.js
 
 Create a new file in `./src/js/test/` with the name of the file you want to test
 in `./src/js`. For example, if you want to test `./src/js/utils.js`, create
-a new file `./src/js/testUtils.js`.
+a new file `./src/js/test/testUtils.js`.
 
 **Make sure to include the following lines at the top of your test file:**
 
