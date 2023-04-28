@@ -29,10 +29,10 @@
 ### Brainstorming
 
 - Group Logo Ideas:
-    - Idea 1: ![Image](../branding/tasty-noodles-icon)
+    - Idea 1: ![Image](../branding/tasty-noodles-icon.png)
 
 - Magic 8-Ball Ideas:
-    - ![Options for Goal 2](../specs/brainstorming/brainstorming1.png)
+    - ![Options for Goal 2](../../specs/brainstorm/04-20-2023_prototype.jpg)
 
 ## Voting
 
