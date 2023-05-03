@@ -36,6 +36,7 @@
             - Needs a lot of custom card images.
             - Large response bank can be hard to make.
     - Horoscope (Noodle by Month)
+![Image](../resources/horoscope_flowchart.jpg)
         - Pros:
             - Adds more user input so it seems more personal to the user.
             - Responses generated are influenced by a hash function based on the date so output isn't deterministic.
