@@ -40,6 +40,8 @@
             - Adds more user input so it seems more personal to the user.
             - Responses generated are influenced by a hash function based on the date so output isn't deterministic.
             - Has a old user button for continuing users (aka has memory of previous fortunes).
+        - Cons:
+            - Very big project that can break if not properly maintained.
     - Fortune Cookie
         - Pros:
             - Has a variety of features we can implement.
@@ -47,3 +49,4 @@
               - Ex: Add in a future lucky day the user will get.
         - Cons:
             - Very little user input.
+            - Very simple, maybe too simple.
