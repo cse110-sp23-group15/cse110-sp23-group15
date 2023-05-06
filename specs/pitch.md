@@ -2,8 +2,9 @@
 
 <h1 align="center">By Tasty Noodles (Team 15)</h1>
 
-![Image](../admin/branding/tasty-noodles-icon.png)
-
+<p align="center">
+  <img src="../admin/branding/tasty-noodles-icon.png" alt="Tasty Noodles" width="400"/>
+</p>
 
 <h1 align="center">Statement of Purpose</h1>
 
@@ -11,8 +12,6 @@ Noodle Horoscope, a fortune telling web app for noodle-lovers that gives you a n
 life advices according to your “noodle” sign. Our mission is to serve as a fun and insightful destination for those
 seeking guidance and inspiration. Our website is designed to create a relaxed, bright, warm, fun and interactive
 webpage for the users to feel comfortable and rest assured about their fortune.
-
-![Image](../admin/resources/ramen_icon.png)
 
 <h1 align="center">Who, What, When, Where, Why, How?</h1>
 
@@ -33,7 +32,7 @@ user’s “noodle personality” which will then be matched to its correspondin
 
 <h2 align="center">Jimmy - Noodle Enthusiast</h2>
 
-![Image](../admin/resources/jimmy.png)
+<img align="right" src="../admin/resources/jimmy.png" style="padding:20px">
 
 **Background:** Jimmy is a 35-year-old food blogger and avid traveler who fell in love with noodles during his culinary adventures across Asia, experiencing the diverse flavors and techniques associated with different noodle dishes.
 
@@ -46,7 +45,7 @@ user’s “noodle personality” which will then be matched to its correspondin
 
 <h2 align="center">Anita - Yoga Instructor</h2>
 
-![Image](../admin/resources/Anita.png)
+<img align="left" src="../admin/resources/Anita.png" style="padding:20px">
 
 **Background:** Anita is a 27-year-old yoga instructor and freelance writer who developed a deep appreciation for both noodles and horoscopes during her travels in Southeast Asia, where she discovered the harmonious connection between food
 and astrology.
@@ -61,7 +60,7 @@ spirituality.
 
 <h2 align="center">Jenny- College Student</h2>
 
-![Image](../admin/resources/jenny.png)
+<img align="right" src="../admin/resources/jenny.png" style="padding:20px">
 
 **Background:** Jenny is a 21-year-old college student pursuing a degree in business administration. She grew up in a small town where she was exposed to limited culinary diversity, but her recent move to a more vibrant city has ignited her interest in exploring new food experiences, particularly with noodles.
 
@@ -104,11 +103,19 @@ spirituality.
 
 [Figma wireframe (view-only)](https://www.figma.com/file/xMDGw4FwyA8KfdYPyGJekg/Magic-8-Ball-Wireframe?type=design&node-id=0%3A1&t=c7xa4mWMXEJiVEdP-1)
 
-![Image](../admin/resources/colors.png)
+<h1 align="center">Styling Guidelines</h1>
+
+<p align="center">
+  <img src="../admin/resources/colors.png" alt="Colors"/>
+</p>
+
+- [branding sheet](../admin/branding/branding-sheet.pdf)
 
 <h1 align="center">Systems Diagram</h1>
 
-![Image](./diagrams/systems.drawio.png)
+<p align="center">
+  <img src="./diagrams/systems.drawio.png">
+</p>
 
 <h1 align="center">Project Roadmap</h1>
 
@@ -157,9 +164,4 @@ If time permits:
 - Basic user authentication
     - Add login and register page
     - Cache user noodle personality for returning users
-
-
-# Finished
-## Thank You!
-
 
