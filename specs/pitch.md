@@ -46,7 +46,7 @@ user’s “noodle personality” which will then be matched to its correspondin
 
 <h2 align="center">Anita - Yoga Instructor</h2>
 
-![Image](../admin/resources/anita.png)
+![Image](../admin/resources/Anita.png)
 
 **Background:** Anita is a 27-year-old yoga instructor and freelance writer who developed a deep appreciation for both noodles and horoscopes during her travels in Southeast Asia, where she discovered the harmonious connection between food
 and astrology.
