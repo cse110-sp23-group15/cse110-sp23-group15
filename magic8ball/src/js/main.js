@@ -81,3 +81,10 @@ function shakeMagic8Ball() {
 }
 
 shakeButton.addEventListener("click", shakeMagic8Ball);
+
+textInput.addEventListener("keyup", function(event){
+  event.preventDefault();
+    if (event.key === 'Enter') {
+        shakeButton.click();
+    }
+})
