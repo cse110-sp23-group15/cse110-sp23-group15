@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
 
       - name: Install dependencies
         working-directory: ./fortunetelling
@@ -29,6 +29,6 @@ jobs:
       - name: Deploy documentation
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: fortunetelling-docs-pages
           publish_dir: ./fortunetelling/docs
