@@ -1,0 +1,35 @@
+name: Publish Fortunetelling JSDoc
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        working-directory: ./fortunetelling
+        run: npm install
+
+      - name: Generate JSDoc documentation
+        working-directory: ./fortunetelling
+        run: npx jsdoc -c ./jsdoc-config.json
+
+      - name: Deploy documentation
+        uses: peaceiris/actions-gh-pages@v3
+        working-directory: ./fortunetelling
+        with:
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: fortunetelling-docs-pages
+          publish_dir: ./docs
