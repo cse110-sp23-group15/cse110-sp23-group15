@@ -21,12 +21,7 @@ const { get } = require('http');
 const get_horoscope = function(horoscope_sign_as_number) {
     const horoscope_json = require('./database/horoscope_db.json');
     const horoscope_index = (starting_point + days_from_start) % num_horoscope_days;
-    for (horoscope in horoscope_json) {
-        if (horoscope_json[horoscope]["numeric_date"] == horoscope_index && horoscope_json[horoscope]["sign_as_number"] == horoscope_sign_as_number) {
-            return horoscope_json[horoscope]["description"];
-        }
-    }
-    return "The mysteries of the noodle are unwilling to reveal themselves at this moment.  Come back on a later date.";
+    return horoscope_json[horoscope_index + (horoscope_sign_as_number - 1) * num_horoscope_days]["description"];
 }
 
 // test the function for all numbers 1-12
