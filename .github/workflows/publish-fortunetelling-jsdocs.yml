@@ -28,8 +28,7 @@ jobs:
 
       - name: Deploy documentation
         uses: peaceiris/actions-gh-pages@v3
-        working-directory: ./fortunetelling
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: fortunetelling-docs-pages
-          publish_dir: ./docs
+          publish_dir: ./fortunetelling/docs
