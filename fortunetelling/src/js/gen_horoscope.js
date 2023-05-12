@@ -17,7 +17,10 @@ const fs = require('fs');
 const { get } = require('http');
 
 
-// Fucnction that gets the day's horoscope for a specific sign
+/* Function that gets the day's horoscope for a specific sign
+/ @param horoscope_sign_as_number: the number of the sign (1-12)
+/ @return: the horoscope for the day as a string
+*/
 const get_horoscope = function(horoscope_sign_as_number) {
     const horoscope_json = require('./database/horoscope_db.json');
     const horoscope_index = (starting_point + days_from_start) % num_horoscope_days;
