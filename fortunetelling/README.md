@@ -2,6 +2,9 @@
 
 ## Development
 
+[JSDoc pages](https://cse110-sp23-group15.github.io/cse110-sp23-group15/) for
+project code documentation.
+
 ### Environment
 
 Recommended setup for dev environment. You can use other method you prefer.

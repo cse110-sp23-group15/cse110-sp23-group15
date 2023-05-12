@@ -6,6 +6,12 @@
 
 https://user-images.githubusercontent.com/52873993/233766082-68d85fb7-b46b-48c1-8f39-fa8417b70bdc.mp4
 
+## Projects
+
+- [Noodle Horoscope](./fortunetelling/README.md)
+    - [JSDoc pages](https://cse110-sp23-group15.github.io/cse110-sp23-group15/)
+- [Magic 8 Ball](./magic8ball/README.md)
+
 ## Development
 
 ### Rules
