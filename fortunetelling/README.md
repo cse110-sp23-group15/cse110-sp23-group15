@@ -1,13 +1,15 @@
 # Noodle Horoscope
 
+## Dependencies
+
+- [JSDoc](https://jsdoc.app/)
+
 ## Development
 
 [JSDoc pages](https://cse110-sp23-group15.github.io/cse110-sp23-group15/) for
 project code documentation.
 
 ### Environment
-
-Recommended setup for dev environment. You can use other method you prefer.
 
 **Requirements:**
 
@@ -16,8 +18,14 @@ Recommended setup for dev environment. You can use other method you prefer.
 **Installation:**
 
 ```bash
+# Install dependencies
+npm install
+
+# (Optional) Install browser-sync for live server
 npm install -g browser-sync
 ```
+
+#### Recommended setup for dev environment (You can use other method you prefer)
 
 **Usage:**
 
