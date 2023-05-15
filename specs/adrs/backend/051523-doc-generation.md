@@ -7,7 +7,7 @@ consulted: Akshay Prabhu
 informed: Backend team
 ---
 
-# Use JSDoc for documentation generation
+# JSDoc for documentation generation
 
 ## Context and Problem Statement
 
@@ -19,7 +19,7 @@ informed: Backend team
 ## Considered Options
 
 - Host a wiki page for our repo
-- [JSDoc](https://jsdoc.app/)
+- JSDoc
 
 ## Decision Outcome
 
