@@ -2,6 +2,7 @@
 
 ## Dependencies
 
+- [node.js](https://nodejs.org/en/) (v18.*)
 - [JSDoc](https://jsdoc.app/)
 
 ## Development
