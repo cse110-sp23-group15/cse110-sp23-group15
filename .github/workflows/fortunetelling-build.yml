@@ -17,7 +17,7 @@ on:
 
 jobs:
   build:
-    name: project build
+    name: fortunetelling-build
     # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idruns-on
     runs-on: ubuntu-latest
 
@@ -25,12 +25,12 @@ jobs:
     steps:
       # https://github.com/actions/checkout
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           # cache installed dependencies for best performance. yarn and pnpm are also supported
           cache: npm
           cache-dependency-path: './fortunetelling/package-lock.json'

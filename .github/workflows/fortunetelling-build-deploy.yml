@@ -15,7 +15,7 @@ jobs:
     uses: cse110-sp23-group15/cse110-sp23-group15/.github/workflows/fortunetelling-build.yml@main
 
   deploy:
-    name: project deploy main
+    name: fortunetelling-deploy-main
     # only run the 'deploy' job if the 'use-build' job passes
     # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idneeds
     needs: use-build
@@ -27,12 +27,12 @@ jobs:
     steps:
       # https://github.com/actions/checkout
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           # cache installed dependencies for best performance. yarn and pnpm are also supported
           cache: npm
           cache-dependency-path: './fortunetelling/package-lock.json'
