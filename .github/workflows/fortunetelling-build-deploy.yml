@@ -15,6 +15,7 @@ jobs:
     uses: marklcrns/cse110-sp23-group15/.github/workflows/fortunetelling-build.yml@main
 
   deploy:
+    name: deploy main
     # only run the 'deploy' job if the 'use-build' job passes
     # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idneeds
     needs: use-build
