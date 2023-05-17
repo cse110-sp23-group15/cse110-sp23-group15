@@ -32,10 +32,14 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
+          # cache installed dependencies for best performance. yarn and pnpm are also supported
+          cache: npm
 
       - name: Install dependencies
         working-directory: ./fortunetelling
-        run: npm ci
+        # For Node 16: https://docs.npmjs.com/cli/v8/commands/npm-ci
+        # for other Node versions, look up the npm version at https://nodejs.org/en/download/releases/
+        run: npm ci --prefer-offline --no-audit
 
       - name: Generate JSDoc documentation
         working-directory: ./fortunetelling
