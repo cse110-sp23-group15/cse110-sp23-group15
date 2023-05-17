@@ -1,0 +1,50 @@
+name: fortunetelling-build
+
+on:
+  # support calling this workflow from other workflows
+  # https://docs.github.com/en/actions/learn-github-actions/reusing-workflows#creating-a-reusable-workflow
+  workflow_call:
+  # support running this workflow on push events
+  # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#onpushpull_requestbranchestags
+  push:
+    branches-ignore: [main]
+
+  pull_request:
+    types: [opened, reopened]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: project build
+    # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idruns-on
+    runs-on: ubuntu-latest
+
+    # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idsteps
+    steps:
+      # https://github.com/actions/checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          # cache installed dependencies for best performance. yarn and pnpm are also supported
+          cache: npm
+          cache-dependency-path: './fortunetelling/package-lock.json'
+
+      - name: Install dependencies
+        working-directory: ./fortunetelling
+        # For Node 16: https://docs.npmjs.com/cli/v8/commands/npm-ci
+        # for other Node versions, look up the npm version at https://nodejs.org/en/download/releases/
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Code lint and format
+        working-directory: ./fortunetelling
+        run: npm run format
+
+      - name: Test suite
+        working-directory: ./fortunetelling
+        run: npm run test
