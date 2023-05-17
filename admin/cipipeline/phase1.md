@@ -2,12 +2,55 @@
 
 ## Status
 
-Presently, the CI/CD pipeline is in the process of being built. The following
-diagram shows the ideal bare-minimum CI pipeline that we will build.
+The following diagram shows our current CI/CD pipeline:
 
 ![CI/CD Diagram](./phase1.drawio.png)
 
-## What currently works
+## How it works
 
-- Automated JSDoc generation
-- Automated JSDoc deployment to GitHub Pages
+The pipeline is built using GitHub Actions and is broken up into two workflows:
+
+1. Build
+2. Build and Deploy
+
+_Build_ is triggered and used as a status check when a new pull request to the
+`main` branch from a `feature` branch is opened (or reopened). This workflow
+ensures the code is linted and formatted[^1] and passses all tests before it can
+be merged into the `main` branch.
+
+Once a `feature` branch is merged into `main`, the _Build and Deploy_ workflow
+is triggered. This workflow reuses the _Build_ workflow to ensure the code is
+still in good shape. If the Build workflow passes, the code is then documented
+using JSDoc and the documentation is deployed into a separate branch called
+`fortunetelling-docs-pages`, which has been set up to be hosted as a GitHub
+Pages site.
+
+> **NOTE:** The _Build and Deploy_ workflow is currently triggered on every push
+> to the `main` branch. Ideally, we want to only trigger this workflow when
+> a new pull request is merged (or maybe only on release, TBD). This will be
+> implemented in Phase 2. Also, in the future, the `main` branch will be closed
+> to direct pushes and will only be updated through pull requests, with very few
+> exceptions[^2].
+
+## What works
+
+- [X] Build
+    - [X] Code linting
+    - [X] Unit testing
+- [X] Deploy
+    - [X] JSDoc generation
+    - [X] JSDoc deployment to GitHub Pages
+    - [ ] Deploy to a remote server? (TBD, ask for Akshay's guidance)
+
+
+[^1]: We are using ESLint and Prettier to lint and format our code usinng the
+    [Google JavaScript Style
+    Guide](https://google.github.io/styleguide/jsguide.html). **Note that code
+    linting/formatting errors that aren't automatically fixed by ESLint and
+    Prettier will also block the build process and return an error to the
+    pipeline.**
+[^2]: Admin users will be able to push directly to `main` for hotfixes and
+    emergency patches.. This will be implemented in Phase 2. Also, since we
+    store our admin documentation in this repository, team leads and the planner
+    will be able to push directly to `main` to update non-code files. Force
+    pushes will also only be allowed for these users.
