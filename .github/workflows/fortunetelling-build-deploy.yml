@@ -12,7 +12,7 @@ jobs:
   use-build:
     # adapt to point to the current repo
     # https://docs.github.com/en/actions/learn-github-actions/reusing-workflows#calling-a-reusable-workflow
-    uses: marklcrns/cse110-sp23-group15/.github/workflow/fortunetelling-build.yml@main
+    uses: marklcrns/cse110-sp23-group15/.github/workflows/fortunetelling-build.yml@main
 
   deploy:
     # only run the 'deploy' job if the 'use-build' job passes
