@@ -4,11 +4,19 @@
   "description": "## Development",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "npm run fix:prettier && npm run fix:eslint",
+    "dry:eslint": "eslint ./src --ext .js,.jsx",
+    "fix:eslint": "eslint ./src --ext .js,.jsx --fix",
+    "fix:prettier": "prettier --write \"./src/**/*.{js,jsx}\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "jsdoc": "^4.0.2"
   }
 }
