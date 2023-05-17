@@ -34,6 +34,7 @@ jobs:
           node-version: 16
           # cache installed dependencies for best performance. yarn and pnpm are also supported
           cache: npm
+          cache-dependency-path: './fortunetelling/package-lock.json'
 
       - name: Install dependencies
         working-directory: ./fortunetelling
