@@ -20,17 +20,25 @@ informed: Everyone
 
 - ESlint
 - Prettier
-- Manual lintint
+- Manual linting
 
 ## Decision Outcome
 
-TODO
+- Chosen option: Both ESlint and Prettier at the same time
 
-### Consequences
+## Consequences
 
-TODO
+We found out that ESlint and Prettier are both good tools for linting. However,
+they have different purposes. ESlint is used for linting (semantic analysis)
+JavaScript code while Prettier is used for formatting (syntactic analysis) code.
+We can use both of them at the same time, but we need to configure them to work
+together.
 
-## Pro
+As we have decided to use both ESlint and Prettier, we need to configure them to
+work together which can be done by using
+[eslint-config-prettier](https://github.com/prettier/eslint-config-prettier).
+
+## Pros and Cons of the Options
 
 ### ESlint
 
@@ -61,4 +69,5 @@ TODO
 
 - [ESlint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
+- [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier).
 
