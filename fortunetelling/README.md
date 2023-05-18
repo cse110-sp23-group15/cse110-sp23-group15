@@ -4,13 +4,79 @@
 
 - [node.js](https://nodejs.org/en/) (v18.*)
 - [JSDoc](https://jsdoc.app/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+
+```bash
+# Install dependencies
+cd ./fortunetelling
+npm install
+```
 
 ## Development
 
 [JSDoc pages](https://cse110-sp23-group15.github.io/cse110-sp23-group15/) for
 project code documentation.
 
+### Project Structure
+
+```
+.
+├── index.html
+├── node_modules
+├── ...
+└── src
+    ├── css
+    │   ├── main.css
+    │   └── ...
+    ├── img
+    │   ├── favicon.ico
+    │   ├── icon.png
+    │   ├── ramen-icon-1.png
+    │   └── ...
+    ├── js
+    │   ├── database
+    │   │   ├── horoscopeDB.json
+    │   │   └── ...
+    │   ├── genHoroscope.js
+    │   ├── main.js
+    │   └── ...
+    └── pages
+        ├── about.html
+        ├── profiles.html
+        ├── questionnaire.html
+        └── ...
+```
+
+### Code Linting
+
+It is important to lint and format your code before committing to the
+repository. Simply run the following to lint files in the `src` directory:
+
+```bash
+# cd ./fortunetelling
+npm run format
+```
+
+> NOTE: Make sure to fix all linting errors before committing as well because 
+> merging PRs with linting errors will be blocked by our CI pipeline.
+
+### Testing
+
+More than anything else, testing your code is non-negotiable. It follows that
+your code should be testable and that prior to merging PRs, all tests should
+pass. To run tests, simply run the following:
+
+```bash
+# Cd ./fortunetelling
+npm run test
+```
+
+> NOTE: Failed tests will block merging PRs.
+
 ### Environment
+
+#### Recommended setup for dev environment (You can use other method you prefer)
 
 **Requirements:**
 
@@ -19,14 +85,9 @@ project code documentation.
 **Installation:**
 
 ```bash
-# Install dependencies
-npm install
-
-# (Optional) Install browser-sync for live server
+# Install browser-sync globally
 npm install -g browser-sync
 ```
-
-#### Recommended setup for dev environment (You can use other method you prefer)
 
 **Usage:**
 
