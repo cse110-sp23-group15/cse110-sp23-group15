@@ -36,7 +36,7 @@ together.
 
 As we have decided to use both ESlint and Prettier, we need to configure them to
 work together which can be done by using
-[eslint-config-prettier](https://github.com/prettier/eslint-config-prettier).
+[eslint-config-prettier](https://www.npmjs.com/package/eslint-plugin-prettier).
 
 ## Pros and Cons of the Options
 
@@ -69,5 +69,5 @@ work together which can be done by using
 
 - [ESlint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-- [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier).
+- [eslint-config-prettier](https://www.npmjs.com/package/eslint-plugin-prettier).
 
