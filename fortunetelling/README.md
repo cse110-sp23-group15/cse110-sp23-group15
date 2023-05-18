@@ -15,8 +15,7 @@ npm install
 
 ## Development
 
-[JSDoc pages](https://cse110-sp23-group15.github.io/cse110-sp23-group15/) for
-project code documentation.
+[JSDoc pages](./docs/index.html) for project code documentation.
 
 ### Project Structure
 
@@ -68,11 +67,26 @@ your code should be testable and that prior to merging PRs, all tests should
 pass. To run tests, simply run the following:
 
 ```bash
-# Cd ./fortunetelling
+# cd ./fortunetelling
 npm run test
 ```
 
 > NOTE: Failed tests will block merging PRs.
+
+### Manual JSDoc Generation
+
+To generate JSDoc, simply run the following:
+
+```bash
+# cd ./fortunetelling
+npm run docgen
+
+# Open JSDoc in your browser
+open ./docs/index.html
+```
+
+> NOTE: This will generate JSDoc in the `./fortunetelling/docs` directory and
+> will be ignored by git.
 
 ### Environment
 

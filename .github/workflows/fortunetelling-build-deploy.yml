@@ -49,11 +49,11 @@ jobs:
 
       - name: Generate JSDoc documentation
         working-directory: ./fortunetelling
-        run: npx jsdoc -c ./jsdoc-config.json
+        run: npm run docgen
 
-      - name: Deploy documentation
+      - name: Deploy to production
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: fortunetelling-docs-pages
-          publish_dir: ./fortunetelling/doc
+          publish_branch: production
+          publish_dir: .

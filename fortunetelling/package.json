@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"no test specified\" && exit 0",
     "format": "npm run fix:prettier && npm run fix:eslint",
+    "docgen": "jsdoc -c jsdoc.json",
     "dry:eslint": "eslint ./src --ext .js,.jsx",
     "fix:eslint": "eslint ./src --ext .js,.jsx --fix",
     "fix:prettier": "prettier --write \"./src/**/*.{js,jsx}\""
