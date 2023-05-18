@@ -15,7 +15,7 @@ npm install
 
 ## Development
 
-[JSDoc pages](./docs/index.html) for project code documentation.
+[JSDoc pages](https://cse110-sp23-group15.github.io/cse110-sp23-group15/fortunetelling/docs/index.html) for project code documentation.
 
 ### Project Structure
 
@@ -75,7 +75,8 @@ npm run test
 
 ### Manual JSDoc Generation
 
-To generate JSDoc, simply run the following:
+To generate JSDoc manually, simply run the following (make sure to exclude
+output from git commit changes):
 
 ```bash
 # cd ./fortunetelling
@@ -86,7 +87,9 @@ open ./docs/index.html
 ```
 
 > NOTE: This will generate JSDoc in the `./fortunetelling/docs` directory and
-> will be ignored by git.
+> will **NOT** be ignored by git to ensure it is included in the `production`
+> branch by the ci/cd pipeline. Make sure to exclude this directory when
+> committing changes.
 
 ### Environment
 
