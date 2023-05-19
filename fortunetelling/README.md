@@ -15,7 +15,38 @@ npm install
 
 ## Development
 
-[JSDoc pages](https://cse110-sp23-group15.github.io/cse110-sp23-group15/fortunetelling/docs/index.html) for project code documentation.
+[Fortunetelling documentation pages](https://cse110-sp23-group15.github.io/cse110-sp23-group15/fortunetelling/docs/index.html) for project code documentation.
+
+## TL;DR
+
+### Git Workflow
+
+1. Create a new branch from `main` branch
+2. Make changes to your branch
+    - Make sure to lint, format, and test your code before committing. Fix all
+      errors if any. Warnings are okay.
+        ```bash
+        # cd ./fortunetelling
+        npm run format
+        npm run test
+        ```
+    - Make sure to include JSDoc comments for all functions. See
+      [examples](https://jsdoc.app/howto-es2015-modules.html).
+        - Make sure to generate JSDoc pages before committing to check for
+          missing documentation. JSDoc output will get ignored by git since
+          `main` branch workflow trigger will auto-generate JSDoc pages and
+          deploy to GitHub pages.
+            ```bash
+            # Cd ./fortunetelling
+            npm run docgen
+            ```
+3. Commit changes to your branch
+4. Push changes to your branch
+5. Create a pull request (PR) to merge your branch to `main` branch
+6. Wait for CI pipeline to pass
+    - If status check failed, fix errors and repeat steps 3-5
+8. Request review from at least one other team lead/team member
+7. Merge PR to `main` branch
 
 ### Project Structure
 
@@ -87,13 +118,12 @@ open ./docs/index.html
 ```
 
 > NOTE: This will generate JSDoc in the `./fortunetelling/docs` directory and
-> will **NOT** be ignored by git to ensure it is included in the `production`
-> branch by the ci/cd pipeline. Make sure to exclude this directory when
-> committing changes.
+> will be ignored by git since `main` branch worflow trigger will auto-generate
+> JSDoc pages and deploy to GitHub pages.
 
 ### Environment
 
-#### Recommended setup for dev environment (You can use other method you prefer)
+#### Recommended setup for dev environment (you can use other method you prefer)
 
 **Requirements:**
 
