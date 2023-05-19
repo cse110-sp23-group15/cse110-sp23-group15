@@ -2,9 +2,9 @@
 
 ## Projects
 
-- [Noodle Horoscope](./fortunetelling/)
-  - [Docs](./fortunetelling/docs/)
-- [Magic 8 Ball](./magic8ball/)
+- [Noodle Horoscope](https://cse110-sp23-group15.github.io/cse110-sp23-group15/fortunetelling/index.html)
+  - [Docs](https://cse110-sp23-group15.github.io/cse110-sp23-group15/fortunetelling/docs/index.html)
+- [Magic 8 Ball](https://cse110-sp23-group15.github.io/cse110-sp23-group15/magic8ball/index.html)
   - [Docs](https://github.com/cse110-sp23-group15/cse110-sp23-group15/blob/main/magic8ball/README.md)
 
 ## Team

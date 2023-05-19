@@ -15,7 +15,7 @@ npm install
 
 ## Development
 
-[JSDoc pages](./fortunetelling/docs/) for project code documentation.
+[JSDoc pages](https://cse110-sp23-group15.github.io/cse110-sp23-group15/fortunetelling/docs/index.html) for project code documentation.
 
 ### Project Structure
 
