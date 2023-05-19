@@ -7,10 +7,10 @@ on:
   # support running this workflow on push events
   # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#onpushpull_requestbranchestags
   push:
-    branches-ignore: [main]
+    branches-ignore: ["main"]
 
   pull_request:
-    types: [opened, reopened]
+    types: ["opened", "reopened"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -33,7 +33,7 @@ jobs:
           node-version: 18
           # cache installed dependencies for best performance. yarn and pnpm are also supported
           cache: npm
-          cache-dependency-path: './fortunetelling/package-lock.json'
+          cache-dependency-path: "./fortunetelling/package-lock.json"
 
       - name: Install dependencies
         working-directory: ./fortunetelling

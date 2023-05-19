@@ -3,10 +3,21 @@ name: fortunetelling-build-deploy
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: [main]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   use-build:
@@ -15,13 +26,17 @@ jobs:
     uses: cse110-sp23-group15/cse110-sp23-group15/.github/workflows/fortunetelling-build.yml@main
 
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     name: fortunetelling-deploy-main
     # only run the 'deploy' job if the 'use-build' job passes
     # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idneeds
     needs: use-build
 
     # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idruns-on
-    runs-on: ubuntu-latest
+    runs-on:
+      ubuntu-latest
 
       # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
     permissions:
@@ -39,7 +54,7 @@ jobs:
           node-version: 18
           # cache installed dependencies for best performance. yarn and pnpm are also supported
           cache: npm
-          cache-dependency-path: './fortunetelling/package-lock.json'
+          cache-dependency-path: "./fortunetelling/package-lock.json"
 
       - name: Install dependencies
         working-directory: ./fortunetelling
@@ -51,9 +66,15 @@ jobs:
         working-directory: ./fortunetelling
         run: npm run docgen
 
-      - name: Deploy to production
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: production
-          publish_dir: .
+          # Upload entire repository
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
