@@ -17,7 +17,12 @@ const wdOpts = {
   capabilities,
 };
 
-async function runTest() {
+/**
+* @param wdOpts: the capabilities and remote opts for webdriverIO to run tests on mobile end
+* @return: none
+*/
+
+async function runTest(wdOpts) {
   const driver = await remote(wdOpts);
   //When starting chrome it takes me as a new user, I need to manually click "accept & continue" and choose whether to sync, something to address
   try {
@@ -30,7 +35,7 @@ async function runTest() {
   }
 }
 
-runTest().catch(console.error);
+runTest(wdOpts).catch(console.error);
 
 /*
 I tried using jest but it came out with lots of problems
