@@ -2,7 +2,7 @@
 
 ## Dependencies
 
-- [node.js](https://nodejs.org/en/) (v18.*)
+- [node.js](https://nodejs.org/en/) (v18.\*)
 - [JSDoc](https://jsdoc.app/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
@@ -15,7 +15,7 @@ npm install
 
 ## Development
 
-[JSDoc pages](https://cse110-sp23-group15.github.io/cse110-sp23-group15/fortunetelling/docs/index.html) for project code documentation.
+[JSDoc pages](./fortunetelling/docs/) for project code documentation.
 
 ### Project Structure
 
@@ -57,7 +57,7 @@ repository. Simply run the following to lint files in the `src` directory:
 npm run format
 ```
 
-> NOTE: Make sure to fix all linting errors before committing as well because 
+> NOTE: Make sure to fix all linting errors before committing as well because
 > merging PRs with linting errors will be blocked by our CI pipeline.
 
 ### Testing
@@ -119,4 +119,3 @@ browser-sync start --server --files "**/*"
 ```
 
 See [BrowserSync](https://browsersync.io/) for more details.
-
