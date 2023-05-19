@@ -7,9 +7,9 @@
 		"test": "jest",
 		"format": "npm run fix:prettier && npm run fix:eslint",
 		"docgen": "jsdoc -c jsdoc.json",
-		"dry:eslint": "eslint .",
-		"fix:eslint": "eslint . --fix",
-		"fix:prettier": "prettier --write ."
+		"dry:eslint": "eslint . --ext .html,.css,.js",
+		"fix:eslint": "eslint . --ext .html,.css,.js --fix",
+		"fix:prettier": "prettier --write './**/*.{html,css,js}'"
 	},
 	"author": "",
 	"license": "ISC",
