@@ -8,32 +8,59 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  use-build:
+  use-status-check:
     # adapt to point to the current repo
     # https://docs.github.com/en/actions/learn-github-actions/reusing-workflows#calling-a-reusable-workflow
-    uses: cse110-sp23-group15/cse110-sp23-group15/.github/workflows/fortunetelling-build.yml@main
+    uses: cse110-sp23-group15/cse110-sp23-group15/.github/workflows/fortunetelling-status-check.yml@main
 
-  deploy:
-    name: fortunetelling-deploy-main
-    # only run the 'deploy' job if the 'use-build' job passes
+  build:
+    name: fortunetelling-build
+    # only run the 'build' job if the 'use-status-check' job passes
     # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idneeds
-    needs: use-build
+    needs: use-status-check
 
-    # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idruns-on
-    runs-on:
-      ubuntu-latest
-
-      # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-    permissions:
-      contents: write
-
-    # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idsteps
+    runs-on: ubuntu-latest
     steps:
-      # https://github.com/actions/checkout
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+
+  deploy:
+    name: fortunetelling-deploy
+
+    needs: build
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -44,18 +71,12 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./fortunetelling
-        # For Node 16: https://docs.npmjs.com/cli/v8/commands/npm-ci
-        # for other Node versions, look up the npm version at https://nodejs.org/en/download/releases/
         run: npm ci --prefer-offline --no-audit
 
       - name: Generate JSDoc documentation
         working-directory: ./fortunetelling
         run: npm run docgen
 
-      - name: Deploy to production
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: production
-          publish_dir: .
-          enable_jekyll: true
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

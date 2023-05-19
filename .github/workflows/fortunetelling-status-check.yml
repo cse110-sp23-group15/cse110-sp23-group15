@@ -16,14 +16,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: fortunetelling-build
+  status-check:
+    name: fortunetelling-status-check
     # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idruns-on
     runs-on: ubuntu-latest
 
     # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idsteps
     steps:
-      # https://github.com/actions/checkout
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -37,8 +36,6 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./fortunetelling
-        # For Node 16: https://docs.npmjs.com/cli/v8/commands/npm-ci
-        # for other Node versions, look up the npm version at https://nodejs.org/en/download/releases/
         run: npm ci --prefer-offline --no-audit
 
       - name: Code lint and format
