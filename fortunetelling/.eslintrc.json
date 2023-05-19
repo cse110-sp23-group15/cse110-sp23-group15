@@ -4,8 +4,13 @@
 		"es2021": true,
 		"node": true
 	},
-	"extends": ["google", "plugin:prettier/recommended", "plugin:css/standard"],
-	"plugins": ["html", "css"],
+	"extends": [
+		"google",
+		"plugin:prettier/recommended",
+		"plugin:css/recommended",
+		"plugin:jest/recommended"
+	],
+	"plugins": ["html", "css", "jest"],
 	"overrides": [],
 	"parserOptions": {
 		"ecmaVersion": "latest",
