@@ -35,22 +35,22 @@ branch, which has been set up to be hosted as a GitHub Pages site.
 
 - [x] Build
   - [x] Code linting and formatting
+    - [x] ESLint
+    - [x] Prettier
+    - [x] Stylelint
   - [x] Unit testing
 - [x] Deploy
+  - [x] Build repo pages with Jekyll to support markdown files as index
   - [x] JSDoc generation
   - [x] Deployment to GitHub Pages
-  - [ ] Deploy to a remote server? (TBD, ask for Akshay's guidance)
 
-[^1]:
-    We are using ESLint and Prettier to lint and format our code usinng the
-    [Google JavaScript Style
+[^1]: We are using ESLint + Prettier + Stylelint to lint and format our code
+    using the ESLint [Google JavaScript Style
     Guide](https://google.github.io/styleguide/jsguide.html). **Note that code
-    linting/formatting errors that aren't automatically fixed by ESLint and
-    Prettier will also return an error to the pipeline and block the
-    build-deploy process.**
+    linting/formatting errors that aren't automatically fixed will also return
+    an error to the pipeline and block the build-deploy process.**
 
-[^2]:
-    Admin users will be able to push directly to `main` for hotfixes and
+[^2]: Admin users will be able to push directly to `main` for hotfixes and
     emergency patches.. This will be implemented in Phase 2. Also, since we
     store our admin documentation in this repository, team leads and the planner
     will be able to push directly to `main` to update non-code files. Force
