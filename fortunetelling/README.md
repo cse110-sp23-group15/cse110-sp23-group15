@@ -8,7 +8,12 @@
 - [Prettier](https://prettier.io/)
 
 ```bash
-# Install dependencies
+# IMPORTANT: Install dependencies
+
+# By default npm install will execute `npm run prepare` script which will
+# install `husky` for git hooks used to auto-format files in git staging before
+# every commits.
+
 cd ./fortunetelling
 npm install
 ```
@@ -23,11 +28,10 @@ npm install
 
 1. Create a new branch from `main` branch
 2. Make changes to your branch
-    - Make sure to lint, format, and test your code before committing. Fix all
-      errors if any. Warnings are okay.
+    - Make sure to test your code before committing. Fix all errors if any.
+      Warnings are okay.
         ```bash
         # cd ./fortunetelling
-        npm run format
         npm run test
         ```
     - Make sure to include JSDoc comments for all functions. See
@@ -40,7 +44,18 @@ npm install
             # Cd ./fortunetelling
             npm run docgen
             ```
+    - **OPTIONAL:** Although we have `husky` and `lint-staged` setup to
+      auto-format all files in staging on `git commit`, it is a good idea to run
+      our linting/formatting script to make sure our code is properly formatted
+      before committing.
+        ```bash
+        # cd ./fortunetelling
+        npm run format
+        ``
 3. Commit changes to your branch
+    - **NOTE:** We have `husky` and `lint-staged` setup to auto-format all files
+      in git staging on `git commit`. This means that you don't have to worry
+      about formatting your code before committing.
 4. Push changes to your branch
 5. Create a pull request (PR) to merge your branch to `main` branch
 6. Wait for CI pipeline to pass
