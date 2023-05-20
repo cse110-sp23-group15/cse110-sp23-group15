@@ -7,10 +7,8 @@
 	"extends": [
 		"google",
 		"plugin:prettier/recommended",
-		"plugin:css/recommended",
 		"plugin:jest/recommended"
 	],
-	"plugins": ["html", "css", "jest"],
 	"overrides": [],
 	"parserOptions": {
 		"ecmaVersion": "latest",
