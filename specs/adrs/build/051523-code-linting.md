@@ -1,5 +1,5 @@
 ---
-title: ESlint for code linting
+title: Code linting
 status: proposed
 date: 2023-05-15
 deciders: Mark Lucernas, Hieu Pham
@@ -7,7 +7,7 @@ consulted: Akshay Prabhu
 informed: Everyone
 ---
 
-# ESlint for code linting
+# Code linting
 
 ## Context and Problem Statement
 
