@@ -106,3 +106,9 @@ main {
     background-color: #f8f6f0;
     text-align: center;
 }
+
+.Question {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
