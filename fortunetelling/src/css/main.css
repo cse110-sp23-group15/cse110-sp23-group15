@@ -106,3 +106,60 @@ main {
     background-color: #f8f6f0;
     text-align: center;
 }
+
+/*styling for the about us carousel*/
+
+.carousel-container {
+    display: none; /* Hide the carousel by default */
+}
+  
+@media (max-width: 767px) {
+    .carousel-container {
+        display: block; /* Show the carousel on mobile devices */
+    }
+    
+    .carousel {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #member-name {
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    
+    #current-member{
+        width: 200px;
+        height: 200px;
+        margin-top: 30px;
+        margin-bottom: 0px;
+        border: solid;
+    }
+
+    #member-noodle{
+        display: block;
+        width: 150px;
+        height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .carousel-control {
+        position: absolute;
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 25px;
+    }
+    
+    .carousel-control.prev {
+        left: 25px;
+    }
+    
+    .carousel-control.next {
+        right: 25px;
+    }
+}
+  
