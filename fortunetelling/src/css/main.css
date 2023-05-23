@@ -107,6 +107,12 @@ main {
     text-align: center;
 }
 
+.Question {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 /*styling for the about us carousel*/
 
 .carousel-container {
@@ -168,3 +174,4 @@ main {
     }
 }
   
+

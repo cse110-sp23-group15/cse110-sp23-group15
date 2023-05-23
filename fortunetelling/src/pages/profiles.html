@@ -1,40 +1,189 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>About</title>
-    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Hi Melody' rel='stylesheet'>
-    <link href="../css/main.css" rel="stylesheet" type="text/css" />
-  </head>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>About</title>
+		<link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Hi Melody"
+			rel="stylesheet"
+		/>
+		<link href="../css/main.css" rel="stylesheet" type="text/css" />
+	</head>
 
-  <body>
-    <header>
-        <a href="../../index.html"><img id='icon' src="../img/icon.png"></a>
-        <h1 id="noodleText">Tasty Noodles</h1>
-        <div class="dropdown">
-          <button class="dropBtn">Dropdown</button>
-          <div class="dropdownContent">
-            <a href="profiles.html">
-                <button>Noodle Profiles</button> 
-              </a>
-              <a href="about.html">
-                <button>About Us</button>
-            </a>
-          </div>
-        </div>
-    </header>
-  
-      <main>
-        <p>Profiles</p>
-      </main>
-  
-      <footer class="footer">
-        <p>© Tasty Noodles</p>
-      </footer>
-  
-      <script src="../js/main.js" type="module"></script>
-    </body>
-  </html>
+	<body>
+		<header>
+			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
+			<h1 id="noodleText">Tasty Noodles</h1>
+			<div class="dropdown">
+				<button class="dropBtn">Dropdown</button>
+				<div class="dropdownContent">
+					<a href="profiles.html">
+						<button>Noodle Profiles</button>
+					</a>
+					<a href="about.html">
+						<button>About Us</button>
+					</a>
+				</div>
+			</div>
+			<style>
+				.carousel {
+					display: flex;
+					justify-content: center;
+					width: 100%;
+				}
+				.carousel img {
+					width: 100%;
+					max-width: 500px;
+				}
+				.name,
+				.description {
+					text-align: center;
+				}
+				.controls {
+					display: flex;
+					justify-content: space-between;
+					margin-top: 20px;
+				}
+				.controls img {
+					width: 100px;
+					cursor: pointer;
+				}
+				.controls div {
+					text-align: center;
+				}
+				.name {
+					/* Hero H1 */
+
+					font-family: 'Montserrat';
+					font-style: normal;
+					font-weight: 400;
+					font-size: 56px;
+					line-height: 80px;
+					/* or 143% */
+
+					letter-spacing: -0.015em;
+
+					color: #ae3131;
+				}
+				.see-prev {
+					font-family: 'Montserrat';
+					font-style: normal;
+					font-weight: 400;
+					font-size: 15px;
+					line-height: 30px;
+					/* or 200% */
+
+					display: flex;
+					align-items: center;
+					text-align: center;
+					letter-spacing: -0.015em;
+				}
+				#next-noodle-name,
+				#prev-noodle-name {
+					font-family: 'Montserrat';
+					font-style: normal;
+					font-weight: 400;
+					font-size: 18px;
+					line-height: 30px;
+					/* or 167% */
+
+					display: flex;
+					align-items: center;
+					text-align: center;
+					letter-spacing: -0.015em;
+          color: #ae3131;
+				}
+			</style>
+		</header>
+
+		<main>
+			<div id="name" class="name">
+				<h2>Noodle 1</h2>
+			</div>
+			<div id="description" class="description">
+				<p>Description for Noodle 1</p>
+			</div>
+			<div id="carousel" class="carousel">
+				<img id="carousel-image" src="../img/noodle1.jpg" alt="Noodle 1" />
+			</div>
+			<div class="controls">
+				<div>
+					<img
+						id="prev-noodle"
+						src="../img/noodle3.jpg"
+						alt="Previous Noodle"
+						onclick="prevNoodle()"
+					/>
+					<p class="see-prev">See previous:</p>
+					<p id="prev-noodle-name">Noodle 3</p>
+				</div>
+				<div>
+					<img
+						id="next-noodle"
+						src="../img/noodle2.jpg"
+						alt="Next Noodle"
+						onclick="nextNoodle()"
+					/>
+					<p id="see-prev">See Next:</p>
+					<p id="next-noodle-name">Noodle 2</p>
+				</div>
+			</div>
+			<script>
+				var noodleIndex = 0;
+				var noodles = [
+					{
+						name: 'Noodle 1',
+						image: '../img/noodle1.jpg',
+						description: 'Description for Noodle 1'
+					},
+					{
+						name: 'Noodle 2',
+						image: '../img/noodle2.jpg',
+						description: 'Description for Noodle 2'
+					},
+					{
+						name: 'Noodle 3',
+						image: '../img/noodle3.jpg',
+						description: 'Description for Noodle 3'
+					}
+				];
+				function updateNoodle() {
+					document.getElementById('carousel-image').src =
+						noodles[noodleIndex].image;
+					document.getElementById('name').innerText = noodles[noodleIndex].name;
+					document.getElementById('description').innerText =
+						noodles[noodleIndex].description;
+					document.getElementById('prev-noodle').src =
+						noodles[(noodleIndex - 1 + noodles.length) % noodles.length].image;
+					document.getElementById('next-noodle').src =
+						noodles[(noodleIndex + 1) % noodles.length].image;
+					document.getElementById('prev-noodle-name').innerText =
+						noodles[(noodleIndex - 1 + noodles.length) % noodles.length].name;
+					document.getElementById('next-noodle-name').innerText =
+						noodles[(noodleIndex + 1) % noodles.length].name;
+				}
+				function nextNoodle() {
+					noodleIndex = (noodleIndex + 1) % noodles.length;
+					updateNoodle();
+				}
+				function prevNoodle() {
+					noodleIndex = (noodleIndex - 1 + noodles.length) % noodles.length;
+					updateNoodle();
+				}
+				updateNoodle();
+			</script>
+		</main>
+
+		<footer class="footer">
+			<p>© Tasty Noodles</p>
+		</footer>
+
+		<script src="../js/main.js" type="module"></script>
+	</body>
+</html>
