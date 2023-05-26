@@ -2,7 +2,6 @@ name: fortunetelling-release
 
 on:
   push:
-    branches: ["main"]
     tags:
       # See https://semver.org/ for Semantic Versioning
       - v[0-9]+.[0-9]+.[0-9]+
