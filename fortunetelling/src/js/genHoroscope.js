@@ -1,3 +1,9 @@
+// If we decide to use ES6
+
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
+
 // use this to generate a random day on the database to start at
 const randomKey = 98370474095984;
 const numHoroscopeDays = 660;
@@ -22,8 +28,8 @@ const { get } = require('http');
 / @param horoscope_sign_as_number: the number of the sign (1-12)
 / @return: the horoscope for the day as a string
 */
-const getHoroscope = function (horoscopeSignAsNumber) {
-	const horoscopeJson = require('./database/horoscope_db.json');
+export const getHoroscope = function (horoscopeSignAsNumber) {
+	const horoscopeJson = require('./database/horoscopeDB.json');
 	const horoscopeIndex = (startingPoint + daysFromStart) % numHoroscopeDays;
 	return horoscopeJson[
 		horoscopeIndex + (horoscopeSignAsNumber - 1) * numHoroscopeDays
