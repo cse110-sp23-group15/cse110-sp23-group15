@@ -5,7 +5,7 @@ import { it } from './helper.js';
 import { getHoroscope } from '../../js/genHoroscope.js';
 import { getJSON } from '../../js/utils.js';
 
-const horoscopeJSON = await getJSON('./database/horoscopeDB.json');
+const horoscopeJSON = await getJSON('./database/horoscopeDb.json');
 
 // Test getHoroscope
 it('getHoroscope() returns a random horoscope from the horoscopes database', async () => {

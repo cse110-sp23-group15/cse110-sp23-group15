@@ -1,3 +1,4 @@
-import { getHoroscope } from './genHoroscope.js';
+import { getHoroscope, getNoodleDescription } from './genHoroscope.js';
 
-console.log(getHoroscope(1));
+console.log(await getHoroscope(1));
+console.log(await getNoodleDescription(1));

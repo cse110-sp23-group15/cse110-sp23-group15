@@ -22,6 +22,6 @@ it('getRandomInt Should return random integer between min (inclusive) and max (e
 
 // Test getJSON
 it('getJSON Should return JSON object from url', async () => {
-	const json = await getJSON('./database/horoscopeDB.json');
+	const json = await getJSON('./database/horoscopeDb.json');
 	strictEqual(typeof json, 'object');
 });

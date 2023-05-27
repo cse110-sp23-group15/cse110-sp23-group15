@@ -27,10 +27,20 @@ const getDaysFromStart = function () {
  * @return {string} the horoscope for the day as a string
  */
 export async function getHoroscope(horoscopeSignAsNumber) {
+	const daysFromStart = getDaysFromStart();
+	const horoscopeJson = await getJSON('./database/horoscopeDb.json');
 	const horoscopeIndex = (startingPoint + daysFromStart) % numHoroscopeDays;
-	const horoscopeJson = await getJSON('./database/horoscopeDB.json');
-
 	return horoscopeJson[
 		horoscopeIndex + (horoscopeSignAsNumber - 1) * numHoroscopeDays
 	]['description'];
+}
+
+/**
+ * Function that get noodle description for a specific sign
+ * @param {int} horoscopeSignAsNumber the number of the sign (1-12)
+ * @return {string} the noodle description for the sign
+ */
+export async function getNoodleDescription(horoscopeSignAsNumber) {
+	const noodleDescription = await getJSON('./database/noodleDescriptions.json');
+	return noodleDescription[horoscopeSignAsNumber - 1]['personalityDescription'];
 }
