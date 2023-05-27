@@ -1,4 +1,4 @@
-//const {getHoroscope} = require('fortunetelling/src/js/genHoroscope.js');
+// const {getHoroscope} = require('fortunetelling/src/js/genHoroscope.js');
 /*
 test('getHoroscope', () => {
 
@@ -14,5 +14,5 @@ test('getHoroscope', () => {
 });
 */
 test('Sample', () => {
-    expect(1+2).toBe(3);
+	expect(1 + 2).toBe(3);
 });
