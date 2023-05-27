@@ -1,108 +1,173 @@
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #eae1cd;
-    margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: #eae1cd;
+	margin: 0;
 }
 
 #icon {
-    width: 61px;
-    height: 55px;
+	width: 61px;
+	height: 55px;
 }
-
 
 /*Styling for the header*/
 header {
-    background-color: #f8f6f0;
-    width: 100%;
-    display: flex;
-    align-items: center;
+	background-color: #f8f6f0;
+	width: 100%;
+	display: flex;
+	align-items: center;
 }
 
 header button {
-    display: flex;
+	display: flex;
 
-    border: none;
-    font-family: 'Montserrat';
-    font-size: 10px;
-    background-color: #da0B0b;
-    color: white;
+	border: none;
+	font-family: 'Montserrat';
+	font-size: 10px;
+	background-color: #da0b0b;
+	color: white;
 }
 
 header button:hover {
-    background-color: #da0b0b77;
+	background-color: #da0b0b77;
 }
 
 /*Styling for text in the header*/
 #noodleText {
-    font-family: 'Hi Melody';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    margin: 7px;
+	font-family: 'Hi Melody';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	margin: 7px;
 }
 
 /*Ramen Icon in the middle of the landing page*/
 #ramen {
-    padding-top: 20vh;
-    width: 195px;
-    height: 194px;
+	padding-top: 20vh;
+	width: 195px;
+	height: 194px;
 }
 
 /*Styling for dropdown menu*/
 .dropdown {
-    position: relative;
+	position: relative;
 
-    background-color: #da0B0b;
-    color: white;
+	background-color: #da0b0b;
+	color: white;
 }
-
 
 /*Styling for the main body*/
 main {
-    flex-grow: 1;
-    font-family: 'Montserrat';
+	flex-grow: 1;
+	font-family: 'Montserrat';
 
-    text-align: center;
+	text-align: center;
 }
 
 #flavorProf {
-    font-weight: 400;
-    font-size: 30px;
-    margin-bottom: 5px;
-    padding-left: 2vw;
-    padding-right: 2vw;
+	font-weight: 400;
+	font-size: 30px;
+	margin-bottom: 5px;
+	padding-left: 2vw;
+	padding-right: 2vw;
 }
 
 #description {
-    margin-top: 10px;
-    padding-bottom: 50px;
-    padding-left: 5vw;
-    padding-right: 5vw;
+	margin-top: 10px;
+	padding-bottom: 50px;
+	padding-left: 5vw;
+	padding-right: 5vw;
 }
 
 /*button to navigate to the questionaire page*/
 #toQuestions {
-    width: 192px;
-    height: 52px;
-    margin-bottom: 10vh;
+	width: 192px;
+	height: 52px;
+	margin-bottom: 10vh;
 
-    border: none;
-    font-family: 'Montserrat';
-    font-size: 20px;
-    border-radius: 8px;
-    background-color: #da0B0b;
-    color: white;
+	border: none;
+	font-family: 'Montserrat';
+	font-size: 20px;
+	border-radius: 8px;
+	background-color: #da0b0b;
+	color: white;
 }
 
 #toQuestions:hover {
-    background-color: #bb1212;
+	background-color: #bb1212;
 }
 
 .footer {
-    width: 100%;
+	width: 100%;
 
-    background-color: #f8f6f0;
-    text-align: center;
+	background-color: #f8f6f0;
+	text-align: center;
+}
+
+.Question {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+/*styling for the about us carousel*/
+
+.carousel-container {
+	display: none; /* Hide the carousel by default */
+}
+
+@media (max-width: 767px) {
+	.carousel-container {
+		display: block; /* Show the carousel on mobile devices */
+	}
+
+	.carousel {
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	#member-name {
+		font-size: 25px;
+		font-weight: bold;
+		margin-top: 20px;
+	}
+
+	#current-member {
+		width: 200px;
+		height: 200px;
+		margin-top: 30px;
+		margin-bottom: 0px;
+		border: solid;
+	}
+
+	#description {
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+
+	#member-noodle {
+		display: block;
+		width: 150px;
+		height: 150px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.carousel-control {
+		position: absolute;
+		top: 50%;
+		width: 30px;
+		height: 30px;
+		font-size: 25px;
+	}
+
+	.carousel-control.prev {
+		left: 25px;
+	}
+
+	.carousel-control.next {
+		right: 25px;
+	}
 }

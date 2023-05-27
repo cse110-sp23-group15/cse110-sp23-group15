@@ -8,15 +8,18 @@ const numHoroscopeDays = 660;
 const startingPoint = randomKey % numHoroscopeDays;
 
 // 1. Get the days from start
-const date = new Date();
-const currentYear = date.getFullYear();
-const currentMonth = date.getMonth();
-const currentDay = date.getDate();
-const currentDate = new Date(currentYear, currentMonth, currentDay);
-const startingDate = new Date(2023, 4, 8);
-const daysFromStart = Math.floor(
-	(currentDate - startingDate) / (1000 * 60 * 60 * 24)
-);
+const getDaysFromStart = function () {
+	const date = new Date();
+	const currentYear = date.getFullYear();
+	const currentMonth = date.getMonth();
+	const currentDay = date.getDate();
+	const currentDate = new Date(currentYear, currentMonth, currentDay);
+	const startingDate = new Date(2023, 4, 8);
+	const daysFromStart = Math.floor(
+		(currentDate - startingDate) / (1000 * 60 * 60 * 24)
+	);
+	return daysFromStart;
+};
 
 /**
  * Function that gets the day's horoscope for a specific sign
