@@ -11,13 +11,13 @@
 
 - [x] Mark Lucernas
 - [x] Hieu Pham
-- [ ] Darren Yu
+- [x] Darren Yu
 - [x] Runhui Wang
 - [x] Xinle Yu
-- [ ] Anthony Yao
+- [x] Anthony Yao
 - [x] Yue(Steve) Yin
 - [x] Holly Zhu
-- [ ] Aaron Kann
+- [x] Aaron Kann
 
 ## Agenda
 
@@ -34,6 +34,9 @@
     - Holly is continuing on the mobile carousel
     - Hanson has finished most part on desktop version of profile page and is going to push
     - Xinle is working on testing for questionnaire page and unit testing for backend functions
+    - Anthony is working on questionnaire page
+    - Darren has finished most part of questionnaire questions
+    - Aaron is working on localStorage to record users' personality
 
 ### Future Business
 
