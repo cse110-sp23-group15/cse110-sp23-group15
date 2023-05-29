@@ -36,6 +36,7 @@
 				.subtitle {
 					text-align: center;
 				}
+
 				.name {
 					/* Hero H1 */
 
@@ -50,104 +51,105 @@
 
 					color: #ae3131;
 				}
-                .subtitle{
-                    text-shadow: 0px 1px 1px rgb(111, 105, 105);
-                    /* margin: 50px; */
-                    padding-bottom: 10px;
-                }
-                #fortune{
-                    /* Body P Large */
 
-                    font-family: 'Montserrat';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 36px;
-                    line-height: 50px;
-                    /* or 139% */
+				.subtitle {
+					text-shadow: 0px 1px 1px rgb(111, 105, 105);
+					/* margin: 50px; */
+					padding-bottom: 10px;
+				}
 
-                    display: flex;
-                    align-items: center;
-                    text-align: center;
-                    letter-spacing: -0.015em;
+				#fortune {
+					/* Body P Large */
 
-                    color: #000000;
+					font-family: 'Montserrat';
+					font-style: normal;
+					font-weight: 400;
+					font-size: 36px;
+					line-height: 50px;
+					/* or 139% */
 
-                    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                    padding-right: 25%;
-                    padding-left: 25%;
-                    min-width: 50%;
-                }
+					display: flex;
+					align-items: center;
+					text-align: center;
+					letter-spacing: -0.015em;
 
-                .controls .dropbtn {
-                    width: 192px;
-                    height: 52px;
-                    cursor: pointer;
-                    outline: none;
-                    border: none;
-                    font-family: 'Montserrat';
-                    font-size: 18px;
-                    border-radius: 8px;
-                    background-color: #da0b0b;
-                    color: white;
-                }
+					color: #000000;
 
-                .dropdown-content {
-                    margin: auto;
-                    width: 184px;
-                    border: none;
-                    display: none;
-                    float: center;
-                }
+					text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+					padding-right: 25%;
+					padding-left: 25%;
+					min-width: 50%;
+				}
 
-                .dropdown-content .noodleButton {
-                    margin: auto;
-                    width: 184px;
-                    cursor: pointer;
-                    outline: none;
-                    border: none;
-                    font-family: 'Montserrat';
-                    font-size: 18px;
-                    border-radius: 2px;
-                    background-color: #f9f9f9;
-                    float: none;
-                    color: black;
-                    height: 24px;
-                    /* padding: 12px 16px; */
-                    text-decoration: none;
-                    display: block;
-                    padding-top: 0%;
-                }
+				.controls .dropbtn {
+					width: 192px;
+					height: 52px;
+					cursor: pointer;
+					outline: none;
+					border: none;
+					font-family: 'Montserrat';
+					font-size: 18px;
+					border-radius: 8px;
+					background-color: #da0b0b;
+					color: white;
+				}
 
-                .show {
-                    display: block;
-                }
+				.dropdown-content {
+					margin: auto;
+					width: 184px;
+					border: none;
+					display: none;
+					float: center;
+				}
 
-                #noodle-image {
-                    width: 96px;
-                    height: auto;
-                    border-radius: 8px;
-                    margin: auto;
-                    display: block;
-                }
+				.dropdown-content .noodleButton {
+					margin: auto;
+					width: 184px;
+					cursor: pointer;
+					outline: none;
+					border: none;
+					font-family: 'Montserrat';
+					font-size: 18px;
+					border-radius: 2px;
+					background-color: #f9f9f9;
+					float: none;
+					color: black;
+					height: 24px;
+					/* padding: 12px 16px; */
+					text-decoration: none;
+					display: block;
+					padding-top: 0%;
+				}
 
-                @media screen and (max-width: 600px) {
-                    #fortune {
-                        padding-right: 10%;
-                        padding-left: 10%;
-                        min-width: 80%;
-                        font-size: 24px;
-                    }
-                }
+				.show {
+					display: block;
+				}
 
-                @media screen and (min-width: 701px) and (max-width: 1000px) {
-                    #fortune {
-                        padding-right: 20%;
-                        padding-left: 20%;
-                        min-width: 60%;
-                        font-size: 30px;
-                    }
-                }
+				#noodle-image {
+					width: 96px;
+					height: auto;
+					border-radius: 8px;
+					margin: auto;
+					display: block;
+				}
 
+				@media screen and (max-width: 600px) {
+					#fortune {
+						padding-right: 10%;
+						padding-left: 10%;
+						min-width: 80%;
+						font-size: 24px;
+					}
+				}
+
+				@media screen and (min-width: 701px) and (max-width: 1000px) {
+					#fortune {
+						padding-right: 20%;
+						padding-left: 20%;
+						min-width: 60%;
+						font-size: 30px;
+					}
+				}
 			</style>
 		</header>
 
@@ -156,70 +158,35 @@
 				<h2>Today's Fortune</h2>
 			</div>
 			<div id="subtitle" class="subtitle">
-				<p>The Great Noodle has spoken.  And it says...</p>
+				<p>The Great Noodle has spoken. And it says...</p>
 			</div>
-            <div id="fortune" class="fortune">
-                <p id="fortuneText">There is no such thing as something for nothing and if you do 
-                    not quite believe that now you will believe it by the end of the day. 
-                    If you lose something valuable accept it as the price you must 
-                    pay to learn this important lesson.
-                </p>
-            </div>
+			<div id="fortune" class="fortune">
+				<p id="fortuneText">
+					There is no such thing as something for nothing and if you do not
+					quite believe that now you will believe it by the end of the day. If
+					you lose something valuable accept it as the price you must pay to
+					learn this important lesson.
+				</p>
+			</div>
 			<div id="controls" class="controls">
 				<img id="noodle-image" src="../img/noodle1.jpg" alt="Noodle 1" />
-                <br>
-                <button id="dropbtn" class="dropbtn">
-                    See other noodles <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" id="myDropdown">
-                    <button class="noodleButton" onclick="">Noodle 1</button>
-                    <button class="noodleButton" onclick="">Noodle 2</button>
-                    <button class="noodleButton" onclick="">Noodle 3</button>
-                </div>
+				<br />
+				<button id="dropbtn" class="dropbtn">
+					See other noodles <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content" id="myDropdown">
+					<button class="noodleButton" onclick="">Noodle 1</button>
+					<button class="noodleButton" onclick="">Noodle 2</button>
+					<button class="noodleButton" onclick="">Noodle 3</button>
+				</div>
 			</div>
-			<script>        /*
-                import { getHoroscope } from '../js/genHoroscope.js';
-				var noodleIndex = 0;
-				var noodles = [
-					{
-						name: 'Noodle 1',
-						image: '../img/noodle1.jpg',
-						description: 'Description for Noodle 1'
-					},
-					{
-						name: 'Noodle 2',
-						image: '../img/noodle2.jpg',
-						description: 'Description for Noodle 2'
-					},
-					{
-						name: 'Noodle 3',
-						image: '../img/noodle3.jpg',
-						description: 'Description for Noodle 3'
-					}
-				];
-                function updateNoodle(newNoodleIndex) {
-                    //import getHoroscope from '../js/genHoroscope.js';
-
-                    alert("new noodle index: " + newNoodleIndex);
-                    noodleIndex = newNoodleIndex;
-                    document.getElementById('carousel-image').src =
-                        noodles[noodleIndex].image;
-                    document.getElementById('fortuneText').innerText =
-                        getHoroscope(noodleIndex);
-                }
-                function buttonFunct() {
-                    // alert("Hello World!");
-                    document.getElementById("myDropdown").classList.toggle("show");
-                }*/
-			</script>
 		</main>
-
 
 		<footer class="footer">
 			<p>© Tasty Noodles</p>
 		</footer>
 
 		<script src="../js/main.js" type="module"></script>
-        <script src="../js/genHoroscope.js" type="module"></script>
+		<script src="../js/fortune.js" type="module"></script>
 	</body>
 </html>
