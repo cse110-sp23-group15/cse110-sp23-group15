@@ -83,11 +83,11 @@ class Speechify {
 		});
 	}
 
+	// TODO: Modify this function to highlight the text under this.element while speaking the text.
+	// Make sure to remove the highlight when the speech is done.
 	/**
 	 * @param {string} text The text to be speechified
 	 */
-	// TODO: Modify this function to highlight the text under this.element while speaking the text.
-	// Make sure to remove the highlight when the speech is done.
 	speechify(text) {
 		this._allVoicesObtained.then((voices) => {
 			this.text = text;
