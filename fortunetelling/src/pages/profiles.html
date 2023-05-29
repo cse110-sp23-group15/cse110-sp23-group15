@@ -99,6 +99,22 @@
 					letter-spacing: -0.015em;
 					color: #ae3131;
 				}
+				.controls #fortune-button {
+                    width: 192px;
+                    height: 52px;
+                    cursor: pointer;
+                    outline: none;
+                    border: none;
+                    font-family: 'Montserrat';
+                    font-size: 18px;
+                    border-radius: 8px;
+                    background-color: #da0b0b;
+                    color: white;
+                }
+
+                .show {
+                    display: block;
+                }
 			</style>
 		</header>
 
@@ -124,6 +140,11 @@
 					<p id="prev-noodle-name">Noodle 3</p>
 				</div>
 				<div>
+					<a href="fortune.html">
+						<button id="fortune-button">Reveal my Fortune</button>
+					</a>
+				</div>
+				<div>
 					<img
 						id="next-noodle"
 						src="../img/noodle2.jpg"
@@ -136,6 +157,7 @@
 			</div>
 			<script>
 				var noodleIndex = 0;
+				localStorage.setItem('noodleIndex', noodleIndex);
 				var noodles = [
 					{
 						name: 'Noodle 1',
@@ -154,6 +176,7 @@
 					}
 				];
 				function updateNoodle() {
+					localStorage.setItem('noodleIndex', noodleIndex);
 					document.getElementById('carousel-image').src =
 						noodles[noodleIndex].image;
 					document.getElementById('name').innerText = noodles[noodleIndex].name;
