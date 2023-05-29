@@ -15,9 +15,15 @@
 	"parserOptions": {
 		"ecmaVersion": "6",
 		"sourceType": "module",
+		"ecmaFeatures": {
+			"modules": true,
+			"experimentalObjectRestSpread": true
+		},
 		"requireConfigFile": false,
 		"babelOptions": {
-			"plugins": ["@babel/plugin-syntax-import-assertions"]
+			"parserOpts": {
+				"plugins": ["importAssertions"]
+			}
 		}
 	},
 	"rules": {

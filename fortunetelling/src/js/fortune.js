@@ -29,6 +29,9 @@ for (let i = 0; i < noodleButtons.length; i++) {
 	});
 }
 
+/**
+ * @param {int} newNoodleIndex The index of the noodle to be displayed
+ */
 async function updateNoodle(newNoodleIndex) {
 	// import getHoroscope from '../js/genHoroscope.js';
 	noodleIndex = newNoodleIndex;
@@ -39,6 +42,7 @@ async function updateNoodle(newNoodleIndex) {
 	// alert('new noodle index: ' + newNoodleIndex + '.');
 }
 
+/** Function to toggle dropbown */
 function buttonFunct() {
 	// alert("Hello World!");
 	document.getElementById('myDropdown').classList.toggle('show');
@@ -51,12 +55,3 @@ document.addEventListener('DOMContentLoaded', function (event) {
 	noodleIndex = parseInt(noodleIndex);
 	updateNoodle(noodleIndex);
 });
-
-// alert("Hello World!");
-// alert("noodleIndex: " + noodleIndex);
-// alert("noodleIndex: " + localStorage.getItem("noodleIndex"));
-
-// export { getHoroscope, getDescription };
-// alert("Hello World!");
-// alert("noodleIndex: " + noodleIndex);
-// alert("noodleIndex: " + localStorage.getItem("noodleIndex"));
