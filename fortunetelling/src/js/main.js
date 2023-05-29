@@ -1,4 +1,4 @@
-import { getHoroscope, getNoodleDescription } from './genHoroscope.js';
+import { getHoroscope, getDescription } from './genHoroscope.js';
 import { Personality } from './personality.js';
 import { Speechify } from './speechify.js';
 
@@ -9,7 +9,7 @@ async function init() {
 	// --- genHoroscope DEMO
 
 	console.log(await getHoroscope(1));
-	console.log(await getNoodleDescription(1));
+	console.log(await getDescription(1));
 
 	// --- Personality DEMO
 
@@ -39,5 +39,6 @@ async function init() {
 	// But for Firefox, it works without the button and would speak the text immediately.
 
 	// UNCOMMENT THIS LINE TO TEST SPEECHIFY
+	// speechify.speechify('Hello world');
 	// speechify.speechify('Hello world');
 }

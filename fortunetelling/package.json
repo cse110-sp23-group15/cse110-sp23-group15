@@ -46,8 +46,9 @@
 		"verbose": true
 	},
 	"lint-staged": {
-		"./**/*.{js,jsx,ts,tsx,html,json}": "npx prettier --write",
-		"./**/*.{css,scss}": "npx stylelint --fix"
+		"*.{js,jsx,ts,tsx,html,json}": "npx prettier --write",
+		"*.{css,scss}": "npx stylelint --fix",
+		"*.{js,jsx,ts,tsx}": "npx eslint --fix"
 	},
 	"type": "module",
 	"dependencies": {

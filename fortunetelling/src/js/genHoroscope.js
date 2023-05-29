@@ -2,13 +2,40 @@
 
 import { getJSON } from './utils.js';
 
-// use this to generate a random day on the database to start at
+// Use this to generate a random day on the database to start at
 const randomKey = 98370474095984;
 const numHoroscopeDays = 660;
 const startingPoint = randomKey % numHoroscopeDays;
 
-// 1. Get the days from start
-const getDaysFromStart = function () {
+/**
+ * Function that gets the day's horoscope for a specific sign
+ * @param {int} horoscopeSignAsNumber the number of the sign (1-12)
+ * @return {string} the horoscope for the day as a string
+ */
+const getHoroscope = async function (horoscopeSignAsNumber) {
+	const daysFromStart = _getDaysFromStart();
+	const horoscopeJson = await getJSON('./database/horoscopeDb.json');
+	const horoscopeIndex = (startingPoint + daysFromStart) % numHoroscopeDays;
+	return horoscopeJson[
+		horoscopeIndex + (horoscopeSignAsNumber - 1) * numHoroscopeDays
+	]['description'];
+};
+
+/**
+ * Function that get noodle description for a specific sign
+ * @param {int} horoscopeSignAsNumber the number of the sign (1-12)
+ * @return {string} the noodle description for the sign
+ */
+const getDescription = async function (horoscopeSignAsNumber) {
+	const noodleDescription = await getJSON('./database/noodleDescriptions.json');
+	return noodleDescription[horoscopeSignAsNumber - 1]['personalityDescription'];
+};
+
+// -------- Helper Functions ------
+
+// Get the days from start
+const _getDaysFromStart = function () {
+	// alert("getDaysFromStart")
 	const date = new Date();
 	const currentYear = date.getFullYear();
 	const currentMonth = date.getMonth();
@@ -21,26 +48,4 @@ const getDaysFromStart = function () {
 	return daysFromStart;
 };
 
-/**
- * Function that gets the day's horoscope for a specific sign
- * @param {int} horoscopeSignAsNumber the number of the sign (1-12)
- * @return {string} the horoscope for the day as a string
- */
-export async function getHoroscope(horoscopeSignAsNumber) {
-	const daysFromStart = getDaysFromStart();
-	const horoscopeJson = await getJSON('./database/horoscopeDb.json');
-	const horoscopeIndex = (startingPoint + daysFromStart) % numHoroscopeDays;
-	return horoscopeJson[
-		horoscopeIndex + (horoscopeSignAsNumber - 1) * numHoroscopeDays
-	]['description'];
-}
-
-/**
- * Function that get noodle description for a specific sign
- * @param {int} horoscopeSignAsNumber the number of the sign (1-12)
- * @return {string} the noodle description for the sign
- */
-export async function getNoodleDescription(horoscopeSignAsNumber) {
-	const noodleDescription = await getJSON('./database/noodleDescriptions.json');
-	return noodleDescription[horoscopeSignAsNumber - 1]['personalityDescription'];
-}
+export { getHoroscope, getDescription };
