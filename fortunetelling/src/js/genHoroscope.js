@@ -1,3 +1,7 @@
+// If we decide to use ES6
+
+import { getJSON } from './utils.js';
+
 // use this to generate a random day on the database to start at
 const randomKey = 98370474095984;
 const numHoroscopeDays = 660;
@@ -17,32 +21,26 @@ const getDaysFromStart = function () {
 	return daysFromStart;
 };
 
-// access the json file in the database folder
-const fs = require('fs');
-const { get } = require('http');
-
-/* Function that gets the day's horoscope for a specific sign
-/ @param horoscopeSignAsNumber: the number of the sign (1-12)
-/ @return: the horoscope for the day as a string
-*/
-const getHoroscope = function (horoscopeSignAsNumber) {
+/**
+ * Function that gets the day's horoscope for a specific sign
+ * @param {int} horoscopeSignAsNumber the number of the sign (1-12)
+ * @return {string} the horoscope for the day as a string
+ */
+export async function getHoroscope(horoscopeSignAsNumber) {
 	const daysFromStart = getDaysFromStart();
-	const horoscopeJson = require('./database/horoscopeDb.json');
+	const horoscopeJson = await getJSON('./database/horoscopeDb.json');
 	const horoscopeIndex = (startingPoint + daysFromStart) % numHoroscopeDays;
 	return horoscopeJson[
 		horoscopeIndex + (horoscopeSignAsNumber - 1) * numHoroscopeDays
 	]['description'];
-};
+}
 
-const getDescription = function (horoscopeSignAsNumber) {
-	const noodleDescription = require('./database/noodleDescriptions.json');
+/**
+ * Function that get noodle description for a specific sign
+ * @param {int} horoscopeSignAsNumber the number of the sign (1-12)
+ * @return {string} the noodle description for the sign
+ */
+export async function getNoodleDescription(horoscopeSignAsNumber) {
+	const noodleDescription = await getJSON('./database/noodleDescriptions.json');
 	return noodleDescription[horoscopeSignAsNumber - 1]['personalityDescription'];
-};
-// test the function for all numbers 1-12
-for (let i = 1; i <= 12; i++) {
-	console.log('Sign: ' + i + '\n');
-	console.log(getDescription(i));
-	console.log('\n');
-	console.log(getHoroscope(i));
-	console.log('\n');
 }
