@@ -33,7 +33,7 @@ class Speechify {
 	// Make sure to remove the highlight when the speech is done.
 
 	/**
-	 * @return {Promise<[]>} Promise that resolves to an array of SpeechSynthesisVoice objects
+	 * @return {Promise} Promise that resolves to an array of SpeechSynthesisVoice objects
 	 */
 	get voices() {
 		return this._allVoicesObtained;
@@ -54,7 +54,7 @@ class Speechify {
 	}
 
 	/**
-	 * @return {Promise<[]>} Promise that resolves to an array of voice names as strings
+	 * @return {Promise} Promise that resolves to an array of voice names as strings
 	 */
 	async getVoiceNames() {
 		return await this.voices.then((voices) => {
