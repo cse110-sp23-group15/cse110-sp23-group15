@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', init);
 /** On load function */
 async function init() {
 
-	addQuestions();
+	await addQuestions();
 
 	// --- genHoroscope DEMO
 
@@ -46,7 +46,7 @@ async function init() {
 }
 
 /**
- * Populates the questionaie page with the questions.
+ * Populates the questionnaire page with the questions.
  */
 async function addQuestions() {
 	const data = await fetch('../js/database/questionnaire.json');
@@ -55,18 +55,24 @@ async function addQuestions() {
 
 	let curQuestion;
 	
-	for (let i = 0; i < questions.length; i++) {
+	for (let i = 1; i < questions.length; i++) {
 		const newDiv = document.createElement('div');
-		//const newQues = document.createTextNode(questions[i].description);
+		const beforeButton = document.querySelector('.submitButton');
 
 		newDiv.innerHTML = `<h2>` + questions[i].description + `</h2>` +
 		`<form id="question"><a>Disagree</a><input type="radio" name="disagree" />
 		<input type="radio" name="slightly disagree" /><input type="radio" name="neutral" />
-		<input type="radio" name="slightly agree" /><input type="radio" name="agree" /><a>Agree</a></form>
-`;
+		<input type="radio" name="slightly agree" /><input type="radio" name="agree" /><a>Agree</a></form>`;
 
 		newDiv.setAttribute('id', `div${i}`);
-		//newDiv.appendChild(newQues);
 		mainRef.appendChild(newDiv);
+		newDiv.after(beforeButton);
 	}
+}
+
+/**
+ * Grades the quiz and returns the closest personality.
+ */
+async function gradeQuiz() {
+
 }
