@@ -14,8 +14,11 @@ function accessswitch(){
 }
 
 function accessEn(){
+    if(page.url() == "http://127.0.0.1:5500/fortunetelling/index.html"){
+        
+    }
     let readText = page.getElementsByClassName("read");
     for (let i = 0; i<readText.length; i++){
-        
+
     }
 }
