@@ -6,6 +6,9 @@ window.addEventListener('DOMContentLoaded', init);
 
 /** On load function */
 async function init() {
+
+	addQuestions();
+
 	// --- genHoroscope DEMO
 
 	console.log(await getHoroscope(1));
@@ -40,4 +43,30 @@ async function init() {
 
 	// UNCOMMENT THIS LINE TO TEST SPEECHIFY
 	// speechify.speechify('Hello world');
+}
+
+/**
+ * Populates the questionaie page with the questions.
+ */
+async function addQuestions() {
+	const data = await fetch('../js/database/questionnaire.json');
+	const questions = await data.json();
+	const mainRef = document.querySelector('main');
+
+	let curQuestion;
+	
+	for (let i = 0; i < questions.length; i++) {
+		const newDiv = document.createElement('div');
+		//const newQues = document.createTextNode(questions[i].description);
+
+		newDiv.innerHTML = `<h2>` + questions[i].description + `</h2>` +
+		`<form id="question"><a>Disagree</a><input type="radio" name="disagree" />
+		<input type="radio" name="slightly disagree" /><input type="radio" name="neutral" />
+		<input type="radio" name="slightly agree" /><input type="radio" name="agree" /><a>Agree</a></form>
+`;
+
+		newDiv.setAttribute('id', `div${i}`);
+		//newDiv.appendChild(newQues);
+		mainRef.appendChild(newDiv);
+	}
 }
