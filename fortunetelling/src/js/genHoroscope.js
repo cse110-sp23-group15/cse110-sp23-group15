@@ -31,6 +31,14 @@ const getDescription = async function (horoscopeSignAsNumber) {
 	return noodleDescription[horoscopeSignAsNumber - 1]['personalityDescription'];
 };
 
+/**
+ * Function that gets all noodle descriptions
+ * @return {obj} the noodle descriptions for all signs as an object
+ */
+const getNoodleData = async function () {
+	return await getJSON('./database/noodleDescriptions.json');
+};
+
 // -------- Helper Functions ------
 
 // Get the days from start
@@ -48,4 +56,4 @@ const _getDaysFromStart = function () {
 	return daysFromStart;
 };
 
-export { getHoroscope, getDescription };
+export { getHoroscope, getDescription, getNoodleData };
