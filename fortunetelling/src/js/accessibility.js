@@ -1,5 +1,7 @@
 import { Speechify } from './speechify.js';
 
+window.speechifyReady = null;
+
 /**
  * General control of the accessibility switch
  */
@@ -15,6 +17,7 @@ async function accessibilitySwitch() {
 		if (this.checked) {
 			speechify.reset();
 			console.log('Accessibility On!');
+
 			if (document.URL.includes('index')) {
 				speechify.speechify(
 					'Welcome to main page of tasty noodle fortune telling site'
@@ -50,11 +53,10 @@ async function accessibilitySwitch() {
  * Read all elements containig class 'read'
  * @param {Speechify} speechify The speechify object
  */
-async function accessElement(speechify) {
+function accessElement(speechify) {
 	const readText = document.getElementsByClassName('read');
 	for (let i = 0; i < readText.length; i++) {
-		speechify.element = readText[i];
-		speechify.speechifyHighlight();
+		speechify.speechifyHighlight(readText[i]);
 	}
 }
 
