@@ -112,10 +112,48 @@ main {
 .carousel-container {
     display: none; /* Hide the carousel by default */
 }
+
+.member-menu {
+    position:absolute;
+    margin: auto;
+    bottom: 70px;
+    margin-left: 80px;
+}
+
+.member-menu img {
+    width: 80px;
+    height: 80px;
+    padding: 10px 30px;
+}
+
+#current-member-dt{
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    border: solid;
+}
+
+#member-noodle-dt{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+}
+
+#member-name-dt {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
   
 @media (max-width: 767px) {
     .carousel-container {
         display: block; /* Show the carousel on mobile devices */
+    }
+
+    .desktop-container {
+        display: none;
     }
     
     .carousel {
@@ -134,7 +172,7 @@ main {
         width: 200px;
         height: 200px;
         margin-top: 30px;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
         border: solid;
     }
 
