@@ -52,7 +52,7 @@ header button:hover {
 	grid-template-rows: repeat(3, 1fr);
 	justify-items: center;
 	z-index: 120;
-  }
+}
 
 .hamburger div {
 	background-color: #eae1cd;
@@ -66,25 +66,24 @@ header button:hover {
 
 #toggle:checked + .hamburger .top {
 	-webkit-transform: rotate(-45deg);
-			transform: rotate(-45deg);
+	transform: rotate(-45deg);
 	margin-top: 22.5px;
-  }
-  
+}
+
 #toggle:checked + .hamburger .middle {
 	-webkit-transform: rotate(45deg);
-		transform: rotate(45deg);
+	transform: rotate(45deg);
 	margin-top: -5px;
 }
 
 #toggle:checked + .hamburger .bottom {
 	-webkit-transform: scale(0);
-		transform: scale(0);
+	transform: scale(0);
 }
 
 #toggle:checked ~ .dropdownContent {
 	overflow: visible;
 }
-
 
 /*Styling for dropdown menu*/
 .dropdown {
@@ -94,7 +93,6 @@ header button:hover {
 
 	background-color: #da0b0b;
 	color: white;
-
 }
 
 .dropdownContent {
@@ -111,7 +109,7 @@ header button:hover {
 
 .navLink {
 	font-size: 15px;
-	font-family: "Montserrat";
+	font-family: 'Montserrat';
 	padding: 15px;
 
 	display: flex;
