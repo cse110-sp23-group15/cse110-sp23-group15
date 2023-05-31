@@ -15,6 +15,13 @@ function accessswitch() {
 				intro.voice = voiceList[0];
 				synth.speak(intro);
 				console.log('intro');
+                accessEn();
+                const end = new SpeechSynthesisUtterance(
+					'press the button and aswer the questions to find out what noodle are you'
+				);
+				end.rate = 2;
+				end.voice = voiceList[0];
+				synth.speak(end);
 			} else if (document.URL.includes('questionnaire')) {
 				console.log('question');
 			} else if (document.URL.includes('about')) {
@@ -23,6 +30,13 @@ function accessswitch() {
 				console.log('fortune');
 			} else if (document.URL.includes('profiles')) {
 				console.log('profiles');
+                const intro = new SpeechSynthesisUtterance(
+					'Here are the profiles of all the noodles'
+				);
+				intro.rate = 2;
+				intro.voice = voiceList[0];
+				synth.speak(intro);
+                accessEn();
 			} else {
 				const intro = new SpeechSynthesisUtterance(
 					'Welcom to main page of tasty noodle fortune telling site'
@@ -33,7 +47,6 @@ function accessswitch() {
 				accessEn();
 				console.log('intro');
 			}
-			accessEn();
 		} else {
 			synth.cancel();
 		}
@@ -42,11 +55,13 @@ function accessswitch() {
 
 /** read everything with read class */
 function accessEn() {
+    console.log("function");
 	const synth = window.speechSynthesis;
 	const readText = document.getElementsByClassName('read');
 	const voiceList = window.speechSynthesis.getVoices();
 	for (let i = 0; i < readText.length; i++) {
-		const text = new SpeechSynthesisUtterance(readText[i].value);
+		const text = new SpeechSynthesisUtterance(readText[i].innerHTML);
+        console.log(readText[i].innerHTML);
 		text.rate = 2;
 		text.voice = voiceList[0];
 		synth.speak(text);

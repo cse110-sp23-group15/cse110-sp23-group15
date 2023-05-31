@@ -1,4 +1,5 @@
 import { accessswitch } from './accessibility.js';
+import { accessEn } from './accessibility.js';
 import { getHoroscope, getDescription } from './genHoroscope.js';
 import { Personality } from './personality.js';
 import { Speechify } from './speechify.js';
