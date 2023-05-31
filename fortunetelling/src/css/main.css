@@ -19,16 +19,6 @@ header {
 	align-items: center;
 }
 
-header button {
-	display: flex;
-
-	border: none;
-	font-family: 'Montserrat';
-	font-size: 10px;
-	background-color: #da0b0b;
-	color: white;
-}
-
 header button:hover {
 	background-color: #da0b0b77;
 }
@@ -49,12 +39,91 @@ header button:hover {
 	height: 194px;
 }
 
+#toggle {
+	display: none;
+}
+
+/* Hamburger */
+.hamburger {
+	height: 45px;
+	margin: 10px;
+	display: -ms-grid;
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	justify-items: center;
+	z-index: 120;
+  }
+
+.hamburger div {
+	background-color: #eae1cd;
+	position: relative;
+	width: 40px;
+	height: 5px;
+	margin-top: 7px;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+#toggle:checked + .hamburger .top {
+	-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+	margin-top: 22.5px;
+  }
+  
+#toggle:checked + .hamburger .middle {
+	-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+	margin-top: -5px;
+}
+
+#toggle:checked + .hamburger .bottom {
+	-webkit-transform: scale(0);
+		transform: scale(0);
+}
+
+#toggle:checked ~ .dropdownContent {
+	overflow: visible;
+}
+
+
 /*Styling for dropdown menu*/
 .dropdown {
+	font-family: 'Montserrat';
 	position: relative;
+	margin-left: auto;
 
 	background-color: #da0b0b;
 	color: white;
+
+}
+
+.dropdownContent {
+	margin: 0;
+	grid-template-rows: 1fr repeat(4, 0.5fr);
+	grid-row-gap: 25px;
+	list-style: none;
+	clear: both;
+	width: auto;
+	text-align: center;
+	height: 0px;
+	overflow: hidden;
+}
+
+.navLink {
+	font-size: 15px;
+	font-family: "Montserrat";
+	padding: 15px;
+
+	display: flex;
+	text-decoration: none;
+	border: none;
+	background-color: #da0b0b;
+	color: white;
+}
+
+.navLink:hover {
+	color: #da0b0b;
+	background-color: #eae1cd;
 }
 
 /*Styling for the main body*/
