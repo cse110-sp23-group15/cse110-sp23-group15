@@ -45,5 +45,4 @@ function accessEn(){
         synth.speak(text);
     }
 }
-
 export {accessswitch, accessEn};
