@@ -59,94 +59,26 @@
 			</div>
 		</header>
 
-		<main class="questionnaire">
-			<h2>Question 1:</h2>
-			<div class="Question">
-				<a class="disagree">Disagree</a>
-				<form>
-					<input type="radio" name="qRadio" class="negative" />
-					<input type="radio" name="qRadio" class="slightlyNegative" />
-					<input type="radio" name="qRadio" class="neutral" />
-					<input type="radio" name="qRadio" class="slightlyPositive" />
-					<input type="radio" name="qRadio" class="positive" />
+		<main>
+			<div class="firstQuestion">
+				<h2>When is your birthday?</h2>
+				<form id="birthday">
+					<input type="date" />
 				</form>
-				<a class="agree">Agree</a>
 			</div>
-			<h2>Question 2:</h2>
-			<div class="Question">
-				<a class="disagree">Disagree</a>
-				<form>
-					<input type="radio" name="qRadio" class="negative" />
-					<input type="radio" name="qRadio" class="slightlyNegative" />
-					<input type="radio" name="qRadio" class="neutral" />
-					<input type="radio" name="qRadio" class="slightlyPositive" />
-					<input type="radio" name="qRadio" class="positive" />
-				</form>
-				<a class="agree">Agree</a>
+			<!--Questions go here.-->
+			<div class="submitButton">
+				<a href="./noodlesResults.html">
+					<button
+						id="submit"
+						class="submit"
+						type="button"
+						style="font-size: 30px; margin: 30px; color: purple"
+					>
+						Submit
+					</button>
+				</a>
 			</div>
-			<h2>Question 3:</h2>
-			<div class="Question">
-				<a class="disagree">Disagree</a>
-				<form>
-					<input type="radio" name="qRadio" class="negative" />
-					<input type="radio" name="qRadio" class="slightlyNegative" />
-					<input type="radio" name="qRadio" class="neutral" />
-					<input type="radio" name="qRadio" class="slightlyPositive" />
-					<input type="radio" name="qRadio" class="positive" />
-				</form>
-				<a class="agree">Agree</a>
-			</div>
-			<h2>Question 4:</h2>
-			<div class="Question">
-				<a class="disagree">Disagree</a>
-				<form>
-					<input type="radio" name="qRadio" class="negative" />
-					<input type="radio" name="qRadio" class="slightlyNegative" />
-					<input type="radio" name="qRadio" class="neutral" />
-					<input type="radio" name="qRadio" class="slightlyPositive" />
-					<input type="radio" name="qRadio" class="positive" />
-				</form>
-				<a class="agree">Agree</a>
-			</div>
-			<h2>Question 5:</h2>
-			<div class="Question">
-				<a class="disagree">Disagree</a>
-				<form>
-					<input type="radio" name="qRadio" class="negative" />
-					<input type="radio" name="qRadio" class="slightlyNegative" />
-					<input type="radio" name="qRadio" class="neutral" />
-					<input type="radio" name="qRadio" class="slightlyPositive" />
-					<input type="radio" name="qRadio" class="positive" />
-				</form>
-				<a class="agree">Agree</a>
-			</div>
-			<h2>Question 6:</h2>
-			<div class="Question">
-				<a class="disagree">Disagree</a>
-				<form>
-					<input type="radio" name="qRadio" class="negative" />
-					<input type="radio" name="qRadio" class="slightlyNegative" />
-					<input type="radio" name="qRadio" class="neutral" />
-					<input type="radio" name="qRadio" class="slightlyPositive" />
-					<input type="radio" name="qRadio" class="positive" />
-				</form>
-				<a class="agree">Agree</a>
-			</div>
-			<h2>Question 7:</h2>
-			<div class="Question">
-				<a class="disagree">Disagree</a>
-				<form>
-					<input type="radio" name="qRadio" class="negative" />
-					<input type="radio" name="qRadio" class="slightlyNegative" />
-					<input type="radio" name="qRadio" class="neutral" />
-					<input type="radio" name="qRadio" class="slightlyPositive" />
-					<input type="radio" name="qRadio" class="positive" />
-				</form>
-				<a class="agree">Agree</a>
-			</div>
-			<a href="noodleResults.html">
-				<button id="submit">Submit!</button>
-			</a>
 		</main>
 
 		<footer class="footer">
@@ -154,5 +86,6 @@
 		</footer>
 
 		<script src="../js/main.js" type="module"></script>
+		<script src="../js/questionnaire.js" type="module"></script>
 	</body>
 </html>
