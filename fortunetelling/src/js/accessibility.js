@@ -1,7 +1,5 @@
-/* general control of the accessibility switch
-/ @param none
-/ @return: none
-*/
+/** general control of the accessibility switch
+ */
 function accessswitch() {
 	const synth = window.speechSynthesis;
 	const voiceList = window.speechSynthesis.getVoices();
@@ -42,10 +40,7 @@ function accessswitch() {
 	});
 }
 
-/* read everything with read class
-/ @param none
-/ @return: none
-*/
+/** read everything with read class */
 function accessEn() {
 	const synth = window.speechSynthesis;
 	const readText = document.getElementsByClassName('read');
