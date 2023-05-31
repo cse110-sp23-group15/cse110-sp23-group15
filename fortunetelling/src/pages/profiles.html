@@ -219,12 +219,16 @@
 					synth.cancel();
 					const accessibility = document.getElementsByName('accessibility');
 					const voiceList = window.speechSynthesis.getVoices();
-					if(accessibility[0].checked){
-						const readName = new SpeechSynthesisUtterance(noodles[noodleIndex].name);
+					if (accessibility[0].checked) {
+						const readName = new SpeechSynthesisUtterance(
+							noodles[noodleIndex].name
+						);
 						readName.rate = 2;
 						readName.voice = voiceList[0];
 						synth.speak(readName);
-						const readDes = new SpeechSynthesisUtterance(noodles[noodleIndex].description);
+						const readDes = new SpeechSynthesisUtterance(
+							noodles[noodleIndex].description
+						);
 						readDes.rate = 2;
 						readDes.voice = voiceList[0];
 						synth.speak(readDes);
