@@ -1,6 +1,9 @@
-import { accessswitch} from './accessibility.js'
+import { accessswitch } from './accessibility.js';
 window.addEventListener('DOMContentLoaded', init);
-
-function init(){
-    accessswitch();
+/* initialize page
+/ @param none
+/ @return: none
+*/
+function init() {
+	accessswitch();
 }
