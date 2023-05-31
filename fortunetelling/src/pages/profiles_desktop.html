@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>About</title>
+		<link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Hi Melody"
+			rel="stylesheet"
+		/>
+		<link href="../css/main.css" rel="stylesheet" type="text/css" />
+		<style>
+			.carousel {
+				display: flex;
+				justify-content: center;
+				overflow-x: auto;
+			}
+			.carousel img {
+				width: 100%;
+				max-width: 200px;
+				margin: 0 10px; /* For spacing between images */
+			}
+			.name,
+			.description {
+				text-align: center;
+			}
+			.name {
+				font-family: 'Montserrat';
+				font-style: bold;
+				font-weight: 400;
+				font-size: 56px;
+				line-height: 80px;
+				letter-spacing: -0.015em;
+				color: #ae3131;
+			}
+			.controls #fortune-button {
+				width: 192px;
+				height: 52px;
+				cursor: pointer;
+				outline: none;
+				border: none;
+				font-family: 'Montserrat';
+				font-size: 18px;
+				border-radius: 8px;
+				background-color: #da0b0b;
+				color: white;
+			}
+			#selected-noodle-img {
+				width: 100%;
+				max-width: 300px;
+			}
+			#selected-noodle-name {
+				/* Hero H1 */
+
+				font-family: 'Montserrat';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 56px;
+				line-height: 80px;
+				/* or 143% */
+
+				display: flex;
+				align-items: center;
+				text-align: center;
+				letter-spacing: -0.015em;
+
+				color: #ae3131;
+			}
+            .carousel-caption {
+                margin-top: 5px;
+                font-size: 20px;
+                font-family: 'Montserrat';
+				font-style: normal;
+
+
+
+				letter-spacing: -0.015em;
+
+				color: #ae3131;
+            }
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
+			<h1 id="noodleText">Tasty Noodles</h1>
+			<div class="dropdown">
+				<button class="dropBtn">Dropdown</button>
+				<div class="dropdownContent">
+					<a href="profiles.html">
+						<button>Noodle Profiles</button>
+					</a>
+					<a href="about.html">
+						<button>About Us</button>
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<div id="selected-noodle">
+				<img
+					id="selected-noodle-img"
+					src="../img/beef-noodle-soup-icon-1.png"
+					alt="Selected Noodle"
+				/>
+			</div>
+			<div id="name" class="name">
+				<h2 id="selected-noodle-name">Beef Noodle Soup</h2>
+			</div>
+			<div id="description" class="description">
+				<p id="selected-noodle-description">Description for Noodle</p>
+			</div>
+            <div class="controls">
+				<div>
+					<a href="fortune.html">
+						<button id="fortune-button">Reveal my Fortune</button>
+					</a>
+				</div>
+			</div>
+			<div id="carousel" class="carousel">
+                <div>
+                    <img src="../img/beef-noodle-soup-icon-1.png" alt="Beef Noodle Soup" onclick="selectNoodle(0)" />
+                    <p class="carousel-caption">Beef Noodle Soup</p>
+                </div>
+                <div>
+                    <img src="../img/bread-icon-1.png" alt="Bread" onclick="selectNoodle(1)" />
+                    <p class="carousel-caption">Bread</p>
+                </div>
+                <div>
+                    <img src="../img/chicken-noodle-soup-icon-1.png" alt="Chicken Noodle Soup" onclick="selectNoodle(2)" />
+                    <p class="carousel-caption">Chicken Noodle Soup</p>
+                </div>
+                <div>
+                    <img src="../img/instant-noodles-icon-1.png" alt="Instant Noodles" onclick="selectNoodle(3)" />
+                    <p class="carousel-caption">Instant Noodles</p>
+                </div>
+                <div>
+                    <img src="../img/lasagna-icon-1.png" alt="Lasagna" onclick="selectNoodle(4)" />
+                    <p class="carousel-caption">Lasagna</p>
+                </div>
+                <div>
+                    <img src="../img/mac-and-cheese-icon-1.png" alt="Mac and Cheese" onclick="selectNoodle(5)" />
+                    <p class="carousel-caption">Mac and Cheese</p>
+                </div>
+                <div>
+                    <img src="../img/pho-icon-1.png" alt="Pho" onclick="selectNoodle(6)" />
+                    <p class="carousel-caption">Pho</p>
+                </div>
+                <div>
+                    <img src="../img/ramen-icon-1.png" alt="Ramen" onclick="selectNoodle(7)" />
+                    <p class="carousel-caption">Ramen</p>
+                </div>
+                <div>
+                    <img src="../img/ravioli-icon-1.png" alt="Ravioli" onclick="selectNoodle(8)" />
+                    <p class="carousel-caption">Ravioli</p>
+                </div>
+                <div>
+                    <img src="../img/spaghetti-icon-1.png" alt="Spaghetti" onclick="selectNoodle(9)" />
+                    <p class="carousel-caption">Spaghetti</p>
+                </div>
+                <div>
+                    <img src="../img/udon-icon-1.png" alt="Udon" onclick="selectNoodle(10)" />
+                    <p class="carousel-caption">Udon</p>
+                </div>
+            </div>
+            
+
+			
+			<script>
+				var noodleIndex = 0;
+				localStorage.setItem('noodleIndex', noodleIndex);
+				var noodles = [
+					{
+						name: 'Beef Noodle Soup',
+						image: '../img/beef-noodle-soup-icon-1.png',
+						description: 'Description for Beef Noodle Soup'
+					},
+					{
+						name: 'Bread',
+						image: '../img/bread-icon-1.png',
+						description: 'Description for Noodle 2'
+					},
+					{
+						name: 'Chicken Noodle Soup',
+						image: '../img/chicken-noodle-soup-icon-1.png',
+						description: 'Description for Noodle 3'
+					},
+					{
+						name: 'Instant Noodles',
+						image: '../img/instant-noodles-icon-1.png',
+						description: 'Description for Noodle 3'
+					},
+					{
+						name: 'Lasagna',
+						image: '../img/lasagna-icon-1.png',
+						description: 'Description for Noodle 3'
+					},
+					{
+						name: 'Mac and Cheese',
+						image: '../img/mac-and-cheese-icon-1.png',
+						description: 'Description for Noodle 3'
+					},
+					{
+						name: 'Pho',
+						image: '../img/pho-icon-1.png',
+						description: 'Description for Noodle 3'
+					},
+					{
+						name: 'Ramen',
+						image: '../img/ramen-icon-1.png',
+						description: 'Description for Noodle 3'
+					},
+					{
+						name: 'Ravioli',
+						image: '../img/ravioli-icon-1.png',
+						description: 'Description for Noodle 3'
+					},
+					{
+						name: 'Spaghetti',
+						image: '../img/spaghetti-icon-1.png',
+						description: 'Description for Noodle 3'
+					},
+					{
+						name: 'Udon',
+						image: '../img/udon-icon-1.png',
+						description: 'Description for Noodle 3'
+					}
+				];
+
+				function selectNoodle(index) {
+					noodleIndex = index;
+					updateNoodle();
+				}
+
+				function updateNoodle() {
+					localStorage.setItem('noodleIndex', noodleIndex);
+					document.getElementById('name').innerText = noodles[noodleIndex].name;
+					document.getElementById('description').innerText =
+						noodles[noodleIndex].description;
+					document.getElementById('selected-noodle-img').src =
+						noodles[noodleIndex].image;
+					var carouselImages = document.getElementById('carousel').children;
+					for (var i = 0; i < carouselImages.length; i++) {
+						carouselImages[i].src = noodles[i].image;
+					}
+				}
+				updateNoodle();
+			</script>
+		</main>
+
+		<footer class="footer">
+			<p>© Tasty Noodles</p>
+		</footer>
+
+		<script src="../js/main.js" type="module"></script>
+	</body>
+</html>
