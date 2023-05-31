@@ -53,6 +53,7 @@
 	"type": "module",
 	"dependencies": {
 		"expect": "^29.5.0",
-		"expect-webdriverio": "^4.2.3"
+		"expect-webdriverio": "^4.2.3",
+		"jstat": "^1.9.6"
 	}
 }
