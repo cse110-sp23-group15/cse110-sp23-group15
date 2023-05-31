@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.1.0] - 2023-05-31
+### :boom: BREAKING CHANGES
+- due to [`86a9240`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/86a92409b2e3ea047fbab32530c28e0093d0c20f) - Modularize css styling for all pages *(commit by [@marklcrns](https://github.com/marklcrns))*:
+
+  Modularize css styling for all pages
+
+
+### :bug: Bug Fixes
+- [`bfc878a`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/bfc878a715722f9c9299b60711369cc42cecb555) - **backend**: Accessibility button element text highilight *(commit by [@marklcrns](https://github.com/marklcrns))*
+- [`1d4e16e`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/1d4e16e140f34d91a11c00360a3fa4ab8f06d45e) - **backend**: Fix accessibility button sequence and termination *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :zap: Performance Improvements
+- [`85aab36`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/85aab36596fa3382fa55d43d00384f7406019c93) - **backend**: Use custom speechify class for speech audio *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :recycle: Refactors
+- [`86a9240`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/86a92409b2e3ea047fbab32530c28e0093d0c20f) - **frontend**: Modularize css styling for all pages *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
 ## [v1.0.0] - 2023-05-31
 ### :sparkles: New Features
 - [`a3fbe9b`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/a3fbe9b8a48a849c50bd86be9f95f93d480ac588) - add noodle icon assets to img folder *(commit by [@hollyzhu573](https://github.com/hollyzhu573))*
@@ -46,3 +64,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [v0.0.3]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v0.0.2...v0.0.3
 [v1.0.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v0.0.3...v1.0.0
+[v1.1.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.0.0...v1.1.0
