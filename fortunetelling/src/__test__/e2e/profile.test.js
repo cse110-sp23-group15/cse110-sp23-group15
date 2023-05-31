@@ -18,10 +18,10 @@ describe('Noodle Profile', () => {
 			expect(noodleName).toBe('Beef Noodle Soup');
 			await page.waitForSelector('img[alt="Chicken Noodle Soup"]');
 			await page.evaluate(() => {
-				const ravioli = document.querySelector(
+				const chicken = document.querySelector(
 					'img[alt="Chicken Noodle Soup"]'
 				);
-				ravioli.click();
+				chicken.click();
 			});
 			await page.screenshot({
 				path: 'src/__test__/screenshots/Galaxy-Chicken-Soup.png'
