@@ -98,12 +98,11 @@ main {
 	background-color: #bb1212;
 }
 
-
 #submit {
 	width: 192px;
 	height: 52px;
 	margin-bottom: 10vh;
-    margin-top: 10vh;
+	margin-top: 10vh;
 
 	border: none;
 	font-family: 'Montserrat';
@@ -117,7 +116,6 @@ main {
 	background-color: #bb1212;
 }
 
-
 .footer {
 	width: 100%;
 
@@ -129,7 +127,7 @@ main {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-    align-items: center;
+	align-items: center;
 }
 
 /*styling for the about us carousel*/
@@ -193,13 +191,11 @@ main {
 	}
 }
 
-
-
 main.questionnaire {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 
@@ -322,54 +318,56 @@ input {
 }
 
 
-
-
-
 form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .negative {
-    /*remove default appearance*/
-    appearance: none;
-    -webkit-appearance: none;
+	/*remove default appearance*/
+	appearance: none;
+	-webkit-appearance: none;
+
 
     /*custom styling*/
     height: 50px;
     width: 50px;
     border: 4px solid rgb(237, 169, 169);
     border-radius: 50%;
+
 }
 
 .slightlyNegative {
-    /*remove default appearance*/
-    appearance: none;
-    -webkit-appearance: none;
+	/*remove default appearance*/
+	appearance: none;
+	-webkit-appearance: none;
 
-    /*custom styling*/
-    position: static;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    border: 4px solid rgb(237, 169, 169);
+  /*custom styling*/
+  position: static;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 4px solid rgb(237, 169, 169);
+
 }
 
-.negative:hover, .slightlyNegative:hover {
-    border: 4px solid rgb(243, 72, 72);
-    background-color: rgb(243, 72, 72);
+.negative:hover,
+.slightlyNegative:hover {
+	border: 4px solid rgb(243, 72, 72);
+	background-color: rgb(243, 72, 72);
 }
 
-.negative:checked, .slightlyNegative:checked {
-    background-color: red;
-    border: 4px solid red;
+.negative:checked,
+.slightlyNegative:checked {
+	background-color: red;
+	border: 4px solid red;
 }
 
 .positive {
-    /*remove default appearance*/
-    appearance: none;
-    -webkit-appearance: none;
+	/*remove default appearance*/
+	appearance: none;
+	-webkit-appearance: none;
 
     /*custom styling*/
     height: 50px;
@@ -379,9 +377,9 @@ form {
 }
 
 .slightlyPositive {
-    /*remove default appearance*/
-    appearance: none;
-    -webkit-appearance: none;
+	/*remove default appearance*/
+	appearance: none;
+	-webkit-appearance: none;
 
     /*custom styling*/
     top: 0;
@@ -390,22 +388,25 @@ form {
     width: 40px;
     border: 4px solid rgb(123, 230, 123);
     border-radius: 50%;
+
 }
 
-.positive:hover, .slightlyPositive:hover{
-    background-color: rgb(120, 202, 120);
-    border: 4px solid rgb(120, 202, 120);
+.positive:hover,
+.slightlyPositive:hover {
+	background-color: rgb(120, 202, 120);
+	border: 4px solid rgb(120, 202, 120);
 }
 
-.positive:checked, .slightlyPositive:checked {
-    background-color: rgb(72, 165, 72);
-    border: 4px solid rgb(72, 165, 72);
+.positive:checked,
+.slightlyPositive:checked {
+	background-color: rgb(72, 165, 72);
+	border: 4px solid rgb(72, 165, 72);
 }
 .neutral {
-    /*remove default appearance*/
-    appearance: none;
-    -webkit-appearance: none;
-
+	/*remove default appearance*/
+	appearance: none;
+	-webkit-appearance: none;
+0
     /*custom styling*/
     top: 0;
     left: 0;
@@ -417,16 +418,17 @@ form {
 
 /*change color to grey on hover*/
 .neutral:hover {
-    background-color: #a7a7a7;
-    border: 3px solid #a7a7a7;
+	background-color: #a7a7a7;
+	border: 3px solid #a7a7a7;
 }
 
 .neutral:checked {
-    background-color: #828282;
-    border: 3px solid #828282;
+	background-color: #828282;
+	border: 3px solid #828282;
 }
 
 a.agree {
+
     font-size: large;
     padding-left:2%;
 }
@@ -434,24 +436,93 @@ a.agree {
 a.disagree {
     font-size: large;
     padding-right: 2%;
-}
 
+}
 
 /*button to submit questionnaire*/
 #submit {
-    width: 192px;
-    height: 52px;
-    margin-bottom: 10vh;
-    margin-top: 10vh;
+	width: 192px;
+	height: 52px;
+	margin-bottom: 10vh;
+	margin-top: 10vh;
 
-    border: none;
-    font-family: 'Montserrat';
-    font-size: 20px;
-    border-radius: 8px;
-    background-color: #da0B0b;
-    color: white;
+	border: none;
+	font-family: 'Montserrat';
+	font-size: 20px;
+	border-radius: 8px;
+	background-color: #da0b0b;
+	color: white;
 }
 
 #submit:hover {
-    background-color: #bb1212;
+	background-color: #bb1212;
+}
+
+.footer {
+	width: 100%;
+
+	background-color: #f8f6f0;
+	text-align: center;
+}
+
+/*style for accessibility switch*/
+.switch {
+	position: relative;
+	display: inline-block;
+	text-align: right;
+	width: 60px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: '';
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .slider {
+	background-color: #2196f3;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
 }
