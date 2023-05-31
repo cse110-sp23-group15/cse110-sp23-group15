@@ -286,6 +286,7 @@ form {
     background-color: rgb(72, 165, 72);
     border: 4px solid rgb(72, 165, 72);
 }
+
 .neutral {
     /*remove default appearance*/
     appearance: none;
