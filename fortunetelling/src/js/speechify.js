@@ -82,7 +82,12 @@ class Speechify {
 	 * @param {string} text The text to be speechified
 	 */
 	speechify(text) {
-		this._allVoicesObtained.then((_) => {
+		this._allVoicesObtained.then((voices) => {
+			if (voices.length === 0) {
+				console.log('Speechify: No voices found');
+				return;
+			}
+
 			// Cancel if the window.speechifyReady flag is false.
 			// Used for canceling speech audio.
 			if (!window.speechifyReady) {
@@ -100,7 +105,12 @@ class Speechify {
 	 * @param {obj} element DOM element to speechify and highlight text
 	 */
 	speechifyHighlight(element) {
-		this._allVoicesObtained.then(async (_) => {
+		this._allVoicesObtained.then(async (voices) => {
+			if (voices.length === 0) {
+				console.log('Speechify: No voices found');
+				return;
+			}
+
 			if (!element) {
 				throw new Error('Speechify: No element selected');
 			}
@@ -147,6 +157,16 @@ class Speechify {
 			element.classList.remove('speechify-highlight');
 		});
 		window.speechifyReady = false;
+	}
+
+	/**
+	 * @return {boolean} True if the browser supports speech synthesis
+	 */
+	async checkBrowserSupport() {
+		if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+			return true;
+		}
+		return false;
 	}
 }
 

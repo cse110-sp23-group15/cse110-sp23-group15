@@ -10,10 +10,15 @@ async function accessibilitySwitch() {
 	const accessibility = document.getElementsByName('accessibility');
 	// Initialize Speechify object
 	const speechify = new Speechify(null);
+	const isBrowserSupported = speechify.checkBrowserSupport();
 	const voices = await speechify.voices;
 	// Select the first voice (default)
 	speechify.voice = voices[0];
 	accessibility[0].addEventListener('change', function () {
+		if (!isBrowserSupported) {
+			alert('Your browser does not support speech synthesis');
+			return;
+		}
 		if (this.checked) {
 			speechify.reset();
 			console.log('Accessibility On!');
@@ -43,8 +48,8 @@ async function accessibilitySwitch() {
 				accessElement(speechify);
 			}
 		} else {
-			console.log('Accessibility Off!');
 			speechify.terminate();
+			console.log('Accessibility Off!');
 		}
 	});
 }
