@@ -1,4 +1,4 @@
-import { accessswitch, accessEn } from './accessibility.js';
+import { accessibilitySwitch } from './accessibility.js';
 import { getHoroscope, getDescription } from './genHoroscope.js';
 import { Personality } from './personality.js';
 import { Speechify } from './speechify.js';
@@ -43,5 +43,5 @@ async function init() {
 	// speechify.speechify('Hello world');
 	// speechify.speechify('Hello world');
 
-	accessswitch();
+	accessibilitySwitch();
 }
