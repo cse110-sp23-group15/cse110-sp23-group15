@@ -89,6 +89,7 @@ class Speechify {
 			await new Promise((resolve) => setTimeout(resolve, 100));
 		}
 
+		console.log('now playing');
 		window.speechSynthesis.speak(audio);
 
 		// Return a promise that resolves when the audio is done playing
@@ -114,7 +115,7 @@ class Speechify {
 	 * Speechify the the innerHTML of an element and highlight the text while speaking.
 	 */
 	speechifyHighlight() {
-		this._allVoicesObtained.then((_) => {
+		this._allVoicesObtained.then(async (_) => {
 			if (!this._element) {
 				throw new Error('Speechify: No element selected');
 			}
@@ -122,13 +123,36 @@ class Speechify {
 			const audio = new SpeechSynthesisUtterance(this._element.innerHTML);
 			audio.voice = this._voice;
 
+			// Wait for the other audio to finish playing
+			while (window.speechSynthesis.speaking) {
+				await new Promise((resolve) => setTimeout(resolve, 100));
+			}
+
 			// Highlight the text while speaking
+
 			this._element.classList.add('speechify-highlight');
 
 			// Remove the highlight when the speech is done
 			this.play(audio).then(() => {
 				this._element.classList.remove('speechify-highlight');
 			});
+		});
+	}
+
+	/** Cancel all speech audio from the utterance queue */
+	reset() {
+		window.speechSynthesis.cancel();
+	}
+
+	/** Remove all speech audio and text highlights */
+	terminate() {
+		this.reset();
+		// Remove all speechify-highlight classes
+		const highlightedElements = document.querySelectorAll(
+			'.speechify-highlight'
+		);
+		highlightedElements.forEach((element) => {
+			element.classList.remove('speechify-highlight');
 		});
 	}
 }

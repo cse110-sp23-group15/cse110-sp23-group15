@@ -3,18 +3,23 @@ import { Speechify } from './speechify.js';
 /**
  * General control of the accessibility switch
  */
-function accessswitch() {
+async function accessibilitySwitch() {
+	// Add event listener to the accessibility switch
 	const accessibility = document.getElementsByName('accessibility');
-	accessibility[0].addEventListener('change', async function () {
+	// Initialize Speechify object
+	const speechify = new Speechify(null);
+	const voices = await speechify.voices;
+	// Select the first voice (default)
+	speechify.voice = voices[0];
+	accessibility[0].addEventListener('change', function () {
 		if (this.checked) {
-			const speechify = new Speechify(null);
-			const voices = await speechify.voices;
-			speechify.voice = voices[0];
+			speechify.reset();
+			console.log('Accessibility On!');
 			if (document.URL.includes('index')) {
 				speechify.speechify(
 					'Welcome to main page of tasty noodle fortune telling site'
 				);
-				accessEn();
+				accessElement(speechify);
 				speechify.speechify(
 					'Press the button and answer the questions to find out what noodle are you'
 				);
@@ -22,32 +27,36 @@ function accessswitch() {
 				speechify.speechify(
 					'Answer these questions, green being agree and red being disagree'
 				);
-				accessEn();
+				accessElement(speechify);
 			} else if (document.URL.includes('about.html')) {
 				speechify.speechify('About us, the tasty noodle team');
-				accessEn();
+				accessElement(speechify);
 			} else if (document.URL.includes('fortune.html')) {
 				speechify.speechify('press the button below to see another noodle');
 			} else if (document.URL.includes('profiles.html')) {
 				speechify.speechify('Here are the profiles of all the noodles');
-				accessEn();
+				accessElement(speechify);
 			} else {
-				accessEn();
+				accessElement(speechify);
 			}
+		} else {
+			console.log('Accessibility Off!');
+			speechify.terminate();
 		}
 	});
 }
 
-/** read everything with read class */
-async function accessEn() {
+/**
+ * Read all elements containig class 'read'
+ * @param {Speechify} speechify The speechify object
+ */
+async function accessElement(speechify) {
 	const readText = document.getElementsByClassName('read');
 	for (let i = 0; i < readText.length; i++) {
-		const speechify = new Speechify(readText[i]);
-		const voices = await speechify.voices;
-		speechify.voice = voices[0];
+		speechify.element = readText[i];
 		speechify.speechifyHighlight();
 	}
 }
 
 // export
-export { accessswitch, accessEn };
+export { accessibilitySwitch };
