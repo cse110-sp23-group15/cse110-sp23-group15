@@ -7,10 +7,9 @@ class Speechify {
 	 * @param {obj} element The DOM element to spechify.
 	 */
 	constructor(element) {
-		this.selectedVoice = null;
-		this.text = null;
+		this._voice = null;
 		this._allVoicesObtained = null;
-		this.element = element;
+		this._element = element;
 		this._init();
 	}
 
@@ -29,9 +28,6 @@ class Speechify {
 		});
 	}
 
-	// TODO: Create functions to highlight the DOM element while speaking the text.
-	// Make sure to remove the highlight when the speech is done.
-
 	/**
 	 * @return {Promise} Promise that resolves to an array of SpeechSynthesisVoice objects
 	 */
@@ -43,14 +39,28 @@ class Speechify {
 	 * @return {SpeechSynthesisVoice} The selected voice
 	 */
 	get voice() {
-		return this.selectedVoice;
+		return this._voice;
+	}
+
+	/**
+	 * @return {obj} The DOM element to spechify.
+	 */
+	get element() {
+		return this._element;
 	}
 
 	/**
 	 * @param {SpeechSynthesisVoice} voice The voice to be selected
 	 */
 	set voice(voice) {
-		this.selectedVoice = voice;
+		this._voice = voice;
+	}
+
+	/**
+	 * @param {obj} element The DOM element to spechify.
+	 */
+	set element(element) {
+		this._element = element;
 	}
 
 	/**
@@ -66,9 +76,7 @@ class Speechify {
 	 * @param {string} voiceName The name of the voice to be selected
 	 */
 	async selectVoiceName(voiceName) {
-		this.selectedVoice = (await this.voices).find(
-			(voice) => voice.name === voiceName
-		);
+		this._voice = (await this.voices).find((voice) => voice.name === voiceName);
 	}
 
 	/**
@@ -76,8 +84,14 @@ class Speechify {
 	 * @return {Promise<SpeechSynthesisEvent>} Promise that resolves when the audio is done playing
 	 */
 	async play(audio) {
+		// Wait for the other audio to finish playing
+		while (window.speechSynthesis.speaking) {
+			await new Promise((resolve) => setTimeout(resolve, 100));
+		}
+
 		window.speechSynthesis.speak(audio);
 
+		// Return a promise that resolves when the audio is done playing
 		return new Promise((resolve) => {
 			audio.onend = resolve;
 		});
@@ -89,15 +103,31 @@ class Speechify {
 	 * @param {string} text The text to be speechified
 	 */
 	speechify(text) {
-		this._allVoicesObtained.then((voices) => {
-			this.text = text;
+		this._allVoicesObtained.then((_) => {
 			const audio = new SpeechSynthesisUtterance(text);
-			audio.voice = this.selectedVoice;
+			audio.voice = this._voice;
+			this.play(audio);
+		});
+	}
 
-			// TODO: Highlight the text here
+	/**
+	 * Speechify the the innerHTML of an element and highlight the text while speaking.
+	 */
+	speechifyHighlight() {
+		this._allVoicesObtained.then((_) => {
+			if (!this._element) {
+				throw new Error('Speechify: No element selected');
+			}
 
+			const audio = new SpeechSynthesisUtterance(this._element.innerHTML);
+			audio.voice = this._voice;
+
+			// Highlight the text while speaking
+			this._element.classList.add('speechify-highlight');
+
+			// Remove the highlight when the speech is done
 			this.play(audio).then(() => {
-				// TODO: Remove the highlight here
+				this._element.classList.remove('speechify-highlight');
 			});
 		});
 	}
