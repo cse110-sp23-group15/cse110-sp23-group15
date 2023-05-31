@@ -7,41 +7,36 @@ describe('Questionnaire', () => {
 		);
 	});
 
-	it('should select only one radio button per form in the questionnaire', async () => {
-		await page.waitForSelector('.Question'); // Wait for the question elements to appear
-
-		const i = Math.ceil(Math.random() * 7);
-
-		const questionSelector = `.Question:nth-child(${i})`;
-		const answerSelector = `${questionSelector} form input[type="radio"]`;
-
-		// Click the first, then the third radio button
-		await page.waitForSelector(answerSelector);
-		await page.click(`${answerSelector}:nth-child(1)`);
-		await page.click(`${answerSelector}:nth-child(3)`);
-		await page.screenshot({
-			path: 'src/__test__/screenshots/tworadioselected-questionnaire.png'
-		});
-
-		// Check if only one radio button is selected
-		const selectedRadioButtonCount = await page.$$eval(
-			answerSelector,
-			(inputs) => {
-				return inputs.reduce((count, input) => {
-					return count + (input.checked ? 1 : 0);
-				}, 0);
+	it(
+		'should select only one radio button per form in the questionnaire',
+		async () => {
+			const questionForms = await page.$$('.Question'); // Get all question form elements
+			const questionForm = questionForms[1];
+			const radioButtons = await questionForm.$$('input[type="radio"]');
+			for (const radioButton of radioButtons) {
+				await radioButton.click(); // Click all radios in the second form, therefore only the last one should be selected in the end
 			}
-		);
+			await page.screenshot({
+				path: 'src/__test__/screenshots/allradioselected-questionnaire.png'
+			});
+			const selectedRadios = await questionForm.$$eval(
+				'input[type="radio"]:checked',
+				(nodes) => nodes.length
+			);
+			expect(selectedRadios).toBe(1);
+		},
+		timeout
+	);
 
-		expect(selectedRadioButtonCount).toBe(2); // This is a problem to address, I wrote this line because of branch protection
-		// expect(selectedRadioButtonCount).toBe(1);
-	}, timeout);
+	it(
+		'should check all forms have their answers before submit',
+		async () => {},
+		timeout
+	);
 
-	it('should check all forms have their answers before submit', async () => {
-
-	},timeout);
-
-	it('should navigate to the right noodle profile after submit',async () => {
-
-	},timeout);
+	it(
+		'should navigate to the right noodle profile after submit',
+		async () => {},
+		timeout
+	);
 });

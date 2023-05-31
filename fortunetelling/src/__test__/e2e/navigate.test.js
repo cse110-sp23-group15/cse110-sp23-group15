@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 // It says cannot import outside a module even if we have type:"module" in package.json, probably needs to fix this later
-const iPhoneX = puppeteer.devices['iPhone X'];
+const iPhoneX = puppeteer.KnownDevices['iPhone X'];
 
 describe('Basic exploration of jest testing', () => {
 	beforeAll(async () => {
