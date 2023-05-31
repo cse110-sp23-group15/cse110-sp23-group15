@@ -15,15 +15,14 @@ The pipeline is built using GitHub Actions and is broken up into two workflows:
 
 _Build_ is triggered and used as a status check when a new pull request to the
 `main` branch from a `feature` branch is opened (or reopened). This workflow
-ensures the code is linted and formatted[^1] and passses all tests before it can
+ensures the code is formatted and linted[^1] and passses all tests before it can
 be merged into the `main` branch.
 
 Once a `feature` branch is merged into `main`, the _Build and Deploy_ workflow
 is triggered. This workflow reuses the _Build_ workflow to ensure the code is
 still in good shape. If the Build workflow passes, the code is then documented
-using JSDoc and the documentation is deployed into a separate branch called
-`fortunetelling-docs-pages`, which has been set up to be hosted as a GitHub
-Pages site.
+using JSDoc and the documentation is deployed into a separate `production`
+branch, which has been set up to be hosted as a GitHub Pages site.
 
 > **NOTE:** The _Build and Deploy_ workflow is currently triggered on every push
 > to the `main` branch. Ideally, we want to only trigger this workflow when
@@ -34,21 +33,23 @@ Pages site.
 
 ## What works
 
-- [X] Build
-    - [X] Code linting
-    - [X] Unit testing
-- [X] Deploy
-    - [X] JSDoc generation
-    - [X] JSDoc deployment to GitHub Pages
-    - [ ] Deploy to a remote server? (TBD, ask for Akshay's guidance)
+- [x] Build
+  - [x] Code linting and formatting
+    - [x] ESLint
+    - [x] Prettier
+    - [x] Stylelint
+  - [x] Unit testing
+- [x] Deploy
+  - [x] Build repo pages with Jekyll to support markdown files as index
+  - [x] JSDoc generation
+  - [x] Deployment to GitHub Pages
 
-
-[^1]: We are using ESLint and Prettier to lint and format our code usinng the
-    [Google JavaScript Style
+[^1]: We are using ESLint + Prettier + Stylelint to lint and format our code
+    using the ESLint [Google JavaScript Style
     Guide](https://google.github.io/styleguide/jsguide.html). **Note that code
-    linting/formatting errors that aren't automatically fixed by ESLint and
-    Prettier will also block the build process and return an error to the
-    pipeline.**
+    linting/formatting errors that aren't automatically fixed will also return
+    an error to the pipeline and block the build-deploy process.**
+
 [^2]: Admin users will be able to push directly to `main` for hotfixes and
     emergency patches.. This will be implemented in Phase 2. Also, since we
     store our admin documentation in this repository, team leads and the planner
