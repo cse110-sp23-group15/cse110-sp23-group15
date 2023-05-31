@@ -21,15 +21,17 @@
 			<img id="icon" src="src/img/icon.png" />
 			<h1 id="noodleText">Tasty Noodles</h1>
 			<div class="dropdown">
-				<button class="dropBtn">Dropdown</button>
-				<div class="dropdownContent">
-					<a href="src/pages/profiles.html">
-						<button>Noodle Profiles</button>
-					</a>
-					<a href="src/pages/about.html">
-						<button>About Us</button>
-					</a>
-				</div>
+				<input id="toggle" type="checkbox" />
+				<label class="hamburger" for="toggle">
+					<div class="top"></div>
+					<div class="middle"></div>
+					<div class="bottom"></div>
+				</label>
+
+				<nav class="dropdownContent">
+					<a class="navLink" href="src/pages/profiles.html">Noodle Profiles</a>
+					<a class="navLink" href="src/pages/about.html">About Us</a>
+				</nav>
 			</div>
 		</header>
 
