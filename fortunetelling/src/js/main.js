@@ -60,12 +60,13 @@ async function addQuestions() {
 		const beforeButton = document.querySelector('.submitButton');
 
 		newDiv.innerHTML = `<h2>` + questions[i].description + `</h2>` +
-		`<form id="question"><a class = "disagree">Disagree</a><input type="radio" name="disagree" class="negative"/>
-		<input type="radio" name="slightly disagree" class="slightlyNegative"/><input type="radio" name="neutral" class="neutral"/>
-		<input type="radio" name="slightly agree" class="slightlyPositive"/><input type="radio" name="agree" class="positive"/>
+		`<form id="question"><a class = "disagree">Disagree</a><input type="radio" name="qRadio" class="negative"/>
+		<input type="radio" name="qRadio" class="slightlyNegative"/><input type="radio" name="qRadio" class="neutral"/>
+		<input type="radio" name="qRadio" class="slightlyPositive"/><input type="radio" name="qRadio" class="positive"/>
 		<a class = "agree">Agree</a></form>`;
 
 		newDiv.setAttribute('id', `div${i}`);
+		newDiv.setAttribute('class', 'Question');
 		mainRef.appendChild(newDiv);
 		newDiv.after(beforeButton);
 	}

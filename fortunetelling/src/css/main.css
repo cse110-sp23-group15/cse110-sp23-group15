@@ -126,8 +126,6 @@ main {
 }
 
 .Question {
-	display: flex;
-	flex-direction: row;
 	justify-content: center;
     align-items: center;
 }
@@ -193,8 +191,6 @@ main {
 	}
 }
 
-
-
 main.questionnaire {
     display: flex;
     flex-direction: column;
@@ -206,9 +202,6 @@ input {
     background-color: white;
     margin: 10px 20px 10px 20px;
 }
-
-
-
 
 form {
     display: flex;
