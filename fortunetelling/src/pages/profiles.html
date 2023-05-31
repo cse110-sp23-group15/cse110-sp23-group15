@@ -143,11 +143,11 @@
 		</header>
 
 		<main>
-			<div id="name" class="name">
-				<h2 class = "read">Noodle 1</h2>
+			<div id="name" class="name read">
+				<h2>Noodle 1</h2>
 			</div>
-			<div id="description" class="description">
-				<p class = "read">Description for Noodle 1</p>
+			<div id="description" class="description read">
+				<p>Description for Noodle 1</p>
 			</div>
 			<div id="carousel" class="carousel">
 				<img id="carousel-image" src="../img/noodle1.jpg" alt="Noodle 1" />
@@ -214,6 +214,21 @@
 						noodles[(noodleIndex - 1 + noodles.length) % noodles.length].name;
 					document.getElementById('next-noodle-name').innerText =
 						noodles[(noodleIndex + 1) % noodles.length].name;
+
+					let synth = window.speechSynthesis;
+					synth.cancel();
+					const accessibility = document.getElementsByName('accessibility');
+					const voiceList = window.speechSynthesis.getVoices();
+					if(accessibility[0].checked){
+						const readName = new SpeechSynthesisUtterance(noodles[noodleIndex].name);
+						readName.rate = 2;
+						readName.voice = voiceList[0];
+						synth.speak(readName);
+						const readDes = new SpeechSynthesisUtterance(noodles[noodleIndex].description);
+						readDes.rate = 2;
+						readDes.voice = voiceList[0];
+						synth.speak(readDes);
+					}
 				}
 				function nextNoodle() {
 					noodleIndex = (noodleIndex + 1) % noodles.length;
