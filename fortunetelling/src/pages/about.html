@@ -15,6 +15,7 @@
 		/>
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
 	</head>
+
 	<body>
 		<header>
 			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
@@ -30,34 +31,31 @@
 					</a>
 				</div>
 			</div>
-			<div
-				style="
-					text-align: center;
-					margin-right: 2vw;
-					margin-left: auto;
-					margin-bottom: 0.5vw;
-				"
-			>
-				<h3
-					style="
-						font-family: 'Hi Melody';
-						font-style: normal;
-						font-size: 20px;
-						margin-bottom: 0.1vw;
-						margin-top: 0.2vw;
-					"
-				>
-					accessibility button
-				</h3>
-				<label class="switch">
-					<input name="accessibility" type="checkbox" />
-					<span class="slider round"></span>
-				</label>
-			</div>
 		</header>
 
 		<main>
 			<p>About Us</p>
+			<div class="desktop-container">
+				<div id="member-name-dt" class="name">
+					<h1>Member Name</h1>
+				</div>
+				<img id="current-member-dt" src="" alt="Current Member" />
+				<img id="member-noodle-dt" src="" alt="Member's Noodle" />
+				<div id="description-dt" class="description">
+					<p>Description for Member</p>
+				</div>
+				<div class="member-menu">
+					<img src="../img/mark-icon.jpeg" alt="Mark" />
+					<img src="../img/hieu-icon.jpeg" alt="Hieu" />
+					<img src="../img/henry-icon.jpg" alt="Xinle" />
+					<img src="../img/mark-icon.jpeg" alt="Aaron" />
+					<img src="../img/mark-icon.jpeg" alt="Steve" />
+					<img src="../img/darren-icon.jpg" alt="Darren" />
+					<img src="../img/holly-icon.png" alt="Holly" />
+					<img src="../img/mark-icon.jpeg" alt="Anthony" />
+					<img src="../img/mark-icon.jpeg" alt="Hanson" />
+				</div>
+			</div>
 
 			<div class="carousel-container">
 				<div class="carousel">
@@ -84,90 +82,106 @@
 				>
 					&#8250;
 				</button>
-
-				<script>
-					var memberIndex = 0;
-					var members = [
-						{
-							name: 'Mark Lucernas',
-							memberImage: '../img/mark-icon.jpeg',
-							memberNoodle: '../img/ramen-icon-1.png',
-							description: 'Description for Mark Lucernas'
-						},
-						{
-							name: 'Hieu Pham',
-							memberImage: '',
-							memberNoodle: '../img/ramen-icon-1.png',
-							description: 'Description for Hieu Pham'
-						},
-						{
-							name: 'Xinle Yu',
-							memberImage: '',
-							memberNoodle: '../img/ramen-icon-1.png',
-							description: 'Description for Xinle Yu'
-						},
-						{
-							name: 'Aaron Kann',
-							memberImage: '',
-							memberNoodle: '../img/ramen-icon-1.png',
-							description: 'Description for Aaron Kann'
-						},
-						{
-							name: 'Steve Yin',
-							memberImage: '',
-							memberNoodle: '../img/ramen-icon-1.png',
-							description: 'Description for Steve Yin'
-						},
-						{
-							name: 'Darren Yu',
-							memberImage: '',
-							memberNoodle: '../img/ramen-icon-1.png',
-							description: 'Description for Darren Yu'
-						},
-						{
-							name: 'Holly Zhu',
-							memberImage: '../img/holly-icon.png',
-							memberNoodle: '../img/ramen-icon-1.png',
-							description: 'Description for Holly Zhu'
-						},
-						{
-							name: 'Anthony Yao',
-							memberImage: '',
-							memberNoodle: '../img/ramen-icon-1.png',
-							description: 'Description for Anthony Yao'
-						},
-						{
-							name: 'Hanson Wang',
-							memberImage: '',
-							memberNoodle: '../img/ramen-icon-1.png',
-							description: 'Description for Hanson Wang'
-						}
-					];
-
-					function updateMember() {
-						document.getElementById('current-member').src =
-							members[memberIndex].memberImage;
-						document.getElementById('member-noodle').src =
-							members[memberIndex].memberNoodle;
-						document.getElementById('member-name').innerText =
-							members[memberIndex].name;
-						document.getElementById('description').innerText =
-							members[memberIndex].description;
-					}
-
-					function nextMember() {
-						memberIndex = (memberIndex + 1) % members.length;
-						updateMember();
-					}
-
-					function prevMember() {
-						memberIndex = (memberIndex - 1 + members.length) % members.length;
-						updateMember();
-					}
-
-					updateMember();
-				</script>
 			</div>
+
+			<script>
+				var memberIndex = 0;
+				var members = [
+					{
+						name: 'Mark Lucernas',
+						memberImage: '../img/mark-icon.jpeg',
+						memberNoodle: '../img/ramen-icon-1.png',
+						description: 'Description for Mark Lucernas'
+					},
+					{
+						name: 'Hieu Pham',
+						memberImage: '../img/hieu-icon.jpeg',
+						memberNoodle: '../img/ravioli-icon-1.png',
+						description: 'Description for Hieu Pham'
+					},
+					{
+						name: 'Xinle Yu',
+						memberImage: '../img/henry-icon.jpg',
+						memberNoodle: '../img/beef-noodle-soup-icon-1.png',
+						description: 'Description for Xinle Yu'
+					},
+					{
+						name: 'Aaron Kann',
+						memberImage: '',
+						memberNoodle: '../img/mac-and-cheese-icon-1.png',
+						description: 'Description for Aaron Kann'
+					},
+					{
+						name: 'Steve Yin',
+						memberImage: '',
+						memberNoodle: '../img/udon-icon-1.png',
+						description: 'Description for Steve Yin'
+					},
+					{
+						name: 'Darren Yu',
+						memberImage: '../img/darren-icon.jpg',
+						memberNoodle: '../img/instant-noodles-icon-1.png',
+						description: 'Description for Darren Yu'
+					},
+					{
+						name: 'Holly Zhu',
+						memberImage: '../img/holly-icon.png',
+						memberNoodle: '../img/spaghetti-icon-1.png',
+						description: 'Description for Holly Zhu'
+					},
+					{
+						name: 'Anthony Yao',
+						memberImage: '',
+						memberNoodle: '../img/pho-icon-1.png',
+						description: 'Description for Anthony Yao'
+					},
+					{
+						name: 'Hanson Wang',
+						memberImage: '',
+						memberNoodle: '../img/pad-thai-icon-1.png',
+						description: 'Description for Hanson Wang'
+					}
+				];
+
+				function updateMember() {
+					document.getElementById('current-member').src =
+						members[memberIndex].memberImage;
+					document.getElementById('member-noodle').src =
+						members[memberIndex].memberNoodle;
+					document.getElementById('member-name').innerText =
+						members[memberIndex].name;
+					document.getElementById('description').innerText =
+						members[memberIndex].description;
+				}
+
+				function nextMember() {
+					memberIndex = (memberIndex + 1) % members.length;
+					updateMember();
+				}
+
+				function prevMember() {
+					memberIndex = (memberIndex - 1 + members.length) % members.length;
+					updateMember();
+				}
+
+				const memberMenu = document.querySelectorAll('.member-menu img');
+
+				memberMenu.forEach((mem, idx) => {
+					mem.addEventListener('click', () => {
+						document.getElementById('current-member-dt').src =
+							members[idx].memberImage;
+						document.getElementById('member-noodle-dt').src =
+							members[idx].memberNoodle;
+						document.getElementById('member-name-dt').innerText =
+							members[idx].name;
+						document.getElementById('description-dt').innerText =
+							members[idx].description;
+					});
+				});
+
+				document.querySelector('.member-menu img').click();
+				updateMember();
+			</script>
 		</main>
 
 		<footer class="footer">

@@ -7,12 +7,7 @@ describe('Noodle Profile', () => {
 		);
 	});
 
-	it('should get to the expected noodle profile', async () => {
-        
-	}, timeout);
+	it('should get to the expected noodle profile', async () => {}, timeout);
 
-    it('should review the expected fortune', async () =>{
-
-    }, timeout);
-
+	it('should review the expected fortune', async () => {}, timeout);
 });

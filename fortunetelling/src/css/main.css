@@ -136,9 +136,46 @@ main {
 	display: none; /* Hide the carousel by default */
 }
 
+.member-menu {
+	position: absolute;
+	margin: auto;
+	bottom: 70px;
+}
+
+.member-menu img {
+	width: 6%;
+	height: 6%;
+	padding: 10px 30px;
+}
+
+#current-member-dt {
+	width: 200px;
+	height: 200px;
+	margin-top: 10px;
+	border: solid;
+}
+
+#member-noodle-dt {
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin: 10px auto;
+}
+
+#member-name-dt {
+	font-size: 25px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
 @media (max-width: 767px) {
 	.carousel-container {
 		display: block; /* Show the carousel on mobile devices */
+	}
+
+	.desktop-container {
+		display: none;
 	}
 
 	.carousel {
@@ -157,7 +194,7 @@ main {
 		width: 200px;
 		height: 200px;
 		margin-top: 30px;
-		margin-bottom: 0px;
+		margin-bottom: 10px;
 		border: solid;
 	}
 
@@ -198,8 +235,6 @@ main.questionnaire {
 	justify-content: center;
 }
 
-
-
 input {
 	background-color: white;
 	margin: 10 px 0px 10px 0px;
@@ -212,9 +247,9 @@ input {
 	}
 	a.agree {
 		font-size: x-large;
-		padding-left:2%;
+		padding-left: 2%;
 	}
-	
+
 	a.disagree {
 		font-size: x-large;
 		padding-right: 2%;
@@ -224,19 +259,19 @@ input {
 		/*remove default appearance*/
 		appearance: none;
 		-webkit-appearance: none;
-	
+
 		/*custom styling*/
 		height: 60px;
 		width: 60px;
 		border: 4px solid rgb(237, 169, 169);
 		border-radius: 50%;
 	}
-	
+
 	.slightlyNegative {
 		/*remove default appearance*/
 		appearance: none;
 		-webkit-appearance: none;
-	
+
 		/*custom styling*/
 		position: static;
 		height: 50px;
@@ -244,34 +279,36 @@ input {
 		border-radius: 50%;
 		border: 4px solid rgb(237, 169, 169);
 	}
-	
-	.negative:hover, .slightlyNegative:hover {
+
+	.negative:hover,
+	.slightlyNegative:hover {
 		border: 4px solid rgb(243, 72, 72);
 		background-color: rgb(243, 72, 72);
 	}
-	
-	.negative:checked, .slightlyNegative:checked {
+
+	.negative:checked,
+	.slightlyNegative:checked {
 		background-color: red;
 		border: 4px solid red;
 	}
-	
+
 	.positive {
 		/*remove default appearance*/
 		appearance: none;
 		-webkit-appearance: none;
-	
+
 		/*custom styling*/
 		height: 60px;
 		width: 60px;
 		border: 4px solid rgb(123, 230, 123);
 		border-radius: 50%;
 	}
-	
+
 	.slightlyPositive {
 		/*remove default appearance*/
 		appearance: none;
 		-webkit-appearance: none;
-	
+
 		/*custom styling*/
 		top: 0;
 		left: 0;
@@ -280,13 +317,15 @@ input {
 		border: 4px solid rgb(123, 230, 123);
 		border-radius: 50%;
 	}
-	
-	.positive:hover, .slightlyPositive:hover{
+
+	.positive:hover,
+	.slightlyPositive:hover {
 		background-color: rgb(120, 202, 120);
 		border: 4px solid rgb(120, 202, 120);
 	}
-	
-	.positive:checked, .slightlyPositive:checked {
+
+	.positive:checked,
+	.slightlyPositive:checked {
 		background-color: rgb(72, 165, 72);
 		border: 4px solid rgb(72, 165, 72);
 	}
@@ -294,7 +333,7 @@ input {
 		/*remove default appearance*/
 		appearance: none;
 		-webkit-appearance: none;
-	
+
 		/*custom styling*/
 		top: 0;
 		left: 0;
@@ -303,20 +342,18 @@ input {
 		border: 4px solid #a7a7a7;
 		border-radius: 50%;
 	}
-	
+
 	/*change color to grey on hover*/
 	.neutral:hover {
 		background-color: #a7a7a7;
 		border: 3px solid #a7a7a7;
 	}
-	
+
 	.neutral:checked {
 		background-color: #828282;
 		border: 3px solid #828282;
 	}
-	
 }
-
 
 form {
 	display: flex;
@@ -329,13 +366,11 @@ form {
 	appearance: none;
 	-webkit-appearance: none;
 
-
-    /*custom styling*/
-    height: 50px;
-    width: 50px;
-    border: 4px solid rgb(237, 169, 169);
-    border-radius: 50%;
-
+	/*custom styling*/
+	height: 50px;
+	width: 50px;
+	border: 4px solid rgb(237, 169, 169);
+	border-radius: 50%;
 }
 
 .slightlyNegative {
@@ -343,13 +378,12 @@ form {
 	appearance: none;
 	-webkit-appearance: none;
 
-  /*custom styling*/
-  position: static;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  border: 4px solid rgb(237, 169, 169);
-
+	/*custom styling*/
+	position: static;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	border: 4px solid rgb(237, 169, 169);
 }
 
 .negative:hover,
@@ -369,11 +403,11 @@ form {
 	appearance: none;
 	-webkit-appearance: none;
 
-    /*custom styling*/
-    height: 50px;
-    width: 50px;
-    border: 4px solid rgb(123, 230, 123);
-    border-radius: 50%;
+	/*custom styling*/
+	height: 50px;
+	width: 50px;
+	border: 4px solid rgb(123, 230, 123);
+	border-radius: 50%;
 }
 
 .slightlyPositive {
@@ -381,14 +415,13 @@ form {
 	appearance: none;
 	-webkit-appearance: none;
 
-    /*custom styling*/
-    top: 0;
-    left: 0;
-    height: 40px;
-    width: 40px;
-    border: 4px solid rgb(123, 230, 123);
-    border-radius: 50%;
-
+	/*custom styling*/
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	border: 4px solid rgb(123, 230, 123);
+	border-radius: 50%;
 }
 
 .positive:hover,
@@ -407,13 +440,13 @@ form {
 	appearance: none;
 	-webkit-appearance: none;
 
-    /*custom styling*/
-    top: 0;
-    left: 0;
-    height: 30px;
-    width: 30px;
-    border: 4px solid #a7a7a7;
-    border-radius: 50%;
+	/*custom styling*/
+	top: 0;
+	left: 0;
+	height: 30px;
+	width: 30px;
+	border: 4px solid #a7a7a7;
+	border-radius: 50%;
 }
 
 /*change color to grey on hover*/
@@ -428,15 +461,13 @@ form {
 }
 
 a.agree {
-
-    font-size: large;
-    padding-left:2%;
+	font-size: large;
+	padding-left: 2%;
 }
 
 a.disagree {
-    font-size: large;
-    padding-right: 2%;
-
+	font-size: large;
+	padding-right: 2%;
 }
 
 /*button to submit questionnaire*/
