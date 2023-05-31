@@ -8,9 +8,11 @@ on:
   # https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#onpushpull_requestbranchestags
   push:
     branches-ignore: ["main"]
+    paths-ignore: "**/*.md"
 
   pull_request:
     types: ["opened", "reopened"]
+    paths-ignore: "**/*.md"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

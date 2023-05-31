@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>About</title>
+		<link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Hi Melody"
+			rel="stylesheet"
+		/>
+		<link href="../css/main.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<header>
+			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
+			<h1 id="noodleText">Tasty Noodles</h1>
+			<div class="dropdown">
+				<button class="dropBtn">Dropdown</button>
+				<div class="dropdownContent">
+					<a href="profiles.html">
+						<button>Noodle Profiles</button>
+					</a>
+					<a href="about.html">
+						<button>About Us</button>
+					</a>
+				</div>
+			</div>
+			<style>
+				.name,
+				.subtitle {
+					text-align: center;
+				}
+
+				.name {
+					/* Hero H1 */
+
+					font-family: 'Montserrat';
+					font-style: normal;
+					font-weight: 400;
+					font-size: 56px;
+					line-height: 80px;
+					/* or 143% */
+
+					letter-spacing: -0.015em;
+
+					color: #ae3131;
+				}
+
+				.subtitle {
+					text-shadow: 0px 1px 1px rgb(111, 105, 105);
+					/* margin: 50px; */
+					padding-bottom: 10px;
+				}
+
+				#fortune {
+					/* Body P Large */
+
+					font-family: 'Montserrat';
+					font-style: normal;
+					font-weight: 400;
+					font-size: 36px;
+					line-height: 50px;
+					/* or 139% */
+
+					display: flex;
+					align-items: center;
+					text-align: center;
+					letter-spacing: -0.015em;
+
+					color: #000000;
+
+					text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+					padding-right: 25%;
+					padding-left: 25%;
+					min-width: 50%;
+				}
+
+				.controls .dropbtn {
+					width: 192px;
+					height: 52px;
+					cursor: pointer;
+					outline: none;
+					border: none;
+					font-family: 'Montserrat';
+					font-size: 18px;
+					border-radius: 8px;
+					background-color: #da0b0b;
+					color: white;
+				}
+
+				.dropdown-content {
+					margin: auto;
+					width: 184px;
+					border: none;
+					display: none;
+					float: center;
+				}
+
+				.dropdown-content .noodleButton {
+					margin: auto;
+					width: 184px;
+					cursor: pointer;
+					outline: none;
+					border: none;
+					font-family: 'Montserrat';
+					font-size: 18px;
+					border-radius: 2px;
+					background-color: #f9f9f9;
+					float: none;
+					color: black;
+					/* padding: 12px 16px; */
+					text-decoration: none;
+					display: block;
+					padding-top: 0%;
+				}
+
+				.show {
+					display: block;
+				}
+
+				#noodle-image {
+					width: 96px;
+					height: auto;
+					border-radius: 8px;
+					margin: auto;
+					display: block;
+				}
+
+				@media screen and (max-width: 600px) {
+					#fortune {
+						padding-right: 10%;
+						padding-left: 10%;
+						min-width: 80%;
+						font-size: 24px;
+					}
+				}
+
+				@media screen and (min-width: 701px) and (max-width: 1000px) {
+					#fortune {
+						padding-right: 20%;
+						padding-left: 20%;
+						min-width: 60%;
+						font-size: 30px;
+					}
+				}
+			</style>
+			<div
+				style="
+					text-align: center;
+					margin-right: 2vw;
+					margin-left: auto;
+					margin-bottom: 0.5vw;
+				"
+			>
+				<h3
+					style="
+						font-family: 'Hi Melody';
+						font-style: normal;
+						font-size: 20px;
+						margin-bottom: 0.1vw;
+						margin-top: 0.2vw;
+					"
+				>
+					accessibility button
+				</h3>
+				<label class="switch">
+					<input name="accessibility" type="checkbox" />
+					<span class="slider round"></span>
+				</label>
+			</div>
+		</header>
+
+		<main>
+			<div id="title" class="title">
+				<h2 class="read">Today's Fortune</h2>
+			</div>
+			<div id="subtitle" class="subtitle">
+				<p class="read">The Great Noodle has spoken. And it says...</p>
+			</div>
+			<div id="fortune" class="fortune">
+				<p id="fortuneText" class="read">
+					There is no such thing as something for nothing and if you do not
+					quite believe that now you will believe it by the end of the day. If
+					you lose something valuable accept it as the price you must pay to
+					learn this important lesson.
+				</p>
+			</div>
+			<div id="controls" class="controls">
+				<img id="noodle-image" src="" alt="" />
+				<br />
+				<button id="dropbtn" class="dropbtn">
+					See other noodles <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content" id="myDropdown">
+					<button class="noodleButton" onclick="">Ravioli</button>
+					<button class="noodleButton" onclick="">Pho</button>
+					<button class="noodleButton" onclick="">Mac and Cheese</button>
+					<button class="noodleButton" onclick="">Instant Noodles</button>
+					<button class="noodleButton" onclick="">Pad Thai</button>
+					<button class="noodleButton" onclick="">Chicken Noodle Soup</button>
+					<button class="noodleButton" onclick="">Udon</button>
+					<button class="noodleButton" onclick="">Ramen</button>
+					<button class="noodleButton" onclick="">
+						Spaghetti and Meatballs
+					</button>
+					<button class="noodleButton" onclick="">Lasagna</button>
+					<button class="noodleButton" onclick="">
+						Taiwanese Beef Noodle Soup
+					</button>
+					<button class="noodleButton" onclick="">Bread</button>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<p>© Tasty Noodles</p>
+		</footer>
+
+		<script src="../js/main.js" type="module"></script>
+		<script src="../js/fortune.js" type="module"></script>
+	</body>
+</html>
