@@ -21,22 +21,49 @@
 			<img id="icon" src="src/img/icon.png" />
 			<h1 id="noodleText">Tasty Noodles</h1>
 			<div class="dropdown">
-				<button class="dropBtn">Dropdown</button>
-				<div class="dropdownContent">
-					<a href="src/pages/profiles.html">
-						<button>Noodle Profiles</button>
-					</a>
-					<a href="src/pages/about.html">
-						<button>About Us</button>
-					</a>
-				</div>
+				<input id="toggle" type="checkbox" />
+				<label class="hamburger" for="toggle">
+					<div class="top"></div>
+					<div class="middle"></div>
+					<div class="bottom"></div>
+				</label>
+
+				<nav class="dropdownContent">
+					<a class="navLink" href="src/pages/profiles.html">Noodle Profiles</a>
+					<a class="navLink" href="src/pages/about.html">About Us</a>
+				</nav>
+			</div>
+
+			<div
+				style="
+					text-align: center;
+					margin-right: 2vw;
+					margin-left: auto;
+					margin-bottom: 0.5vw;
+				"
+			>
+				<h3
+					style="
+						font-family: 'Hi Melody';
+						font-style: normal;
+						font-size: 20px;
+						margin-bottom: 0.1vw;
+						margin-top: 0.2vw;
+					"
+				>
+					accessibility button
+				</h3>
+				<label class="switch">
+					<input name="accessibility" type="checkbox" />
+					<span class="slider round"></span>
+				</label>
 			</div>
 		</header>
 
 		<main>
 			<img id="ramen" src="src/img/ramen-icon-1.png" />
-			<h4 id="flavorProf">Unlock your flavor profile</h4>
-			<p id="description">
+			<h4 id="flavorProf" class="read">Unlock your flavor profile</h4>
+			<p id="description" class="read">
 				Your noodle horoscope and fortune is just a few clicks away!
 			</p>
 			<a href="src/pages/questionnaire.html">

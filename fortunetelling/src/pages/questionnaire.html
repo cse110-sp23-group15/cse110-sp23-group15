@@ -21,15 +21,41 @@
 			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
 			<h1 id="noodleText">Tasty Noodles</h1>
 			<div class="dropdown">
-				<button class="dropBtn">Dropdown</button>
-				<div class="dropdownContent">
-					<a href="profiles.html">
-						<button>Noodle Profiles</button>
-					</a>
-					<a href="about.html">
-						<button>About Us</button>
-					</a>
-				</div>
+				<input id="toggle" type="checkbox" />
+				<label class="hamburger" for="toggle">
+					<div class="top"></div>
+					<div class="middle"></div>
+					<div class="bottom"></div>
+				</label>
+
+				<nav class="dropdownContent">
+					<a class="navLink" href="profiles.html">Noodle Profiles</a>
+					<a class="navLink" href="about.html">About Us</a>
+				</nav>
+			</div>
+			<div
+				style="
+					text-align: center;
+					margin-right: 2vw;
+					margin-left: auto;
+					margin-bottom: 0.5vw;
+				"
+			>
+				<h3
+					style="
+						font-family: 'Hi Melody';
+						font-style: normal;
+						font-size: 20px;
+						margin-bottom: 0.1vw;
+						margin-top: 0.2vw;
+					"
+				>
+					accessibility button
+				</h3>
+				<label class="switch">
+					<input name="accessibility" type="checkbox" />
+					<span class="slider round"></span>
+				</label>
 			</div>
 		</header>
 
@@ -37,15 +63,20 @@
 			<div class="firstQuestion">
 				<h2>When is your birthday?</h2>
 				<form id="birthday">
-					<input type="date"/>
+					<input type="date" />
 				</form>
 			</div>
 			<!--Questions go here.-->
 			<div class="submitButton">
 				<a href="./noodlesResults.html">
-				<button id="submit" class="submit" type="button" style="font-size: 30px; margin: 30px; color: purple;">
-					Submit
-				</button>
+					<button
+						id="submit"
+						class="submit"
+						type="button"
+						style="font-size: 30px; margin: 30px; color: purple"
+					>
+						Submit
+					</button>
 				</a>
 			</div>
 		</main>
@@ -55,5 +86,6 @@
 		</footer>
 
 		<script src="../js/main.js" type="module"></script>
+		<script src="../js/questionnaire.js" type="module"></script>
 	</body>
 </html>
