@@ -31,6 +31,11 @@ header {
 	align-items: center;
 }
 
+header a {
+	text-decoration: none;
+	color: black;
+}
+
 header button:hover {
 	background-color: #da0b0b77;
 }
