@@ -141,11 +141,15 @@ class Speechify {
 		});
 	}
 
+	/** Set global variable speechifyReady to true */
+	makeReady() {
+		window.speechifyReady = true;
+	}
+
 	/** Cancel all speechify audio sequence */
 	reset() {
 		window.speechSynthesis.cancel();
 		this.resetHighlight();
-		window.speechifyReady = true;
 	}
 
 	/** Remove all speechify text highlighting */

@@ -27,6 +27,7 @@ async function accessibilitySwitch() {
 			}
 
 			speechify.reset();
+			speechify.makeReady();
 			console.log('Accessibility On!');
 
 			if (document.URL.includes('index')) {
