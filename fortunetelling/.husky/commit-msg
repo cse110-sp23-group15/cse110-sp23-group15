@@ -4,7 +4,7 @@
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-if ! head -1 "$1" | grep -qE "^(feat|fix|ci|chore|docs|test|style|refactor|perf|build|revert)(\(.+?\))?: .{1,}$"; then
+if ! (head -1 "$1" | grep -qE "^(feat|fix|ci|chore|docs|test|style|refactor|perf|build|revert)(\(.+?\))?(!)?: .{1,}$" || head -1 "$1" | grep -qE "^Merge branch.+"); then
 	message="
     <type>(<scope>): <subject>
 
