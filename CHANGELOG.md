@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.1.1] - 2023-06-01
+### :sparkles: New Features
+- [`ae7672b`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/ae7672b9a12deb074c9959c7c93dbae0b476ebd3) - **backend**: Add mouseover and click event for text-to-speech *(commit by [@marklcrns](https://github.com/marklcrns))*
+- [`70cedc0`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/70cedc051f9759380bf3949bb1ee2ae96b5a920d) - **backend**: More util functions for localStorage *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :bug: Bug Fixes
+- [`abeb8b4`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/abeb8b4f3340844a9d06a65cd28a523ab9f81deb) - **backend**: Accessibility readiness bug *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :recycle: Refactors
+- [`79b90c6`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/79b90c65f29594c6146509dc396029b77b68a6a9) - **backend**: Speechify check browser support *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :white_check_mark: Tests
+- [`17bbf89`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/17bbf8952584cbba37d9e65f0bf37603f0ecc031) - add primary profile page test *(commit by [@Henri-XYu02](https://github.com/Henri-XYu02))*
+- [`561d495`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/561d495b7ad69a7b7a435944782f83131aca3ab3) - update tests *(commit by [@Henri-XYu02](https://github.com/Henri-XYu02))*
+- [`8bf743a`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/8bf743a547e1910f4615da3685f813072008f6b8) - update variable names *(commit by [@Henri-XYu02](https://github.com/Henri-XYu02))*
+
+
 ## [v1.1.0] - 2023-05-31
 ### :boom: BREAKING CHANGES
 - due to [`86a9240`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/86a92409b2e3ea047fbab32530c28e0093d0c20f) - Modularize css styling for all pages *(commit by [@marklcrns](https://github.com/marklcrns))*:
@@ -65,3 +82,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v0.0.3]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v0.0.2...v0.0.3
 [v1.0.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v0.0.3...v1.0.0
 [v1.1.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.0.0...v1.1.0
+[v1.1.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.1.0...v1.1.1
