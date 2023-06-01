@@ -1,7 +1,5 @@
 import { Speechify } from './speechify.js';
 
-window.speechifyReady = null;
-
 /**
  * General control of the accessibility switch
  */
@@ -10,11 +8,24 @@ async function accessibilitySwitch() {
 	const accessibility = document.getElementsByName('accessibility');
 	// Initialize Speechify object
 	const speechify = new Speechify(null);
+	const isBrowserSupported = speechify.checkBrowserSupport();
 	const voices = await speechify.voices;
-	// Select the first voice (default)
-	speechify.voice = voices[0];
+	speechify.voice = voices[0]; // Select the first voice (default)
+	speechify.reset(); // Reset speechify. Also makes window.speechifyReady = true
 	accessibility[0].addEventListener('change', function () {
+		if (!isBrowserSupported) {
+			alert('Your browser does not support speech synthesis');
+			return;
+		}
 		if (this.checked) {
+			if (!isBrowserSupported) {
+				alert('Your browser does not support speech synthesis');
+				return;
+			} else if (voices.length === 0) {
+				alert('No voices installation found');
+				return;
+			}
+
 			speechify.reset();
 			console.log('Accessibility On!');
 
@@ -22,41 +33,52 @@ async function accessibilitySwitch() {
 				speechify.speechify(
 					'Welcome to main page of tasty noodle fortune telling site'
 				);
-				accessElement(speechify);
 				speechify.speechify(
 					'Press the button and answer the questions to find out what noodle are you'
 				);
 			} else if (document.URL.includes('questionnaire.html')) {
 				speechify.speechify(
-					'Answer these questions, green being agree and red being disagree'
+					'Welcome to the questionnaire page. Answer the questions to find out what noodle are you'
 				);
-				accessElement(speechify);
 			} else if (document.URL.includes('about.html')) {
 				speechify.speechify('About us, the tasty noodle team');
-				accessElement(speechify);
 			} else if (document.URL.includes('fortune.html')) {
 				speechify.speechify('press the button below to see another noodle');
 			} else if (document.URL.includes('profiles.html')) {
 				speechify.speechify('Here are the profiles of all the noodles');
-				accessElement(speechify);
-			} else {
-				accessElement(speechify);
 			}
+			accessElement(speechify);
 		} else {
-			console.log('Accessibility Off!');
 			speechify.terminate();
+			console.log('Accessibility Off!');
 		}
 	});
 }
 
 /**
- * Read all elements containig class 'read'
+ * Inject event listeners to elements with class 'speechify' and 'speechify-onload'
+ * to enable text-to-speech on mouseover and click and on page load respectively.
  * @param {Speechify} speechify The speechify object
  */
 function accessElement(speechify) {
-	const readText = document.getElementsByClassName('read');
-	for (let i = 0; i < readText.length; i++) {
-		speechify.speechifyHighlight(readText[i]);
+	// Enable speechify on mouseover and click
+	const readEnabled = document.getElementsByClassName('speechify');
+	for (let i = 0; i < readEnabled.length; i++) {
+		readEnabled[i].addEventListener('mouseover', (_) => {
+			speechify.reset();
+			speechify.speechifyHighlight(readEnabled[i]);
+		});
+
+		readEnabled[i].addEventListener('click', (_) => {
+			speechify.reset();
+			speechify.speechifyHighlight(readEnabled[i]);
+		});
+	}
+
+	// Read all elements containig class 'speechify-init' on page load
+	const readOnLoad = document.getElementsByClassName('speechify-onload');
+	for (let i = 0; i < readOnLoad.length; i++) {
+		speechify.speechifyHighlight(readOnLoad[i]);
 	}
 }
 
