@@ -10,6 +10,7 @@ class Speechify {
 		this._voice = null;
 		this._allVoicesObtained = null;
 		this._init();
+		window.speechifyReady = null;
 	}
 
 	/** Load SpeechSynthesis voices */
@@ -84,7 +85,7 @@ class Speechify {
 	speechify(text) {
 		this._allVoicesObtained.then((voices) => {
 			if (voices.length === 0) {
-				console.log('Speechify: No voices found');
+				console.log('Speechify: No voices installation found');
 				return;
 			}
 
@@ -107,7 +108,7 @@ class Speechify {
 	speechifyHighlight(element) {
 		this._allVoicesObtained.then(async (voices) => {
 			if (voices.length === 0) {
-				console.log('Speechify: No voices found');
+				console.log('Speechify: No voices installation found');
 				return;
 			}
 
@@ -140,15 +141,15 @@ class Speechify {
 		});
 	}
 
-	/** Cancel all speech audio from the utterance queue */
+	/** Cancel all speechify audio sequence */
 	reset() {
 		window.speechSynthesis.cancel();
+		this.resetHighlight();
 		window.speechifyReady = true;
 	}
 
-	/** Remove all speech audio and text highlights */
-	terminate() {
-		this.reset();
+	/** Remove all speechify text highlighting */
+	resetHighlight() {
 		// Remove all speechify-highlight classes
 		const highlightedElements = document.querySelectorAll(
 			'.speechify-highlight'
@@ -156,6 +157,11 @@ class Speechify {
 		highlightedElements.forEach((element) => {
 			element.classList.remove('speechify-highlight');
 		});
+	}
+
+	/** Remove all speech audio and text highlights */
+	terminate() {
+		this.reset();
 		window.speechifyReady = false;
 	}
 
