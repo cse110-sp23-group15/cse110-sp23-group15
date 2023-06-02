@@ -1,3 +1,10 @@
+/* WARNING: css styling that applies to all pages */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Hi+Melody');
+
+/* Global styling */
 body {
 	display: flex;
 	flex-direction: column;
@@ -6,11 +13,6 @@ body {
 	margin: 0;
 }
 
-.speechify-highlight {
-	color: #d7ae0d !important;
-}
-
-/*Styling for the main body*/
 main {
 	flex-grow: 1;
 	font-family: 'Montserrat';
@@ -23,7 +25,6 @@ main {
 	height: 55px;
 }
 
-/*Styling for the header*/
 header {
 	background-color: #f8f6f0;
 	width: 100%;
@@ -141,7 +142,26 @@ header button:hover {
 	text-align: center;
 }
 
-/*style for accessibility switch*/
+/* Styling for accessibility button */
+.speechify-highlight {
+	color: #d7ae0d !important;
+}
+
+.accessibility-container {
+	text-align: center;
+	margin-right: 2vw;
+	margin-left: auto;
+	margin-bottom: 0.5vw;
+}
+
+.accessibility-header {
+	font-family: 'Hi Melody';
+	font-style: normal;
+	font-size: 20px;
+	margin-bottom: 0.1vw;
+	margin-top: 0.2vw;
+}
+
 .switch {
 	position: relative;
 	display: inline-block;
@@ -194,7 +214,6 @@ input:checked + .slider:before {
 	transform: translateX(26px);
 }
 
-/* Rounded sliders */
 .slider.round {
 	border-radius: 34px;
 }

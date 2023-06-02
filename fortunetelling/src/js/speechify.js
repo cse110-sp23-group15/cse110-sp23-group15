@@ -1,3 +1,10 @@
+// Speechify class for interacting with browser's SpeechSynthesis
+
+// Make sure to document our code
+// See examples:
+// - https://jsdoc.app/howto-es2015-modules.html
+// - https://jsdoc.app/howto-es2015-classes.html
+
 /**
  * Class that spechifies text inputs and highlights the text while speaking.
  * Reference: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis

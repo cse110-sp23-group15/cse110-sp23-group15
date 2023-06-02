@@ -5,19 +5,16 @@
 		<meta name="viewport" content="width=device-width" />
 		<title>About</title>
 		<link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
-		<link
-			href="https://fonts.googleapis.com/css?family=Montserrat"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css?family=Hi Melody"
-			rel="stylesheet"
-		/>
+
+		<!-- Stylesheets -->
+		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
+		<!-- main.css. Page-specific styles should be in questionnaire.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
 		<link href="../css/noodlesResults.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
+		<!-- Navigation bar -->
 		<header>
 			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
 			<a href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
@@ -35,25 +32,9 @@
 				</nav>
 			</div>
 
-			<div
-				style="
-					text-align: center;
-					margin-right: 2vw;
-					margin-left: auto;
-					margin-bottom: 0.5vw;
-				"
-			>
-				<h3
-					style="
-						font-family: 'Hi Melody';
-						font-style: normal;
-						font-size: 20px;
-						margin-bottom: 0.1vw;
-						margin-top: 0.2vw;
-					"
-				>
-					accessibility button
-				</h3>
+			<!-- Accessibility button -->
+			<div class="accessibility-container">
+				<h3 class="accessibility-header">Accessibility</h3>
 				<label class="switch">
 					<input name="accessibility" type="checkbox" />
 					<span class="slider round"></span>
@@ -61,6 +42,7 @@
 			</div>
 		</header>
 
+		<!-- Main content -->
 		<main>
 			<img src="../img/ramen-icon-1.png" class="rotate" style="height: 250px" />
 			<p
@@ -84,8 +66,21 @@
 			</div>
 		</main>
 
+		<!-- Footer -->
 		<footer class="footer">
 			<p>© Tasty Noodles</p>
 		</footer>
+
+		<!-- NOTE: main.js is a module that runs after the page is loaded. Also main.js -->
+		<!-- applies to all pages. Page specific scripts should be in index.js which runs -->
+		<!-- before the page is loaded. -->
+
+		<!-- NOTE: If you need to import from another script, e.g. utils.js, then you -->
+		<!-- need the script tag to have the type="module" attribute. However, module -->
+		<!-- scripts are deferred, so they don't run until the page is loaded. If you -->
+		<!-- want to run your script codes before the page is loaded, then you need to -->
+		<!-- remove the type="module" attribute. -->
+		<script src="../js/main.js" type="module"></script>
+		<script src="../js/noodlesResults.js" type="module"></script>
 	</body>
 </html>

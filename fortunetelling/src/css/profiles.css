@@ -1,3 +1,5 @@
+/* profiles.html css styling */
+
 #singlePageContent {
 	display: flex;
 	min-height: 100vh;
@@ -178,8 +180,5 @@
 		align-items: center; /* align vertically */
 		margin-top: 20px;
 		margin-bottom: 20px;
-	}
-	footer {
-		margin-top: 30vh;
 	}
 }
