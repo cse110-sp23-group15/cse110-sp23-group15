@@ -1,4 +1,9 @@
-// If we decide to use ES6
+// Functions for generating horoscopes and getting data from noodle databases
+
+// Make sure to document our code
+// See examples:
+// - https://jsdoc.app/howto-es2015-modules.html
+// - https://jsdoc.app/howto-es2015-classes.html
 
 import { getJSON } from './utils.js';
 

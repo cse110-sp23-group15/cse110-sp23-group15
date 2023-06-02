@@ -1,3 +1,10 @@
+// questionnaire.html onload module script
+
+// Make sure to document our code
+// See examples:
+// - https://jsdoc.app/howto-es2015-modules.html
+// - https://jsdoc.app/howto-es2015-classes.html
+
 import { getJSON } from './utils.js';
 
 // upon loading, call updatenoodle, passing in the noodleIndex from local storage
@@ -22,7 +29,7 @@ async function addQuestions() {
 		const beforeButton = document.querySelector('.submitButton');
 
 		newDiv.innerHTML =
-			`<h2>` +
+			`<h2 class="speechify speechify-onload">` +
 			questions[i].description +
 			`</h2>` +
 			`<form id="question"><a class = "disagree">Disagree</a><input type="radio" name="qRadio" class="negative"/>

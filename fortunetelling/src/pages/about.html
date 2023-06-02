@@ -5,19 +5,16 @@
 		<meta name="viewport" content="width=device-width" />
 		<title>About</title>
 		<link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
-		<link
-			href="https://fonts.googleapis.com/css?family=Montserrat"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css?family=Hi Melody"
-			rel="stylesheet"
-		/>
+
+		<!-- Stylesheets -->
+		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
+		<!-- main.css. Page-specific styles should be in about.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
 		<link href="../css/about.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
+		<!-- Navigation bar -->
 		<header>
 			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
 			<a href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
@@ -34,17 +31,26 @@
 					<a class="navLink" href="about.html">About Us</a>
 				</nav>
 			</div>
+
+			<!-- Accessibility button -->
+			<div class="accessibility-container">
+				<h3 class="accessibility-header">Accessibility</h3>
+				<label class="switch">
+					<input name="accessibility" type="checkbox" />
+					<span class="slider round"></span>
+				</label>
+			</div>
 		</header>
 
+		<!-- Main content -->
 		<main>
-			<p>About Us</p>
 			<div class="desktop-container">
-				<div id="member-name-dt" class="name">
+				<div id="member-name-dt" class="name speechify speechify-onload">
 					<h1>Member Name</h1>
 				</div>
 				<img id="current-member-dt" src="" alt="Current Member" />
 				<img id="member-noodle-dt" src="" alt="Member's Noodle" />
-				<div id="description-dt" class="description">
+				<div id="description-dt" class="description speechify speechify-onload">
 					<p>Description for Member</p>
 				</div>
 				<div class="member-menu">
@@ -86,111 +92,25 @@
 					&#8250;
 				</button>
 			</div>
-
-			<script>
-				var memberIndex = 0;
-				var members = [
-					{
-						name: 'Mark Lucernas',
-						memberImage: '../img/mark-icon.jpeg',
-						memberNoodle: '../img/ramen-icon-1.png',
-						description: 'Description for Mark Lucernas'
-					},
-					{
-						name: 'Hieu Pham',
-						memberImage: '../img/hieu-icon.jpeg',
-						memberNoodle: '../img/ravioli-icon-1.png',
-						description: 'Description for Hieu Pham'
-					},
-					{
-						name: 'Xinle Yu',
-						memberImage: '../img/henry-icon.jpg',
-						memberNoodle: '../img/beef-noodle-soup-icon-1.png',
-						description: 'Description for Xinle Yu'
-					},
-					{
-						name: 'Aaron Kann',
-						memberImage: '',
-						memberNoodle: '../img/mac-and-cheese-icon-1.png',
-						description: 'Description for Aaron Kann'
-					},
-					{
-						name: 'Steve Yin',
-						memberImage: '',
-						memberNoodle: '../img/udon-icon-1.png',
-						description: 'Description for Steve Yin'
-					},
-					{
-						name: 'Darren Yu',
-						memberImage: '../img/darren-icon.jpg',
-						memberNoodle: '../img/instant-noodles-icon-1.png',
-						description: 'Description for Darren Yu'
-					},
-					{
-						name: 'Holly Zhu',
-						memberImage: '../img/holly-icon.png',
-						memberNoodle: '../img/spaghetti-icon-1.png',
-						description: 'Description for Holly Zhu'
-					},
-					{
-						name: 'Anthony Yao',
-						memberImage: '',
-						memberNoodle: '../img/pho-icon-1.png',
-						description: 'Description for Anthony Yao'
-					},
-					{
-						name: 'Hanson Wang',
-						memberImage: '',
-						memberNoodle: '../img/pad-thai-icon-1.png',
-						description: 'Description for Hanson Wang'
-					}
-				];
-
-				function updateMember() {
-					document.getElementById('current-member').src =
-						members[memberIndex].memberImage;
-					document.getElementById('member-noodle').src =
-						members[memberIndex].memberNoodle;
-					document.getElementById('member-name').innerText =
-						members[memberIndex].name;
-					document.getElementById('description').innerText =
-						members[memberIndex].description;
-				}
-
-				function nextMember() {
-					memberIndex = (memberIndex + 1) % members.length;
-					updateMember();
-				}
-
-				function prevMember() {
-					memberIndex = (memberIndex - 1 + members.length) % members.length;
-					updateMember();
-				}
-
-				const memberMenu = document.querySelectorAll('.member-menu img');
-
-				memberMenu.forEach((mem, idx) => {
-					mem.addEventListener('click', () => {
-						document.getElementById('current-member-dt').src =
-							members[idx].memberImage;
-						document.getElementById('member-noodle-dt').src =
-							members[idx].memberNoodle;
-						document.getElementById('member-name-dt').innerText =
-							members[idx].name;
-						document.getElementById('description-dt').innerText =
-							members[idx].description;
-					});
-				});
-
-				document.querySelector('.member-menu img').click();
-				updateMember();
-			</script>
 		</main>
 
+		<!-- Footer -->
 		<footer class="footer">
 			<p>© Tasty Noodles</p>
 		</footer>
 
+		<!-- Scripts -->
+
+		<!-- NOTE: main.js is a module that runs after the page is loaded. Also main.js -->
+		<!-- applies to all pages. Page specific scripts should be in index.js which runs -->
+		<!-- before the page is loaded. -->
+
+		<!-- NOTE: If you need to import from another script, e.g. utils.js, then you -->
+		<!-- need the script tag to have the type="module" attribute. However, module -->
+		<!-- scripts are deferred, so they don't run until the page is loaded. If you -->
+		<!-- want to run your script codes before the page is loaded, then you need to -->
+		<!-- remove the type="module" attribute. -->
 		<script src="../js/main.js" type="module"></script>
+		<script src="../js/about.js"></script>
 	</body>
 </html>

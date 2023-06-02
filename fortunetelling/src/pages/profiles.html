@@ -5,20 +5,18 @@
 		<meta name="viewport" content="width=device-width" />
 		<title>About</title>
 		<link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
-		<link
-			href="https://fonts.googleapis.com/css?family=Montserrat"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css?family=Hi Melody"
-			rel="stylesheet"
-		/>
+
+		<!-- Stylesheets -->
+		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
+		<!-- main.css. Page-specific styles should be in profiles.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
 		<link href="../css/profiles.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
+		<!-- Single page view -->
 		<div id="singlePageContent" style="display: block">
+			<!-- Navigation bar -->
 			<header>
 				<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
 				<a href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
@@ -36,25 +34,9 @@
 					</nav>
 				</div>
 
-				<div
-					style="
-						text-align: center;
-						margin-right: 2vw;
-						margin-left: auto;
-						margin-bottom: 0.5vw;
-					"
-				>
-					<h3
-						style="
-							font-family: 'Hi Melody';
-							font-style: normal;
-							font-size: 20px;
-							margin-bottom: 0.1vw;
-							margin-top: 0.2vw;
-						"
-					>
-						accessibility button
-					</h3>
+				<!-- Accessibility button -->
+				<div class="accessibility-container">
+					<h3 class="accessibility-header">Accessibility</h3>
 					<label class="switch">
 						<input name="accessibility" type="checkbox" />
 						<span class="slider round"></span>
@@ -62,6 +44,7 @@
 				</div>
 			</header>
 
+			<!-- Main content -->
 			<main>
 				<div id="selected-noodle">
 					<img
@@ -70,10 +53,10 @@
 						alt="Selected Noodle"
 					/>
 				</div>
-				<div id="name" class="name">
+				<div id="name" class="name speechify speechify-onload">
 					<h2 id="selected-noodle-name">Beef Noodle Soup</h2>
 				</div>
-				<div id="description" class="description">
+				<div id="description" class="description speechify speechify-onload">
 					<p id="selected-noodle-description">Description for Noodle</p>
 				</div>
 				<div class="controls">
@@ -173,124 +156,56 @@
 						<p class="carousel-caption">Udon</p>
 					</div>
 				</div>
-
-				<script>
-					var noodleIndex = 0;
-					localStorage.setItem('noodleIndex', noodleIndex);
-					var noodles = [
-						{
-							name: 'Beef Noodle Soup',
-							image: '../img/beef-noodle-soup-icon-1.png',
-							description: 'Description for Beef Noodle Soup'
-						},
-						{
-							name: 'Bread',
-							image: '../img/bread-icon-1.png',
-							description: 'Description for Noodle 2'
-						},
-						{
-							name: 'Chicken Noodle Soup',
-							image: '../img/chicken-noodle-soup-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Instant Noodles',
-							image: '../img/instant-noodles-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Lasagna',
-							image: '../img/lasagna-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Mac and Cheese',
-							image: '../img/mac-and-cheese-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Pho',
-							image: '../img/pho-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Ramen',
-							image: '../img/ramen-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Ravioli',
-							image: '../img/ravioli-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Spaghetti',
-							image: '../img/spaghetti-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Udon',
-							image: '../img/udon-icon-1.png',
-							description: 'Description for Noodle 3'
-						}
-					];
-
-					function selectNoodle(index) {
-						noodleIndex = index;
-						updateNoodle();
-					}
-
-					function updateNoodle() {
-						localStorage.setItem('noodleIndex', noodleIndex);
-						document.getElementById('name').innerText =
-							noodles[noodleIndex].name;
-						document.getElementById('description').innerText =
-							noodles[noodleIndex].description;
-						document.getElementById('selected-noodle-img').src =
-							noodles[noodleIndex].image;
-						var carouselImages = document.getElementById('carousel').children;
-						for (var i = 0; i < carouselImages.length; i++) {
-							carouselImages[i].src = noodles[i].image;
-						}
-					}
-					updateNoodle();
-				</script>
 			</main>
 
+			<!-- Footer -->
 			<footer class="footer">
 				<p>© Tasty Noodles</p>
 			</footer>
-
-			<script src="../js/main.js" type="module"></script>
 		</div>
+
+		<!-- Double page view -->
 		<div id="doublePageContent" style="display: none">
+			<!-- Navigation bar -->
 			<header>
 				<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
-				<h1 id="noodleText">Tasty Noodles</h1>
+				<a href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
 				<div class="dropdown">
-					<button class="dropBtn">Dropdown</button>
-					<div class="dropdownContent">
-						<a href="profiles.html">
-							<button>Noodle Profiles</button>
-						</a>
-						<a href="about.html">
-							<button>About Us</button>
-						</a>
-					</div>
+					<input id="toggle" type="checkbox" />
+					<label class="hamburger" for="toggle">
+						<div class="top"></div>
+						<div class="middle"></div>
+						<div class="bottom"></div>
+					</label>
+
+					<nav class="dropdownContent">
+						<a class="navLink" href="profiles.html">Noodle Profiles</a>
+						<a class="navLink" href="about.html">About Us</a>
+					</nav>
+				</div>
+
+				<!-- Accessibility button -->
+				<div class="accessibility-container">
+					<h3 class="accessibility-header">Accessibility</h3>
+					<label class="switch">
+						<input name="accessibility" type="checkbox" />
+						<span class="slider round"></span>
+					</label>
 				</div>
 			</header>
 
+			<!-- Main content -->
 			<main>
-				<div id="name" class="name">
+				<div id="name" class="name speechify speechify-onload">
 					<h2>Beef Noodle Soup</h2>
 				</div>
-				<div id="description" class="description">
+				<div id="description" class="description speechify speechify-onload">
 					<p>Description for Noodle</p>
 				</div>
 				<div id="carousel" class="carousel">
 					<img
 						id="carousel-image"
-						src=".../img/beef-noodle-soup-icon-1.png"
+						src="../img/beef-noodle-soup-icon-1.png"
 						alt="Noodle 1"
 					/>
 				</div>
@@ -321,124 +236,26 @@
 						<p id="next-noodle-name">Bread</p>
 					</div>
 				</div>
-				<script>
-					var noodleIndex = 0;
-					localStorage.setItem('noodleIndex', noodleIndex);
-					var noodles = [
-						{
-							name: 'Beef Noodle Soup',
-							image: '../img/beef-noodle-soup-icon-1.png',
-							description: 'Description for Beef Noodle Soup'
-						},
-						{
-							name: 'Bread',
-							image: '../img/bread-icon-1.png',
-							description: 'Description for Noodle 2'
-						},
-						{
-							name: 'Chicken Noodle Soup',
-							image: '../img/chicken-noodle-soup-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Instant Noodles',
-							image: '../img/instant-noodles-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Lasagna',
-							image: '../img/lasagna-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Mac and Cheese',
-							image: '../img/mac-and-cheese-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Pho',
-							image: '../img/pho-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Ramen',
-							image: '../img/ramen-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Ravioli',
-							image: '../img/ravioli-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Spaghetti',
-							image: '../img/spaghetti-icon-1.png',
-							description: 'Description for Noodle 3'
-						},
-						{
-							name: 'Udon',
-							image: '../img/udon-icon-1.png',
-							description: 'Description for Noodle 3'
-						}
-					];
-					function updateNoodle() {
-						localStorage.setItem('noodleIndex', noodleIndex);
-						document.getElementById('carousel-image').src =
-							noodles[noodleIndex].image;
-						document.getElementById('name').innerText =
-							noodles[noodleIndex].name;
-						document.getElementById('description').innerText =
-							noodles[noodleIndex].description;
-						document.getElementById('prev-noodle').src =
-							noodles[
-								(noodleIndex - 1 + noodles.length) % noodles.length
-							].image;
-						document.getElementById('next-noodle').src =
-							noodles[(noodleIndex + 1) % noodles.length].image;
-						document.getElementById('prev-noodle-name').innerText =
-							noodles[(noodleIndex - 1 + noodles.length) % noodles.length].name;
-						document.getElementById('next-noodle-name').innerText =
-							noodles[(noodleIndex + 1) % noodles.length].name;
-					}
-					function nextNoodle() {
-						noodleIndex = (noodleIndex + 1) % noodles.length;
-						updateNoodle();
-					}
-					function prevNoodle() {
-						noodleIndex = (noodleIndex - 1 + noodles.length) % noodles.length;
-						updateNoodle();
-					}
-					updateNoodle();
-				</script>
 			</main>
 
+			<!-- Footer -->
 			<footer class="footer">
 				<p>© Tasty Noodles</p>
 			</footer>
 		</div>
-		<script>
-			function checkWindowSize() {
-				var singlePageContent = document.getElementById('singlePageContent');
-				var doublePageContent = document.getElementById('doublePageContent');
 
-				if (window.innerWidth > 800) {
-					// If the window is less than or equal to 800 pixels wide,
-					// show the single-page layout and hide the double-page layout.
-					singlePageContent.style.display = 'block';
-					doublePageContent.style.display = 'none';
-				} else {
-					// If the window is more than 800 pixels wide,
-					// show the double-page layout and hide the single-page layout.
-					singlePageContent.style.display = 'none';
-					doublePageContent.style.display = 'block';
-				}
-			}
+		<!-- Scripts -->
 
-			// Call checkWindowSize at the start
-			checkWindowSize();
+		<!-- NOTE: main.js is a module that runs after the page is loaded. Also main.js -->
+		<!-- applies to all pages. Page specific scripts should be in index.js which runs -->
+		<!-- before the page is loaded. -->
 
-			// Call checkWindowSize whenever the window is resized
-			window.addEventListener('resize', checkWindowSize);
-		</script>
+		<!-- NOTE: If you need to import from another script, e.g. utils.js, then you -->
+		<!-- need the script tag to have the type="module" attribute. However, module -->
+		<!-- scripts are deferred, so they don't run until the page is loaded. If you -->
+		<!-- want to run your script codes before the page is loaded, then you need to -->
+		<!-- remove the type="module" attribute. -->
+		<script src="../js/main.js" type="module"></script>
+		<script src="../js/profiles.js"></script>
 	</body>
 </html>
