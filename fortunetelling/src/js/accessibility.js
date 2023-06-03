@@ -12,6 +12,7 @@ import { Speechify } from './speechify.js';
  */
 async function accessibilitySwitch() {
 	// Add event listener to the accessibility switch
+
 	const accessibility = document.getElementsByName('accessibility');
 	// Initialize Speechify object
 	const speechify = new Speechify(null);
@@ -19,12 +20,21 @@ async function accessibilitySwitch() {
 	const voices = await speechify.voices;
 	speechify.voice = voices[0]; // Select the first voice (default)
 	speechify.reset(); // Reset speechify. Also makes window.speechifyReady = true
-	accessibility[0].addEventListener('change', function () {
+	if(localStorage.getItem("accessibility") == null) {
+		localStorage.setItem("accessibility", false);
+	} else if (localStorage.getItem("accessibility") == 'true'){
+		setTimeout(() => {
+			accessibility[0].click();
+		}, 1);
+	}
+	accessibility[0].addEventListener('click', function () {
+		console.log("event triggered");
 		if (!isBrowserSupported) {
 			alert('Your browser does not support speech synthesis');
 			return;
 		}
 		if (this.checked) {
+			localStorage.setItem("accessibility", true);
 			if (!isBrowserSupported) {
 				alert('Your browser does not support speech synthesis');
 				return;
@@ -57,6 +67,7 @@ async function accessibilitySwitch() {
 			}
 			accessElement(speechify);
 		} else {
+			localStorage.setItem("accessibility", false);
 			speechify.terminate();
 			console.log('Accessibility Off!');
 		}
