@@ -54,6 +54,7 @@
 	"dependencies": {
 		"expect": "^29.5.0",
 		"expect-webdriverio": "^4.2.3",
-		"jstat": "^1.9.6"
+		"jstat": "^1.9.6",
+		"openai": "^3.2.1"
 	}
 }
