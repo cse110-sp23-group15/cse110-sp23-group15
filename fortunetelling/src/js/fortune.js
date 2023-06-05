@@ -1,4 +1,12 @@
+// fortune.html onload module script
+
+// Make sure to document our code
+// See examples:
+// - https://jsdoc.app/howto-es2015-modules.html
+// - https://jsdoc.app/howto-es2015-classes.html
+
 import { getHoroscope, getNoodleData } from './genHoroscope.js';
+import { getLocalStorage } from './utils.js';
 
 // upon loading, call updatenoodle, passing in the noodleIndex from local storage
 document.addEventListener('DOMContentLoaded', init);
@@ -15,7 +23,7 @@ async function init() {
 		});
 	}
 
-	let noodleIndex = localStorage.getItem('noodleIndex');
+	let noodleIndex = getLocalStorage('noodleIndex');
 	// typecase noodleIndex to int
 	noodleIndex = parseInt(noodleIndex);
 	updateNoodle(noodleIndex);

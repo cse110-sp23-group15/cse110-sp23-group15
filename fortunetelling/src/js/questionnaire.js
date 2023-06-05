@@ -1,3 +1,10 @@
+// questionnaire.html onload module script
+
+// Make sure to document our code
+// See examples:
+// - https://jsdoc.app/howto-es2015-modules.html
+// - https://jsdoc.app/howto-es2015-classes.html
+
 import { getJSON } from './utils.js';
 
 // upon loading, call updatenoodle, passing in the noodleIndex from local storage
@@ -22,9 +29,10 @@ async function addQuestions() {
 	for (let i = 0; i < questions.length; i++) {
 		const newDiv = document.createElement('div');
 		const beforeButton = document.querySelector('.submitButton');
+		const footer = document.querySelector('.footer');
 
 		newDiv.innerHTML =
-			`<h2>` +
+			`<h2 class="speechify speechify-onload">` +
 			questions[i].description +
 			`</h2>` +
 			`<form id="question"><a class = "disagree">Disagree</a><input type="radio" name="qRadio" class="negative"/>
@@ -35,6 +43,7 @@ async function addQuestions() {
 		newDiv.setAttribute('id', `div${i}`);
 		newDiv.setAttribute('class', 'Question');
 		mainRef.appendChild(newDiv);
+		newDiv.after(footer);
 		newDiv.after(beforeButton);
 	}
 }
@@ -92,7 +101,7 @@ async function gradeQuiz() {
 			} else if (hash == 5) {
 				localStorage.setItem('noodle', '../img/mac-and-cheese-icon-1.png');
 			} else if (hash == 6) {
-				localStorage.setItem('noodle', '../img/pad-thai-1.png');
+				localStorage.setItem('noodle', '../img/pad-thai-icon-1.png');
 			} else if (hash == 7) {
 				localStorage.setItem('noodle', '../img/pho-icon-1.png');
 			} else if (hash == 8) {

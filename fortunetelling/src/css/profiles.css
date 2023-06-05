@@ -1,0 +1,184 @@
+/* profiles.html css styling */
+
+#singlePageContent {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* For mobile phones: */
+@media screen and (max-width: 800px) {
+	.carousel {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+	.carousel img {
+		width: 100%;
+		max-width: 500px;
+	}
+	.name,
+	.description {
+		text-align: center;
+	}
+	.controls {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 20px;
+	}
+	.controls img {
+		width: 100px;
+		cursor: pointer;
+	}
+	.controls div {
+		text-align: center;
+	}
+	.name {
+		/* Hero H1 */
+
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 56px;
+		line-height: 80px;
+		/* or 143% */
+
+		letter-spacing: -0.015em;
+
+		color: #ae3131;
+	}
+	.see-prev {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 30px;
+		/* or 200% */
+
+		display: flex;
+		align-items: center;
+		text-align: center;
+		letter-spacing: -0.015em;
+	}
+
+	#prev-noodle-name {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 30px;
+		/* or 167% */
+
+		letter-spacing: -0.015em;
+		color: #ae3131;
+	}
+	#next-noodle-name {
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 30px;
+		/* or 167% */
+
+		color: #ae3131;
+	}
+	.controls #fortune-button {
+		width: 192px;
+		height: 52px;
+		cursor: pointer;
+		outline: none;
+		border: none;
+		font-family: 'Montserrat';
+		font-size: 18px;
+		border-radius: 8px;
+		background-color: #da0b0b;
+		color: white;
+	}
+
+	.show {
+		display: block;
+	}
+}
+
+/* For tablets and larger screens */
+@media screen and (min-width: 801px) {
+	main {
+		display: flex;
+		min-height: 60vh;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.carousel {
+		display: flex;
+		justify-content: center;
+	}
+	.carousel img {
+		width: 100%;
+		max-width: 200px;
+		margin: 0 10px; /* For spacing between images */
+	}
+	.name,
+	.description {
+		text-align: center;
+	}
+	.name {
+		font-family: 'Montserrat';
+		font-style: bold;
+		font-weight: 400;
+		font-size: 56px;
+		line-height: 80px;
+		letter-spacing: -0.015em;
+		color: #ae3131;
+	}
+	.controls #fortune-button {
+		width: 192px;
+		height: 52px;
+		cursor: pointer;
+		outline: none;
+		border: none;
+		font-family: 'Montserrat';
+		font-size: 18px;
+		border-radius: 8px;
+		background-color: #da0b0b;
+		color: white;
+	}
+	#selected-noodle-img {
+		width: 100%;
+		max-width: 300px;
+	}
+	#selected-noodle-name {
+		/* Hero H1 */
+
+		font-family: 'Montserrat';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 56px;
+		line-height: 80px;
+		/* or 143% */
+
+		display: flex;
+		align-items: center;
+		text-align: center;
+		letter-spacing: -0.015em;
+
+		color: #ae3131;
+	}
+	.carousel-caption {
+		margin-top: 5px;
+		font-size: 20px;
+		font-family: 'Montserrat';
+		font-style: normal;
+
+		letter-spacing: -0.015em;
+
+		color: #ae3131;
+	}
+	.controls {
+		display: flex;
+		justify-content: center; /* align horizontally */
+		align-items: center; /* align vertically */
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}

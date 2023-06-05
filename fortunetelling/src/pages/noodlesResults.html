@@ -5,34 +5,37 @@
 		<meta name="viewport" content="width=device-width" />
 		<title>About</title>
 		<link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
-		<link
-			href="https://fonts.googleapis.com/css?family=Montserrat"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css?family=Hi Melody"
-			rel="stylesheet"
-		/>
+
+		<!-- Stylesheets -->
+		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
+		<!-- main.css. Page-specific styles should be in questionnaire.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
+		<link href="../css/noodlesResults.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
+		<!-- Navigation bar -->
 		<header>
 			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
-			<h1 id="noodleText">Tasty Noodles</h1>
-			<div class="dropdown">
-				<button class="dropBtn">Dropdown</button>
-				<div class="dropdownContent">
-					<a href="profiles.html">
-						<button>Noodle Profiles</button>
-					</a>
-					<a href="about.html">
-						<button>About Us</button>
-					</a>
-				</div>
+			<a href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
+
+			<!-- Navigation buttons -->
+			<div class="navButtons">
+				<a href="profiles.html">Noodle Profiles</a>
+				<a href="about.html">About Us</a>
+			</div>
+
+			<!-- Accessibility button -->
+			<div class="accessibility-container">
+				<h3 class="accessibility-header">Accessibility</h3>
+				<label class="switch">
+					<input name="accessibility" type="checkbox" />
+					<span class="slider round"></span>
+				</label>
 			</div>
 		</header>
 
+		<!-- Main content -->
 		<main>
             <img src="../img/ramen-icon-1.png" id="noodleImg" class="rotate" style="height:250px; margin: 50px"/>
             <p style="color: purple; font-size:25px;">
@@ -48,6 +51,7 @@
 			</div>
 		</main>
 
+		<!-- Footer -->
 		<footer class="footer">
 			<p>© Tasty Noodles</p>
 		</footer>

@@ -1,95 +1,94 @@
-/** general control of the accessibility switch
+// Accessibility script for text-to-speech functionalities
+
+// Make sure to document our code
+// See examples:
+// - https://jsdoc.app/howto-es2015-modules.html
+// - https://jsdoc.app/howto-es2015-classes.html
+
+import { Speechify } from './speechify.js';
+
+/**
+ * General control of the accessibility switch
  */
-function accessswitch() {
-	const synth = window.speechSynthesis;
-	const voiceList = window.speechSynthesis.getVoices();
+async function accessibilitySwitch() {
+	// Add event listener to the accessibility switch
 	const accessibility = document.getElementsByName('accessibility');
+	// Initialize Speechify object
+	const speechify = new Speechify(null);
+	const isBrowserSupported = speechify.checkBrowserSupport();
+	const voices = await speechify.voices;
+	speechify.voice = voices[0]; // Select the first voice (default)
+	speechify.reset(); // Reset speechify. Also makes window.speechifyReady = true
 	accessibility[0].addEventListener('change', function () {
+		if (!isBrowserSupported) {
+			alert('Your browser does not support speech synthesis');
+			return;
+		}
 		if (this.checked) {
-			if (document.URL.includes('index')) {
-				const intro = new SpeechSynthesisUtterance(
-					'Welcom to main page of tasty noodle fortune telling site'
-				);
-				intro.rate = 2;
-				intro.voice = voiceList[0];
-				synth.speak(intro);
-				console.log('intro');
-				accessEn();
-				const end = new SpeechSynthesisUtterance(
-					'press the button and aswer the questions to find out what noodle are you'
-				);
-				end.rate = 2;
-				end.voice = voiceList[0];
-				synth.speak(end);
-			} else if (document.URL.includes('questionnaire.html')) {
-				console.log('question');
-				const intro = new SpeechSynthesisUtterance(
-					'Answer these questions, green being agree and red being disagree'
-				);
-				intro.rate = 2;
-				intro.voice = voiceList[0];
-				synth.speak(intro);
-				console.log('intro');
-				accessEn();
-			} else if (document.URL.includes('about.html')) {
-				console.log('about');
-				const intro = new SpeechSynthesisUtterance(
-					'About us, the tasty noodle team'
-				);
-				intro.rate = 2;
-				intro.voice = voiceList[0];
-				synth.speak(intro);
-				console.log('intro');
-				accessEn();
-			} else if (document.URL.includes('fortune.html')) {
-				console.log('fortune');
-				accessEn();
-				const end = new SpeechSynthesisUtterance(
-					'press the button below to see another noodle'
-				);
-				end.rate = 2;
-				end.voice = voiceList[0];
-				synth.speak(end);
-			} else if (document.URL.includes('profiles.html')) {
-				console.log('profiles');
-				const intro = new SpeechSynthesisUtterance(
-					'Here are the profiles of all the noodles'
-				);
-				intro.rate = 2;
-				intro.voice = voiceList[0];
-				synth.speak(intro);
-				accessEn();
-			} else {
-				const intro = new SpeechSynthesisUtterance(
-					'Welcom to main page of tasty noodle fortune telling site'
-				);
-				intro.rate = 2;
-				intro.voice = voiceList[0];
-				synth.speak(intro);
-				accessEn();
-				console.log('intro');
+			if (!isBrowserSupported) {
+				alert('Your browser does not support speech synthesis');
+				return;
+			} else if (voices.length === 0) {
+				alert('No voices installation found');
+				return;
 			}
+
+			speechify.reset();
+			speechify.makeReady();
+			console.log('Accessibility On!');
+
+			if (document.URL.includes('index')) {
+				speechify.speechify(
+					'Welcome to main page of tasty noodle fortune telling site'
+				);
+				speechify.speechify(
+					'Press the button and answer the questions to find out what noodle are you'
+				);
+			} else if (document.URL.includes('questionnaire.html')) {
+				speechify.speechify(
+					'Welcome to the questionnaire page. Answer the questions to find out what noodle are you'
+				);
+			} else if (document.URL.includes('about.html')) {
+				speechify.speechify('About us, the tasty noodle team');
+			} else if (document.URL.includes('fortune.html')) {
+				speechify.speechify('press the button below to see another noodle');
+			} else if (document.URL.includes('profiles.html')) {
+				speechify.speechify('Here are the profiles of all the noodles');
+			}
+			accessElement(speechify);
 		} else {
-			synth.cancel();
+			speechify.terminate();
+			console.log('Accessibility Off!');
 		}
 	});
 }
 
-/** read everything with read class */
-function accessEn() {
-	console.log('function');
-	const synth = window.speechSynthesis;
-	const readText = document.getElementsByClassName('read');
-	const voiceList = window.speechSynthesis.getVoices();
-	console.log(readText.length);
-	for (let i = 0; i < readText.length; i++) {
-		const text = new SpeechSynthesisUtterance(readText[i].innerHTML);
-		console.log(readText[i].innerHTML);
-		text.rate = 2;
-		text.voice = voiceList[0];
-		synth.speak(text);
+/**
+ * Inject event listeners to elements with class 'speechify' and 'speechify-onload'
+ * to enable text-to-speech on mouseover and click and on page load respectively.
+ * @param {Speechify} speechify The speechify object
+ */
+function accessElement(speechify) {
+	// Enable speechify on mouseover and click
+	const readEnabled = document.getElementsByClassName('speechify');
+	for (let i = 0; i < readEnabled.length; i++) {
+		readEnabled[i].addEventListener('mouseover', (_) => {
+			speechify.reset();
+			speechify.speechifyHighlight(readEnabled[i]);
+		});
+
+		readEnabled[i].addEventListener('click', (_) => {
+			speechify.reset();
+			speechify.speechifyHighlight(readEnabled[i]);
+		});
+	}
+
+	// Read all elements containig class 'speechify-init' on page load
+	const readOnLoad = document.getElementsByClassName('speechify-onload');
+	for (let i = 0; i < readOnLoad.length; i++) {
+		speechify.speechifyHighlight(readOnLoad[i]);
 	}
 }
 
 // export
-export { accessswitch, accessEn };
+export { accessibilitySwitch };

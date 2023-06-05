@@ -1,3 +1,10 @@
+// Speechify class for interacting with browser's SpeechSynthesis
+
+// Make sure to document our code
+// See examples:
+// - https://jsdoc.app/howto-es2015-modules.html
+// - https://jsdoc.app/howto-es2015-classes.html
+
 /**
  * Class that spechifies text inputs and highlights the text while speaking.
  * Reference: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
@@ -7,11 +14,10 @@ class Speechify {
 	 * @param {obj} element The DOM element to spechify.
 	 */
 	constructor(element) {
-		this.selectedVoice = null;
-		this.text = null;
+		this._voice = null;
 		this._allVoicesObtained = null;
-		this.element = element;
 		this._init();
+		window.speechifyReady = null;
 	}
 
 	/** Load SpeechSynthesis voices */
@@ -29,9 +35,6 @@ class Speechify {
 		});
 	}
 
-	// TODO: Create functions to highlight the DOM element while speaking the text.
-	// Make sure to remove the highlight when the speech is done.
-
 	/**
 	 * @return {Promise} Promise that resolves to an array of SpeechSynthesisVoice objects
 	 */
@@ -43,14 +46,14 @@ class Speechify {
 	 * @return {SpeechSynthesisVoice} The selected voice
 	 */
 	get voice() {
-		return this.selectedVoice;
+		return this._voice;
 	}
 
 	/**
 	 * @param {SpeechSynthesisVoice} voice The voice to be selected
 	 */
 	set voice(voice) {
-		this.selectedVoice = voice;
+		this._voice = voice;
 	}
 
 	/**
@@ -66,9 +69,7 @@ class Speechify {
 	 * @param {string} voiceName The name of the voice to be selected
 	 */
 	async selectVoiceName(voiceName) {
-		this.selectedVoice = (await this.voices).find(
-			(voice) => voice.name === voiceName
-		);
+		this._voice = (await this.voices).find((voice) => voice.name === voiceName);
 	}
 
 	/**
@@ -76,30 +77,113 @@ class Speechify {
 	 * @return {Promise<SpeechSynthesisEvent>} Promise that resolves when the audio is done playing
 	 */
 	async play(audio) {
+		console.log('now playing');
 		window.speechSynthesis.speak(audio);
 
+		// Return a promise that resolves when the audio is done playing
 		return new Promise((resolve) => {
 			audio.onend = resolve;
 		});
 	}
 
-	// TODO: Modify this function to highlight the text under this.element while speaking the text.
-	// Make sure to remove the highlight when the speech is done.
 	/**
 	 * @param {string} text The text to be speechified
 	 */
 	speechify(text) {
 		this._allVoicesObtained.then((voices) => {
-			this.text = text;
+			if (voices.length === 0) {
+				console.log('Speechify: No voices installation found');
+				return;
+			}
+
+			// Cancel if the window.speechifyReady flag is false.
+			// Used for canceling speech audio.
+			if (!window.speechifyReady) {
+				return;
+			}
+
 			const audio = new SpeechSynthesisUtterance(text);
-			audio.voice = this.selectedVoice;
+			audio.voice = this._voice;
+			this.play(audio);
+		});
+	}
 
-			// TODO: Highlight the text here
+	/**
+	 * Speechify the the innerHTML of an element and highlight the text while speaking.
+	 * @param {obj} element DOM element to speechify and highlight text
+	 */
+	speechifyHighlight(element) {
+		this._allVoicesObtained.then(async (voices) => {
+			if (voices.length === 0) {
+				console.log('Speechify: No voices installation found');
+				return;
+			}
 
+			if (!element) {
+				throw new Error('Speechify: No element selected');
+			}
+
+			// Wait for the other audio to finish playing
+			while (window.speechSynthesis.speaking) {
+				await new Promise((resolve) => setTimeout(resolve, 100));
+			}
+
+			const audio = new SpeechSynthesisUtterance(element.innerHTML);
+			audio.voice = this._voice;
+
+			// Cancel if the window.speechifyReady flag is false.
+			// Used for canceling speech audio.
+			if (!window.speechifyReady) {
+				return;
+			}
+
+			// Highlight the text while speaking
+
+			element.classList.add('speechify-highlight');
+
+			// Remove the highlight when the speech is done
 			this.play(audio).then(() => {
-				// TODO: Remove the highlight here
+				element.classList.remove('speechify-highlight');
 			});
 		});
+	}
+
+	/** Set global variable speechifyReady to true */
+	makeReady() {
+		window.speechifyReady = true;
+	}
+
+	/** Cancel all speechify audio sequence */
+	reset() {
+		window.speechSynthesis.cancel();
+		this.resetHighlight();
+	}
+
+	/** Remove all speechify text highlighting */
+	resetHighlight() {
+		// Remove all speechify-highlight classes
+		const highlightedElements = document.querySelectorAll(
+			'.speechify-highlight'
+		);
+		highlightedElements.forEach((element) => {
+			element.classList.remove('speechify-highlight');
+		});
+	}
+
+	/** Remove all speech audio and text highlights */
+	terminate() {
+		this.reset();
+		window.speechifyReady = false;
+	}
+
+	/**
+	 * @return {boolean} True if the browser supports speech synthesis
+	 */
+	async checkBrowserSupport() {
+		if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+			return true;
+		}
+		return false;
 	}
 }
 
