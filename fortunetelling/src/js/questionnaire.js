@@ -2,10 +2,12 @@ import { getJSON } from './utils.js';
 
 // upon loading, call updatenoodle, passing in the noodleIndex from local storage
 document.addEventListener('DOMContentLoaded', init);
+const QUESTIONS = 10;
 
 /** On load function */
 async function init() {
 	await addQuestions();
+	await gradeQuiz();
 }
 
 /**
@@ -17,7 +19,7 @@ async function addQuestions() {
 
 	let curQuestion;
 
-	for (let i = 1; i < questions.length; i++) {
+	for (let i = 0; i < questions.length; i++) {
 		const newDiv = document.createElement('div');
 		const beforeButton = document.querySelector('.submitButton');
 
@@ -40,4 +42,70 @@ async function addQuestions() {
 /**
  * Grades the quiz and returns the closest personality.
  */
-async function gradeQuiz() {}
+async function gradeQuiz() {
+	const submitButton = document.querySelector('#submit');
+
+	submitButton.addEventListener("click", function() {
+		const link = document.querySelector('#next');
+		const answers = document.getElementsByName('qRadio');
+		let answerCnt = 0;
+		let pnts = 0;
+
+		for (let i = 0; i < answers.length; i++) {
+			if (answers[i].checked) {
+				let response = answers[i].className;
+
+				if (response == "negative") {
+					pnts += 1;
+					answerCnt++;
+				} else if (response == "slightlyNegative") {
+					pnts += 2;
+					answerCnt++;
+				} else if (response == "neutral") {
+					pnts += 3;
+					answerCnt++;
+				} else if (response == "slightlyPositive") {
+					pnts += 4;
+					answerCnt++;
+				} else if (response == "positive") {
+					pnts += 5;
+					answerCnt++;
+				}
+			}
+		}
+
+		if (answerCnt != QUESTIONS) {
+			alert('You have not answered all the questions.');
+		} else {
+			let hash = pnts % 12;
+
+			if (hash == 0) {
+				localStorage.setItem('noodle', '../img/beef-noodle-soup-icon-1.png');
+			} else if (hash == 1) {
+				localStorage.setItem('noodle', '../img/bread-icon-1');
+			} else if (hash == 2) {
+				localStorage.setItem('noodle', '../img/chicken-noodle-soup-icon-1.png');
+			} else if (hash == 3) {
+				localStorage.setItem('noodle', '../img/instant-noodles-icon-1.png');
+			} else if (hash == 4) {
+				localStorage.setItem('noodle', '../img/lasagna-icon-1.png');
+			} else if (hash == 5) {
+				localStorage.setItem('noodle', '../img/mac-and-cheese-icon-1.png');
+			} else if (hash == 6) {
+				localStorage.setItem('noodle', '../img/pad-thai-1.png');
+			} else if (hash == 7) {
+				localStorage.setItem('noodle', '../img/pho-icon-1.png');
+			} else if (hash == 8) {
+				localStorage.setItem('noodle', '../img/ramen-icon-1.png');
+			} else if (hash == 9) {
+				localStorage.setItem('noodle', '../img/ravioli-icon-1.png');
+			} else if (hash == 10) {
+				localStorage.setItem('noodle', '../img/spaghetti-icon-1.png');
+			} else {
+				localStorage.setItem('noodle', '../img/udon-icon-1.png');
+			}
+
+			link.setAttribute('href','./noodlesResults.html');
+		}
+	});
+}
