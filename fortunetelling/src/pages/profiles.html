@@ -46,7 +46,7 @@
 
 			<!-- Main content -->
 			<main data-router-wrapper>
-				<article data-router-view="profiles">
+				<section data-router-view="profiles1">
 					<div id="selected-noodle">
 						<img
 							id="selected-noodle-img"
@@ -157,7 +157,7 @@
 							<p class="carousel-caption">Udon</p>
 						</div>
 					</div>
-				</article>
+				</section>
 			</main>
 
 			<!-- Footer -->
@@ -197,47 +197,49 @@
 			</header>
 
 			<!-- Main content -->
-			<main>
-				<div id="name" class="name speechify speechify-onload">
-					<h2>Beef Noodle Soup</h2>
-				</div>
-				<div id="description" class="description speechify speechify-onload">
-					<p>Description for Noodle</p>
-				</div>
-				<div id="carousel" class="carousel">
-					<img
-						id="carousel-image"
-						src="../img/beef-noodle-soup-icon-1.png"
-						alt="Noodle 1"
-					/>
-				</div>
-				<div class="controls">
-					<div>
+			<main data-router-wrapper>
+				<section data-router-view="profile2">
+					<div id="name" class="name speechify speechify-onload">
+						<h2>Beef Noodle Soup</h2>
+					</div>
+					<div id="description" class="description speechify speechify-onload">
+						<p>Description for Noodle</p>
+					</div>
+					<div id="carousel" class="carousel">
 						<img
-							id="prev-noodle"
-							src="../img/udon-icon-1.png"
-							alt="Previous Noodle"
-							onclick="prevNoodle()"
+							id="carousel-image"
+							src="../img/beef-noodle-soup-icon-1.png"
+							alt="Noodle 1"
 						/>
-						<p class="see-prev">See Previous:</p>
-						<p id="prev-noodle-name">Udon</p>
 					</div>
-					<div>
-						<a href="fortune.html">
-							<button id="fortune-button">Reveal my Fortune</button>
-						</a>
+					<div class="controls">
+						<div>
+							<img
+								id="prev-noodle"
+								src="../img/udon-icon-1.png"
+								alt="Previous Noodle"
+								onclick="prevNoodle()"
+							/>
+							<p class="see-prev">See Previous:</p>
+							<p id="prev-noodle-name">Udon</p>
+						</div>
+						<div>
+							<a href="fortune.html">
+								<button id="fortune-button">Reveal my Fortune</button>
+							</a>
+						</div>
+						<div>
+							<img
+								id="next-noodle"
+								src="../img/bread-icon-1.png"
+								alt="Next Noodle"
+								onclick="nextNoodle()"
+							/>
+							<p id="see-prev">See Next:</p>
+							<p id="next-noodle-name">Bread</p>
+						</div>
 					</div>
-					<div>
-						<img
-							id="next-noodle"
-							src="../img/bread-icon-1.png"
-							alt="Next Noodle"
-							onclick="nextNoodle()"
-						/>
-						<p id="see-prev">See Next:</p>
-						<p id="next-noodle-name">Bread</p>
-					</div>
-				</div>
+				</section>
 			</main>
 
 			<!-- Footer -->

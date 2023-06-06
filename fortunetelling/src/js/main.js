@@ -18,6 +18,14 @@ const H = new highway.Core({
 		default: transition
 	}
 });
+var getLinks = document.querySelectorAll('.navLink');
+var Links = Array.from(getLinks);
+H.on('NAVIGATE_IN', ({to, location}) => {
+	if(!(location.href.includes("index.html"))){
+		Links[0].href = "profiles.html";
+		Links[1].href = "about.html"
+	}
+});
 /** On load function */
 async function init() {
 	// --- genHoroscope DEMO

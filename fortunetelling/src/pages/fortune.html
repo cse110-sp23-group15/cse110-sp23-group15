@@ -13,7 +13,7 @@
 		<link href="../css/fortune.css" rel="stylesheet" type="text/css" />
 	</head>
 
-	<body>
+	<body data-router-wrapper>
 		<!-- Navigation bar -->
 		<header>
 			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
@@ -44,7 +44,7 @@
 
 		<!-- Main content -->
 		<main data-router-wrapper>
-			<article data-router-view="fortune">
+			<section data-router-view="fortune">
 				<div id="title" class="title">
 					<h2 class="speechify speechify-onload">Today's Fortune</h2>
 				</div>
@@ -86,7 +86,7 @@
 						<button class="noodleButton" onclick="">Bread</button>
 					</div>
 				</div>
-			</article>
+			</section>
 		</main>
 
 		<!-- Footer -->

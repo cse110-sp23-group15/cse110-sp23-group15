@@ -9,7 +9,7 @@ class transition extends highway.Transition {
 
   out({ from, trigger, done }) {
     // [...]
-    gsap.fromTo(from, 0.5, {opacity:1}, {opacity:0, onComplete:done});
+    gsap.fromTo(from, 0.5, {opacity:1}, {opacity:0, onComplete: done});
   }
 }
 
