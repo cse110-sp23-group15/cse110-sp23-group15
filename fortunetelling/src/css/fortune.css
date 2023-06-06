@@ -73,7 +73,8 @@
 .dropdown-content .noodleButton {
 	margin: auto;
 	width: 256px;
-	margin-left: 36px;
+	margin-right: 36px;
+	margin-left: -36px;
 	cursor: pointer;
 	outline: none;
 	border: none;
