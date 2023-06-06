@@ -45,117 +45,119 @@
 			</header>
 
 			<!-- Main content -->
-			<main>
-				<div id="selected-noodle">
-					<img
-						id="selected-noodle-img"
-						src="../img/beef-noodle-soup-icon-1.png"
-						alt="Selected Noodle"
-					/>
-				</div>
-				<div id="name" class="name speechify speechify-onload">
-					<h2 id="selected-noodle-name">Beef Noodle Soup</h2>
-				</div>
-				<div id="description" class="description speechify speechify-onload">
-					<p id="selected-noodle-description">Description for Noodle</p>
-				</div>
-				<div class="controls">
-					<div>
-						<a href="fortune.html">
-							<button id="fortune-button">Reveal my Fortune</button>
-						</a>
-					</div>
-				</div>
-				<div id="carousel" class="carousel">
-					<div>
+			<main data-router-wrapper>
+				<article data-router-view="profiles">
+					<div id="selected-noodle">
 						<img
+							id="selected-noodle-img"
 							src="../img/beef-noodle-soup-icon-1.png"
-							alt="Beef Noodle Soup"
-							onclick="selectNoodle(0)"
+							alt="Selected Noodle"
 						/>
-						<p class="carousel-caption">Beef Noodle Soup</p>
 					</div>
-					<div>
-						<img
-							src="../img/bread-icon-1.png"
-							alt="Bread"
-							onclick="selectNoodle(1)"
-						/>
-						<p class="carousel-caption">Bread</p>
+					<div id="name" class="name speechify speechify-onload">
+						<h2 id="selected-noodle-name">Beef Noodle Soup</h2>
 					</div>
-					<div>
-						<img
-							src="../img/chicken-noodle-soup-icon-1.png"
-							alt="Chicken Noodle Soup"
-							onclick="selectNoodle(2)"
-						/>
-						<p class="carousel-caption">Chicken Noodle Soup</p>
+					<div id="description" class="description speechify speechify-onload">
+						<p id="selected-noodle-description">Description for Noodle</p>
 					</div>
-					<div>
-						<img
-							src="../img/instant-noodles-icon-1.png"
-							alt="Instant Noodles"
-							onclick="selectNoodle(3)"
-						/>
-						<p class="carousel-caption">Instant Noodles</p>
+					<div class="controls">
+						<div>
+							<a href="fortune.html">
+								<button id="fortune-button">Reveal my Fortune</button>
+							</a>
+						</div>
 					</div>
-					<div>
-						<img
-							src="../img/lasagna-icon-1.png"
-							alt="Lasagna"
-							onclick="selectNoodle(4)"
-						/>
-						<p class="carousel-caption">Lasagna</p>
+					<div id="carousel" class="carousel">
+						<div>
+							<img
+								src="../img/beef-noodle-soup-icon-1.png"
+								alt="Beef Noodle Soup"
+								onclick="selectNoodle(0)"
+							/>
+							<p class="carousel-caption">Beef Noodle Soup</p>
+						</div>
+						<div>
+							<img
+								src="../img/bread-icon-1.png"
+								alt="Bread"
+								onclick="selectNoodle(1)"
+							/>
+							<p class="carousel-caption">Bread</p>
+						</div>
+						<div>
+							<img
+								src="../img/chicken-noodle-soup-icon-1.png"
+								alt="Chicken Noodle Soup"
+								onclick="selectNoodle(2)"
+							/>
+							<p class="carousel-caption">Chicken Noodle Soup</p>
+						</div>
+						<div>
+							<img
+								src="../img/instant-noodles-icon-1.png"
+								alt="Instant Noodles"
+								onclick="selectNoodle(3)"
+							/>
+							<p class="carousel-caption">Instant Noodles</p>
+						</div>
+						<div>
+							<img
+								src="../img/lasagna-icon-1.png"
+								alt="Lasagna"
+								onclick="selectNoodle(4)"
+							/>
+							<p class="carousel-caption">Lasagna</p>
+						</div>
+						<div>
+							<img
+								src="../img/mac-and-cheese-icon-1.png"
+								alt="Mac and Cheese"
+								onclick="selectNoodle(5)"
+							/>
+							<p class="carousel-caption">Mac and Cheese</p>
+						</div>
+						<div>
+							<img
+								src="../img/pho-icon-1.png"
+								alt="Pho"
+								onclick="selectNoodle(6)"
+							/>
+							<p class="carousel-caption">Pho</p>
+						</div>
+						<div>
+							<img
+								src="../img/ramen-icon-1.png"
+								alt="Ramen"
+								onclick="selectNoodle(7)"
+							/>
+							<p class="carousel-caption">Ramen</p>
+						</div>
+						<div>
+							<img
+								src="../img/ravioli-icon-1.png"
+								alt="Ravioli"
+								onclick="selectNoodle(8)"
+							/>
+							<p class="carousel-caption">Ravioli</p>
+						</div>
+						<div>
+							<img
+								src="../img/spaghetti-icon-1.png"
+								alt="Spaghetti"
+								onclick="selectNoodle(9)"
+							/>
+							<p class="carousel-caption">Spaghetti</p>
+						</div>
+						<div>
+							<img
+								src="../img/udon-icon-1.png"
+								alt="Udon"
+								onclick="selectNoodle(10)"
+							/>
+							<p class="carousel-caption">Udon</p>
+						</div>
 					</div>
-					<div>
-						<img
-							src="../img/mac-and-cheese-icon-1.png"
-							alt="Mac and Cheese"
-							onclick="selectNoodle(5)"
-						/>
-						<p class="carousel-caption">Mac and Cheese</p>
-					</div>
-					<div>
-						<img
-							src="../img/pho-icon-1.png"
-							alt="Pho"
-							onclick="selectNoodle(6)"
-						/>
-						<p class="carousel-caption">Pho</p>
-					</div>
-					<div>
-						<img
-							src="../img/ramen-icon-1.png"
-							alt="Ramen"
-							onclick="selectNoodle(7)"
-						/>
-						<p class="carousel-caption">Ramen</p>
-					</div>
-					<div>
-						<img
-							src="../img/ravioli-icon-1.png"
-							alt="Ravioli"
-							onclick="selectNoodle(8)"
-						/>
-						<p class="carousel-caption">Ravioli</p>
-					</div>
-					<div>
-						<img
-							src="../img/spaghetti-icon-1.png"
-							alt="Spaghetti"
-							onclick="selectNoodle(9)"
-						/>
-						<p class="carousel-caption">Spaghetti</p>
-					</div>
-					<div>
-						<img
-							src="../img/udon-icon-1.png"
-							alt="Udon"
-							onclick="selectNoodle(10)"
-						/>
-						<p class="carousel-caption">Udon</p>
-					</div>
-				</div>
+				</article>
 			</main>
 
 			<!-- Footer -->

@@ -9,9 +9,15 @@ import { accessibilitySwitch } from './accessibility.js';
 import { getHoroscope, getDescription } from './genHoroscope.js';
 import { Personality } from './personality.js';
 import { Speechify } from './speechify.js';
+import Highway from '@dogstudio/highway';
+import transition from './transition.js';
 
 window.addEventListener('DOMContentLoaded', init);
-
+const H = new Highway.Core({
+	transitions: {
+		default: transition
+	}
+});
 /** On load function */
 async function init() {
 	// --- genHoroscope DEMO

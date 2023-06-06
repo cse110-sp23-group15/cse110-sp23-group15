@@ -43,48 +43,50 @@
 		</header>
 
 		<!-- Main content -->
-		<main>
-			<div id="title" class="title">
-				<h2 class="speechify speechify-onload">Today's Fortune</h2>
-			</div>
-			<div id="subtitle" class="subtitle">
-				<p class="speechify speechify-onload">
-					The Great Noodle has spoken. And it says...
-				</p>
-			</div>
-			<div id="fortune" class="fortune">
-				<p id="fortuneText" class="speechify speechify-onload">
-					There is no such thing as something for nothing and if you do not
-					quite believe that now you will believe it by the end of the day. If
-					you lose something valuable accept it as the price you must pay to
-					learn this important lesson.
-				</p>
-			</div>
-			<div id="controls" class="controls">
-				<img id="noodle-image" src="" alt="" />
-				<br />
-				<button id="dropbtn" class="dropbtn">
-					See other noodles <i class="fa fa-caret-down"></i>
-				</button>
-				<div class="dropdown-content" id="myDropdown">
-					<button class="noodleButton" onclick="">Ravioli</button>
-					<button class="noodleButton" onclick="">Pho</button>
-					<button class="noodleButton" onclick="">Mac and Cheese</button>
-					<button class="noodleButton" onclick="">Instant Noodles</button>
-					<button class="noodleButton" onclick="">Pad Thai</button>
-					<button class="noodleButton" onclick="">Chicken Noodle Soup</button>
-					<button class="noodleButton" onclick="">Udon</button>
-					<button class="noodleButton" onclick="">Ramen</button>
-					<button class="noodleButton" onclick="">
-						Spaghetti and Meatballs
-					</button>
-					<button class="noodleButton" onclick="">Lasagna</button>
-					<button class="noodleButton" onclick="">
-						Taiwanese Beef Noodle Soup
-					</button>
-					<button class="noodleButton" onclick="">Bread</button>
+		<main data-router-wrapper>
+			<article data-router-view="fortune">
+				<div id="title" class="title">
+					<h2 class="speechify speechify-onload">Today's Fortune</h2>
 				</div>
-			</div>
+				<div id="subtitle" class="subtitle">
+					<p class="speechify speechify-onload">
+						The Great Noodle has spoken. And it says...
+					</p>
+				</div>
+				<div id="fortune" class="fortune">
+					<p id="fortuneText" class="speechify speechify-onload">
+						There is no such thing as something for nothing and if you do not
+						quite believe that now you will believe it by the end of the day. If
+						you lose something valuable accept it as the price you must pay to
+						learn this important lesson.
+					</p>
+				</div>
+				<div id="controls" class="controls">
+					<img id="noodle-image" src="" alt="" />
+					<br />
+					<button id="dropbtn" class="dropbtn">
+						See other noodles <i class="fa fa-caret-down"></i>
+					</button>
+					<div class="dropdown-content" id="myDropdown">
+						<button class="noodleButton" onclick="">Ravioli</button>
+						<button class="noodleButton" onclick="">Pho</button>
+						<button class="noodleButton" onclick="">Mac and Cheese</button>
+						<button class="noodleButton" onclick="">Instant Noodles</button>
+						<button class="noodleButton" onclick="">Pad Thai</button>
+						<button class="noodleButton" onclick="">Chicken Noodle Soup</button>
+						<button class="noodleButton" onclick="">Udon</button>
+						<button class="noodleButton" onclick="">Ramen</button>
+						<button class="noodleButton" onclick="">
+							Spaghetti and Meatballs
+						</button>
+						<button class="noodleButton" onclick="">Lasagna</button>
+						<button class="noodleButton" onclick="">
+							Taiwanese Beef Noodle Soup
+						</button>
+						<button class="noodleButton" onclick="">Bread</button>
+					</div>
+				</div>
+			</article>
 		</main>
 
 		<!-- Footer -->

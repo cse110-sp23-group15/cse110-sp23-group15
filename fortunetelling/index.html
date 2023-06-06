@@ -43,17 +43,19 @@
 		</header>
 
 		<!-- Main content -->
-		<main>
-			<img id="ramen" src="src/img/ramen-icon-1.png" />
-			<h4 id="flavorProf" class="speechify speechify-onload">
-				Unlock your flavor profile
-			</h4>
-			<p id="description" class="speechify speechify-onload">
-				Your noodle horoscope and fortune is just a few clicks away!
-			</p>
-			<a href="src/pages/questionnaire.html">
-				<button id="toQuestions">Grab me a bowl!</button>
-			</a>
+		<main data-router-wrapper>
+			<article data-router-view="name">
+				<img id="ramen" src="src/img/ramen-icon-1.png" />
+				<h4 id="flavorProf" class="speechify speechify-onload">
+					Unlock your flavor profile
+				</h4>
+				<p id="description" class="speechify speechify-onload">
+					Your noodle horoscope and fortune is just a few clicks away!
+				</p>
+				<a href="src/pages/questionnaire.html">
+					<button id="toQuestions">Grab me a bowl!</button>
+				</a>
+			</article>
 		</main>
 
 		<!-- Footer -->

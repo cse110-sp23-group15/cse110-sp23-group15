@@ -43,27 +43,29 @@
 		</header>
 
 		<!-- Main content -->
-		<main>
-			<img src="../img/ramen-icon-1.png" class="rotate" style="height: 250px" />
-			<p
-				style="color: purple; font-size: 25px"
-				class="speechify speechify-onload"
-			>
-				Congratulations, your personality type is ramen!
-			</p>
+		<main data-router-wrapper>
+			<article data-router-view="noodlesResults">
+				<img src="../img/ramen-icon-1.png" class="rotate" style="height: 250px" />
+				<p
+					style="color: purple; font-size: 25px"
+					class="speechify speechify-onload"
+				>
+					Congratulations, your personality type is ramen!
+				</p>
 
-			<div class="tryAgain">
-				<a href="./questionnaire.html">
-					<button
-						id="submit"
-						class="submit"
-						type="button"
-						style="font-size: 20px; margin: 30px; color: purple"
-					>
-						Retake Quiz
-					</button>
-				</a>
-			</div>
+				<div class="tryAgain">
+					<a href="./questionnaire.html">
+						<button
+							id="submit"
+							class="submit"
+							type="button"
+							style="font-size: 20px; margin: 30px; color: purple"
+						>
+							Retake Quiz
+						</button>
+					</a>
+				</div>
+			</article>	
 		</main>
 
 		<!-- Footer -->
