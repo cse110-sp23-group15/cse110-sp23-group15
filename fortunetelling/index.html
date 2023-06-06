@@ -10,14 +10,14 @@
 		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
 		<!-- main.css. Page-specific styles should be in index.css. -->
 		<link href="./src/css/main.css" rel="stylesheet" type="text/css" />
-		<link href="./src/css/index.css" rel="stylesheet" type="text/css" />
+		<link class = "style" href="./src/css/index.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
 		<!-- Navigation bar -->
 		<header>
-			<img id="icon" src="src/img/icon.png" />
-			<h1 id="noodleText">Tasty Noodles</h1>
+			<a class = "home" href="index.html"><img id="icon" src="src/img/icon.png" /></a>
+			<a class = "home" href="index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
 			<div class="dropdown">
 				<input id="toggle" type="checkbox" />
 				<label class="hamburger" for="toggle">
@@ -44,7 +44,7 @@
 
 		<!-- Main content -->
 		<main data-router-wrapper>
-			<section data-router-view="name">
+			<section data-router-view="index">
 				<img id="ramen" src="src/img/ramen-icon-1.png" />
 				<h4 id="flavorProf" class="speechify speechify-onload">
 					Unlock your flavor profile
@@ -55,6 +55,8 @@
 				<a href="src/pages/questionnaire.html">
 					<button id="toQuestions">Grab me a bowl!</button>
 				</a>
+				<script src="./src/js/main.js" type="module"></script>
+				<script src="./src/js/index.js"></script>
 			</section>
 		</main>
 
@@ -74,8 +76,6 @@
 		<!-- scripts are deferred, so they don't run until the page is loaded. If you -->
 		<!-- want to run your script codes before the page is loaded, then you need to -->
 		<!-- remove the type="module" attribute. -->
-		<script src="./src/js/main.js" type="module"></script>
-		<script src="./src/js/index.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@dogstudio/highway@2.2.1/build/highway.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
 	</body>

@@ -20,10 +20,32 @@ const H = new highway.Core({
 });
 var getLinks = document.querySelectorAll('.navLink');
 var Links = Array.from(getLinks);
+var stylesheet = document.getElementsByClassName("style");
+var homebutton = document.getElementsByClassName("home");
 H.on('NAVIGATE_IN', ({to, location}) => {
 	if(!(location.href.includes("index.html"))){
 		Links[0].href = "profiles.html";
-		Links[1].href = "about.html"
+		Links[1].href = "about.html";
+		homebutton[0].href = "../../index.html";
+		homebutton[1].href = "../../index.html";
+	}else{
+		Links[0].href = "src/pages/profiles.html";
+		Links[1].href = "src/pages/about.html";
+		homebutton[0].href = "index.html";
+		homebutton[1].href = "index.html";
+	}
+	if(location.href.includes("index.html")){
+		stylesheet[0].href = "./src/css/index.css";
+	} else if(location.href.includes("questionnaire.html")){
+		stylesheet[0].href = "../css/questionnaire.css";
+	} else if(location.href.includes("profiles.html")){
+		stylesheet[0].href = "../css/profiles.css";
+	} else if(location.href.includes("noodlesResults.html")){
+		stylesheet[0].href = "../css/noodlesResults.css";
+	} else if(location.href.includes("fortune.html")){
+		stylesheet[0].href = "../css/fortune.css";
+	} else if(location.href.includes("about.html")){
+		stylesheet[0].href = "../css/about.css";
 	}
 });
 /** On load function */

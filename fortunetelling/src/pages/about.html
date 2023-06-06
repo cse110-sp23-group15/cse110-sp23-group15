@@ -11,14 +11,14 @@
 		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
 		<!-- main.css. Page-specific styles should be in about.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
-		<link href="../css/about.css" rel="stylesheet" type="text/css" />
+		<link class = "style" href="../css/about.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
 		<!-- Navigation bar -->
 		<header>
-			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
-			<a href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
+			<a class = "home" href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
+			<a class = "home" href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
 			<div class="dropdown">
 				<input id="toggle" type="checkbox" />
 				<label class="hamburger" for="toggle">
@@ -94,6 +94,8 @@
 						&#8250;
 					</button>
 				</div>
+				<script src="../js/main.js" type="module"></script>
+				<script src="../js/about.js"></script>
 			</section>
 		</main>
 
@@ -113,8 +115,6 @@
 		<!-- scripts are deferred, so they don't run until the page is loaded. If you -->
 		<!-- want to run your script codes before the page is loaded, then you need to -->
 		<!-- remove the type="module" attribute. -->
-		<script src="../js/main.js" type="module"></script>
-		<script src="../js/about.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@dogstudio/highway@2.2.1/build/highway.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
 	</body>
