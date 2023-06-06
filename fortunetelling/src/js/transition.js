@@ -1,12 +1,10 @@
-import Highway from '@dogstudio/highway';
-import { gsap } from 'gsap';
-
-class transition extends Highway.Transition {
+class transition extends highway.Transition {
   // Built-in methods
   in({ from, to, trigger, done }) {
     // [...]
     from.remove();
     gsap.fromTo(to, 0.5, {opacity:0}, {opacity:1, onComplete: done});
+    console.log("transition active");
   }
 
   out({ from, trigger, done }) {

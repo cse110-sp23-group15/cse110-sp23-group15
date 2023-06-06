@@ -23,6 +23,7 @@
     "@babel/eslint-parser": "^7.21.8",
     "@babel/plugin-syntax-import-assertions": "^7.20.0",
     "@babel/preset-env": "^7.21.5",
+    "@dogstudio/highway": "^2.2.1",
     "babel-jest": "^29.5.0",
     "eslint": "^8.40.0",
     "eslint-config-google": "^0.14.0",
@@ -52,7 +53,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@dogstudio/highway": "^2.2.1",
     "expect": "^29.5.0",
     "expect-webdriverio": "^4.2.3",
     "gsap": "^3.11.5",
