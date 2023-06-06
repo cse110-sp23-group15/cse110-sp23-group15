@@ -48,3 +48,5 @@ async function addQuestions() {
  * Grades the quiz and returns the closest personality.
  */
 async function gradeQuiz() {}
+
+export default init();
