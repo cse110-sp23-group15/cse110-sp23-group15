@@ -14,8 +14,11 @@
 		<link href="./src/css/landing.css" rel="stylesheet" type="text/css" />
 		<style>
 			@media screen and (min-width: 801px) {
+				main{
+					background-image: url("src/img/landing-background.jpg");
+				}
 				body{
-					min-height:100vh;
+					max-height: 1152px;
 				}
 				.chat-box {
 					display: flex;
@@ -36,6 +39,7 @@
 				  #message-output {
 					text-align: center;
 					margin-bottom: 20px;
+					color:red;
 				  }
 				  
 				  .user-input {
@@ -90,8 +94,8 @@
 				  }
 			}
 			@media screen and (max-width: 800px){
-				body{
-					min-height:100vh;
+				main{
+					background-image: url("src/img/landing-background.jpg");
 				}
 				.chat-box {
 					display: flex;
@@ -112,6 +116,7 @@
 				  #message-output {
 					text-align: center;
 					margin-bottom: 20px;
+					color:red;
 				  }
 				  
 				  .user-input {
