@@ -46,7 +46,7 @@ async function accessibilitySwitch() {
 			speechify.reset();
 			speechify.makeReady();
 			console.log('Accessibility On!');
-
+			let time = 0;
 			if (document.URL.includes('index')) {
 				speechify.speechify(
 					'Welcome to main page of tasty noodle fortune telling site'
@@ -54,18 +54,29 @@ async function accessibilitySwitch() {
 				speechify.speechify(
 					'Press the button and answer the questions to find out what noodle are you'
 				);
+				time = 8000;
 			} else if (document.URL.includes('questionnaire.html')) {
 				speechify.speechify(
 					'Welcome to the questionnaire page. Answer the questions to find out what noodle are you'
 				);
+				time = 5000;
 			} else if (document.URL.includes('about.html')) {
 				speechify.speechify('About us, the tasty noodle team');
+				time = 2000;
 			} else if (document.URL.includes('fortune.html')) {
 				speechify.speechify('press the button below to see another noodle');
+				time = 2000;
 			} else if (document.URL.includes('profiles.html')) {
 				speechify.speechify('Here are the profiles of all the noodles');
+				time = 2000;
+			} else if (document.URL.includes('noodlesResults')) {
+				speechify.speechify('Here is your result!');
+				time = 2000;
 			}
-			accessElement(speechify);
+			setTimeout(function () {
+				accessElement(speechify);
+				readChoice(speechify);
+			}, time);
 		} else {
 			localStorage.setItem('accessibility', false);
 			speechify.terminate();
@@ -100,6 +111,19 @@ function accessElement(speechify) {
 		speechify.speechifyHighlight(readOnLoad[i]);
 	}
 }
-
+/**
+ * read the selected choice of the user on the questionaire page
+ * @param {Speechify} speechify The speechify object
+ */
+function readChoice(speechify) {
+	const choices = document.querySelectorAll('input[type=radio]');
+	const choicearray = Array.from(choices);
+	for (let i = 0; i < choicearray.length; i++) {
+		choicearray[i].addEventListener('click', (_) => {
+			speechify.reset();
+			speechify.speechify(choicearray[i].getAttribute('class'));
+		});
+	}
+}
 // export
 export { accessibilitySwitch };
