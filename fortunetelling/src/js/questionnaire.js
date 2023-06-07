@@ -6,6 +6,7 @@
 // - https://jsdoc.app/howto-es2015-classes.html
 
 import { getJSON } from './utils.js';
+import { getHoroscope, getNoodleData } from './genHoroscope.js';
 
 // upon loading, call updatenoodle, passing in the noodleIndex from local storage
 document.addEventListener('DOMContentLoaded', init);
@@ -52,6 +53,7 @@ async function addQuestions() {
  * Grades the quiz and returns the closest personality.
  */
 async function gradeQuiz() {
+	const noodleData = await getNoodleData();
 	const submitButton = document.querySelector('#submit');
 
 	submitButton.addEventListener("click", function() {
@@ -87,33 +89,8 @@ async function gradeQuiz() {
 			alert('You have not answered all the questions.');
 		} else {
 			let hash = pnts % 12;
-
-			if (hash == 0) {
-				localStorage.setItem('noodle', '../img/beef-noodle-soup-icon-1.png');
-			} else if (hash == 1) {
-				localStorage.setItem('noodle', '../img/bread-icon-1');
-			} else if (hash == 2) {
-				localStorage.setItem('noodle', '../img/chicken-noodle-soup-icon-1.png');
-			} else if (hash == 3) {
-				localStorage.setItem('noodle', '../img/instant-noodles-icon-1.png');
-			} else if (hash == 4) {
-				localStorage.setItem('noodle', '../img/lasagna-icon-1.png');
-			} else if (hash == 5) {
-				localStorage.setItem('noodle', '../img/mac-and-cheese-icon-1.png');
-			} else if (hash == 6) {
-				localStorage.setItem('noodle', '../img/pad-thai-icon-1.png');
-			} else if (hash == 7) {
-				localStorage.setItem('noodle', '../img/pho-icon-1.png');
-			} else if (hash == 8) {
-				localStorage.setItem('noodle', '../img/ramen-icon-1.png');
-			} else if (hash == 9) {
-				localStorage.setItem('noodle', '../img/ravioli-icon-1.png');
-			} else if (hash == 10) {
-				localStorage.setItem('noodle', '../img/spaghetti-icon-1.png');
-			} else {
-				localStorage.setItem('noodle', '../img/udon-icon-1.png');
-			}
-
+			localStorage.setItem('noodle', noodleData[hash]["path"]);
+			localStorage.setItem('noodleIndex', hash);
 			link.setAttribute('href','./noodlesResults.html');
 		}
 	});
