@@ -6,13 +6,16 @@
 // - https://jsdoc.app/howto-es2015-classes.html
 
 import { getJSON } from './utils.js';
+import { getHoroscope, getNoodleData } from './genHoroscope.js';
 
 // upon loading, call updatenoodle, passing in the noodleIndex from local storage
 document.addEventListener('DOMContentLoaded', init);
+const QUESTIONS = 10;
 
 /** On load function */
 async function init() {
 	await addQuestions();
+	await gradeQuiz();
 }
 
 /**
@@ -24,9 +27,10 @@ async function addQuestions() {
 
 	let curQuestion;
 
-	for (let i = 1; i < questions.length; i++) {
+	for (let i = 0; i < questions.length; i++) {
 		const newDiv = document.createElement('div');
 		const beforeButton = document.querySelector('.submitButton');
+		const footer = document.querySelector('.footer');
 
 		newDiv.innerHTML =
 			`<h2 class="speechify speechify-onload">` +
@@ -40,6 +44,7 @@ async function addQuestions() {
 		newDiv.setAttribute('id', `div${i}`);
 		newDiv.setAttribute('class', 'Question');
 		mainRef.appendChild(newDiv);
+		newDiv.after(footer);
 		newDiv.after(beforeButton);
 	}
 }
@@ -47,6 +52,46 @@ async function addQuestions() {
 /**
  * Grades the quiz and returns the closest personality.
  */
-async function gradeQuiz() {}
+async function gradeQuiz() {
+	const noodleData = await getNoodleData();
+	const submitButton = document.querySelector('#submit');
 
-export default init();
+	submitButton.addEventListener('click', function () {
+		const link = document.querySelector('#next');
+		const answers = document.getElementsByName('qRadio');
+		let answerCnt = 0;
+		let pnts = 0;
+
+		for (let i = 0; i < answers.length; i++) {
+			if (answers[i].checked) {
+				const response = answers[i].className;
+
+				if (response == 'negative') {
+					pnts += 1;
+					answerCnt++;
+				} else if (response == 'slightlyNegative') {
+					pnts += 2;
+					answerCnt++;
+				} else if (response == 'neutral') {
+					pnts += 3;
+					answerCnt++;
+				} else if (response == 'slightlyPositive') {
+					pnts += 4;
+					answerCnt++;
+				} else if (response == 'positive') {
+					pnts += 5;
+					answerCnt++;
+				}
+			}
+		}
+
+		if (answerCnt != QUESTIONS) {
+			alert('You have not answered all the questions.');
+		} else {
+			const hash = pnts % 12;
+			localStorage.setItem('noodle', noodleData[hash]['path']);
+			localStorage.setItem('noodleIndex', hash);
+			link.setAttribute('href', './noodlesResults.html');
+		}
+	});
+}

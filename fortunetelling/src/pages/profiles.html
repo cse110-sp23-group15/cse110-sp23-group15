@@ -10,7 +10,7 @@
 		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
 		<!-- main.css. Page-specific styles should be in profiles.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
-		<link class = "style" href="../css/profiles.css" rel="stylesheet" type="text/css" />
+		<link href="../css/profiles.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
@@ -18,20 +18,13 @@
 		<div id="singlePageContent" style="display: block">
 			<!-- Navigation bar -->
 			<header>
-				<a class = "home" href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
-				<a class = "home" href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
-				<div class="dropdown">
-					<input id="toggle" type="checkbox" />
-					<label class="hamburger" for="toggle">
-						<div class="top"></div>
-						<div class="middle"></div>
-						<div class="bottom"></div>
-					</label>
+				<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
+				<a href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
 
-					<nav class="dropdownContent">
-						<a class="navLink" href="profiles.html">Noodle Profiles</a>
-						<a class="navLink" href="about.html">About Us</a>
-					</nav>
+				<!-- Navigation buttons -->
+				<div class="navButtons">
+					<a>Noodle Profiles</a>
+					<a href="about.html">About Us</a>
 				</div>
 
 				<!-- Accessibility button -->
@@ -45,121 +38,132 @@
 			</header>
 
 			<!-- Main content -->
-			<main data-router-wrapper>
-				<section data-router-view="profiles1">
-					<div id="selected-noodle">
+			<main>
+				<!-- Dropdown Button -->
+				<div class="dropdown">
+					<input id="toggle" type="checkbox" />
+					<label class="hamburger" for="toggle">
+						<div class="top"></div>
+						<div class="middle"></div>
+						<div class="bottom"></div>
+					</label>
+
+					<nav class="dropdownContent">
+						<a class="navLink" href="profiles.html">Noodle Profiles</a>
+						<a class="navLink" href="about.html">About Us</a>
+					</nav>
+				</div>
+				<div id="selected-noodle">
+					<img
+						id="selected-noodle-img"
+						src="../img/beef-noodle-soup-icon-1.png"
+						alt="Selected Noodle"
+					/>
+				</div>
+
+				<div id="name" class="name speechify speechify-onload">
+					<h2 id="selected-noodle-name">Beef Noodle Soup</h2>
+				</div>
+				<div id="description" class="description speechify speechify-onload">
+					<p id="selected-noodle-description">Description for Noodle</p>
+				</div>
+				<div class="controls">
+					<div>
+						<a href="fortune.html">
+							<button id="fortune-button">Reveal my Fortune</button>
+						</a>
+					</div>
+				</div>
+				<div id="carousel" class="carousel">
+					<div>
 						<img
-							id="selected-noodle-img"
 							src="../img/beef-noodle-soup-icon-1.png"
-							alt="Selected Noodle"
+							alt="Beef Noodle Soup"
+							onclick="selectNoodle(0)"
 						/>
+						<p class="carousel-caption">Beef Noodle Soup</p>
 					</div>
-					<div id="name" class="name speechify speechify-onload">
-						<h2 id="selected-noodle-name">Beef Noodle Soup</h2>
+					<div>
+						<img
+							src="../img/bread-icon-1.png"
+							alt="Bread"
+							onclick="selectNoodle(1)"
+						/>
+						<p class="carousel-caption">Bread</p>
 					</div>
-					<div id="description" class="description speechify speechify-onload">
-						<p id="selected-noodle-description">Description for Noodle</p>
+					<div>
+						<img
+							src="../img/chicken-noodle-soup-icon-1.png"
+							alt="Chicken Noodle Soup"
+							onclick="selectNoodle(2)"
+						/>
+						<p class="carousel-caption">Chicken Noodle Soup</p>
 					</div>
-					<div class="controls">
-						<div>
-							<a href="fortune.html">
-								<button id="fortune-button">Reveal my Fortune</button>
-							</a>
-						</div>
+					<div>
+						<img
+							src="../img/instant-noodles-icon-1.png"
+							alt="Instant Noodles"
+							onclick="selectNoodle(3)"
+						/>
+						<p class="carousel-caption">Instant Noodles</p>
 					</div>
-					<div id="carousel" class="carousel">
-						<div>
-							<img
-								src="../img/beef-noodle-soup-icon-1.png"
-								alt="Beef Noodle Soup"
-								onclick="selectNoodle(0)"
-							/>
-							<p class="carousel-caption">Beef Noodle Soup</p>
-						</div>
-						<div>
-							<img
-								src="../img/bread-icon-1.png"
-								alt="Bread"
-								onclick="selectNoodle(1)"
-							/>
-							<p class="carousel-caption">Bread</p>
-						</div>
-						<div>
-							<img
-								src="../img/chicken-noodle-soup-icon-1.png"
-								alt="Chicken Noodle Soup"
-								onclick="selectNoodle(2)"
-							/>
-							<p class="carousel-caption">Chicken Noodle Soup</p>
-						</div>
-						<div>
-							<img
-								src="../img/instant-noodles-icon-1.png"
-								alt="Instant Noodles"
-								onclick="selectNoodle(3)"
-							/>
-							<p class="carousel-caption">Instant Noodles</p>
-						</div>
-						<div>
-							<img
-								src="../img/lasagna-icon-1.png"
-								alt="Lasagna"
-								onclick="selectNoodle(4)"
-							/>
-							<p class="carousel-caption">Lasagna</p>
-						</div>
-						<div>
-							<img
-								src="../img/mac-and-cheese-icon-1.png"
-								alt="Mac and Cheese"
-								onclick="selectNoodle(5)"
-							/>
-							<p class="carousel-caption">Mac and Cheese</p>
-						</div>
-						<div>
-							<img
-								src="../img/pho-icon-1.png"
-								alt="Pho"
-								onclick="selectNoodle(6)"
-							/>
-							<p class="carousel-caption">Pho</p>
-						</div>
-						<div>
-							<img
-								src="../img/ramen-icon-1.png"
-								alt="Ramen"
-								onclick="selectNoodle(7)"
-							/>
-							<p class="carousel-caption">Ramen</p>
-						</div>
-						<div>
-							<img
-								src="../img/ravioli-icon-1.png"
-								alt="Ravioli"
-								onclick="selectNoodle(8)"
-							/>
-							<p class="carousel-caption">Ravioli</p>
-						</div>
-						<div>
-							<img
-								src="../img/spaghetti-icon-1.png"
-								alt="Spaghetti"
-								onclick="selectNoodle(9)"
-							/>
-							<p class="carousel-caption">Spaghetti</p>
-						</div>
-						<div>
-							<img
-								src="../img/udon-icon-1.png"
-								alt="Udon"
-								onclick="selectNoodle(10)"
-							/>
-							<p class="carousel-caption">Udon</p>
-						</div>
+					<div>
+						<img
+							src="../img/lasagna-icon-1.png"
+							alt="Lasagna"
+							onclick="selectNoodle(4)"
+						/>
+						<p class="carousel-caption">Lasagna</p>
 					</div>
-					<script src="../js/main.js" type="module"></script>
-					<script src="../js/profiles.js"></script>
-				</section>
+					<div>
+						<img
+							src="../img/mac-and-cheese-icon-1.png"
+							alt="Mac and Cheese"
+							onclick="selectNoodle(5)"
+						/>
+						<p class="carousel-caption">Mac and Cheese</p>
+					</div>
+					<div>
+						<img
+							src="../img/pho-icon-1.png"
+							alt="Pho"
+							onclick="selectNoodle(6)"
+						/>
+						<p class="carousel-caption">Pho</p>
+					</div>
+					<div>
+						<img
+							src="../img/ramen-icon-1.png"
+							alt="Ramen"
+							onclick="selectNoodle(7)"
+						/>
+						<p class="carousel-caption">Ramen</p>
+					</div>
+					<div>
+						<img
+							src="../img/ravioli-icon-1.png"
+							alt="Ravioli"
+							onclick="selectNoodle(8)"
+						/>
+						<p class="carousel-caption">Ravioli</p>
+					</div>
+					<div>
+						<img
+							src="../img/spaghetti-icon-1.png"
+							alt="Spaghetti"
+							onclick="selectNoodle(9)"
+						/>
+						<p class="carousel-caption">Spaghetti</p>
+					</div>
+					<div>
+						<img
+							src="../img/udon-icon-1.png"
+							alt="Udon"
+							onclick="selectNoodle(10)"
+						/>
+						<p class="carousel-caption">Udon</p>
+					</div>
+				</div>
 			</main>
 
 			<!-- Footer -->
@@ -199,49 +203,47 @@
 			</header>
 
 			<!-- Main content -->
-			<main data-router-wrapper>
-				<section data-router-view="profile2">
-					<div id="name" class="name speechify speechify-onload">
-						<h2>Beef Noodle Soup</h2>
-					</div>
-					<div id="description" class="description speechify speechify-onload">
-						<p>Description for Noodle</p>
-					</div>
-					<div id="carousel" class="carousel">
+			<main>
+				<div id="name" class="name speechify speechify-onload">
+					<h2>Beef Noodle Soup</h2>
+				</div>
+				<div id="description" class="description speechify speechify-onload">
+					<p>Description for Noodle</p>
+				</div>
+				<div id="carousel" class="carousel">
+					<img
+						id="carousel-image"
+						src="../img/beef-noodle-soup-icon-1.png"
+						alt="Noodle 1"
+					/>
+				</div>
+				<div class="controls">
+					<div>
 						<img
-							id="carousel-image"
-							src="../img/beef-noodle-soup-icon-1.png"
-							alt="Noodle 1"
+							id="prev-noodle"
+							src="../img/udon-icon-1.png"
+							alt="Previous Noodle"
+							onclick="prevNoodle()"
 						/>
+						<p class="see-prev">See Previous:</p>
+						<p id="prev-noodle-name">Udon</p>
 					</div>
-					<div class="controls">
-						<div>
-							<img
-								id="prev-noodle"
-								src="../img/udon-icon-1.png"
-								alt="Previous Noodle"
-								onclick="prevNoodle()"
-							/>
-							<p class="see-prev">See Previous:</p>
-							<p id="prev-noodle-name">Udon</p>
-						</div>
-						<div>
-							<a href="fortune.html">
-								<button id="fortune-button">Reveal my Fortune</button>
-							</a>
-						</div>
-						<div>
-							<img
-								id="next-noodle"
-								src="../img/bread-icon-1.png"
-								alt="Next Noodle"
-								onclick="nextNoodle()"
-							/>
-							<p id="see-prev">See Next:</p>
-							<p id="next-noodle-name">Bread</p>
-						</div>
+					<div>
+						<a href="fortune.html">
+							<button id="fortune-button">Reveal my Fortune</button>
+						</a>
 					</div>
-				</section>
+					<div>
+						<img
+							id="next-noodle"
+							src="../img/bread-icon-1.png"
+							alt="Next Noodle"
+							onclick="nextNoodle()"
+						/>
+						<p id="see-prev">See Next:</p>
+						<p id="next-noodle-name">Bread</p>
+					</div>
+				</div>
 			</main>
 
 			<!-- Footer -->
@@ -262,8 +264,6 @@
 		<!-- want to run your script codes before the page is loaded, then you need to -->
 		<!-- remove the type="module" attribute. -->
 		<script src="../js/main.js" type="module"></script>
-		<script class = "script" src="../js/profiles.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@dogstudio/highway@2.2.1/build/highway.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
+		<script src="../js/profiles.js"></script>
 	</body>
 </html>

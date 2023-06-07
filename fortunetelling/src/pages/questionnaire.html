@@ -10,14 +10,34 @@
 		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
 		<!-- main.css. Page-specific styles should be in questionnaire.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
-		<link class = "style" href="../css/questionnaire.css" rel="stylesheet" type="text/css" />
+		<link href="../css/questionnaire.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
 		<!-- Navigation bar -->
 		<header>
-			<a class = "home" href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
-			<a class = "home" href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
+			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
+			<a href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
+
+			<!-- Navigation buttons -->
+			<div class="navButtons">
+				<a href="profiles.html">Noodle Profiles</a>
+				<a href="about.html">About Us</a>
+			</div>
+
+			<!-- Accessibility button -->
+			<div class="accessibility-container">
+				<h3 class="accessibility-header">Accessibility</h3>
+				<label class="switch">
+					<input name="accessibility" type="checkbox" />
+					<span class="slider round"></span>
+				</label>
+			</div>
+		</header>
+
+		<!-- Main content -->
+		<main>
+			<!-- Dropdown Button -->
 			<div class="dropdown">
 				<input id="toggle" type="checkbox" />
 				<label class="hamburger" for="toggle">
@@ -32,39 +52,23 @@
 				</nav>
 			</div>
 
-			<!-- Accessibility button -->
-			<div class="accessibility-container">
-				<h3 class="accessibility-header">Accessibility</h3>
-				<label class="switch">
-					<input name="accessibility" type="checkbox" />
-					<span class="slider round"></span>
-				</label>
+			<div>
+				<h1 style="font-weight: bold; padding: 25px">Questionnaire</h1>
 			</div>
-		</header>
 
-		<!-- Main content -->
-		<main data-router-wrapper>
-			<section data-router-view="questionnaire">
-				<div class="firstQuestion">
-					<h2 class="speechify speechify-onload">When is your birthday?</h2>
-					<form id="birthday">
-						<input type="date" />
-					</form>
-				</div>
-				<!--Questions go here.-->
-				<div class="submitButton">
-					<a href="./noodlesResults.html">
-						<button
-							id="submit"
-							class="submit"
-							type="button"
-							style="font-size: 30px; margin: 30px; color: purple"
-						>
-							Submit
-						</button>
-					</a>
-				</div>
-			</section>
+			<!--Questions go here.-->
+			<div class="submitButton">
+				<a id="next">
+					<button
+						id="submit"
+						class="submit"
+						type="button"
+						style="font-size: 30px; margin: 30px; color: purple"
+					>
+						Submit
+					</button>
+				</a>
+			</div>
 		</main>
 
 		<!-- Footer -->
@@ -84,8 +88,7 @@
 		<!-- want to run your script codes before the page is loaded, then you need to -->
 		<!-- remove the type="module" attribute. -->
 		<script src="../js/main.js" type="module"></script>
-		<script class = "script" src="../js/questionnaire.js" type="module"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@dogstudio/highway@2.2.1/build/highway.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
+		<script src="../js/questionnaire.js" type="module"></script>
 	</body>
 </html>
+/html>
