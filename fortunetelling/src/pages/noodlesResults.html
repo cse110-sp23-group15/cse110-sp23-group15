@@ -37,39 +37,24 @@
 
 		<!-- Main content -->
 		<main>
-			<!-- Dropdown Button -->
-			<div class="dropdown">
-				<input id="toggle" type="checkbox" />
-				<label class="hamburger" for="toggle">
-					<div class="top"></div>
-					<div class="middle"></div>
-					<div class="bottom"></div>
-				</label>
-
-				<nav class="dropdownContent">
-					<a class="navLink" href="profiles.html">Noodle Profiles</a>
-					<a class="navLink" href="about.html">About Us</a>
-				</nav>
-			</div>
-
-			<img src="../img/ramen-icon-1.png" class="rotate" style="height: 250px" />
-			<p
-				style="color: purple; font-size: 25px"
-				class="speechify speechify-onload"
-			>
-				Congratulations, your personality type is ramen!
+            <img src="../img/ramen-icon-1.png" id="noodleImg" class="rotate" style="height:250px; margin: 50px"/>
+            <p style="color: purple; font-size:25px; font-weight: bold;" id="quizResult">
+                Congratulations, your personality type is ramen!
+            </p>
+			<p id="noodleDescription">
+				Trust me, this is the result you wanted.
 			</p>
 
-			<div class="tryAgain">
-				<a href="./questionnaire.html">
-					<button
-						id="submit"
-						class="submit"
-						type="button"
-						style="font-size: 20px; margin: 30px; color: purple"
-					>
-						Retake Quiz
-					</button>
+            <div class="tryAgain">
+				<a href="./profiles.html">
+				<button id="submit" class="submit" type="button" style="font-size: 20px; margin: 30px;">
+					Noodle Profiles
+				</button>
+				</a>
+			</div>
+			<div class="controls">
+				<a href="fortune.html">
+					<button id="fortune-button" class="fortune-button" type="button" style="font-size: 20px; margin: 30px;">Reveal my Fortune</button>
 				</a>
 			</div>
 		</main>
@@ -79,16 +64,7 @@
 			<p>© Tasty Noodles</p>
 		</footer>
 
-		<!-- NOTE: main.js is a module that runs after the page is loaded. Also main.js -->
-		<!-- applies to all pages. Page specific scripts should be in index.js which runs -->
-		<!-- before the page is loaded. -->
-
-		<!-- NOTE: If you need to import from another script, e.g. utils.js, then you -->
-		<!-- need the script tag to have the type="module" attribute. However, module -->
-		<!-- scripts are deferred, so they don't run until the page is loaded. If you -->
-		<!-- want to run your script codes before the page is loaded, then you need to -->
-		<!-- remove the type="module" attribute. -->
 		<script src="../js/main.js" type="module"></script>
-		<script src="../js/noodlesResults.js" type="module"></script>
+		<script src="../js/noodlesResult.js" type="module"></script>
 	</body>
 </html>
