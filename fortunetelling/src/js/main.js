@@ -9,8 +9,7 @@ import { accessibilitySwitch } from './accessibility.js';
 import { getHoroscope, getDescription } from './genHoroscope.js';
 import { Personality } from './personality.js';
 import { Speechify } from './speechify.js';
-import  transition  from './transition.js';
-import init from './noodlesResults.js'
+import transition from './transition.js';
 
 window.addEventListener('DOMContentLoaded', init);
 const H = new highway.Core({
@@ -18,42 +17,41 @@ const H = new highway.Core({
 		default: transition
 	}
 });
-var getLinks = document.querySelectorAll('.navLink');
-var Links = Array.from(getLinks);
-var stylesheet = document.getElementsByClassName("style");
-var homebutton = document.getElementsByClassName("home");
-var script = document.getElementsByClassName("script");
-H.on('NAVIGATE_IN', ({to, location}) => {
-	if(!(location.href.includes("index.html"))){
-		Links[0].href = "profiles.html";
-		Links[1].href = "about.html";
-		homebutton[0].href = "../../index.html";
-		homebutton[1].href = "../../index.html";
-	}else{
-		Links[0].href = "src/pages/profiles.html";
-		Links[1].href = "src/pages/about.html";
-		homebutton[0].href = "index.html";
-		homebutton[1].href = "index.html";
+const getLinks = document.querySelectorAll('.navLink');
+const Links = Array.from(getLinks);
+const stylesheet = document.getElementsByClassName('style');
+const homebutton = document.getElementsByClassName('home');
+const script = document.getElementsByClassName('script');
+H.on('NAVIGATE_IN', ({ to, location }) => {
+	if (!location.href.includes('index.html')) {
+		Links[0].href = 'profiles.html';
+		Links[1].href = 'about.html';
+		homebutton[0].href = '../../index.html';
+		homebutton[1].href = '../../index.html';
+	} else {
+		Links[0].href = 'src/pages/profiles.html';
+		Links[1].href = 'src/pages/about.html';
+		homebutton[0].href = 'index.html';
+		homebutton[1].href = 'index.html';
 	}
-	if(location.href.includes("index.html")){
-		stylesheet[0].href = "./src/css/index.css";
-		script[0].src = "./src/js/index.js";
-	} else if(location.href.includes("questionnaire.html")){
-		stylesheet[0].href = "../css/questionnaire.css";
-		script[0].src = "../js/questionnaire.js";
-		init();
-	} else if(location.href.includes("profiles.html")){
-		stylesheet[0].href = "../css/profiles.css";
-		script[0].src = "../js/profiles.js";
-	} else if(location.href.includes("noodlesResults.html")){
-		stylesheet[0].href = "../css/noodlesResults.css";
-		script[0].src = "../js/noodlesResults.js";
-	} else if(location.href.includes("fortune.html")){
-		stylesheet[0].href = "../css/fortune.css";
-		script[0].src = "../js/fortune.js";
-	} else if(location.href.includes("about.html")){
-		stylesheet[0].href = "../css/about.css";
-		script[0].src = "../js/about.js";
+	if (location.href.includes('index.html')) {
+		stylesheet[0].href = './src/css/index.css';
+		script[0].src = './src/js/index.js';
+	} else if (location.href.includes('questionnaire.html')) {
+		stylesheet[0].href = '../css/questionnaire.css';
+		script[0].src = '../js/questionnaire.js';
+	} else if (location.href.includes('profiles.html')) {
+		stylesheet[0].href = '../css/profiles.css';
+		script[0].src = '../js/profiles.js';
+	} else if (location.href.includes('noodlesResults.html')) {
+		stylesheet[0].href = '../css/noodlesResults.css';
+		script[0].src = '../js/noodlesResults.js';
+	} else if (location.href.includes('fortune.html')) {
+		stylesheet[0].href = '../css/fortune.css';
+		script[0].src = '../js/fortune.js';
+	} else if (location.href.includes('about.html')) {
+		stylesheet[0].href = '../css/about.css';
+		script[0].src = '../js/about.js';
 	}
 });
 /** On load function */
