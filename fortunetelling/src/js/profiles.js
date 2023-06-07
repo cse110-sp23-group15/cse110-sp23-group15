@@ -5,93 +5,42 @@
 // - https://jsdoc.app/howto-es2015-modules.html
 // - https://jsdoc.app/howto-es2015-classes.html
 
+import { getJSON } from './utils.js';
+
 let noodleIndex = 0;
 localStorage.setItem('noodleIndex', noodleIndex);
-const noodles = [
-	{
-		name: 'Beef Noodle Soup',
-		image: '../img/beef-noodle-soup-icon-1.png',
-		description: 'Description for Beef Noodle Soup'
-	},
-	{
-		name: 'Bread',
-		image: '../img/bread-icon-1.png',
-		description: 'Description for Noodle 2'
-	},
-	{
-		name: 'Chicken Noodle Soup',
-		image: '../img/chicken-noodle-soup-icon-1.png',
-		description: 'Description for Noodle 3'
-	},
-	{
-		name: 'Instant Noodles',
-		image: '../img/instant-noodles-icon-1.png',
-		description: 'Description for Noodle 3'
-	},
-	{
-		name: 'Lasagna',
-		image: '../img/lasagna-icon-1.png',
-		description: 'Description for Noodle 3'
-	},
-	{
-		name: 'Mac and Cheese',
-		image: '../img/mac-and-cheese-icon-1.png',
-		description: 'Description for Noodle 3'
-	},
-	{
-		name: 'Pho',
-		image: '../img/pho-icon-1.png',
-		description: 'Description for Noodle 3'
-	},
-	{
-		name: 'Ramen',
-		image: '../img/ramen-icon-1.png',
-		description: 'Description for Noodle 3'
-	},
-	{
-		name: 'Ravioli',
-		image: '../img/ravioli-icon-1.png',
-		description: 'Description for Noodle 3'
-	},
-	{
-		name: 'Spaghetti',
-		image: '../img/spaghetti-icon-1.png',
-		description: 'Description for Noodle 3'
-	},
-	{
-		name: 'Udon',
-		image: '../img/udon-icon-1.png',
-		description: 'Description for Noodle 3'
-	}
-];
 
 /** Single page update content function */
-function singlePageUpdateNoodle() {
-	document.getElementById('name').innerText = noodles[noodleIndex].name;
+async function singlePageUpdateNoodle() {
+	const noodles = await getJSON('./database/noodleDescriptions.json');
+
+	document.getElementById('name').innerText = noodles[noodleIndex].noodleName;
 	document.getElementById('description').innerText =
-		noodles[noodleIndex].description;
+		noodles[noodleIndex].personalityDescription;
 	document.getElementById('selected-noodle-img').src =
-		noodles[noodleIndex].image;
+		noodles[noodleIndex].path;
 	const carouselImages = document.getElementById('carousel').children;
 	for (let i = 0; i < carouselImages.length; i++) {
-		carouselImages[i].src = noodles[i].image;
+		carouselImages[i].src = noodles[i].path;
 	}
 }
 
 /** Double page update content function */
-function doublePageUpdateNoodle() {
-	document.getElementById('carousel-image').src = noodles[noodleIndex].image;
-	document.getElementById('name').innerText = noodles[noodleIndex].name;
+async function doublePageUpdateNoodle() {
+	const noodles = await getJSON('./database/noodleDescriptions.json');
+
+	document.getElementById('carousel-image').src = noodles[noodleIndex].path;
+	document.getElementById('name').innerText = noodles[noodleIndex].noodleName;
 	document.getElementById('description').innerText =
-		noodles[noodleIndex].description;
+		noodles[noodleIndex].personalityDescription;
 	document.getElementById('prev-noodle').src =
-		noodles[(noodleIndex - 1 + noodles.length) % noodles.length].image;
+		noodles[(noodleIndex - 1 + noodles.length) % noodles.length].path;
 	document.getElementById('next-noodle').src =
-		noodles[(noodleIndex + 1) % noodles.length].image;
+		noodles[(noodleIndex + 1) % noodles.length].path;
 	document.getElementById('prev-noodle-name').innerText =
-		noodles[(noodleIndex - 1 + noodles.length) % noodles.length].name;
+		noodles[(noodleIndex - 1 + noodles.length) % noodles.length].noodleName;
 	document.getElementById('next-noodle-name').innerText =
-		noodles[(noodleIndex + 1) % noodles.length].name;
+		noodles[(noodleIndex + 1) % noodles.length].noodleName;
 }
 
 /**
@@ -104,13 +53,17 @@ function selectNoodle(index) {
 }
 
 /** Function to select next carousel content in double page */
-function nextNoodle() {
+async function nextNoodle() {
+	const noodles = await getJSON('./database/noodleDescriptions.json');
+
 	noodleIndex = (noodleIndex + 1) % noodles.length;
 	doublePageUpdateNoodle();
 }
 
 /** Function to select previous carousel content in double page */
-function prevNoodle() {
+async function prevNoodle() {
+	const noodles = await getJSON('./database/noodleDescriptions.json');
+
 	noodleIndex = (noodleIndex - 1 + noodles.length) % noodles.length;
 	doublePageUpdateNoodle();
 }
