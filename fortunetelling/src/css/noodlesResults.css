@@ -15,49 +15,25 @@ main {
     font-size: 24px;
 }
 
-.controls {
-    margin-top: -40px;
+#quizResult {
+    font-size: 36px;
+    font-weight: bold;
+    color: #da0b0b;
+}
+
+main button {
+	width: 192px;
+	height: 52px;
 	cursor: pointer;
 	outline: none;
 	border: none;
 	font-family: 'Montserrat';
 	font-size: 18px;
 	border-radius: 8px;
-}
-
-.dropdown-content {
-	margin: auto;
-	width: 184px;
-	border: none;
-	display: none;
-	float: center;
-    padding-right: 30%;
-}
-
-.dropdown-content .noodleButton {
-	margin: auto;
-	width: 256px;
-	margin-left: 36px;
-	cursor: pointer;
-	outline: none;
-	border: none;
-	font-family: 'Montserrat';
-	font-size: 18px;
-	/* border-radius: 2px; */
-	background-color: #f9f9f9;
-	float: none;
-	color: black;
-	/* padding: 12px 16px; */
-	text-decoration: none;
-	display: block;
-	padding-top: 0%;
-	border-style: solid;
-	border-width: 1px;
-	border-color: black;
-}
-
-.show {
-	display: block;
+	background-color: #da0b0b;
+	color: white;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 @media screen and (max-width: 600px) {
