@@ -11,6 +11,34 @@ main {
     padding-right: 25%;
 }
 
+#submit {
+	width: 192px;
+	height: 52px;
+	margin-bottom: 10vh;
+	margin-top: 10vh;
+
+	border: none;
+	font-family: 'Montserrat';
+	font-size: 20px;
+	border-radius: 8px;
+	background-color: #da0b0b;
+	color: white;
+}
+
+#fortune-button {
+	width: 192px;
+	height: 52px;
+	margin-bottom: 10vh;
+	margin-top: 10vh;
+
+	border: none;
+	font-family: 'Montserrat';
+	font-size: 18px;
+	border-radius: 8px;
+	background-color: #da0b0b;
+	color: white;
+}
+
 #noodleDescription {
     font-size: 24px;
 }
