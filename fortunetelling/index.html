@@ -13,78 +13,159 @@
 		<link href="./src/css/index.css" rel="stylesheet" type="text/css" />
 		<link href="./src/css/landing.css" rel="stylesheet" type="text/css" />
 		<style>
-			.chat-box {
-				position: relative;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				height: 100vh;
-				font-family: cursive;
-			  }
-			  
-			  .noodles-container {
-				position: absolute;
-				top: 10%;
-				left: 10%;
-				transform: translate(-50%, -50%);
-			  }
-			  
-			  #message-output {
-				text-align: center;
-				margin-bottom: 20px;
-			  }
-			  
-			  .user-input {
-				display: flex;
-			  }
-			  
-			  #user-input-button {
-				padding: 10px 20px;
-				background-color: #da0b0b;
-				color: white;
-				border: none;
-				cursor: pointer;
-				font-family: cursive;
-				transition: background-color 0.3s ease;
-			  }
-			  
-			  #user-input-button:hover {
-				background-color: #da0b0b77;
-			  }
-			  
-			  .noodles-container.fly-to-center {
-				animation: 1s fly-to-center linear;
-				animation-fill-mode: forwards;
-			  }
-			  
-			  @keyframes fly-to-center {
-				0% {
-				  transform: translate(0, 0);
+			@media screen and (min-width: 801px) {
+				body{
+					min-height:100vh;
 				}
-				100% {
-				  transform: translate(calc(50% + 70px), calc(50% + 70px));
+				.chat-box {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					height: 100vh;
+					font-family: cursive;
+				  }
+				  
+				  .noodles-container {
+					position: relative;
+					top: -30%;
+					left: -30%;
+	
+				  }
+				  
+				  #message-output {
+					text-align: center;
+					margin-bottom: 20px;
+				  }
+				  
+				  .user-input {
+					display: flex;
+				  }
+				  
+				  #user-input-button {
+					padding: 10px 20px;
+					background-color: #da0b0b;
+					color: white;
+					border: none;
+					cursor: pointer;
+					font-family: cursive;
+					transition: background-color 0.3s ease;
+				  }
+				  
+				  #user-input-button:hover {
+					background-color: #da0b0b77;
+				  }
+				  
+				  .noodles-container.fly-to-center {
+					animation: 1s fly-to-center linear;
+					animation-fill-mode: forwards;
+				  }
+				  
+				  @keyframes fly-to-center {
+					0% {
+					  transform: translate(0, 0);
+					}
+					100% {
+					  transform: translate(50vh, 20vh);
+					}
+				  }
+				  @keyframes fly-out {
+					0% {
+					  opacity: 1;
+					  transform: translate(0, 0) rotate(0);
+					}
+					100% {
+					  opacity: 0;
+					  transform: translate(100px, 100px) rotate(-360deg);
+					}
+				  }
+				  
+				  .flying-noodle {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 50px; /* Adjust the image width as needed */
+					height: auto;
+				  }
+			}
+			@media screen and (max-width: 800px){
+				body{
+					min-height:100vh;
 				}
-			  }
-			  @keyframes fly-out {
-				0% {
-				  opacity: 1;
-				  transform: translate(0, 0) rotate(0);
-				}
-				100% {
-				  opacity: 0;
-				  transform: translate(100px, 100px) rotate(-360deg);
-				}
-			  }
-			  
-			  .flying-noodle {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				width: 50px; /* Adjust the image width as needed */
-				height: auto;
-			  }
+				.chat-box {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					height: 100vh;
+					font-family: cursive;
+				  }
+				  
+				  .noodles-container {
+					position: relative;
+					top: -30%;
+					left: -30%;
+	
+				  }
+				  
+				  #message-output {
+					text-align: center;
+					margin-bottom: 20px;
+				  }
+				  
+				  .user-input {
+					display: flex;
+				  }
+				  
+				  #user-input-button {
+					padding: 10px 20px;
+					background-color: #da0b0b;
+					color: white;
+					border: none;
+					cursor: pointer;
+					font-family: cursive;
+					transition: background-color 0.3s ease;
+				  }
+				  
+				  #user-input-button:hover {
+					background-color: #da0b0b77;
+				  }
+				  
+				  .noodles-container.fly-to-center {
+					animation: 1s fly-to-center linear;
+					animation-fill-mode: forwards;
+				  }
+				  
+				  @keyframes fly-to-center {
+					0% {
+					  transform: translate(0, 0);
+					}
+					100% {
+					  transform: translate(150px, 150px);
+					}
+				  }
+				  @keyframes fly-out {
+					0% {
+					  opacity: 1;
+					  transform: translate(0, 0) rotate(0);
+					}
+					100% {
+					  opacity: 0;
+					  transform: translate(100px, 100px) rotate(-360deg);
+					}
+				  }
+				  
+				  .flying-noodle {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 50px; /* Adjust the image width as needed */
+					height: auto;
+				  }
+			}
+			
 			  
 
 			  

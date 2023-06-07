@@ -37,7 +37,7 @@ function nextStep2() {
 
   // Remove existing event listener
   userInputButton.removeEventListener('click', nextStep2);
-
+  userInputButton.addEventListener('click', nextStep3);
   // Animate the noodles
   const noodles = [
     {
