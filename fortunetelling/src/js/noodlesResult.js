@@ -2,6 +2,11 @@ window.addEventListener('DOMContentLoaded', init);
 
 import { getHoroscope, getNoodleData } from './genHoroscope.js';
 
+
+/**
+ * On load function,
+ * use localStorage to get the quiz result and display the corresponding noodle
+ */
 async function init() {
     const image = document.getElementById("noodleImg");
     let noodle = localStorage.getItem('noodle');
