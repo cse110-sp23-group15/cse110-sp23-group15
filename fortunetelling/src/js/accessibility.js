@@ -78,6 +78,13 @@ async function accessibilitySwitch() {
 				readChoice(speechify);
 			}, time);
 		} else {
+			const readEnabled = document.getElementsByClassName('speechify');
+			for (let i = 0; i < readEnabled.length; i++) {
+				readEnabled[i].parentNode.replaceChild(
+					readEnabled[i].cloneNode(true),
+					readEnabled[i]
+				);
+			}
 			localStorage.setItem('accessibility', false);
 			speechify.terminate();
 			console.log('Accessibility Off!');
@@ -103,12 +110,6 @@ function accessElement(speechify) {
 			speechify.reset();
 			speechify.speechifyHighlight(readEnabled[i]);
 		});
-	}
-
-	// Read all elements containig class 'speechify-init' on page load
-	const readOnLoad = document.getElementsByClassName('speechify-onload');
-	for (let i = 0; i < readOnLoad.length; i++) {
-		speechify.speechifyHighlight(readOnLoad[i]);
 	}
 }
 /**
