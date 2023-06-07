@@ -72,13 +72,15 @@
 
 .dropdown-content .noodleButton {
 	margin: auto;
-	width: 184px;
+	width: 256px;
+	margin-right: 36px;
+	margin-left: -36px;
 	cursor: pointer;
 	outline: none;
 	border: none;
 	font-family: 'Montserrat';
 	font-size: 18px;
-	border-radius: 2px;
+	/* border-radius: 2px; */
 	background-color: #f9f9f9;
 	float: none;
 	color: black;
@@ -86,6 +88,9 @@
 	text-decoration: none;
 	display: block;
 	padding-top: 0%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
 }
 
 .show {
@@ -107,9 +112,14 @@
 		min-width: 80%;
 		font-size: 24px;
 	}
+
+	.dropdown-content .noodleButton {
+		width: 184px;
+		margin-left: 0%;
+	}
 }
 
-@media screen and (min-width: 701px) and (max-width: 1000px) {
+@media screen and (min-width: 601px) and (max-width: 1000px) {
 	#fortune {
 		padding-right: 20%;
 		padding-left: 20%;

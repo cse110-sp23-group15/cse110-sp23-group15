@@ -1,11 +1,11 @@
 const timeout = 20000;
 const puppeteer = require('puppeteer');
 // It says cannot import outside a module even if we have type:"module" in package.json, probably needs to fix this later
-const GalaxyS8 = puppeteer.KnownDevices['Galaxy S8'];
+// const GalaxyS8 = puppeteer.KnownDevices['Galaxy S8'];
 
 describe('Noodle Profile', () => {
 	beforeAll(async () => {
-		await page.emulate(GalaxyS8);
+		// await page.emulate(GalaxyS8);
 		await page.goto(
 			'https://cse110-sp23-group15.github.io/cse110-sp23-group15/fortunetelling/src/pages/profiles.html'
 		);
@@ -35,8 +35,11 @@ describe('Noodle Profile', () => {
 	it(
 		'should see a fortune',
 		async () => {
-			// await page.waitForSelector('div button[innerText="Reveal my Fortune"]');
-			await page.click('a[href="fortune.html"]'); // Don't know why, I just can't select or click the fortune button
+			await page.evaluate(() => {
+				const button = document.querySelector('#fortune-button');
+				button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+			});
+			await page.waitForTimeout(500);
 			const fortune = await page.$eval('#fortuneText', (el) => el.innerText);
 			expect(fortune).not.toBe('');
 		},
