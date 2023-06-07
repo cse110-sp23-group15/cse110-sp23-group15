@@ -16,10 +16,9 @@ body {
 main {
 	flex-grow: 1;
 	font-family: 'Montserrat';
-
 	text-align: center;
+	opacity: 0;
 }
-
 #icon {
 	width: 61px;
 	height: 55px;
