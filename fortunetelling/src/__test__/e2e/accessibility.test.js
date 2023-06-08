@@ -1,4 +1,4 @@
-// Having problem with clicking the accessibility button
+// Having problem with clicking the accessibility button, I have tried literally all combinations
 
 const timeout = 20000;
 
