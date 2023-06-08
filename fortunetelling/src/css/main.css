@@ -81,6 +81,8 @@ header button:hover {
 	.hamburger {
 		height: 45px;
 		margin: 10px;
+		width: 100%;
+
 		display: grid;
 		grid-template-rows: repeat(3, 1fr);
 		justify-items: center;

@@ -6,7 +6,6 @@
 // - https://jsdoc.app/howto-es2015-classes.html
 
 let noodleIndex = 0;
-localStorage.setItem('noodleIndex', noodleIndex);
 const noodles = [
 	{
 		name: 'Beef Noodle Soup',
