@@ -40,11 +40,11 @@
 	/* animation: pulse 2s infinite; */
 }
 
-#toQuestions:hover, #fortune-button:hover {
+#toQuestions:hover, #fortuneButton:hover {
 	background-color: #bb1212;
 }
 
-#fortune-button {
+#fortuneButton {
 	width: 192px;
 	height: 52px;
 	cursor: pointer;
@@ -55,6 +55,9 @@
 	border-radius: 8px;
 	background-color: #da0b0b;
 	color: white;
+
+	box-shadow: 0 0 0 0 #bb1212;
+	transform: scale(1);
 }
 
 
