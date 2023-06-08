@@ -14,6 +14,10 @@
 	</head>
 
 	<body>
+		<audio autoplay="autoplay" loop>
+			<source src="../sounds/bg-music.wav" type="audio/mpeg" />
+		</audio>
+
 		<!-- Single page view -->
 		<div id="singlePageContent" style="display: block">
 			<!-- Navigation bar -->
@@ -39,7 +43,7 @@
 
 			<!-- Main content -->
 			<main>
-			<!-- Dropdown Button -->
+				<!-- Dropdown Button -->
 				<div class="dropdown">
 					<input id="toggle" type="checkbox" />
 					<label class="hamburger" for="toggle">
@@ -47,7 +51,7 @@
 						<div class="middle"></div>
 						<div class="bottom"></div>
 					</label>
-	
+
 					<nav class="dropdownContent">
 						<a class="navLink" href="profiles.html">Noodle Profiles</a>
 						<a class="navLink" href="about.html">About Us</a>
@@ -265,5 +269,6 @@
 		<!-- remove the type="module" attribute. -->
 		<script src="../js/main.js" type="module"></script>
 		<script src="../js/profiles.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
 	</body>
 </html>

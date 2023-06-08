@@ -14,6 +14,10 @@
 	</head>
 
 	<body>
+		<audio autoplay="autoplay">
+			<source src="../sounds/congratulations.wav" type="audio/mpeg" />
+		</audio>
+
 		<!-- Navigation bar -->
 		<header>
 			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
@@ -37,19 +41,24 @@
 
 		<!-- Main content -->
 		<main>
-            <img src="../img/ramen-icon-1.png" id="noodleImg" class="rotate" style="height:250px; margin: 50px"/>
-            <p  id="quizResult">
-                Congratulations, your personality type is ramen!
-            </p>
-			<p id="noodleDescription">
+			<img
+				src="../img/ramen-icon-1.png"
+				id="noodleImg"
+				class="rotate"
+				style="height: 250px; margin: 50px"
+			/>
+			<p id="quizResult" class="speechify speechify-onload">
+				Congratulations, your personality type is ramen!
+			</p>
+			<p id="noodleDescription" class="speechify speechify-onload">
 				Trust me, this is the result you wanted.
 			</p>
 
-            <div class="tryAgain">
+			<div class="tryAgain">
 				<a href="./profiles.html">
-				<button id="submit" class="submit" type="button">
-					Noodle Profiles
-				</button>
+					<button id="submit" class="submit" type="button">
+						Noodle Profiles
+					</button>
 				</a>
 			</div>
 			<div class="controls">
@@ -66,5 +75,6 @@
 
 		<script src="../js/main.js" type="module"></script>
 		<script src="../js/noodlesResult.js" type="module"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
 	</body>
 </html>

@@ -14,6 +14,10 @@
 	</head>
 
 	<body>
+		<audio autoplay="autoplay" loop>
+			<source src="../sounds/bg-music.wav" type="audio/mpeg" />
+		</audio>
+
 		<!-- Navigation bar -->
 		<header>
 			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
@@ -55,16 +59,18 @@
 			<div>
 				<h1 style="font-weight: bold; padding: 25px">Questionnaire</h1>
 			</div>
-			
+
 			<!--Questions go here.-->
 			<div class="submitButton">
 				<a id="next">
-				<button
-				id="submit"
-				class="submit"
-				type="button"
-				style="font-size: 30px; margin: 30px; color: purple"
-				>Submit</button>
+					<button
+						id="submit"
+						class="submit"
+						type="button"
+						style="font-size: 30px; margin: 30px; color: white"
+					>
+						Submit
+					</button>
 				</a>
 			</div>
 		</main>
@@ -87,5 +93,6 @@
 		<!-- remove the type="module" attribute. -->
 		<script src="../js/main.js" type="module"></script>
 		<script src="../js/questionnaire.js" type="module"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
 	</body>
 </html>

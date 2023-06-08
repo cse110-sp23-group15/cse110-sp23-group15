@@ -9,9 +9,9 @@ import { accessibilitySwitch } from './accessibility.js';
 import { getHoroscope, getDescription } from './genHoroscope.js';
 import { Personality } from './personality.js';
 import { Speechify } from './speechify.js';
+import { transition } from './transition.js';
 
 window.addEventListener('DOMContentLoaded', init);
-
 /** On load function */
 async function init() {
 	// --- genHoroscope DEMO
@@ -50,4 +50,5 @@ async function init() {
 
 	// Activate accessibility switch
 	accessibilitySwitch();
+	transition();
 }
