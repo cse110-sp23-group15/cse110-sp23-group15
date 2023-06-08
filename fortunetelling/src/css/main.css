@@ -87,7 +87,7 @@ header button:hover {
 		z-index: 120;
 		margin-top: 0px;
 	}
-	
+
 	.hamburger div {
 		background-color: #eae1cd;
 		position: relative;
@@ -97,24 +97,24 @@ header button:hover {
 		-webkit-transition: all 0.2s ease-in-out;
 		transition: all 0.2s ease-in-out;
 	}
-	
+
 	#toggle:checked + .hamburger .top {
 		-webkit-transform: rotate(-45deg);
 		transform: rotate(-45deg);
 		margin-top: 22.5px;
 	}
-	
+
 	#toggle:checked + .hamburger .middle {
 		-webkit-transform: rotate(45deg);
 		transform: rotate(45deg);
 		margin-top: -5px;
 	}
-	
+
 	#toggle:checked + .hamburger .bottom {
 		-webkit-transform: scale(0);
 		transform: scale(0);
 	}
-	
+
 	#toggle:checked ~ .dropdownContent {
 		overflow: visible;
 		height: auto;
@@ -143,7 +143,7 @@ header button:hover {
 		font-size: 15px;
 		font-family: 'Montserrat';
 		padding: 15px;
-	
+
 		display: flex;
 		text-decoration: none;
 		border: none;
@@ -152,8 +152,6 @@ header button:hover {
 		text-align: center;
 	}
 }
-
-
 
 .footer {
 	width: 100%;
@@ -248,9 +246,9 @@ input:checked + .slider:before {
 
 @keyframes rotation {
 	from {
-	  transform: rotate(0deg);
+		transform: rotate(0deg);
 	}
 	to {
-	  transform: rotate(359deg);
+		transform: rotate(359deg);
 	}
-  }
+}
