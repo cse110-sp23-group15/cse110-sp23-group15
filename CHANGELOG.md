@@ -4,6 +4,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.2.0] - 2023-06-08
+### :boom: BREAKING CHANGES
+- due to [`c074342`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/c0743423735bcc785c6e4d737b49f47728eeb036) - Codebase restructure and some bug fixes. Update code docs *(commit by [@marklcrns](https://github.com/marklcrns))*:
+
+  Codebase restructure and some bug fixes. Update code docs
+
+
+### :sparkles: New Features
+- [`a5e3f8b`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/a5e3f8b574edecae5ddc80b648a3976c7b286bbd) - **frontend**: Add bg music for all pages *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :bug: Bug Fixes
+- [`4179ce6`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/4179ce6c8266e102f1e44eb3bdf1c3c575fd9d19) - **frontend**: Add Descriptions in About Us *(commit by [@hollyzhu573](https://github.com/hollyzhu573))*
+- [`fa716c5`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/fa716c52075d70891194b40781b2e50f015b9b36) - **frontend**: Member Name styling *(commit by [@hollyzhu573](https://github.com/hollyzhu573))*
+- [`da446cf`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/da446cf6f638dce9814305ebae243f518d46a832) - fix format *(commit by [@YueSteveYin](https://github.com/YueSteveYin))*
+- [`4f690f9`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/4f690f9835202182a03ffdc2ad7a9809bbb127e2) - formatting issue *(commit by [@YueSteveYin](https://github.com/YueSteveYin))*
+- [`1667d49`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/1667d49aef79ef37bb218e35a48b121f7302cd9a) - **frontend**: Finish adding images for members *(commit by [@hollyzhu573](https://github.com/hollyzhu573))*
+- [`fe23f0c`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/fe23f0c16de87b196739c2b6daf12127de3f3223) - **frontend**: Aspect ratio of uploaded photos *(commit by [@hollyzhu573](https://github.com/hollyzhu573))*
+
+### :zap: Performance Improvements
+- [`e5eb8ab`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/e5eb8abfd3faa228c3f50fe313772320a777cc4d) - better accessibility coverage *(commit by [@YueSteveYin](https://github.com/YueSteveYin))*
+- [`f781a8b`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/f781a8b73a95bb9431f2b5a22e3542db542ee2e3) - accessibility better experience *(commit by [@YueSteveYin](https://github.com/YueSteveYin))*
+
+### :recycle: Refactors
+- [`c074342`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/c0743423735bcc785c6e4d737b49f47728eeb036) - Codebase restructure and some bug fixes. Update code docs *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :white_check_mark: Tests
+- [`ff8af48`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/ff8af489463b087cbd972a53d58ac9e0dd0cafde) - create fortune.test.js *(commit by [@Henri-XYu02](https://github.com/Henri-XYu02))*
+- [`163d60c`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/163d60c44bf2dc0cccb189bb1574c1fa1ceacedf) - add test for fortune and accessibility *(commit by [@Henri-XYu02](https://github.com/Henri-XYu02))*
+- [`96c3e41`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/96c3e4199aba91a246d7d6baa870f9dba2ed6284) - Testing new background music for landing page *(commit by [@marklcrns](https://github.com/marklcrns))*
+- [`7888139`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/7888139c735fd7e066fe73ccdde8e3cffef0053f) - update tests for questionnaire *(commit by [@Henri-XYu02](https://github.com/Henri-XYu02))*
+
+### :wrench: Chores
+- [`727c23d`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/727c23dc2c1dc1a3feb037485e13a6676d316139) - Remove weired root package-lock.json *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
 ## [v1.1.1] - 2023-06-01
 ### :sparkles: New Features
 - [`ae7672b`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/ae7672b9a12deb074c9959c7c93dbae0b476ebd3) - **backend**: Add mouseover and click event for text-to-speech *(commit by [@marklcrns](https://github.com/marklcrns))*
@@ -83,3 +118,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.0.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v0.0.3...v1.0.0
 [v1.1.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.0.0...v1.1.0
 [v1.1.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.1.0...v1.1.1
+[v1.2.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.1.1...v1.2.0
