@@ -11,6 +11,172 @@
 		<!-- main.css. Page-specific styles should be in index.css. -->
 		<link href="./src/css/main.css" rel="stylesheet" type="text/css" />
 		<link href="./src/css/index.css" rel="stylesheet" type="text/css" />
+		<link href="./src/css/landing.css" rel="stylesheet" type="text/css" />
+		<style>
+			@media screen and (min-width: 801px) {
+				main{
+					background-image: url("src/img/landing-background.jpg");
+				}
+				body{
+					max-height: 1152px;
+				}
+				.chat-box {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					height: 100vh;
+					font-family: cursive;
+				  }
+				  
+				  .noodles-container {
+					position: relative;
+					top: -20%;
+					left: -30%;
+	
+				  }
+				  
+				  #message-output {
+					text-align: center;
+					margin-bottom: 20px;
+					color:black;
+				  }
+				  
+				  .user-input {
+					display: flex;
+				  }
+				  
+				  #user-input-button {
+					padding: 10px 20px;
+					background-color: #da0b0b;
+					color: white;
+					border: none;
+					cursor: pointer;
+					font-family: cursive;
+					transition: background-color 0.3s ease;
+				  }
+				  
+				  #user-input-button:hover {
+					background-color: #da0b0b77;
+				  }
+				  
+				  .noodles-container.fly-to-center {
+					animation: 1s fly-to-center linear;
+					animation-fill-mode: forwards;
+				  }
+				  
+				  @keyframes fly-to-center {
+					0% {
+					  transform: translate(0, 0);
+					}
+					100% {
+					  transform: translate(40vh, 10vh);
+					}
+				  }
+				  @keyframes fly-out {
+					0% {
+					  opacity: 1;
+					  transform: translate(0, 0) rotate(0);
+					}
+					100% {
+					  opacity: 0;
+					  transform: translate(100px, 100px) rotate(-360deg);
+					}
+				  }
+				  
+				  .flying-noodle {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 50px; /* Adjust the image width as needed */
+					height: auto;
+				  }
+			}
+			@media screen and (max-width: 800px){
+				main{
+					background-image: url("src/img/landing-background.jpg");
+				}
+				.chat-box {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					height: 100vh;
+					font-family: cursive;
+				  }
+				  
+				  .noodles-container {
+					position: relative;
+					top: -20%;
+					left: -30%;
+	
+				  }
+				  
+				  #message-output {
+					text-align: center;
+					margin-bottom: 20px;
+					color:black;
+				  }
+				  
+				  .user-input {
+					display: flex;
+				  }
+				  
+				  #user-input-button {
+					padding: 10px 20px;
+					background-color: #da0b0b;
+					color: white;
+					border: none;
+					cursor: pointer;
+					font-family: cursive;
+					transition: background-color 0.3s ease;
+				  }
+				  
+				  #user-input-button:hover {
+					background-color: #da0b0b77;
+				  }
+				  
+				  .noodles-container.fly-to-center {
+					animation: 1s fly-to-center linear;
+					animation-fill-mode: forwards;
+				  }
+				  
+				  @keyframes fly-to-center {
+					0% {
+					  transform: translate(0, 0);
+					}
+					100% {
+					  transform: translate(100px, 100px);
+					}
+				  }
+				  @keyframes fly-out {
+					0% {
+					  opacity: 1;
+					  transform: translate(0, 0) rotate(0);
+					}
+					100% {
+					  opacity: 0;
+					  transform: translate(100px, 100px) rotate(-360deg);
+					}
+				  }
+				  
+				  .flying-noodle {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 50px; /* Adjust the image width as needed */
+					height: auto;
+				  }
+			}
+			
+			  
+
+			  
+			  
+		</style>
+		<script src="./src/js/talk.js"></script>
 	</head>
 
 	<body>
@@ -41,6 +207,34 @@
 
 		<!-- Main content -->
 		<main>
+
+			  <div class="chat-box">
+				<div class="noodles-container">
+					<div class="noodles">
+						<div class="cap right"></div>
+						<div class="cap back"></div>
+						<div class="side right"></div>
+						<div class="side back"></div>
+						<div class="noodle noodles-1"></div>
+						<div class="noodle noodles-2"></div>
+						<div class="noodle noodles-3"></div>
+						<div class="side left"></div>
+						<div class="side front">
+								<div class="eyes-container">
+							<div class="eyes"></div>
+						</div>
+							<div class="mouth"></div>
+						</div>
+						<div class="cap left"></div>
+						<div class="cap front"></div>
+					</div>
+				</div>
+				<h1 id="message-output">Welcome to the Noodle Shop!</h1>
+				<div class="user-input">
+				  <button id="user-input-button">Start Conversation</button>
+				</div>
+			  </div>
+
 			<!-- Dropdown Button -->
 			<div class="dropdown">
 				<input id="toggle" type="checkbox" />
