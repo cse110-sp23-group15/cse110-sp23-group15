@@ -8,7 +8,67 @@
 import { getJSON } from './utils.js';
 
 let noodleIndex = 0;
+<<<<<<< HEAD
 localStorage.setItem('noodleIndex', noodleIndex);
+=======
+const noodles = [
+	{
+		name: 'Beef Noodle Soup',
+		image: '../img/beef-noodle-soup-icon-1.png',
+		description: 'Description for Beef Noodle Soup'
+	},
+	{
+		name: 'Bread',
+		image: '../img/bread-icon-1.png',
+		description: 'Description for Noodle 2'
+	},
+	{
+		name: 'Chicken Noodle Soup',
+		image: '../img/chicken-noodle-soup-icon-1.png',
+		description: 'Description for Noodle 3'
+	},
+	{
+		name: 'Instant Noodles',
+		image: '../img/instant-noodles-icon-1.png',
+		description: 'Description for Noodle 3'
+	},
+	{
+		name: 'Lasagna',
+		image: '../img/lasagna-icon-1.png',
+		description: 'Description for Noodle 3'
+	},
+	{
+		name: 'Mac and Cheese',
+		image: '../img/mac-and-cheese-icon-1.png',
+		description: 'Description for Noodle 3'
+	},
+	{
+		name: 'Pho',
+		image: '../img/pho-icon-1.png',
+		description: 'Description for Noodle 3'
+	},
+	{
+		name: 'Ramen',
+		image: '../img/ramen-icon-1.png',
+		description: 'Description for Noodle 3'
+	},
+	{
+		name: 'Ravioli',
+		image: '../img/ravioli-icon-1.png',
+		description: 'Description for Noodle 3'
+	},
+	{
+		name: 'Spaghetti',
+		image: '../img/spaghetti-icon-1.png',
+		description: 'Description for Noodle 3'
+	},
+	{
+		name: 'Udon',
+		image: '../img/udon-icon-1.png',
+		description: 'Description for Noodle 3'
+	}
+];
+>>>>>>> 5ed9a3d046cc24411462464787fa1a504ef32919
 
 /** Single page update content function */
 async function singlePageUpdateNoodle() {
