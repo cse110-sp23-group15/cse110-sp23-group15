@@ -256,7 +256,7 @@
 	}
 	
 	.side.front {
-		transform: translateZ(9vw) rotateX(-5deg);
+		transform: translateZ(6vw) rotateX(-5deg);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -301,7 +301,7 @@
 	
 	.eyes-container {
 		position: absolute;
-		top: 15vw;
+		top: 20vw;
 		left: 6.8vw;
 		width: 11vw;
 		height: 2vw;
