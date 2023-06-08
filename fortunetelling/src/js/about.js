@@ -11,55 +11,64 @@ const members = [
 		name: 'Mark Lucernas',
 		memberImage: '../img/mark-icon.jpeg',
 		memberNoodle: '../img/ramen-icon-1.png',
-		description: 'Description for Mark Lucernas'
+		description:
+			'Mark is a third year studying computer science and is one of the team leads for our team.'
 	},
 	{
 		name: 'Hieu Pham',
 		memberImage: '../img/hieu-icon.jpeg',
 		memberNoodle: '../img/ravioli-icon-1.png',
-		description: 'Description for Hieu Pham'
+		description:
+			'Hieu is another one of our team leads and is currently a second year studying computer science.'
 	},
 	{
 		name: 'Xinle Yu',
 		memberImage: '../img/henry-icon.jpg',
 		memberNoodle: '../img/beef-noodle-soup-icon-1.png',
-		description: 'Description for Xinle Yu'
+		description:
+			'Xinle (Henry) is a sophomore majoring in computer science, and he is a developer on the team.'
 	},
 	{
 		name: 'Aaron Kann',
-		memberImage: '',
+		memberImage: '../img/aaron-icon.jpg',
 		memberNoodle: '../img/mac-and-cheese-icon-1.png',
-		description: 'Description for Aaron Kann'
+		description:
+			"Aaron's role on the team is a developer, and he is a second year studying math and computer science."
 	},
 	{
 		name: 'Steve Yin',
-		memberImage: '',
+		memberImage: '../img/steve-icon.jpg',
 		memberNoodle: '../img/udon-icon-1.png',
-		description: 'Description for Steve Yin'
+		description:
+			'Steve is a developer on our team, and he is currently a second year majoring in computer engineering.'
 	},
 	{
 		name: 'Darren Yu',
 		memberImage: '../img/darren-icon.jpg',
 		memberNoodle: '../img/instant-noodles-icon-1.png',
-		description: 'Description for Darren Yu'
+		description:
+			'Darren is a second year computer science major, and he is the planner as well as developer for the team.'
 	},
 	{
 		name: 'Holly Zhu',
 		memberImage: '../img/holly-icon.png',
 		memberNoodle: '../img/spaghetti-icon-1.png',
-		description: 'Description for Holly Zhu'
+		description:
+			'Holly is a computer science major with a design minor, and she is the designer and a developer on our team.'
 	},
 	{
 		name: 'Anthony Yao',
-		memberImage: '',
+		memberImage: '../img/anthony-icon.jpg',
 		memberNoodle: '../img/pho-icon-1.png',
-		description: 'Description for Anthony Yao'
+		description:
+			"Anthony's role on the team is a developer, and he is currently a sophomore majoring in computer science."
 	},
 	{
 		name: 'Hanson Wang',
-		memberImage: '',
+		memberImage: '../img/hanson-icon.png',
 		memberNoodle: '../img/pad-thai-icon-1.png',
-		description: 'Description for Hanson Wang'
+		description:
+			'Hanson is a math and computer science in his second year, and serves as a developer on the team.'
 	}
 ];
 

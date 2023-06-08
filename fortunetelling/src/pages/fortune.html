@@ -14,10 +14,34 @@
 	</head>
 
 	<body>
+		<audio autoplay="autoplay" loop>
+			<source src="../sounds/bg-music.wav" type="audio/mpeg" />
+		</audio>
+
 		<!-- Navigation bar -->
 		<header>
 			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
 			<a href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
+
+			<!-- Navigation buttons -->
+			<div class="navButtons">
+				<a href="profiles.html">Noodle Profiles</a>
+				<a href="about.html">About Us</a>
+			</div>
+
+			<!-- Accessibility button -->
+			<div class="accessibility-container">
+				<h3 class="accessibility-header">Read Aloud</h3>
+				<label class="switch">
+					<input name="accessibility" type="checkbox" />
+					<span class="slider round"></span>
+				</label>
+			</div>
+		</header>
+
+		<!-- Main content -->
+		<main>
+			<!-- Dropdown Button -->
 			<div class="dropdown">
 				<input id="toggle" type="checkbox" />
 				<label class="hamburger" for="toggle">
@@ -31,19 +55,6 @@
 					<a class="navLink" href="about.html">About Us</a>
 				</nav>
 			</div>
-
-			<!-- Accessibility button -->
-			<div class="accessibility-container">
-				<h3 class="accessibility-header">Accessibility</h3>
-				<label class="switch">
-					<input name="accessibility" type="checkbox" />
-					<span class="slider round"></span>
-				</label>
-			</div>
-		</header>
-
-		<!-- Main content -->
-		<main>
 			<div id="title" class="title">
 				<h2 class="speechify speechify-onload">Today's Fortune</h2>
 			</div>
@@ -105,5 +116,6 @@
 		<!-- remove the type="module" attribute. -->
 		<script src="../js/main.js" type="module"></script>
 		<script src="../js/fortune.js" type="module"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
 	</body>
 </html>

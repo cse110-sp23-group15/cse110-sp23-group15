@@ -6,7 +6,6 @@
 // - https://jsdoc.app/howto-es2015-classes.html
 
 let noodleIndex = 0;
-localStorage.setItem('noodleIndex', noodleIndex);
 const noodles = [
 	{
 		name: 'Beef Noodle Soup',
@@ -67,7 +66,6 @@ const noodles = [
 
 /** Single page update content function */
 function singlePageUpdateNoodle() {
-	localStorage.setItem('noodleIndex', noodleIndex);
 	document.getElementById('name').innerText = noodles[noodleIndex].name;
 	document.getElementById('description').innerText =
 		noodles[noodleIndex].description;
@@ -81,7 +79,6 @@ function singlePageUpdateNoodle() {
 
 /** Double page update content function */
 function doublePageUpdateNoodle() {
-	localStorage.setItem('noodleIndex', noodleIndex);
 	document.getElementById('carousel-image').src = noodles[noodleIndex].image;
 	document.getElementById('name').innerText = noodles[noodleIndex].name;
 	document.getElementById('description').innerText =

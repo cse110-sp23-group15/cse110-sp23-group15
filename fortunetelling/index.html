@@ -180,27 +180,24 @@
 	</head>
 
 	<body>
+		<audio autoplay="autoplay" loop>
+			<source src="./src/sounds/bg-music.wav" type="audio/mpeg" />
+		</audio>
+
 		<!-- Navigation bar -->
 		<header>
 			<img id="icon" src="src/img/icon.png" />
 			<h1 id="noodleText">Tasty Noodles</h1>
-			<div class="dropdown">
-				<input id="toggle" type="checkbox" />
-				<label class="hamburger" for="toggle">
-					<div class="top"></div>
-					<div class="middle"></div>
-					<div class="bottom"></div>
-				</label>
 
-				<nav class="dropdownContent">
-					<a class="navLink" href="src/pages/profiles.html">Noodle Profiles</a>
-					<a class="navLink" href="src/pages/about.html">About Us</a>
-				</nav>
+			<!-- Navigation buttons -->
+			<div class="navButtons">
+				<a href="src/pages/profiles.html">Noodle Profiles</a>
+				<a href="src/pages/about.html">About Us</a>
 			</div>
 
 			<!-- Accessibility button -->
 			<div class="accessibility-container">
-				<h3 class="accessibility-header">Accessibility</h3>
+				<h3 class="accessibility-header">Read Aloud</h3>
 				<label class="switch">
 					<input name="accessibility" type="checkbox" />
 					<span class="slider round"></span>
@@ -237,7 +234,36 @@
 				  <button id="user-input-button">Start Conversation</button>
 				</div>
 			  </div>
-			  
+
+			<!-- Dropdown Button -->
+			<div class="dropdown">
+				<input id="toggle" type="checkbox" />
+				<label class="hamburger" for="toggle">
+					<div class="top"></div>
+					<div class="middle"></div>
+					<div class="bottom"></div>
+				</label>
+
+				<nav class="dropdownContent">
+					<a class="navLink" href="src/pages/profiles.html">Noodle Profiles</a>
+					<a class="navLink" href="src/pages/about.html">About Us</a>
+				</nav>
+			</div>
+
+			<img id="ramen" src="src/img/ramen-icon-1.png" />
+			<h4 id="flavorProf" class="speechify speechify-onload">
+				Unlock your flavor profile
+			</h4>
+			<p id="description" class="speechify speechify-onload">
+				Your noodle horoscope and fortune is just a few clicks away!
+			</p>
+			<a href="src/pages/questionnaire.html">
+				<button id="toQuestions">Grab me a bowl!</button>
+			</a>
+			<br>
+			<a href="src/pages/fortune.html" id="fortuneLink">
+				<button id="fortune-button" type="button">Reveal my Fortune</button>
+			</a>
 		</main>
 
 		<!-- Footer -->
@@ -258,5 +284,6 @@
 		<!-- remove the type="module" attribute. -->
 		<script src="./src/js/main.js" type="module"></script>
 		<script src="./src/js/index.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
 	</body>
 </html>

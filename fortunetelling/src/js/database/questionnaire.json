@@ -1,102 +1,42 @@
 [
 	{
 		"id": 0,
-		"description": "When is your birthday?"
-	},
-	{
-		"id": 1,
-		"description": "I enjoy eating fish and sushi is one of my favorite dishes."
-	},
-	{
-		"id": 2,
 		"description": "The main course is my favorite part of a three-course meal."
 	},
 	{
-		"id": 3,
-		"description": "Dessert is my favorite part of a three-course meal."
-	},
-	{
-		"id": 4,
+		"id": 1,
 		"description": "I like preparing/cooking my own meals."
 	},
 	{
-		"id": 5,
-		"description": "I like going out to eat."
-	},
-	{
-		"id": 6,
+		"id": 2,
 		"description": "Yellow is one of my favorite colors."
 	},
 	{
-		"id": 7,
+		"id": 3,
 		"description": "I enjoy drinking caffeinated beverages."
 	},
 	{
-		"id": 8,
-		"description": "I like drinking alcoholic beverages."
-	},
-	{
-		"id": 9,
+		"id": 4,
 		"description": "I like staying indoors and relaxing at home."
 	},
 	{
-		"id": 10,
-		"description": "Water is my preferred drink of choice."
-	},
-	{
-		"id": 11,
+		"id": 5,
 		"description": "I play video games on a regular basis."
 	},
 	{
-		"id": 12,
-		"description": "I usually take night showers over day showers."
-	},
-	{
-		"id": 13,
+		"id": 6,
 		"description": "I don't mind overspending on new experiences."
 	},
 	{
-		"id": 14,
-		"description": "I've thrown up after consuming alcohol before."
-	},
-	{
-		"id": 15,
+		"id": 7,
 		"description": "I enjoy eating fruits and/or vegetables."
 	},
 	{
-		"id": 16,
-		"description": "I watch my sugar intake every day."
+		"id": 8,
+		"description": "When making a bowl of cereal, I pour milk first, then cereal."
 	},
 	{
-		"id": 17,
-		"description": "Japan is one of my favorite countries."
-	},
-	{
-		"id": 18,
-		"description": "I enjoy watching anime."
-	},
-	{
-		"id": 19,
-		"description": "I exercise regularly, whether jogging, weight lifting, or playing sports."
-	},
-	{
-		"id": 20,
-		"description": "I believe pineapples belong on pizza."
-	},
-	{
-		"id": 21,
-		"description": "When making a bowl of cereal, pour milk first, then cereal."
-	},
-	{
-		"id": 22,
-		"description": "I would rather have a cat as a pet than a dog."
-	},
-	{
-		"id": 23,
-		"description": "I go clubbing or attend frat parties at least once a month."
-	},
-	{
-		"id": 24,
-		"description": "Grades are very important to me, and consider “B’s” bad."
+		"id": 9,
+		"description": "Grades are very important to me, and consider “B's” bad."
 	}
 ]

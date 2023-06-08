@@ -14,10 +14,34 @@
 	</head>
 
 	<body>
+		<audio autoplay="autoplay" loop>
+			<source src="../sounds/bg-music.wav" type="audio/mpeg" />
+		</audio>
+
 		<!-- Navigation bar -->
 		<header>
 			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
 			<a href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
+
+			<!-- Navigation buttons -->
+			<div class="navButtons">
+				<a href="profiles.html">Noodle Profiles</a>
+				<a href="about.html">About Us</a>
+			</div>
+
+			<!-- Accessibility button -->
+			<div class="accessibility-container">
+				<h3 class="accessibility-header">Read Aloud</h3>
+				<label class="switch">
+					<input name="accessibility" type="checkbox" />
+					<span class="slider round"></span>
+				</label>
+			</div>
+		</header>
+
+		<!-- Main content -->
+		<main>
+			<!-- Dropdown Button -->
 			<div class="dropdown">
 				<input id="toggle" type="checkbox" />
 				<label class="hamburger" for="toggle">
@@ -32,32 +56,18 @@
 				</nav>
 			</div>
 
-			<!-- Accessibility button -->
-			<div class="accessibility-container">
-				<h3 class="accessibility-header">Accessibility</h3>
-				<label class="switch">
-					<input name="accessibility" type="checkbox" />
-					<span class="slider round"></span>
-				</label>
+			<div>
+				<h1 style="font-weight: bold; padding: 25px">Questionnaire</h1>
 			</div>
-		</header>
 
-		<!-- Main content -->
-		<main>
-			<div class="firstQuestion">
-				<h2 class="speechify speechify-onload">When is your birthday?</h2>
-				<form id="birthday">
-					<input type="date" />
-				</form>
-			</div>
 			<!--Questions go here.-->
 			<div class="submitButton">
-				<a href="./noodlesResults.html">
+				<a id="next">
 					<button
 						id="submit"
 						class="submit"
 						type="button"
-						style="font-size: 30px; margin: 30px; color: purple"
+						style="font-size: 30px; margin: 30px; color: white"
 					>
 						Submit
 					</button>
@@ -83,5 +93,6 @@
 		<!-- remove the type="module" attribute. -->
 		<script src="../js/main.js" type="module"></script>
 		<script src="../js/questionnaire.js" type="module"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
 	</body>
 </html>
