@@ -1,5 +1,7 @@
 /* noodlesResults.html css styling */
-
+* {
+	/* z-index: 1; */
+}
 main {
     display: flex;
     flex-direction: column;
@@ -54,6 +56,16 @@ main button {
 	color: white;
     margin-top: 8px;
     margin-bottom: 8px;
+}
+
+.smoke img{
+	/* z-index: -1; */
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/* background: #000; */
+	left: 0px;
+	top: 196px;
 }
 
 @media screen and (max-width: 600px) {

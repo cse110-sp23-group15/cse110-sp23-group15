@@ -119,6 +119,11 @@
 	}
 }
 
+.smokeAnimation { 
+	width: 100%;
+	height: auto;
+}
+
 @media screen and (min-width: 601px) and (max-width: 1000px) {
 	#fortune {
 		padding-right: 20%;
