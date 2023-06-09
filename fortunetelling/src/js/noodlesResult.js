@@ -2,12 +2,12 @@ window.addEventListener('DOMContentLoaded', init);
 
 import { getHoroscope, getNoodleData } from './genHoroscope.js';
 
-const SMOKE_ANIMATION_TIME = 1840;
-const IMAGE_ANIMATION_TIME = 2900;
-const TIME_BEFORE_SMOKE = 2000;
-const SMOKE_MAX_COVER_TIME = 700;
-const IMAGE_WHEEL_SPINS = 4;
-const IMAGE_EXP_MULITPLIER = 1.1;
+const smokeAnimationTime = 1840;
+const imageAnimationTime = 2900;
+const timeBeforeSmoke = 2000;
+const smokePeakCoverTime = 700;
+const totalImageCycles = 4;
+const imageExponentialPlier = 1.1;
 
 
 /**
@@ -27,17 +27,17 @@ async function init() {
 	
 	setTimeout(() => {	
 		doSmokeEffect();
-	}, TIME_BEFORE_SMOKE);	
+	}, timeBeforeSmoke);	
 
 	setTimeout(() => {
 		noodleDescription.style.opacity = 1;
 		quizResult.style.opacity = 1;
 		setDescriptionAndResult();
-	}, TIME_BEFORE_SMOKE + SMOKE_MAX_COVER_TIME);
+	}, timeBeforeSmoke + smokePeakCoverTime);
 
 	setTimeout(() => {
 		setImageCorrectly();
-	}, IMAGE_ANIMATION_TIME + 1);
+	}, imageAnimationTime + 1);
 }
 
 /**
@@ -69,15 +69,15 @@ async function setDescriptionAndResult() {
  */
 async function spinNoodleWheel() {
 	const noodleData = await getNoodleData();
-	const spins_around = IMAGE_WHEEL_SPINS;
-	const spin_time = IMAGE_ANIMATION_TIME;
+	const spinsAround = totalImageCycles;
+	const spinTime = imageAnimationTime;
 
 	//exponential function 
-	const b = IMAGE_EXP_MULITPLIER;
-	const a = spin_time / Math.pow(b, spins_around*12);
+	const b = imageExponentialPlier;
+	const a = spinTime / Math.pow(b, spinsAround*12);
 	
 	const image = document.getElementById('noodleImg');
-	for (let i = 0; i < spins_around * 12; i++) {
+	for (let i = 0; i < spinsAround * 12; i++) {
 		setTimeout(() => {
 			image.setAttribute('src', noodleData[i % 12]['path']);
 		}, a * Math.pow(b, i));
@@ -91,7 +91,7 @@ function doSmokeEffect() {
 	const smoke = document.getElementById('smokeImage');
 	setTimeout(() => {
 		smoke.style.opacity = 0;
-	}, SMOKE_ANIMATION_TIME);
+	}, smokeAnimationTime);
 	// img.src = img.src + "?";
 	smoke.style.opacity = 1;
 }
