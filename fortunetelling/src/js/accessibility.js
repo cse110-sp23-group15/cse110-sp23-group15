@@ -119,10 +119,18 @@ function accessElement(speechify) {
 			speechify.reset();
 			speechify.speechifyHighlight(buttons[i]);
 		});
+		buttons[i].addEventListener('click', (_) => {
+			speechify.reset();
+			speechify.speechifyHighlight(buttons[i]);
+		});
 	}
 	const modifiedButtons = document.getElementsByClassName('button');
 	for (let i = 0; i < buttons.length; i++) {
 		modifiedButtons[i].addEventListener('mouseover', (_) => {
+			speechify.reset();
+			speechify.speechifyHighlight(modifiedButtons[i]);
+		});
+		modifiedButtons[i].addEventListener('click', (_) => {
 			speechify.reset();
 			speechify.speechifyHighlight(modifiedButtons[i]);
 		});
