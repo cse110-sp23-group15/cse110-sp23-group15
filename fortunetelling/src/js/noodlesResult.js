@@ -37,7 +37,7 @@ async function init() {
 
 	setTimeout(() => {
 		setImageCorrectly();
-	}, IMAGE_ANIMATION_TIME + 100);
+	}, IMAGE_ANIMATION_TIME + 1);
 }
 
 /**
