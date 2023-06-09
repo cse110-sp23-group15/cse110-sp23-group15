@@ -5,10 +5,8 @@
 @import url('https://fonts.googleapis.com/css?family=Hi+Melody');
 
 /* Global styling */
-html
-{
+html {
     width: 100%;
-    height: 100%;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
@@ -22,7 +20,6 @@ body {
 	margin: 0;
 
 	width: 100%;
-    height: 100%;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
