@@ -17,7 +17,7 @@
 
 #description {
 	margin-top: 10px;
-	padding-bottom: 50px;
+	padding-bottom: 30px;
 	padding-left: 5vw;
 	padding-right: 5vw;
 }
@@ -31,7 +31,7 @@
 #toQuestions {
 	width: 192px;
 	height: 52px;
-	margin-bottom: 24px;
+	margin-bottom: 15px;
 
 	border: none;
 	font-family: 'Montserrat';
@@ -45,11 +45,12 @@
 	/* animation: pulse 2s infinite; */
 }
 
-#toQuestions:hover, #fortune-button:hover {
+#toQuestions:hover,
+#fortuneButton:hover {
 	background-color: #bb1212;
 }
 
-#fortune-button {
+#fortuneButton {
 	width: 192px;
 	height: 52px;
 	cursor: pointer;
@@ -60,8 +61,10 @@
 	border-radius: 8px;
 	background-color: #da0b0b;
 	color: white;
-}
 
+	box-shadow: 0 0 0 0 #bb1212;
+	transform: scale(1);
+}
 
 @keyframes pulse {
 	0% {

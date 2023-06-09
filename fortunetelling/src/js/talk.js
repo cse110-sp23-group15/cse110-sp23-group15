@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const userInputButton = document.getElementById('user-input-button');
 	const messageOutput = document.getElementById('message-output');
 	const toQuestions = document.getElementById('toQuestions');
-	const fortuneButton = document.getElementById('fortune-button');
+	const fortuneButton = document.getElementById('fortuneButton');
 	let isFirstClick = true;
 
 	userInputButton.addEventListener('click', startConversation);
