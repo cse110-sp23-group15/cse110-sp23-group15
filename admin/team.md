@@ -1,6 +1,9 @@
 # Tasty Noodles (Team 15)
 
-![branding](../admin/branding/tasty-noodles-icon.png)
+<p align="center">
+  <img src="../admin/branding/tasty-noodles-icon.png" alt="Tasty Noodles" width="200"/>
+</p>
+
 
 ## Meet The Team
 

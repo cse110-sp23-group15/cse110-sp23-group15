@@ -1,24 +1,44 @@
 /* noodlesResults.html css styling */
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    min-width: 50%;
-    padding-left: 25%;
-    padding-right: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	min-width: 50%;
+	padding-left: 25%;
+	padding-right: 25%;
+}
+
+#submit {
+	border: none;
+	font-family: 'Montserrat';
+	font-size: 20px;
+	border-radius: 8px;
+	background-color: #da0b0b;
+	color: white;
+}
+
+#fortune-button {
+	margin: 20px;
+
+	border: none;
+	font-family: 'Montserrat';
+	font-size: 18px;
+	border-radius: 8px;
+	background-color: #da0b0b;
+	color: white;
 }
 
 #noodleDescription {
-    font-size: 24px;
+	font-size: 24px;
 }
 
 #quizResult {
-    font-size: 36px;
-    font-weight: bold;
-    color: #da0b0b;
+	font-size: 36px;
+	font-weight: bold;
+	color: #da0b0b;
 }
 
 main button {
@@ -32,8 +52,8 @@ main button {
 	border-radius: 8px;
 	background-color: #da0b0b;
 	color: white;
-    margin-top: 8px;
-    margin-bottom: 8px;
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
 
 @media screen and (max-width: 600px) {
@@ -43,22 +63,19 @@ main button {
 		min-width: 80%;
 	}
 
-    #noodleDescription {
-        font-size: 18px;
-    }
-
+	#noodleDescription {
+		font-size: 18px;
+	}
 }
 
 @media screen and (min-width: 601px) and (max-width: 1000px) {
 	main {
 		padding-right: 20%;
 		padding-left: 20%;
-        min-width: 60%;
+		min-width: 60%;
 	}
 
-    #noodleDescription {
-        font-size: 24px;
-    }
+	#noodleDescription {
+		font-size: 24px;
+	}
 }
-
-

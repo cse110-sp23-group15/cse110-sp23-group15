@@ -39,16 +39,31 @@
 			</div>
 		</header>
 
+		<!-- Dropdown Button -->
+		<div class="dropdown">
+			<input id="toggle" type="checkbox" />
+			<label class="hamburger" for="toggle">
+				<div class="top"></div>
+				<div class="middle"></div>
+				<div class="bottom"></div>
+			</label>
+
+			<nav class="dropdownContent">
+				<a class="navLink" href="profiles.html">Noodle Profiles</a>
+				<a class="navLink" href="about.html">About Us</a>
+			</nav>
+		</div>
+
 		<!-- Main content -->
 		<main>
 			<img
-				src="../img/ramen-icon-1.png"
+				src=""
 				id="noodleImg"
 				class="rotate"
 				style="height: 250px; margin: 50px"
 			/>
 			<p id="quizResult" class="speechify speechify-onload">
-				Congratulations, your personality type is ramen!
+				Congratulations, your personality type is
 			</p>
 			<p id="noodleDescription" class="speechify speechify-onload">
 				Trust me, this is the result you wanted.
@@ -61,9 +76,12 @@
 					</button>
 				</a>
 			</div>
+
 			<div class="controls">
 				<a href="fortune.html">
-					<button id="fortune-button" type="button">Reveal my Fortune</button>
+					<button id="fortune-button" class="fortune-button" type="button">
+						Reveal my Fortune
+					</button>
 				</a>
 			</div>
 		</main>
