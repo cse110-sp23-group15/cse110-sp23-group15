@@ -33,8 +33,9 @@ class Personality {
 
 		const result = '';
 		this._personality = result;
-		this._personalityID = 0 //implement as well
-		this.pDescipt = this.personalitiesJSON[this._personalityID]['personalityDescription']; //if this.personality is not int, readjust
+		this._personalityID = 0; // implement as well
+		this.pDescipt =
+			this.personalitiesJSON[this._personalityID]['personalityDescription']; // if this.personality is not int, readjust
 	}
 
 	/**

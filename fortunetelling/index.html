@@ -11,9 +11,172 @@
 		<!-- main.css. Page-specific styles should be in index.css. -->
 		<link href="./src/css/main.css" rel="stylesheet" type="text/css" />
 		<link href="./src/css/index.css" rel="stylesheet" type="text/css" />
+		<link href="./src/css/landing.css" rel="stylesheet" type="text/css" />
+		<style>
+			@media screen and (min-width: 801px) {
+				main {
+					background-image: url('src/img/landing-background.jpg');
+				}
+				body {
+					max-height: 1152px;
+				}
+				.chat-box {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					height: 100vh;
+					font-family: cursive;
+				}
+
+				.noodles-container {
+					position: relative;
+					top: -20%;
+					left: -30%;
+				}
+
+				#message-output {
+					text-align: center;
+					margin-bottom: 20px;
+					color: black;
+				}
+
+				.user-input {
+					display: flex;
+				}
+
+				#user-input-button {
+					padding: 10px 20px;
+					background-color: #da0b0b;
+					color: white;
+					border: none;
+					cursor: pointer;
+					font-family: cursive;
+					transition: background-color 0.3s ease;
+				}
+
+				#user-input-button:hover {
+					background-color: #da0b0b77;
+				}
+
+				.noodles-container.fly-to-center {
+					animation: 1s fly-to-center linear;
+					animation-fill-mode: forwards;
+				}
+
+				@keyframes fly-to-center {
+					0% {
+						transform: translate(0, 0);
+					}
+					100% {
+						transform: translate(40vh, 10vh);
+					}
+				}
+				@keyframes fly-out {
+					0% {
+						opacity: 1;
+						transform: translate(0, 0) rotate(0);
+					}
+					100% {
+						opacity: 0;
+						transform: translate(100px, 100px) rotate(-360deg);
+					}
+				}
+
+				.flying-noodle {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 50px; /* Adjust the image width as needed */
+					height: auto;
+				}
+			}
+			@media screen and (max-width: 800px) {
+				main {
+					background-image: url('src/img/landing-background.jpg');
+				}
+				.chat-box {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					height: 100vh;
+					font-family: cursive;
+				}
+
+				.noodles-container {
+					position: relative;
+					top: -20%;
+					left: -30%;
+				}
+
+				#message-output {
+					text-align: center;
+					margin-bottom: 20px;
+					color: black;
+				}
+
+				.user-input {
+					display: flex;
+				}
+
+				#user-input-button {
+					padding: 10px 20px;
+					background-color: #da0b0b;
+					color: white;
+					border: none;
+					cursor: pointer;
+					font-family: cursive;
+					transition: background-color 0.3s ease;
+				}
+
+				#user-input-button:hover {
+					background-color: #da0b0b77;
+				}
+
+				.noodles-container.fly-to-center {
+					animation: 1s fly-to-center linear;
+					animation-fill-mode: forwards;
+				}
+
+				@keyframes fly-to-center {
+					0% {
+						transform: translate(0, 0);
+					}
+					100% {
+						transform: translate(100px, 100px);
+					}
+				}
+				@keyframes fly-out {
+					0% {
+						opacity: 1;
+						transform: translate(0, 0) rotate(0);
+					}
+					100% {
+						opacity: 0;
+						transform: translate(100px, 100px) rotate(-360deg);
+					}
+				}
+
+				.flying-noodle {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 50px; /* Adjust the image width as needed */
+					height: auto;
+				}
+			}
+		</style>
+		<script src="./src/js/talk.js"></script>
 	</head>
 
 	<body>
+		<audio autoplay="autoplay" loop>
+			<source src="./src/sounds/bg-music.wav" type="audio/mpeg" />
+		</audio>
+
 		<!-- Navigation bar -->
 		<header>
 			<img id="icon" src="src/img/icon.png" />
@@ -24,11 +187,10 @@
 				<a href="src/pages/profiles.html">Noodle Profiles</a>
 				<a href="src/pages/about.html">About Us</a>
 			</div>
-			
 
 			<!-- Accessibility button -->
 			<div class="accessibility-container">
-				<h3 class="accessibility-header">Accessibility</h3>
+				<h3 class="accessibility-header">Read Aloud</h3>
 				<label class="switch">
 					<input name="accessibility" type="checkbox" />
 					<span class="slider round"></span>
@@ -53,20 +215,46 @@
 				</nav>
 			</div>
 
-			<img id="ramen" src="src/img/ramen-icon-1.png" />
-			<h4 id="flavorProf" class="speechify speechify-onload">
-				Unlock your flavor profile
-			</h4>
-			<p id="description" class="speechify speechify-onload">
-				Your noodle horoscope and fortune is just a few clicks away!
-			</p>
-			<a href="src/pages/questionnaire.html">
-				<button id="toQuestions">Grab me a bowl!</button>
-			</a>
-			<br>
-			<a href="src/pages/fortune.html" id="fortuneLink">
-				<button id="fortuneButton" type="button">Reveal my Fortune</button>
-			</a>
+			<div class="chat-box">
+				<div class="noodles-container">
+					<div class="noodles">
+						<div class="cap right"></div>
+						<div class="cap back"></div>
+						<div class="side right"></div>
+						<div class="side back"></div>
+						<div class="noodle noodles-1"></div>
+						<div class="noodle noodles-2"></div>
+						<div class="noodle noodles-3"></div>
+						<div class="side left"></div>
+						<div class="side front">
+							<div class="eyes-container">
+								<div class="eyes"></div>
+							</div>
+							<div class="mouth"></div>
+						</div>
+						<div class="cap left"></div>
+						<div class="cap front"></div>
+					</div>
+				</div>
+
+				<h4 id="flavorProf" class="speechify speechify-onload">
+					Unlock your flavor profile
+				</h4>
+				<div class="user-input">
+					<button id="user-input-button">Start Conversation</button>
+				</div>
+				<a href="src/pages/questionnaire.html">
+					<button id="toQuestions" style="display: none">
+						Grab me a bowl!
+					</button>
+				</a>
+				<br />
+				<a href="src/pages/fortune.html" id="fortuneLink">
+					<button id="fortuneButton" style="display: none">
+						Reveal my Fortune
+					</button>
+				</a>
+			</div>
 		</main>
 
 		<!-- Footer -->
@@ -87,5 +275,6 @@
 		<!-- remove the type="module" attribute. -->
 		<script src="./src/js/main.js" type="module"></script>
 		<script src="./src/js/index.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
 	</body>
 </html>
