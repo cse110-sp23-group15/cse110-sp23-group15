@@ -14,10 +14,10 @@
 		<link href="./src/css/landing.css" rel="stylesheet" type="text/css" />
 		<style>
 			@media screen and (min-width: 801px) {
-				main{
-					background-image: url("src/img/landing-background.jpg");
+				main {
+					background-image: url('src/img/landing-background.jpg');
 				}
-				body{
+				body {
 					max-height: 1152px;
 				}
 				.chat-box {
@@ -27,26 +27,25 @@
 					align-items: center;
 					height: 100vh;
 					font-family: cursive;
-				  }
-				  
-				  .noodles-container {
+				}
+
+				.noodles-container {
 					position: relative;
 					top: -20%;
 					left: -30%;
-	
-				  }
-				  
-				  #message-output {
+				}
+
+				#message-output {
 					text-align: center;
 					margin-bottom: 20px;
-					color:black;
-				  }
-				  
-				  .user-input {
+					color: black;
+				}
+
+				.user-input {
 					display: flex;
-				  }
-				  
-				  #user-input-button {
+				}
+
+				#user-input-button {
 					padding: 10px 20px;
 					background-color: #da0b0b;
 					color: white;
@@ -54,48 +53,48 @@
 					cursor: pointer;
 					font-family: cursive;
 					transition: background-color 0.3s ease;
-				  }
-				  
-				  #user-input-button:hover {
+				}
+
+				#user-input-button:hover {
 					background-color: #da0b0b77;
-				  }
-				  
-				  .noodles-container.fly-to-center {
+				}
+
+				.noodles-container.fly-to-center {
 					animation: 1s fly-to-center linear;
 					animation-fill-mode: forwards;
-				  }
-				  
-				  @keyframes fly-to-center {
+				}
+
+				@keyframes fly-to-center {
 					0% {
-					  transform: translate(0, 0);
+						transform: translate(0, 0);
 					}
 					100% {
-					  transform: translate(40vh, 10vh);
+						transform: translate(40vh, 10vh);
 					}
-				  }
-				  @keyframes fly-out {
+				}
+				@keyframes fly-out {
 					0% {
-					  opacity: 1;
-					  transform: translate(0, 0) rotate(0);
+						opacity: 1;
+						transform: translate(0, 0) rotate(0);
 					}
 					100% {
-					  opacity: 0;
-					  transform: translate(100px, 100px) rotate(-360deg);
+						opacity: 0;
+						transform: translate(100px, 100px) rotate(-360deg);
 					}
-				  }
-				  
-				  .flying-noodle {
+				}
+
+				.flying-noodle {
 					position: absolute;
 					top: 50%;
 					left: 50%;
 					transform: translate(-50%, -50%);
 					width: 50px; /* Adjust the image width as needed */
 					height: auto;
-				  }
+				}
 			}
-			@media screen and (max-width: 800px){
-				main{
-					background-image: url("src/img/landing-background.jpg");
+			@media screen and (max-width: 800px) {
+				main {
+					background-image: url('src/img/landing-background.jpg');
 				}
 				.chat-box {
 					display: flex;
@@ -104,26 +103,25 @@
 					align-items: center;
 					height: 100vh;
 					font-family: cursive;
-				  }
-				  
-				  .noodles-container {
+				}
+
+				.noodles-container {
 					position: relative;
 					top: -20%;
 					left: -30%;
-	
-				  }
-				  
-				  #message-output {
+				}
+
+				#message-output {
 					text-align: center;
 					margin-bottom: 20px;
-					color:black;
-				  }
-				  
-				  .user-input {
+					color: black;
+				}
+
+				.user-input {
 					display: flex;
-				  }
-				  
-				  #user-input-button {
+				}
+
+				#user-input-button {
 					padding: 10px 20px;
 					background-color: #da0b0b;
 					color: white;
@@ -131,50 +129,45 @@
 					cursor: pointer;
 					font-family: cursive;
 					transition: background-color 0.3s ease;
-				  }
-				  
-				  #user-input-button:hover {
+				}
+
+				#user-input-button:hover {
 					background-color: #da0b0b77;
-				  }
-				  
-				  .noodles-container.fly-to-center {
+				}
+
+				.noodles-container.fly-to-center {
 					animation: 1s fly-to-center linear;
 					animation-fill-mode: forwards;
-				  }
-				  
-				  @keyframes fly-to-center {
+				}
+
+				@keyframes fly-to-center {
 					0% {
-					  transform: translate(0, 0);
+						transform: translate(0, 0);
 					}
 					100% {
-					  transform: translate(100px, 100px);
+						transform: translate(100px, 100px);
 					}
-				  }
-				  @keyframes fly-out {
+				}
+				@keyframes fly-out {
 					0% {
-					  opacity: 1;
-					  transform: translate(0, 0) rotate(0);
+						opacity: 1;
+						transform: translate(0, 0) rotate(0);
 					}
 					100% {
-					  opacity: 0;
-					  transform: translate(100px, 100px) rotate(-360deg);
+						opacity: 0;
+						transform: translate(100px, 100px) rotate(-360deg);
 					}
-				  }
-				  
-				  .flying-noodle {
+				}
+
+				.flying-noodle {
 					position: absolute;
 					top: 50%;
 					left: 50%;
 					transform: translate(-50%, -50%);
 					width: 50px; /* Adjust the image width as needed */
 					height: auto;
-				  }
+				}
 			}
-			
-			  
-
-			  
-			  
 		</style>
 		<script src="./src/js/talk.js"></script>
 	</head>
@@ -207,34 +200,6 @@
 
 		<!-- Main content -->
 		<main>
-
-			  <div class="chat-box">
-				<div class="noodles-container">
-					<div class="noodles">
-						<div class="cap right"></div>
-						<div class="cap back"></div>
-						<div class="side right"></div>
-						<div class="side back"></div>
-						<div class="noodle noodles-1"></div>
-						<div class="noodle noodles-2"></div>
-						<div class="noodle noodles-3"></div>
-						<div class="side left"></div>
-						<div class="side front">
-								<div class="eyes-container">
-							<div class="eyes"></div>
-						</div>
-							<div class="mouth"></div>
-						</div>
-						<div class="cap left"></div>
-						<div class="cap front"></div>
-					</div>
-				</div>
-				<h1 id="message-output">Welcome to the Noodle Shop!</h1>
-				<div class="user-input">
-				  <button id="user-input-button">Start Conversation</button>
-				</div>
-			  </div>
-
 			<!-- Dropdown Button -->
 			<div class="dropdown">
 				<input id="toggle" type="checkbox" />
@@ -250,20 +215,46 @@
 				</nav>
 			</div>
 
-			<img id="ramen" src="src/img/ramen-icon-1.png" />
-			<h4 id="flavorProf" class="speechify speechify-onload">
-				Unlock your flavor profile
-			</h4>
-			<p id="description" class="speechify speechify-onload">
-				Your noodle horoscope and fortune is just a few clicks away!
-			</p>
-			<a href="src/pages/questionnaire.html">
-				<button id="toQuestions">Grab me a bowl!</button>
-			</a>
-			<br>
-			<a href="src/pages/fortune.html" id="fortuneLink">
-				<button id="fortune-button" type="button">Reveal my Fortune</button>
-			</a>
+			<div class="chat-box">
+				<div class="noodles-container">
+					<div class="noodles">
+						<div class="cap right"></div>
+						<div class="cap back"></div>
+						<div class="side right"></div>
+						<div class="side back"></div>
+						<div class="noodle noodles-1"></div>
+						<div class="noodle noodles-2"></div>
+						<div class="noodle noodles-3"></div>
+						<div class="side left"></div>
+						<div class="side front">
+							<div class="eyes-container">
+								<div class="eyes"></div>
+							</div>
+							<div class="mouth"></div>
+						</div>
+						<div class="cap left"></div>
+						<div class="cap front"></div>
+					</div>
+				</div>
+
+				<h4 id="flavorProf" class="speechify speechify-onload">
+					Unlock your flavor profile
+				</h4>
+				<div class="user-input">
+					<button id="user-input-button">Start Conversation</button>
+				</div>
+				<a href="src/pages/questionnaire.html">
+					<button id="toQuestions" style="display: none">
+						Grab me a bowl!
+					</button>
+				</a>
+				<br />
+				<a href="src/pages/fortune.html" id="fortuneLink">
+					<button id="fortune-button" style="display: none">
+						Reveal my Fortune
+					</button>
+				</a>
+			</div>
 		</main>
 
 		<!-- Footer -->
