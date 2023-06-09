@@ -9,7 +9,6 @@
 
 /* For mobile phones: */
 @media screen and (max-width: 800px) {
-	
 	.carousel {
 		display: flex;
 		justify-content: center;
@@ -104,9 +103,9 @@
 
 /* For tablets and larger screens */
 @media screen and (min-width: 801px) {
-	body {
+	main {
 		display: flex;
-		min-height: 100vh;
+		min-height: 60vh;
 		flex-direction: column;
 		justify-content: space-between;
 	}
@@ -182,5 +181,4 @@
 		margin-top: 20px;
 		margin-bottom: 20px;
 	}
-	
 }
