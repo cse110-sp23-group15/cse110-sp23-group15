@@ -111,6 +111,50 @@ function accessElement(speechify) {
 			speechify.speechifyHighlight(readEnabled[i]);
 		});
 	}
+	const buttons = document.getElementsByClassName('button');
+	for (let i = 0; i < buttons.length; i++) {
+		buttons[i].addEventListener('mouseover', (_) => {
+			speechify.reset();
+			speechify.speechify(buttons[i].textContent);
+		});
+
+		buttons[i].addEventListener('click', (_) => {
+			speechify.reset();
+			speechify.speechify(buttons[i].textContent);
+		});
+	}
+	const home = document.querySelectorAll('a');
+	const homebutton = Array.from(home);
+	for (let i = 0; i < 2; i++) {
+		homebutton[i].addEventListener('mouseover', (_) => {
+			speechify.reset();
+			speechify.speechify('main page');
+		});
+
+		homebutton[i].addEventListener('click', (_) => {
+			speechify.reset();
+			speechify.speechify('main page');
+		});
+	}
+	const images = Array.from(document.querySelectorAll('div.carousel img'));
+	for (let i = 0; i < images.length; i++) {
+		images[i].addEventListener('mouseover', (_) => {
+			speechify.reset();
+			speechify.speechify(images[i].getAttribute('alt'));
+		});
+
+		images[i].addEventListener('click', (_) => {
+			speechify.reset();
+			speechify.speechify(images[i].getAttribute('alt'));
+		});
+	}
+	const noodleButtons = document.getElementsByClassName('noodleButton');
+	for (let i = 0; i < noodleButtons.length; i++) {
+		noodleButtons[i].addEventListener('click', (_) => {
+			speechify.reset();
+			speechify.speechify(noodleButtons[i].textContent);
+		});
+	}
 }
 /**
  * read the selected choice of the user on the questionaire page

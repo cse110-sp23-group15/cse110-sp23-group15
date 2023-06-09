@@ -179,13 +179,13 @@
 
 		<!-- Navigation bar -->
 		<header>
-			<img id="icon" src="src/img/icon.png" />
-			<h1 id="noodleText">Tasty Noodles</h1>
+			<a href="index.html"><img id="icon" src="src/img/icon.png" /></a>
+			<a href="index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
 
 			<!-- Navigation buttons -->
 			<div class="navButtons">
-				<a href="src/pages/profiles.html">Noodle Profiles</a>
-				<a href="src/pages/about.html">About Us</a>
+				<a class="button" href="src/pages/profiles.html">Noodle Profiles</a>
+				<a class="button" href="src/pages/about.html">About Us</a>
 			</div>
 
 			<!-- Accessibility button -->
@@ -210,8 +210,12 @@
 				</label>
 
 				<nav class="dropdownContent">
-					<a class="navLink" href="src/pages/profiles.html">Noodle Profiles</a>
-					<a class="navLink" href="src/pages/about.html">About Us</a>
+					<a class="button" class="navLink" href="src/pages/profiles.html"
+						>Noodle Profiles</a
+					>
+					<a class="button" class="navLink" href="src/pages/about.html"
+						>About Us</a
+					>
 				</nav>
 			</div>
 
@@ -244,13 +248,13 @@
 					<button id="user-input-button">Start Conversation</button>
 				</div>
 				<a href="src/pages/questionnaire.html">
-					<button id="toQuestions" style="display: none">
+					<button class="button" id="toQuestions" style="display: none">
 						Grab me a bowl!
 					</button>
 				</a>
 				<br />
 				<a href="src/pages/fortune.html" id="fortuneLink">
-					<button id="fortuneButton" style="display: none">
+					<button id="fortuneButton" style="display: none" class="button">
 						Reveal my Fortune
 					</button>
 				</a>
