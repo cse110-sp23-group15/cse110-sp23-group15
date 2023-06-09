@@ -28,7 +28,6 @@ async function accessibilitySwitch() {
 		}, 1);
 	}
 	accessibility[0].addEventListener('click', function () {
-		console.log('event triggered');
 		if (!isBrowserSupported) {
 			alert('Your browser does not support speech synthesis');
 			return;
@@ -98,7 +97,8 @@ async function accessibilitySwitch() {
  * @param {Speechify} speechify The speechify object
  */
 function accessElement(speechify) {
-	// Enable speechify on mouseover and click
+	// Enable speechify on text element with `speechify` class on mouseover and
+	// click
 	const readEnabled = document.getElementsByClassName('speechify');
 	for (let i = 0; i < readEnabled.length; i++) {
 		readEnabled[i].addEventListener('mouseover', (_) => {
@@ -111,32 +111,47 @@ function accessElement(speechify) {
 			speechify.speechifyHighlight(readEnabled[i]);
 		});
 	}
-	const buttons = document.getElementsByClassName('button');
+
+	// Enable speechify on button elements
+	const buttons = document.querySelectorAll('button');
 	for (let i = 0; i < buttons.length; i++) {
 		buttons[i].addEventListener('mouseover', (_) => {
 			speechify.reset();
-			speechify.speechify(buttons[i].textContent);
-		});
-
-		buttons[i].addEventListener('click', (_) => {
-			speechify.reset();
-			speechify.speechify(buttons[i].textContent);
+			speechify.speechifyHighlight(buttons[i]);
 		});
 	}
-	const home = document.querySelectorAll('a');
-	const homebutton = Array.from(home);
+	const modifiedButtons = document.getElementsByClassName('button');
+	for (let i = 0; i < buttons.length; i++) {
+		modifiedButtons[i].addEventListener('mouseover', (_) => {
+			speechify.reset();
+			speechify.speechifyHighlight(modifiedButtons[i]);
+		});
+	}
+
+	// Enable speechify on links on mouseover
+	const refLinks = document.querySelectorAll('a');
 	for (let i = 0; i < 2; i++) {
-		homebutton[i].addEventListener('mouseover', (_) => {
-			speechify.reset();
-			speechify.speechify('main page');
-		});
+		// Extract link innerHTML
+		const linkText = refLinks[i].innerHTML;
 
-		homebutton[i].addEventListener('click', (_) => {
+		// Extract page name from href link if innerHTML is empty
+		if (linkText == '') {
+			let linkText = refLinks[i].href
+				.replace(/^.*[\\\/]/, '')
+				.replace(/\.[^/.]+$/, '');
+			if (linkText == 'index') {
+				linkText = 'main page';
+			}
+		}
+
+		refLinks[i].addEventListener('mouseover', (_) => {
 			speechify.reset();
-			speechify.speechify('main page');
+			speechify.speechify(linkText);
 		});
 	}
-	const images = Array.from(document.querySelectorAll('div.carousel img'));
+
+	// Enable speechify on images on mouseover and click
+	const images = Array.from(document.querySelectorAll('img'));
 	for (let i = 0; i < images.length; i++) {
 		images[i].addEventListener('mouseover', (_) => {
 			speechify.reset();
@@ -148,16 +163,9 @@ function accessElement(speechify) {
 			speechify.speechify(images[i].getAttribute('alt'));
 		});
 	}
-	const noodleButtons = document.getElementsByClassName('noodleButton');
-	for (let i = 0; i < noodleButtons.length; i++) {
-		noodleButtons[i].addEventListener('click', (_) => {
-			speechify.reset();
-			speechify.speechify(noodleButtons[i].textContent);
-		});
-	}
 }
 /**
- * read the selected choice of the user on the questionaire page
+ * Read the selected choice of the user on the questionaire page
  * @param {Speechify} speechify The speechify object
  */
 function readChoice(speechify) {
