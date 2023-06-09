@@ -53,7 +53,7 @@ codebase. Highway does a lot of lifting for us but it does not integrate well.
 
 ### GSAP + Highway
 
-[GSAP](https://greensock.com/gsap/)
+[GSAP](https://greensock.com/gsap/) + [Highway](https://highway.js.org/)
 
 - Pro: Do the heavy lifting for us to make our animations look magical
 - Pro: Works well with GSAP
