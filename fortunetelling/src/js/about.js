@@ -112,11 +112,11 @@ const memberMenu = document.querySelectorAll('.member-menu img');
 
 memberMenu.forEach((mem, idx) => {
 	mem.addEventListener('click', () => {
-		const currentMemeberImg = document.getElementById('current-member');
+		const currentMemeberImg = document.getElementById('current-member-dt');
 		currentMemeberImg.src = members[idx].memberImage;
 		currentMemeberImg.alt = members[idx].name + "'s profile picture";
 
-		const currentMemberNoodle = document.getElementById('member-noodle');
+		const currentMemberNoodle = document.getElementById('member-noodle-dt');
 		currentMemberNoodle.src = members[idx].memberNoodleImg;
 		currentMemberNoodle.alt = members[idx].memberNoodleName + ' icon';
 
