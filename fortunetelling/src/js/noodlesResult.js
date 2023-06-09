@@ -2,6 +2,14 @@ window.addEventListener('DOMContentLoaded', init);
 
 import { getHoroscope, getNoodleData } from './genHoroscope.js';
 
+const SMOKE_ANIMATION_TIME = 1840;
+const IMAGE_ANIMATION_TIME = 2900;
+const TIME_BEFORE_SMOKE = 2000;
+const SMOKE_MAX_COVER_TIME = 700;
+const IMAGE_WHEEL_SPINS = 4;
+const IMAGE_EXP_MULITPLIER = 1.1;
+
+
 /**
  * On load function,
  * use localStorage to get the quiz result and display the corresponding noodle
@@ -19,25 +27,31 @@ async function init() {
 	
 	setTimeout(() => {	
 		doSmokeEffect();
-	}, 2000);	
+	}, TIME_BEFORE_SMOKE);	
 
 	setTimeout(() => {
 		noodleDescription.style.opacity = 1;
 		quizResult.style.opacity = 1;
 		setDescriptionAndResult();
-	}, 2700);
+	}, TIME_BEFORE_SMOKE + SMOKE_MAX_COVER_TIME);
 
 	setTimeout(() => {
 		setImageCorrectly();
-	}, 3000);
+	}, IMAGE_ANIMATION_TIME + 100);
 }
 
+/**
+ * Set the noodle image to the corresponding image of the user's quiz result
+ */
 function setImageCorrectly() {
 	const image = document.getElementById('noodleImg');
 	const noodle = localStorage.getItem('noodle');
 	image.setAttribute('src', noodle);
 }
 
+/**
+ * Set the noodle description and quiz result to the corresponding text of the user's quiz result
+ */
 async function setDescriptionAndResult() {
 	const noodleDescription = document.getElementById('noodleDescription');
 	const quizResult = document.getElementById('quizResult');
@@ -50,13 +64,16 @@ async function setDescriptionAndResult() {
 	quizResult.textContent = `Congratulations, your personality type is ${noodleData[noodleId]['noodleName']}!`;
 }
 
+/**
+ * Animates the image to shuffle through all noodle images
+ */
 async function spinNoodleWheel() {
 	const noodleData = await getNoodleData();
-	const spins_around = 4;
-	const spin_time = 2900;
+	const spins_around = IMAGE_WHEEL_SPINS;
+	const spin_time = NOODLE_ANIMATION_TIME;
 
 	//exponential function 
-	const b = 1.1;
+	const b = IMAGE_EXP_MULITPLIER;
 	const a = spin_time / Math.pow(b, spins_around*12);
 	
 	const image = document.getElementById('noodleImg');
@@ -67,11 +84,14 @@ async function spinNoodleWheel() {
 	}
 }
 
+/**
+ * Animates the smoke image exactly once
+ */
 function doSmokeEffect() {
 	const smoke = document.getElementById('smokeImage');
 	setTimeout(() => {
 		smoke.style.opacity = 0;
-	}, 1840);
+	}, SMOKE_ANIMATION_TIME);
 	// img.src = img.src + "?";
 	smoke.style.opacity = 1;
 }
