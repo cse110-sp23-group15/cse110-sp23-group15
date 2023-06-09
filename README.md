@@ -1,4 +1,9 @@
-# cse110-sp23-group15
+# Tasty Noodles (Team 15)
+
+<p align="center">
+  <img src="./admin/branding/tasty-noodles-icon.png" alt="Tasty Noodles" width="200"/>
+</p>
+
 
 ## Projects
 
