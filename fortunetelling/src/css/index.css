@@ -22,6 +22,11 @@
 	padding-right: 5vw;
 }
 
+/*removes underline of buttons*/
+.chat-box a {
+	text-decoration: none;
+}
+
 /*button to navigate to the questionaire page*/
 #toQuestions {
 	width: 192px;
