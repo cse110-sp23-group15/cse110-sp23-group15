@@ -28,7 +28,6 @@ async function addQuestions() {
 	for (let i = 0; i < questions.length; i++) {
 		const newDiv = document.createElement('div');
 		const beforeButton = document.querySelector('.submitButton');
-		const footer = document.querySelector('.footer');
 
 		newDiv.innerHTML =
 			`<h2 class="speechify speechify-onload">` +
@@ -42,7 +41,6 @@ async function addQuestions() {
 		newDiv.setAttribute('id', `div${i}`);
 		newDiv.setAttribute('class', 'Question');
 		mainRef.appendChild(newDiv);
-		newDiv.after(footer);
 		newDiv.after(beforeButton);
 	}
 }
