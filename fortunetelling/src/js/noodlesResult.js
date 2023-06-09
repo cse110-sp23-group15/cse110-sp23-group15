@@ -70,7 +70,7 @@ async function setDescriptionAndResult() {
 async function spinNoodleWheel() {
 	const noodleData = await getNoodleData();
 	const spins_around = IMAGE_WHEEL_SPINS;
-	const spin_time = NOODLE_ANIMATION_TIME;
+	const spin_time = IMAGE_ANIMATION_TIME;
 
 	//exponential function 
 	const b = IMAGE_EXP_MULITPLIER;
