@@ -6,7 +6,6 @@
 // - https://jsdoc.app/howto-es2015-classes.html
 
 let noodleIndex = 0;
-localStorage.setItem('noodleIndex', noodleIndex);
 const noodles = [
 	{
 		"noodleName": "Ravioli",
@@ -93,6 +92,8 @@ function singlePageUpdateNoodle() {
 	for (let i = 0; i < carouselImages.length; i++) {
 		carouselImages[i].src = noodles[i].path;
 	}
+
+	localStorage.setItem('noodleIndex', noodleIndex);
 }
 
 /** Double page update content function */
@@ -109,6 +110,8 @@ function doublePageUpdateNoodle() {
 		noodles[(noodleIndex - 1 + noodles.length) % noodles.length].noodleName;
 	document.getElementById('next-noodle-name').innerText =
 		noodles[(noodleIndex + 1) % noodles.length].noodleName;
+
+	localStorage.setItem('noodleIndex', noodleIndex);
 }
 
 /**
