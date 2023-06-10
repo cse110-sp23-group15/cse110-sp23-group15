@@ -18,31 +18,29 @@ async function init() {
 	const prevButton = document.getElementById('leftArrow');
 	const nextButton = document.getElementById('rightArrow');
 	const noodleImg = document.getElementById('noodle-image');
-	
+
 	dropbtn.addEventListener('click', buttonFunct);
 
 	// Makes prevButton go to previous noodle fortune
 	prevButton.addEventListener('click', () => {
-		if(noodleIndex == 0) {
+		if (noodleIndex == 0) {
 			noodleIndex = 11;
-		}
-		else {
+		} else {
 			noodleIndex--;
 		}
 		console.log(noodleIndex);
 		updateNoodle(noodleIndex);
-	})
+	});
 
 	// Makes nextButton got o next noodle fortune
 	nextButton.addEventListener('click', () => {
-		if(noodleIndex == 11) {
+		if (noodleIndex == 11) {
 			noodleIndex = 0;
-		}
-		else {
+		} else {
 			noodleIndex++;
 		}
 		updateNoodle(noodleIndex);
-	})
+	});
 
 	for (let i = 0; i < noodleButtons.length; i++) {
 		noodleButtons[i].addEventListener('click', function () {
@@ -51,7 +49,7 @@ async function init() {
 		});
 	}
 
-	let noodleIndex = getLocalStorage('noodleIndex');
+	let noodleIndex = getLocalStorage('myNoodleIndex');
 	// typecase noodleIndex to int
 	noodleIndex = parseInt(noodleIndex);
 	updateNoodle(noodleIndex);

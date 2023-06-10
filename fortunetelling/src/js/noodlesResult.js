@@ -8,12 +8,13 @@ import { getHoroscope, getNoodleData } from './genHoroscope.js';
  */
 async function init() {
 	const image = document.getElementById('noodleImg');
-	const noodle = localStorage.getItem('noodle');
+	const noodle = localStorage.getItem('myNoodle');
 	image.setAttribute('src', noodle);
 
 	const noodleDescription = document.getElementById('noodleDescription');
 	const quizResult = document.getElementById('quizResult');
-	let noodleId = localStorage.getItem('noodleIndex');
+	let noodleId = localStorage.getItem('myNoodleIndex');
+
 	// convert noodleId to int
 	noodleId = parseInt(noodleId);
 	const noodleData = await getNoodleData();

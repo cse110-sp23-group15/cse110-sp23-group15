@@ -66,30 +66,22 @@
 	margin: auto;
 	width: 184px;
 	border: none;
-	display:none;
+	display: none;
 }
 
 .dropdown-content .noodleButton {
 	margin: auto;
-	width: 6vw;
-	height: 6vw;
-	max-height: 200px;
-	max-width: 200px;
-	margin-left: 8px;
-	margin-right: 8px;
+	width: 7vw;
+	margin-left: 4px;
+	margin-right: 4px;
 	cursor: pointer;
-	outline: none;
-	border: none;
-	/* border-radius: 2px; */
-	float: none;
-	/* padding: 12px 16px; */
-	text-decoration: none;
 	display: block;
-	padding-top: 0%;
-	padding-left: 10%;
-	padding-right: 10%;
+	transition: width 0.3s ease;
 }
 
+.dropdown-content .noodleButton:hover {
+	width: 8vw;
+}
 
 .carousel-caption {
 	font-size: 15px;
@@ -113,8 +105,6 @@
 	display: block;
 }
 
-
-
 @media screen and (max-width: 600px) {
 	#fortune {
 		padding-right: 10%;
@@ -124,8 +114,6 @@
 	}
 
 	.dropdown-content .noodleButton {
-		width: 184px;
-		margin-left: 0%;
 		display: none;
 	}
 
@@ -135,7 +123,20 @@
 
 	.arrowButton {
 		display: inline-block;
+		width: 50px;
 		font-size: 25px;
+	}
+
+	#leftArrow {
+		margin-right: 50px;
+	}
+
+	#rightArrow {
+		margin-left: 50px;
+	}
+
+	#dropbtn {
+		display: none;
 	}
 }
 
@@ -147,4 +148,3 @@
 		font-size: 30px;
 	}
 }
-

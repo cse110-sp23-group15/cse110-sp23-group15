@@ -10,60 +10,63 @@
 		<!-- NOTE: main.css should contain all font imports. Global styles should be in -->
 		<!-- main.css. Page-specific styles should be in fortune.css. -->
 		<link href="../css/main.css" rel="stylesheet" type="text/css" />
+		<link href="../css/navbar.css" rel="stylesheet" type="text/css" />
 		<link href="../css/fortune.css" rel="stylesheet" type="text/css" />
+		<!-- Font Awesome -->
+		<link
+			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+			rel="stylesheet"
+			integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+			crossorigin="anonymous"
+		/>
 	</head>
 
 	<body>
-		<audio autoplay="autoplay" loop>
+		<audio id="bg-music" loop>
 			<source src="../sounds/bg-music.wav" type="audio/mpeg" />
 		</audio>
 
 		<!-- Navigation bar -->
-		<header>
-			<a href="../../index.html"><img id="icon" src="../img/icon.png" /></a>
-			<a href="../../index.html"><h1 id="noodleText">Tasty Noodles</h1></a>
-
-			<!-- Navigation buttons -->
-			<div class="navButtons">
-				<a href="profiles.html">Noodle Profiles</a>
-				<a href="about.html">About Us</a>
-				<a href="questionnaire.html">Take Our Quiz!</a>
-			</div>
-
-			<!-- Accessibility button -->
-			<div class="accessibility-container">
-				<h3 class="accessibility-header">Read Aloud</h3>
-				<label class="switch">
-					<input name="accessibility" type="checkbox" />
-					<span class="slider round"></span>
-				</label>
-			</div>
-		</header>
+		<nav id="navbar">
+			<ul class="menu">
+				<a href="../../index.html">
+					<img id="icon" src="../img/icon.png" />
+				</a>
+				<li class="logo">
+					<a id="noodleText" href="../../index.html"> Tasty Noodles </a>
+				</li>
+				<li class="item"><a href="./profiles.html">Noodle Profiles</a></li>
+				<li class="item"><a href="./about.html">About Us</a></li>
+				<li class="item"><a href="./questionnaire.html">Take a Quiz!</a></li>
+				<li class="item accessibility-container">
+					<label class="switch">
+						<input name="accessibility" type="checkbox" />
+						<span class="slider round">
+							<i class="fas fa-assistive-listening-systems fa-lg"></i>
+						</span>
+					</label>
+				</li>
+				<li class="item button bg-music-toggle" id="bg-music-toggle">
+					<i class="fas fa-lg" id="bg-music-toggle-icon"></i>
+				</li>
+				<li class="toggle">
+					<input id="toggle" type="checkbox" />
+					<label class="hamburger" for="toggle">
+						<div class="top"></div>
+						<div class="middle"></div>
+						<div class="bottom"></div>
+					</label>
+				</li>
+			</ul>
+		</nav>
 
 		<!-- Main content -->
 		<main>
-			<!-- Dropdown Button -->
-			<div class="dropdown">
-				<input id="toggle" type="checkbox" />
-				<label class="hamburger" for="toggle">
-					<div class="top"></div>
-					<div class="middle"></div>
-					<div class="bottom"></div>
-				</label>
-
-				<nav class="dropdownContent">
-					<a class="navLink" href="profiles.html">Noodle Profiles</a>
-					<a class="navLink" href="about.html">About Us</a>
-					<a class="navLink" href="questionnaire.html">Take Our Quiz!</a>
-				</nav>
-			</div>
-			<div id="title" class="title">
-				<h2 class="speechify speechify-onload">Today's Fortune</h2>
-			</div>
+			<h2 class="title speechify speechify-onload">Today's Fortune</h2>
 			<div id="subtitle" class="subtitle">
-				<p class="speechify speechify-onload">
+				<h1 class="speechify speechify-onload">
 					The Great Noodle has spoken. And it says...
-				</p>
+				</h1>
 			</div>
 			<div id="fortune" class="fortune">
 				<p id="fortuneText" class="speechify speechify-onload">
@@ -76,12 +79,12 @@
 			<div id="controls" class="controls">
 				<img id="noodle-image" src="" alt="" />
 				<br />
-				<div class = "arrowButtons" id = "myArrowButtons">
-					<button id = "leftArrow" class = "arrowButton">&#8249;</button>
+				<div class="arrowButtons" id="myArrowButtons">
+					<button id="leftArrow" class="arrowButton">&#8249;</button>
 					<button id="dropbtn" class="dropbtn" style="margin: 20px">
 						See other noodles <i class="fa fa-caret-down"></i>
 					</button>
-					<button id = "rightArrow" class = "arrowButton">&#8250;</button>
+					<button id="rightArrow" class="arrowButton">&#8250;</button>
 				</div>
 				<div class="dropdown-content" id="myDropdown">
 					<div>
@@ -89,7 +92,7 @@
 							src="../img/ravioli-icon-1.png"
 							alt="Ravioli"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Ravioli</p>
 					</div>
@@ -98,7 +101,7 @@
 							src="../img/pho-icon-1.png"
 							alt="Pho"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Pho</p>
 					</div>
@@ -107,7 +110,7 @@
 							src="../img/mac-and-cheese-icon-1.png"
 							alt="Mac and Cheese"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Mac and Cheese</p>
 					</div>
@@ -116,7 +119,7 @@
 							src="../img/instant-noodles-icon-1.png"
 							alt="Instant Noodles"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Instant Noodles</p>
 					</div>
@@ -125,7 +128,7 @@
 							src="../img/pad-thai-icon-1.png"
 							alt="Pad Thai"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Pad Thai</p>
 					</div>
@@ -134,7 +137,7 @@
 							src="../img/chicken-noodle-soup-icon-1.png"
 							alt="Chicken Noodle Soup"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Chicken Noodle Soup</p>
 					</div>
@@ -143,7 +146,7 @@
 							src="../img/udon-icon-1.png"
 							alt="Udon"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Udon</p>
 					</div>
@@ -152,7 +155,7 @@
 							src="../img/ramen-icon-1.png"
 							alt="Ramen"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Ramen</p>
 					</div>
@@ -161,7 +164,7 @@
 							src="../img/spaghetti-icon-1.png"
 							alt="Spaghetti"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Spaghetti</p>
 					</div>
@@ -170,7 +173,7 @@
 							src="../img/lasagna-icon-1.png"
 							alt="Lasagna"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Lasagna</p>
 					</div>
@@ -179,7 +182,7 @@
 							src="../img/beef-noodle-soup-icon-1.png"
 							alt="Beef Noodle Soup"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Beef Noodle Soup</p>
 					</div>
@@ -188,7 +191,7 @@
 							src="../img/bread-icon-1.png"
 							alt="Bread"
 							onclick=""
-							class = "noodleButton"
+							class="noodleButton"
 						/>
 						<p class="carousel-caption">Bread</p>
 					</div>
@@ -213,6 +216,7 @@
 		<!-- want to run your script codes before the page is loaded, then you need to -->
 		<!-- remove the type="module" attribute. -->
 		<script src="../js/main.js" type="module"></script>
+		<script src="../js/settings.js" type="module"></script>
 		<script src="../js/fortune.js" type="module"></script>
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.11/dist/gsap.min.js"></script>
 	</body>

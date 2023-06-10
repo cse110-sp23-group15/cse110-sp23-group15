@@ -20,6 +20,8 @@ async function accessibilitySwitch() {
 	const voices = await speechify.voices;
 	speechify.voice = voices[0]; // Select the first voice (default)
 	speechify.reset(); // Reset speechify. Also makes window.speechifyReady = true
+
+	// Save accessibility state
 	if (localStorage.getItem('accessibility') == null) {
 		localStorage.setItem('accessibility', false);
 	} else if (localStorage.getItem('accessibility') == 'true') {
@@ -27,8 +29,8 @@ async function accessibilitySwitch() {
 			accessibility[0].click();
 		}, 1);
 	}
+
 	accessibility[0].addEventListener('click', function () {
-		console.log('event triggered');
 		if (!isBrowserSupported) {
 			alert('Your browser does not support speech synthesis');
 			return;
@@ -46,7 +48,10 @@ async function accessibilitySwitch() {
 			speechify.reset();
 			speechify.makeReady();
 			console.log('Accessibility On!');
+
+			// Time for delaying access to elements to speechify
 			let time = 0;
+
 			if (document.URL.includes('index')) {
 				speechify.speechify(
 					'Welcome to main page of tasty noodle fortune telling site'
@@ -75,7 +80,11 @@ async function accessibilitySwitch() {
 			}
 			setTimeout(function () {
 				accessElement(speechify);
-				readChoice(speechify);
+
+				// FIXME: readOnload does not get cancelled when other speechify
+				// functions are called. reset() does not cancel audio queue.
+
+				// readOnload(speechify);
 			}, time);
 		} else {
 			const readEnabled = document.getElementsByClassName('speechify');
@@ -98,25 +107,79 @@ async function accessibilitySwitch() {
  * @param {Speechify} speechify The speechify object
  */
 function accessElement(speechify) {
-	// Enable speechify on mouseover and click
+	// Enable speechify on text element with `speechify` class on mouseover and
+	// click
 	const readEnabled = document.getElementsByClassName('speechify');
-	for (let i = 0; i < readEnabled.length; i++) {
-		readEnabled[i].addEventListener('mouseover', (_) => {
-			speechify.reset();
-			speechify.speechifyHighlight(readEnabled[i]);
-		});
+	if (readEnabled != null) {
+		for (let i = 0; i < readEnabled.length; i++) {
+			readEnabled[i].addEventListener('mouseover', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(readEnabled[i]);
+			});
 
-		readEnabled[i].addEventListener('click', (_) => {
-			speechify.reset();
-			speechify.speechifyHighlight(readEnabled[i]);
-		});
+			readEnabled[i].addEventListener('click', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(readEnabled[i]);
+			});
+		}
 	}
-}
-/**
- * read the selected choice of the user on the questionaire page
- * @param {Speechify} speechify The speechify object
- */
-function readChoice(speechify) {
+
+	// Enable speechify on button elements
+	const buttons = document.querySelectorAll('button');
+	if (buttons != null) {
+		for (let i = 0; i < buttons.length; i++) {
+			buttons[i].addEventListener('mouseover', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(buttons[i]);
+			});
+			buttons[i].addEventListener('click', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(buttons[i]);
+			});
+		}
+	}
+
+	// Enable speechify on links on mouseover
+	const refLinks = document.querySelectorAll('a');
+	if (refLinks != null) {
+		for (let i = 0; i < 2; i++) {
+			// Extract link innerHTML
+			const linkText = refLinks[i].innerHTML;
+
+			// Extract page name from href link if innerHTML is empty
+			if (linkText == '') {
+				let linkText = refLinks[i].href
+					.replace(/^.*[\\\/]/, '')
+					.replace(/\.[^/.]+$/, '');
+				if (linkText == 'index') {
+					linkText = 'main page';
+				}
+			}
+
+			refLinks[i].addEventListener('mouseover', (_) => {
+				speechify.reset();
+				speechify.speechify(linkText);
+			});
+		}
+	}
+
+	// Enable speechify on images on mouseover and click
+	const images = Array.from(document.querySelectorAll('img'));
+	if (images != null) {
+		for (let i = 0; i < images.length; i++) {
+			images[i].addEventListener('mouseover', (_) => {
+				speechify.reset();
+				speechify.speechify(images[i].getAttribute('alt'));
+			});
+
+			images[i].addEventListener('click', (_) => {
+				speechify.reset();
+				speechify.speechify(images[i].getAttribute('alt'));
+			});
+		}
+	}
+
+	// Enable speechify on input elements on click
 	const choices = document.querySelectorAll('input[type=radio]');
 	const choicearray = Array.from(choices);
 	for (let i = 0; i < choicearray.length; i++) {
@@ -126,5 +189,18 @@ function readChoice(speechify) {
 		});
 	}
 }
+
+/**
+ * Read the selected choice of the user on the questionaire page
+ * @param {Speechify} speechify The speechify object
+ */
+function readOnload(speechify) {
+	const elements = document.getElementsByClassName('speechify-onload');
+	for (let i = 0; i < elements.length; i++) {
+		speechify.reset();
+		speechify.speechifyHighlight(elements[i]);
+	}
+}
+
 // export
 export { accessibilitySwitch };
