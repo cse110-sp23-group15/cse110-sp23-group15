@@ -14,20 +14,17 @@
 }
 
 html {
-	width: 100%;
 	overflow-x: hidden;
 }
 
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
 	background-color: #eae1cd;
+	min-height: 100vh;
 	margin: 0;
-
 	width: 100%;
-	margin: 0px;
-	padding: 0px;
+	height: 100%;
 	overflow-x: hidden;
 }
 

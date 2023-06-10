@@ -72,16 +72,15 @@
 						alt="Selected Noodle"
 					/>
 				</div>
-				<div id="name" class="name speechify speechify-onload"></div>
+				<div id="name-double" class="name speechify speechify-onload"></div>
 				<div
-					id="description"
+					id="description-double"
 					class="description speechify speechify-onload"
-					style="margin-right: 20pc; margin-left: 20pc"
 				></div>
 				<div class="controls">
 					<div>
-						<a id="fortune-link" href="fortune.html">
-							<button id="fortune-button">Reveal my Fortune</button>
+						<a href="fortune.html">
+							<button class="button fortune-button">Reveal my Fortune</button>
 						</a>
 					</div>
 				</div>
@@ -226,15 +225,20 @@
 			<!-- Main content -->
 			<main>
 				<div id="name" class="name speechify speechify-onload"></div>
-				<div id="description" class="description speechify speechify-onload">
-					<p>Description for Noodle</p>
-				</div>
 				<div id="carousel" class="carousel">
 					<img
 						id="carousel-image"
 						src="../img/beef-noodle-soup-icon-1.png"
 						alt="Noodle 1"
 					/>
+				</div>
+				<div>
+					<a href="fortune.html">
+						<button class="button fortune-button">Reveal my Fortune</button>
+					</a>
+				</div>
+				<div id="description" class="description speechify speechify-onload">
+					<p>Description for Noodle</p>
 				</div>
 				<div class="controls">
 					<div>
@@ -244,13 +248,7 @@
 							alt="Previous Noodle"
 							onclick="prevNoodle()"
 						/>
-						<p class="see-prev">See Previous:</p>
-						<p id="prev-noodle-name">Udon</p>
-					</div>
-					<div>
-						<a href="fortune.html">
-							<button id="fortune-button">Reveal my Fortune</button>
-						</a>
+						<p class="see-prev">See Prev:</p>
 					</div>
 					<div>
 						<img
@@ -259,8 +257,7 @@
 							alt="Next Noodle"
 							onclick="nextNoodle()"
 						/>
-						<p id="see-prev">See Next:</p>
-						<p id="next-noodle-name">Bread</p>
+						<p id="see-next">See Next:</p>
 					</div>
 				</div>
 			</main>

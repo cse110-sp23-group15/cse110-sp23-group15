@@ -28,7 +28,6 @@ async function accessibilitySwitch() {
 		}, 1);
 	}
 	accessibility[0].addEventListener('click', function () {
-		console.log('event triggered');
 		if (!isBrowserSupported) {
 			alert('Your browser does not support speech synthesis');
 			return;
@@ -98,22 +97,94 @@ async function accessibilitySwitch() {
  * @param {Speechify} speechify The speechify object
  */
 function accessElement(speechify) {
-	// Enable speechify on mouseover and click
+	// Enable speechify on text element with `speechify` class on mouseover and
+	// click
 	const readEnabled = document.getElementsByClassName('speechify');
-	for (let i = 0; i < readEnabled.length; i++) {
-		readEnabled[i].addEventListener('mouseover', (_) => {
-			speechify.reset();
-			speechify.speechifyHighlight(readEnabled[i]);
-		});
+	if (readEnabled != null) {
+		for (let i = 0; i < readEnabled.length; i++) {
+			readEnabled[i].addEventListener('mouseover', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(readEnabled[i]);
+			});
 
-		readEnabled[i].addEventListener('click', (_) => {
-			speechify.reset();
-			speechify.speechifyHighlight(readEnabled[i]);
-		});
+			readEnabled[i].addEventListener('click', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(readEnabled[i]);
+			});
+		}
+	}
+
+	// Enable speechify on button elements
+	const buttons = document.querySelectorAll('button');
+	if (buttons != null) {
+		for (let i = 0; i < buttons.length; i++) {
+			buttons[i].addEventListener('mouseover', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(buttons[i]);
+			});
+			buttons[i].addEventListener('click', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(buttons[i]);
+			});
+		}
+	}
+
+	const modifiedButtons = document.getElementsByClassName('button');
+	if (modifiedButtons != null) {
+		for (let i = 0; i < buttons.length; i++) {
+			modifiedButtons[i].addEventListener('mouseover', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(modifiedButtons[i]);
+			});
+			modifiedButtons[i].addEventListener('click', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(modifiedButtons[i]);
+			});
+		}
+	}
+	// Enable speechify on links on mouseover
+	const refLinks = document.querySelectorAll('a');
+	if (refLinks != null) {
+		for (let i = 0; i < 2; i++) {
+			// Extract link innerHTML
+			const linkText = refLinks[i].innerHTML;
+
+			// Extract page name from href link if innerHTML is empty
+			if (linkText == '') {
+				let linkText = refLinks[i].href
+					.replace(/^.*[\\\/]/, '')
+					.replace(/\.[^/.]+$/, '');
+				if (linkText == 'index') {
+					linkText = 'main page';
+				}
+			}
+
+			refLinks[i].addEventListener('mouseover', (_) => {
+				speechify.reset();
+				speechify.speechify(linkText);
+			});
+		}
+	}
+
+	// Enable speechify on images on mouseover and click
+	const images = Array.from(document.querySelectorAll('img'));
+	if (images != null) {
+		for (let i = 0; i < images.length; i++) {
+			images[i].addEventListener('mouseover', (_) => {
+				speechify.reset();
+				speechify.speechify(images[i].getAttribute('alt'));
+			});
+
+			images[i].addEventListener('click', (_) => {
+				speechify.reset();
+				speechify.speechify(images[i].getAttribute('alt'));
+			});
+		}
 	}
 }
+
 /**
- * read the selected choice of the user on the questionaire page
+ * Read the selected choice of the user on the questionaire page
  * @param {Speechify} speechify The speechify object
  */
 function readChoice(speechify) {

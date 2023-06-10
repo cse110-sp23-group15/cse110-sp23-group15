@@ -5,7 +5,6 @@
 // - https://jsdoc.app/howto-es2015-modules.html
 // - https://jsdoc.app/howto-es2015-classes.html
 
-let noodleIndex = 0;
 const noodles = [
 	{
 		noodleName: 'Ravioli',
@@ -93,13 +92,23 @@ const noodles = [
 	}
 ];
 
+let noodleIndex = 0;
+
+if (localStorage.getItem('myNoodleIndex') !== null) {
+	noodleIndex = localStorage.getItem('myNoodleIndex');
+}
+
 /** Single page update content function */
 function singlePageUpdateNoodle() {
 	document.getElementById('name').innerText = noodles[noodleIndex].noodleName;
 	document.getElementById('description').innerText =
 		noodles[noodleIndex].personalityDescription;
-	document.getElementById('selected-noodle-img').src =
-		noodles[noodleIndex].path;
+
+	const selectedNoodleImg = document.getElementById('selected-noodle-img');
+	selectedNoodleImg.src = noodles[noodleIndex].path;
+	selectedNoodleImg.alt =
+		'Delicious ' + noodles[noodleIndex].noodleName + ' image';
+
 	const carouselImages = document.getElementById('carousel').children;
 	for (let i = 0; i < carouselImages.length; i++) {
 		carouselImages[i].src = noodles[i].path;
@@ -108,18 +117,30 @@ function singlePageUpdateNoodle() {
 
 /** Double page update content function */
 function doublePageUpdateNoodle() {
-	document.getElementById('carousel-image').src = noodles[noodleIndex].path;
-	document.getElementById('name').innerText = noodles[noodleIndex].noodleName;
-	document.getElementById('description').innerText =
-		noodles[noodleIndex].personalityDescription;
-	document.getElementById('prev-noodle').src =
+	const selectedNoodleImg = document.getElementById('carousel-image');
+	selectedNoodleImg.src = noodles[noodleIndex].path;
+	selectedNoodleImg.alt =
+		'Delicious ' + noodles[noodleIndex].noodleName + ' image';
+
+	const nextNoodleImg = document.getElementById('next-noodle');
+	nextNoodleImg.src = noodles[(noodleIndex + 1) % noodles.length].path;
+	nextNoodleImg.alt =
+		'Delicious ' +
+		noodles[(noodleIndex + 1) % noodles.length].noodleName +
+		' image';
+
+	const prevNoodleImg = document.getElementById('prev-noodle');
+	prevNoodleImg.src =
 		noodles[(noodleIndex - 1 + noodles.length) % noodles.length].path;
-	document.getElementById('next-noodle').src =
-		noodles[(noodleIndex + 1) % noodles.length].path;
-	document.getElementById('prev-noodle-name').innerText =
-		noodles[(noodleIndex - 1 + noodles.length) % noodles.length].noodleName;
-	document.getElementById('next-noodle-name').innerText =
-		noodles[(noodleIndex + 1) % noodles.length].noodleName;
+	prevNoodleImg.alt =
+		'Delicious ' +
+		noodles[(noodleIndex - 1 + noodles.length) % noodles.length].noodleName +
+		' image';
+
+	document.getElementById('name-double').innerText =
+		noodles[noodleIndex].noodleName;
+	document.getElementById('description-double').innerText =
+		noodles[noodleIndex].personalityDescription;
 }
 
 /**
@@ -164,16 +185,19 @@ function checkWindowSize() {
 // Call checkWindowSize whenever the window is resized
 window.addEventListener('resize', checkWindowSize);
 
-const button = document.getElementById('fortune-button');
-button.addEventListener('click', () => {
-	if (localStorage.getItem('myNoodleIndex') == null) {
-		const linkRef = document.getElementById('fortune-link');
-		linkRef.setAttribute('href', 'questionnaire.html');
-		alert(
-			"Oops, looks like you haven't taken our personality quiz yet. Here is the quiz."
-		);
-	}
-});
+const buttons = document.querySelectorAll('.fortune-button');
+
+for (let i = 0; i < buttons.length; i++) {
+	buttons[i].addEventListener('click', () => {
+		if (localStorage.getItem('myNoodleIndex') == null) {
+			const linkRef = buttons[i].parentElement;
+			linkRef.setAttribute('href', 'questionnaire.html');
+			alert(
+				"Oops, looks like you haven't taken our personality quiz yet. Here is the quiz."
+			);
+		}
+	});
+}
 
 // Call functions before the page loads
 singlePageUpdateNoodle();
