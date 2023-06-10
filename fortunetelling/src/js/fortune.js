@@ -23,7 +23,7 @@ async function init() {
 		});
 	}
 
-	let noodleIndex = getLocalStorage('noodleIndex');
+	let noodleIndex = getLocalStorage('myNoodleIndex');
 	// typecase noodleIndex to int
 	noodleIndex = parseInt(noodleIndex);
 	updateNoodle(noodleIndex);

@@ -5,12 +5,24 @@
 @import url('https://fonts.googleapis.com/css?family=Hi+Melody');
 
 /* Global styling */
+html {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	background-color: #eae1cd;
 	margin: 0;
+
+	width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
 }
 
 main {
@@ -19,6 +31,7 @@ main {
 	text-align: center;
 	opacity: 0;
 }
+
 #icon {
 	width: 61px;
 	height: 55px;
@@ -26,7 +39,7 @@ main {
 
 header {
 	background-color: #f8f6f0;
-	width: 100%;
+	width: auto;
 	display: flex;
 	align-items: center;
 }
@@ -155,7 +168,7 @@ header button:hover {
 }
 
 .footer {
-	width: 100%;
+	min-width: 100%;
 
 	background-color: #f8f6f0;
 	text-align: center;
