@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.4.0] - 2023-06-10
+### :bug: Bug Fixes
+- [`aa50cef`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/aa50cef9df66e79a9ae3297816b42922079210be) - **frontend**: Noodles result UI *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
 ## [v1.3.1] - 2023-06-10
 ### :bug: Bug Fixes
 - [`9b1a09e`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/9b1a09e6e196a52f9eb619cd4a8fda3fc0be4f4f) - index styling and animation *(commit by [@marklcrns](https://github.com/marklcrns))*
@@ -143,3 +148,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.2.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.1.1...v1.2.0
 [v1.3.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.2.0...v1.3.0
 [v1.3.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.3.0...v1.3.1
+[v1.4.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.3.1...v1.4.0
