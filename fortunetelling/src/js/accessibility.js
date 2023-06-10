@@ -129,19 +129,6 @@ function accessElement(speechify) {
 		}
 	}
 
-	const modifiedButtons = document.getElementsByClassName('button');
-	if (modifiedButtons != null) {
-		for (let i = 0; i < buttons.length; i++) {
-			modifiedButtons[i].addEventListener('mouseover', (_) => {
-				speechify.reset();
-				speechify.speechifyHighlight(modifiedButtons[i]);
-			});
-			modifiedButtons[i].addEventListener('click', (_) => {
-				speechify.reset();
-				speechify.speechifyHighlight(modifiedButtons[i]);
-			});
-		}
-	}
 	// Enable speechify on links on mouseover
 	const refLinks = document.querySelectorAll('a');
 	if (refLinks != null) {
