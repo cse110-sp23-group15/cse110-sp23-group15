@@ -8,11 +8,12 @@
 }
 
 #flavorProf {
-	font-weight: 400;
-	font-size: 30px;
+	color: #eee;
+	font-size: 2rem;
 	margin-bottom: 5px;
 	padding-left: 2vw;
 	padding-right: 2vw;
+	text-shadow: 3px 2px 2px #bb1212;
 }
 
 #description {

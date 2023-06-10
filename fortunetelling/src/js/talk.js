@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const messageOutput = document.getElementById('message-output');
 	const toQuestions = document.getElementById('toQuestions');
 	const fortuneButton = document.getElementById('fortuneButton');
+	const flavorProfile = document.getElementById('flavorProf');
 	let isFirstClick = true;
 
 	userInputButton.addEventListener('click', startConversation);
@@ -59,31 +60,112 @@ document.addEventListener('DOMContentLoaded', function () {
 	 */
 	function nextStep2() {
 		updateMessageWithAnimation('You will know in one sec. Come with me');
-		showButton('...');
 
 		// Remove existing event listener
 		userInputButton.removeEventListener('click', nextStep2);
 		userInputButton.style.display = 'none';
 
+		// Animate the noodles
+		const noodles = [
+			{
+				name: 'Beef Noodle Soup',
+				image: './src/img/beef-noodle-soup-icon-1.png',
+				description: 'Description for Beef Noodle Soup'
+			},
+			{
+				name: 'Bread',
+				image: './src/img/bread-icon-1.png',
+				description: 'Description for Noodle 2'
+			},
+			{
+				name: 'Chicken Noodle Soup',
+				image: './src/img/chicken-noodle-soup-icon-1.png',
+				description: 'Description for Noodle 3'
+			},
+			{
+				name: 'Instant Noodles',
+				image: './src/img/instant-noodles-icon-1.png',
+				description: 'Description for Noodle 4'
+			},
+			{
+				name: 'Lasagna',
+				image: './src/img/lasagna-icon-1.png',
+				description: 'Description for Noodle 5'
+			},
+			{
+				name: 'Mac and Cheese',
+				image: './src/img/mac-and-cheese-icon-1.png',
+				description: 'Description for Noodle 6'
+			},
+			{
+				name: 'Pho',
+				image: './src/img/pho-icon-1.png',
+				description: 'Description for Noodle 7'
+			},
+			{
+				name: 'Ramen',
+				image: './src/img/ramen-icon-1.png',
+				description: 'Description for Noodle 8'
+			},
+			{
+				name: 'Ravioli',
+				image: './src/img/ravioli-icon-1.png',
+				description: 'Description for Noodle 9'
+			},
+			{
+				name: 'Spaghetti',
+				image: './src/img/spaghetti-icon-1.png',
+				description: 'Description for Noodle 10'
+			},
+			{
+				name: 'Udon',
+				image: './src/img/udon-icon-1.png',
+				description: 'Description for Noodle 11'
+			}
+		];
+
+		const noodlesContainer = document.querySelector('.noodles-container');
+
+		noodles.forEach((noodle, index) => {
+			const image = document.createElement('img');
+			image.src = noodle.image;
+			image.alt = noodle.name;
+			image.classList.add('flying-noodle');
+			noodlesContainer.appendChild(image);
+
+			setTimeout(() => {
+				image.style.animation = `fly-out 1s forwards`;
+				image.addEventListener('animationend', () => {
+					noodlesContainer.removeChild(image);
+				});
+			}, index * 250);
+		});
+
 		// Show questionnaire and fortune button
 		toQuestions.style.display = 'initial';
 		fortuneButton.style.display = 'initial';
-	}
-
-	/**
-	 * Updates the displayed message with a typing animation.
-	 * @param {string} message - The message to display.
-	 */
-	function updateMessageWithAnimation(message) {
-		// ...
+		flavorProfile.style.display = 'initial';
 	}
 
 	/**
 	 * Updates the displayed message.
 	 * @param {string} message - The message to display.
 	 */
-	function updateMessage(message) {
-		messageOutput.textContent = message;
+	function updateMessageWithAnimation(message) {
+		const characters = message.split('');
+		let currentIndex = 0;
+
+		// Clear previous message
+		messageOutput.textContent = '';
+
+		const animationInterval = setInterval(() => {
+			if (currentIndex >= characters.length) {
+				clearInterval(animationInterval);
+			} else {
+				messageOutput.textContent += characters[currentIndex];
+				currentIndex++;
+			}
+		}, 20);
 	}
 
 	/**

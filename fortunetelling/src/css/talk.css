@@ -1,3 +1,146 @@
+/* Flying noodle box text styling */
+#message-output {
+	text-align: center;
+	color: #eee;
+	font-size: 1.4rem;
+	font-weight: normal;
+	margin-top: 20px;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	text-shadow: 3px 2px 2px #000;
+}
+
+@media screen and (min-width: 801px) {
+	main {
+		background-image: url('../img/landing-background.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.chat-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		font-family: cursive;
+	}
+
+	.noodles-container {
+		position: relative;
+		top: -20%;
+		left: -30%;
+	}
+
+	.user-input {
+		display: flex;
+	}
+
+	.noodles-container.fly-to-center {
+		animation: 1s fly-to-center linear;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes fly-to-center {
+		0% {
+			transform: translate(0, 0);
+		}
+		100% {
+			transform: translate(10vh, 5vh);
+		}
+	}
+	@keyframes fly-out {
+		0% {
+			opacity: 1;
+			transform: translate(0, 0) rotate(0);
+		}
+		100% {
+			opacity: 0;
+			transform: translate(100px, 100px) rotate(-360deg);
+		}
+	}
+
+	.flying-noodle {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 50px; /* Adjust the image width as needed */
+		height: auto;
+	}
+}
+@media screen and (max-width: 800px) {
+	main {
+		background-image: url('../img/landing-background.jpg');
+	}
+	.chat-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		font-family: cursive;
+	}
+
+	.noodles-container {
+		position: relative;
+		top: -20%;
+		left: -30%;
+	}
+
+	.user-input {
+		display: flex;
+	}
+
+	#user-input-button {
+		padding: 10px 20px;
+		background-color: #da0b0b;
+		color: white;
+		border: none;
+		cursor: pointer;
+		font-family: cursive;
+		transition: background-color 0.3s ease;
+	}
+
+	#user-input-button:hover {
+		background-color: #da0b0b77;
+	}
+
+	.noodles-container.fly-to-center {
+		animation: 1s fly-to-center linear;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes fly-to-center {
+		0% {
+			transform: translate(0, 0);
+		}
+		100% {
+			transform: translate(100px, 100px);
+		}
+	}
+	@keyframes fly-out {
+		0% {
+			opacity: 1;
+			transform: translate(0, 0) rotate(0);
+		}
+		100% {
+			opacity: 0;
+			transform: translate(100px, 100px) rotate(-360deg);
+		}
+	}
+
+	.flying-noodle {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 50px; /* Adjust the image width as needed */
+		height: auto;
+	}
+}
+
+/* Flying noodle box animation styling */
 @media screen and (min-width: 801px) {
 	.noodles {
 		position: relative;
