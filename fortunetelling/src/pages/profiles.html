@@ -72,17 +72,15 @@
 						alt="Selected Noodle"
 					/>
 				</div>
-				<div id="name-double" class="name speechify speechify-onload"></div>
+				<div id="name" class="name speechify speechify-onload"></div>
 				<div
-					id="description-double"
+					id="description"
 					class="description speechify speechify-onload"
 				></div>
-				<div class="controls">
-					<div>
-						<a href="fortune.html">
-							<button class="button fortune-button">Reveal my Fortune</button>
-						</a>
-					</div>
+				<div class="buttons">
+					<a href="fortune.html">
+						<button class="button fortune-button">Reveal my Fortune</button>
+					</a>
 				</div>
 				<div id="carousel" class="carousel">
 					<div>
@@ -198,8 +196,11 @@
 					<li class="logo">
 						<a id="noodleText" href="../../index.html"> Tasty Noodles </a>
 					</li>
-					<li class="item"><a href="./profiles.html">Noodle Profiles</a></li>
-					<li class="item"><a href="./about.html">About</a></li>
+					<li class="item current">
+						<a href="./profiles.html">Noodle Profiles</a>
+					</li>
+					<li class="item"><a href="./about.html">About Us</a></li>
+					<li class="item"><a href="./questionnaire.html">Take a Quiz!</a></li>
 					<li class="item accessibility-container">
 						<label class="switch">
 							<input name="accessibility" type="checkbox" />
@@ -224,7 +225,7 @@
 
 			<!-- Main content -->
 			<main>
-				<div id="name" class="name speechify speechify-onload"></div>
+				<div id="name-double" class="name speechify speechify-onload"></div>
 				<div id="carousel" class="carousel">
 					<img
 						id="carousel-image"
@@ -232,12 +233,15 @@
 						alt="Noodle 1"
 					/>
 				</div>
-				<div>
+				<div class="buttons">
 					<a href="fortune.html">
 						<button class="button fortune-button">Reveal my Fortune</button>
 					</a>
 				</div>
-				<div id="description" class="description speechify speechify-onload">
+				<div
+					id="description-double"
+					class="description speechify speechify-onload"
+				>
 					<p>Description for Noodle</p>
 				</div>
 				<div class="controls">
