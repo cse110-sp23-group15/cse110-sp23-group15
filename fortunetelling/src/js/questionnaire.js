@@ -7,7 +7,7 @@
 
 // upon loading, call updatenoodle, passing in the noodleIndex from local storage
 document.addEventListener('DOMContentLoaded', init);
-const QUESTIONS = 10;
+const QUESTIONS = 10; // Questionnaire Length
 const noodleData = [
 	{
 		"noodleName": "Ravioli",
@@ -100,6 +100,7 @@ function gradeQuiz() {
 		let answerCnt = 0;
 		let pnts = 0;
 
+		// Go through each question and tally up the points.
 		for (let i = 0; i < answers.length; i++) {
 			if (answers[i].checked) {
 				const response = answers[i].className;
@@ -123,12 +124,13 @@ function gradeQuiz() {
 			}
 		}
 
+		// Makes sure the user has answered all the questions.
 		if (answerCnt != QUESTIONS) {
 			alert('You have not answered all the questions.');
 		} else {
 			const hash = pnts % 12;
-			localStorage.setItem('noodle', noodleData[hash]['path']);
-			localStorage.setItem('noodleIndex', hash);
+			localStorage.setItem('myNoodle', noodleData[hash]['path']);
+			localStorage.setItem('myNoodleIndex', hash);
 			link.setAttribute('href', './noodlesResults.html');
 		}
 	});
