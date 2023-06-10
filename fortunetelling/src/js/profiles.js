@@ -104,8 +104,6 @@ function singlePageUpdateNoodle() {
 	for (let i = 0; i < carouselImages.length; i++) {
 		carouselImages[i].src = noodles[i].path;
 	}
-
-	localStorage.setItem('noodleIndex', noodleIndex);
 }
 
 /** Double page update content function */
@@ -122,8 +120,6 @@ function doublePageUpdateNoodle() {
 		noodles[(noodleIndex - 1 + noodles.length) % noodles.length].noodleName;
 	document.getElementById('next-noodle-name').innerText =
 		noodles[(noodleIndex + 1) % noodles.length].noodleName;
-
-	localStorage.setItem('noodleIndex', noodleIndex);
 }
 
 /**
@@ -167,6 +163,17 @@ function checkWindowSize() {
 
 // Call checkWindowSize whenever the window is resized
 window.addEventListener('resize', checkWindowSize);
+
+const button = document.getElementById('fortune-button');
+button.addEventListener('click', () => {
+	if (localStorage.getItem('myNoodleIndex') == null) {
+		const linkRef = document.getElementById('fortune-link');
+		linkRef.setAttribute('href', 'questionnaire.html');
+		alert(
+			"Oops, looks like you haven't taken our personality quiz yet. Here is the quiz."
+		);
+	}
+});
 
 // Call functions before the page loads
 singlePageUpdateNoodle();
