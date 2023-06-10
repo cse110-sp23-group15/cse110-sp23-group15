@@ -95,6 +95,10 @@
 	font-size: 15px;
 }
 
+.arrowButton {
+	display: none;
+}
+
 .show {
 	display: flex;
 	flex-direction: row;
@@ -109,6 +113,8 @@
 	display: block;
 }
 
+
+
 @media screen and (max-width: 600px) {
 	#fortune {
 		padding-right: 10%;
@@ -120,6 +126,16 @@
 	.dropdown-content .noodleButton {
 		width: 184px;
 		margin-left: 0%;
+		display: none;
+	}
+
+	.carousel-caption {
+		display: none;
+	}
+
+	.arrowButton {
+		display: inline-block;
+		font-size: 25px;
 	}
 }
 
@@ -131,3 +147,4 @@
 		font-size: 30px;
 	}
 }
+

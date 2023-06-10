@@ -15,11 +15,39 @@ document.addEventListener('DOMContentLoaded', init);
 async function init() {
 	const dropbtn = document.getElementById('dropbtn');
 	const noodleButtons = document.getElementsByClassName('noodleButton');
+	const prevButton = document.getElementById('leftArrow');
+	const nextButton = document.getElementById('rightArrow');
+	const noodleImg = document.getElementById('noodle-image');
+	
 	dropbtn.addEventListener('click', buttonFunct);
+
+	// Makes prevButton go to previous noodle fortune
+	prevButton.addEventListener('click', () => {
+		if(noodleIndex == 0) {
+			noodleIndex = 11;
+		}
+		else {
+			noodleIndex--;
+		}
+		console.log(noodleIndex);
+		updateNoodle(noodleIndex);
+	})
+
+	// Makes nextButton got o next noodle fortune
+	nextButton.addEventListener('click', () => {
+		if(noodleIndex == 11) {
+			noodleIndex = 0;
+		}
+		else {
+			noodleIndex++;
+		}
+		updateNoodle(noodleIndex);
+	})
 
 	for (let i = 0; i < noodleButtons.length; i++) {
 		noodleButtons[i].addEventListener('click', function () {
 			updateNoodle(i);
+			noodleIndex = i;
 		});
 	}
 
@@ -40,6 +68,8 @@ async function updateNoodle(newNoodleIndex) {
 	document.getElementById('fortuneText').innerText = await getHoroscope(
 		newNoodleIndex + 1
 	);
+
+	return newNoodleIndex;
 }
 
 /** Function to toggle dropbown */
