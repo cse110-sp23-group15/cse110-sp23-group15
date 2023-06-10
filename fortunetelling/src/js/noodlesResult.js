@@ -14,7 +14,7 @@ async function init() {
 	const noodleDescription = document.getElementById('noodleDescription');
 	const quizResult = document.getElementById('quizResult');
 	let noodleId = localStorage.getItem('myNoodleIndex');
-	
+
 	// convert noodleId to int
 	noodleId = parseInt(noodleId);
 	const noodleData = await getNoodleData();

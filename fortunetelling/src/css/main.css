@@ -5,31 +5,34 @@
 @import url('https://fonts.googleapis.com/css?family=Hi+Melody');
 
 /* Global styling */
+* {
+	font-family: 'Hi Melody';
+	font-size: 1.3rem;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
 html {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
 	background-color: #eae1cd;
+	min-height: 100vh;
 	margin: 0;
-
 	width: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
+	height: 100%;
+	overflow-x: hidden;
 }
 
 main {
 	flex-grow: 1;
-	font-family: 'Montserrat';
 	text-align: center;
 	opacity: 0;
+	padding: 50px;
 }
 
 #icon {
@@ -168,10 +171,29 @@ header button:hover {
 }
 
 .footer {
-	min-width: 100%;
-
+	width: 100%;
 	background-color: #f8f6f0;
 	text-align: center;
+	justify-content: center;
+}
+
+button {
+	font-family: 'Montserrat';
+	border: none;
+	font-size: 20px;
+	border-radius: 8px;
+	background-color: #da0b0b;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	padding: 10px;
+	width: auto;
+	height: auto;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+	background-color: #da0b0b77;
 }
 
 /* Styling for accessibility button */
@@ -181,17 +203,6 @@ header button:hover {
 
 .accessibility-container {
 	text-align: center;
-	margin-right: 2vw;
-	margin-left: auto;
-	margin-bottom: 0.5vw;
-}
-
-.accessibility-header {
-	font-family: 'Hi Melody';
-	font-style: normal;
-	font-size: 20px;
-	margin-bottom: 0.1vw;
-	margin-top: 0.2vw;
 }
 
 .switch {
@@ -248,6 +259,11 @@ input:checked + .slider:before {
 
 .slider.round {
 	border-radius: 34px;
+}
+
+span i.fas {
+	font-size: 1rem;
+	transform: translateY(-12px) translateX(8px);
 }
 
 .slider.round:before {
