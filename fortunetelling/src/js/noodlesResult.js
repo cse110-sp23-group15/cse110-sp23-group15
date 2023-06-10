@@ -9,7 +9,6 @@ const smokePeakCoverTime = 700;
 const totalImageCycles = 4;
 const imageExponentialPlier = 1.1;
 
-
 /**
  * On load function,
  * use localStorage to get the quiz result and display the corresponding noodle
@@ -19,15 +18,14 @@ async function init() {
 	const quizResult = document.getElementById('quizResult');
 	const smoke = document.getElementById('smokeImage');
 	noodleDescription.style.opacity = 0;
-	quizResult.textContent = "Your personality type is being calculated...";
+	quizResult.textContent = 'Your personality type is being calculated...';
 	smoke.style.opacity = 0;
 
-
 	spinNoodleWheel();
-	
-	setTimeout(() => {	
+
+	setTimeout(() => {
 		doSmokeEffect();
-	}, timeBeforeSmoke);	
+	}, timeBeforeSmoke);
 
 	setTimeout(() => {
 		noodleDescription.style.opacity = 1;
@@ -37,7 +35,7 @@ async function init() {
 
 	setTimeout(() => {
 		setImageCorrectly();
-	}, imageAnimationTime + 1);
+	}, imageAnimationTime + 500);
 }
 
 /**
@@ -73,10 +71,10 @@ async function spinNoodleWheel() {
 	const spinsAround = totalImageCycles;
 	const spinTime = imageAnimationTime;
 
-	//exponential function 
+	// exponential function
 	const b = imageExponentialPlier;
-	const a = spinTime / Math.pow(b, spinsAround*12);
-	
+	const a = spinTime / Math.pow(b, spinsAround * 12);
+
 	const image = document.getElementById('noodleImg');
 	for (let i = 0; i < spinsAround * 12; i++) {
 		setTimeout(() => {
