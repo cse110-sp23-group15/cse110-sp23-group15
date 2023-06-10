@@ -137,10 +137,9 @@ header button:hover {
 
 	.dropdown {
 		font-family: 'Montserrat';
-		margin-left: auto;
-		top: 0px;
 		background-color: #da0b0b;
 		color: white;
+		width: 100%;
 	}
 	.dropdownContent {
 		margin: 0;

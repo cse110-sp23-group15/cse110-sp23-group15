@@ -1,6 +1,6 @@
 ---
 title: JSDoc for documentation generation
-status: proposed
+status: accepted
 date: 2023-05-15
 deciders: Mark Lucernas, Hieu Pham
 consulted: Akshay Prabhu
