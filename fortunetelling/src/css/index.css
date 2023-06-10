@@ -8,11 +8,12 @@
 }
 
 #flavorProf {
-	font-weight: 400;
-	font-size: 30px;
+	color: #eee;
+	font-size: 2rem;
 	margin-bottom: 5px;
 	padding-left: 2vw;
 	padding-right: 2vw;
+	text-shadow: 3px 2px 2px #bb1212;
 }
 
 #description {
@@ -22,42 +23,16 @@
 	padding-right: 5vw;
 }
 
+/*removes underline of buttons*/
+.chat-box a {
+	text-decoration: none;
+}
+
 /*button to navigate to the questionaire page*/
+#fortuneButton,
 #toQuestions {
-	width: 192px;
-	height: 52px;
-	margin-bottom: 15px;
-
-	border: none;
-	font-family: 'Montserrat';
-	font-size: 20px;
-	border-radius: 8px;
-	background-color: #da0b0b;
-	color: white;
-
-	box-shadow: 0 0 0 0 #bb1212;
 	transform: scale(1);
-	/* animation: pulse 2s infinite; */
 }
-
-#toQuestions:hover, #fortune-button:hover {
-	background-color: #bb1212;
-}
-
-#fortune-button {
-	margin-bottom: 20px;
-	width: 192px;
-	height: 52px;
-	cursor: pointer;
-	outline: none;
-	border: none;
-	font-family: 'Montserrat';
-	font-size: 18px;
-	border-radius: 8px;
-	background-color: #da0b0b;
-	color: white;
-}
-
 
 @keyframes pulse {
 	0% {

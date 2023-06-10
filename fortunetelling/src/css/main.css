@@ -5,39 +5,39 @@
 @import url('https://fonts.googleapis.com/css?family=Hi+Melody');
 
 /* Global styling */
+* {
+	font-family: 'Hi Melody';
+	font-size: 1.3rem;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	overflow-x: hidden;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
 	background-color: #eae1cd;
+	min-height: 100vh;
 	margin: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
 }
 
 main {
 	flex-grow: 1;
-	font-family: 'Montserrat';
 	text-align: center;
 	opacity: 0;
+	padding: 25px;
 }
+
 #icon {
 	width: 61px;
 	height: 55px;
-}
-
-header {
-	background-color: #f8f6f0;
-	width: 100%;
-	display: flex;
-	align-items: center;
-}
-
-header a {
-	text-decoration: none;
-	color: black;
-}
-
-header button:hover {
-	background-color: #da0b0b77;
 }
 
 /*Styling for text in the header*/
@@ -47,6 +47,13 @@ header button:hover {
 	font-weight: 400;
 	font-size: 40px;
 	margin: 7px;
+}
+
+.title {
+	font-weight: 400;
+	font-size: 60px;
+	line-height: 100px;
+	color: #ae3131;
 }
 
 @media (min-width: 767px) {
@@ -124,10 +131,9 @@ header button:hover {
 
 	.dropdown {
 		font-family: 'Montserrat';
-		margin-left: auto;
-		top: 0px;
 		background-color: #da0b0b;
 		color: white;
+		width: 100%;
 	}
 	.dropdownContent {
 		margin: 0;
@@ -157,9 +163,28 @@ header button:hover {
 
 .footer {
 	width: 100%;
-
 	background-color: #f8f6f0;
 	text-align: center;
+	justify-content: center;
+}
+
+button {
+	font-family: 'Montserrat';
+	border: none;
+	font-size: 20px;
+	border-radius: 8px;
+	background-color: #da0b0b;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	padding: 10px;
+	width: auto;
+	height: auto;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+	background-color: #da0b0b77;
 }
 
 /* Styling for accessibility button */
@@ -169,17 +194,6 @@ header button:hover {
 
 .accessibility-container {
 	text-align: center;
-	margin-right: 2vw;
-	margin-left: auto;
-	margin-bottom: 0.5vw;
-}
-
-.accessibility-header {
-	font-family: 'Hi Melody';
-	font-style: normal;
-	font-size: 20px;
-	margin-bottom: 0.1vw;
-	margin-top: 0.2vw;
 }
 
 .switch {
@@ -236,6 +250,11 @@ input:checked + .slider:before {
 
 .slider.round {
 	border-radius: 34px;
+}
+
+span i.fas {
+	font-size: 1rem;
+	transform: translateY(-12px) translateX(8px);
 }
 
 .slider.round:before {
