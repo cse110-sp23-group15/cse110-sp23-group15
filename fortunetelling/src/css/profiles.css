@@ -99,6 +99,9 @@
 	.show {
 		display: block;
 	}
+	main{
+		opacity: 1;
+	}
 }
 
 /* For tablets and larger screens */
