@@ -1,6 +1,6 @@
 ---
 title: Testing Framework
-status: proposed
+status: accepted
 date: 2023-05-15
 deciders: Mark Lucernas, Xinle Yu
 consulted: Akshay Prabhu

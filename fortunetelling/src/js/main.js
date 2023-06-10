@@ -5,50 +5,29 @@
 // - https://jsdoc.app/howto-es2015-modules.html
 // - https://jsdoc.app/howto-es2015-classes.html
 
-import { accessibilitySwitch } from './accessibility.js';
-import { getHoroscope, getDescription } from './genHoroscope.js';
-import { Personality } from './personality.js';
-import { Speechify } from './speechify.js';
 import { transition } from './transition.js';
 
 window.addEventListener('DOMContentLoaded', init);
 /** On load function */
 async function init() {
-	// --- genHoroscope DEMO
+	// Transform the code above into vanilla JavaScript
+	const toggle = document.querySelector('#toggle');
+	const items = document.querySelectorAll('.item');
 
-	// console.log(await getHoroscope(1));
-	// console.log(await getDescription(1));
+	toggle.addEventListener('click', function () {
+		items.forEach((item) => item.classList.toggle('active'));
+	});
 
-	// --- Personality DEMO
+	// Dynamic transparent navbar
+	const nav = document.getElementById('navbar');
+	if (document.body.scrollTop >= 200) {
+		nav.classList.add('nav-colored');
+		nav.classList.remove('nav-transparent');
+	} else {
+		nav.classList.add('nav-transparent');
+		nav.classList.remove('nav-colored');
+	}
 
-	// const answers = [];
-	// const personality = new Personality(answers);
-	// await personality.evaluatePersonality();
-	// console.log(personality.personality);
-
-	// --- Speechify DEMO
-
-	// const speechify = new Speechify();
-	// const voices = await speechify.voices;
-	//
-	// // Selecting voice method 1:
-	// const selectedVoice = voices[2];
-	// speechify.voice = selectedVoice;
-	//
-	// // Selecting voice method 2:
-	// // const selectedVoiceName = selectedVoice.name;
-	// // speechify.selectVoiceName(selectedVoiceName);
-	//
-	// // NOTE: When debugging in Chrome, we need to create a button to trigger the speech.
-	// // Ref: https://stackoverflow.com/a/54266831
-	// //
-	// // But for Firefox, it works without the button and would speak the text immediately.
-	//
-	// // UNCOMMENT THIS LINE TO TEST SPEECHIFY
-	// // speechify.speechify('Hello world');
-	// // speechify.speechify('Hello world');
-
-	// Activate accessibility switch
-	accessibilitySwitch();
+	// Activate page transition
 	transition();
 }

@@ -11,9 +11,10 @@
  */
 class Speechify {
 	/**
-	 * @param {obj} element The DOM element to spechify.
+	 * Constructor function. Initializes the Speechify object. Also initializes
+	 * the window.speechifyReady global flag.
 	 */
-	constructor(element) {
+	constructor() {
 		this._voice = null;
 		this._allVoicesObtained = null;
 		this._init();

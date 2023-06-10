@@ -77,6 +77,7 @@ Example commits:
     7.  revert(backend)!: revert commit 123456
 ```
 
+
 ## Development
 
 This applies to both `fortunetelling` and `magic8ball` projects.
@@ -102,7 +103,12 @@ To install all dependencies:
 npm install
 ```
 
-### Formatting and Linting
+### Styling Guide
+
+Please follow our branding sheet for color and font choices
+[here](./admin/branding/branding-sheet.pdf)
+
+### Code Formatting and Linting
 
 To format and lint all source code:
 
@@ -110,10 +116,11 @@ To format and lint all source code:
 npm run format
 ```
 
-## Testing
+### Code Testing
 
 To run all tests:
 
 ```bash
 npm run test
 ```
+

@@ -1,4 +1,9 @@
-# cse110-sp23-group15
+# Tasty Noodles (Team 15)
+
+<p align="center">
+  <img src="./admin/branding/tasty-noodles-icon.png" alt="Tasty Noodles" width="200"/>
+</p>
+
 
 ## Projects
 
@@ -9,16 +14,16 @@
 
 ## Team
 
-[Meet the Team](./admin/team.md)
+[Meet the Team](https://github.com/cse110-sp23-group15/cse110-sp23-group15/blob/main/admin/team.md)
 
 https://user-images.githubusercontent.com/52873993/233766082-68d85fb7-b46b-48c1-8f39-fa8417b70bdc.mp4
 
 ## Contributing
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for details on how to contribute to
+See [CONTRIBUTING.md](https://github.com/cse110-sp23-group15/cse110-sp23-group15/blob/main/CONTRIBUTING.md) for details on how to contribute to
 this project.
 
 ## License
 
-This project is licensed under the terms of the [MIT License](./LICENSE).
+This project is licensed under the terms of the [MIT License](https://github.com/cse110-sp23-group15/cse110-sp23-group15/blob/main/LICENSE).
 
