@@ -166,6 +166,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				currentIndex++;
 			}
 		}, 20);
+		userInputButton.disabled = true;
+		setTimeout(() => {
+			userInputButton.disabled = false;
+		}, 1500);
 	}
 
 	/**
