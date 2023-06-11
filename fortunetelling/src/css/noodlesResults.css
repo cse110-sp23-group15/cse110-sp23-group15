@@ -1,7 +1,4 @@
 /* noodlesResults.html css styling */
-* {
-	/* z-index: 1; */
-}
 main {
 	display: flex;
 	flex-direction: column;
@@ -31,7 +28,6 @@ main {
 }
 
 .smoke img {
-	z-index: -1;
 	position: absolute;
 	width: 100%;
 	height: 100%;

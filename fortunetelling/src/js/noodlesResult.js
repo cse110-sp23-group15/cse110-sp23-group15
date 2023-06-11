@@ -6,7 +6,7 @@ const smokeAnimationTime = 1840;
 const imageAnimationTime = 2900;
 const timeBeforeSmoke = 2000;
 const smokePeakCoverTime = 700;
-const totalImageCycles = 4;
+const totalImageCycles = 2;
 const imageExponentialPlier = 1.1;
 
 /**
@@ -19,7 +19,7 @@ async function init() {
 	const smoke = document.getElementById('smokeImage');
 	noodleDescription.style.opacity = 0;
 	quizResult.textContent = 'Your personality type is being calculated...';
-	smoke.style.opacity = 0;
+	smoke.style.display = 'none';
 
 	spinNoodleWheel();
 
@@ -36,15 +36,19 @@ async function init() {
 	setTimeout(() => {
 		setImageCorrectly();
 	}, imageAnimationTime + 500);
+
+	bindButtons();
 }
 
 /**
  * Set the noodle image to the corresponding image of the user's quiz result
  */
-function setImageCorrectly() {
+async function setImageCorrectly() {
 	const image = document.getElementById('noodleImg');
-	const noodle = localStorage.getItem('myNoodle');
-	image.setAttribute('src', noodle);
+	const noodleData = await getNoodleData();
+	const noodleIndex = localStorage.getItem('myNoodleIndex');
+	image.setAttribute('src', noodleData[noodleIndex]['path']);
+	image.setAttribute('alt', noodleData[noodleIndex]['noodleName']);
 }
 
 /**
@@ -69,11 +73,10 @@ async function setDescriptionAndResult() {
 async function spinNoodleWheel() {
 	const noodleData = await getNoodleData();
 	const spinsAround = totalImageCycles;
-	const spinTime = imageAnimationTime;
 
 	// exponential function
 	const b = imageExponentialPlier;
-	const a = spinTime / Math.pow(b, spinsAround * 12);
+	const a = imageAnimationTime / Math.pow(b, spinsAround * 12);
 
 	const image = document.getElementById('noodleImg');
 	for (let i = 0; i < spinsAround * 12; i++) {
@@ -89,8 +92,8 @@ async function spinNoodleWheel() {
 function doSmokeEffect() {
 	const smoke = document.getElementById('smokeImage');
 	setTimeout(() => {
-		smoke.style.opacity = 0;
+		smoke.style.display = 'none';
 	}, smokeAnimationTime);
 	// img.src = img.src + "?";
-	smoke.style.opacity = 1;
+	smoke.style.display = 'block';
 }
