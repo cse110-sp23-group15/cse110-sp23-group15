@@ -9,7 +9,6 @@ const smokePeakCoverTime = 700;
 const totalImageCycles = 2;
 const imageExponentialPlier = 1.1;
 
-
 /**
  * On load function,
  * use localStorage to get the quiz result and display the corresponding noodle
@@ -19,15 +18,14 @@ async function init() {
 	const quizResult = document.getElementById('quizResult');
 	const smoke = document.getElementById('smokeImage');
 	noodleDescription.style.opacity = 0;
-	quizResult.textContent = "Your personality type is being calculated...";
-	smoke.style.display = "none";
-
+	quizResult.textContent = 'Your personality type is being calculated...';
+	smoke.style.display = 'none';
 
 	spinNoodleWheel();
-	
-	setTimeout(() => {	
+
+	setTimeout(() => {
 		doSmokeEffect();
-	}, timeBeforeSmoke);	
+	}, timeBeforeSmoke);
 
 	setTimeout(() => {
 		noodleDescription.style.opacity = 1;
@@ -37,7 +35,7 @@ async function init() {
 
 	setTimeout(() => {
 		setImageCorrectly();
-	}, imageAnimationTime + 100);
+	}, imageAnimationTime + 500);
 
 	bindButtons();
 }
@@ -45,10 +43,12 @@ async function init() {
 /**
  * Set the noodle image to the corresponding image of the user's quiz result
  */
-function setImageCorrectly() {
+async function setImageCorrectly() {
 	const image = document.getElementById('noodleImg');
-	const noodle = localStorage.getItem('myNoodle');
-	image.setAttribute('src', noodle);
+	const noodleData = await getNoodleData();
+	const noodleIndex = localStorage.getItem('myNoodleIndex');
+	image.setAttribute('src', noodleData[noodleIndex]['path']);
+	image.setAttribute('alt', noodleData[noodleIndex]['noodleName']);
 }
 
 /**
@@ -74,10 +74,10 @@ async function spinNoodleWheel() {
 	const noodleData = await getNoodleData();
 	const spinsAround = totalImageCycles;
 
-	//exponential function 
+	// exponential function
 	const b = imageExponentialPlier;
-	const a = imageAnimationTime / Math.pow(b, spinsAround*12);
-	
+	const a = imageAnimationTime / Math.pow(b, spinsAround * 12);
+
 	const image = document.getElementById('noodleImg');
 	for (let i = 0; i < spinsAround * 12; i++) {
 		setTimeout(() => {
@@ -95,5 +95,5 @@ function doSmokeEffect() {
 		smoke.style.display = 'none';
 	}, smokeAnimationTime);
 	// img.src = img.src + "?";
-	smoke.style.display = 'block';	
+	smoke.style.display = 'block';
 }

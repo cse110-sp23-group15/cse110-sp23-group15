@@ -1,6 +1,11 @@
 /* questionnaire.html css styling */
 
 /*button to submit questionnaire*/
+
+#submit {
+	margin-top: 20px;
+}
+
 .Question {
 	justify-content: center;
 	align-items: center;
