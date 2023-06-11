@@ -157,11 +157,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		userInputButton.addEventListener('click', () => {
 			clearInterval(animationInterval);
-		})
+		});
 
 		// Clear previous message
-		messageOutput.textContent = '';
-
+		messageOutput.textContent = '> ';
 		const animationInterval = setInterval(() => {
 			if (currentIndex >= characters.length) {
 				clearInterval(animationInterval);
@@ -170,10 +169,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				currentIndex++;
 			}
 		}, 20);
-		// userInputButton.disabled = true;
-		// setTimeout(() => {
-		// 	userInputButton.disabled = false;
-		// }, 1500);
 	}
 
 	/**
