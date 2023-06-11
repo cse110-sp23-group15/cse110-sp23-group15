@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.0] - 2023-06-11
+### :bug: Bug Fixes
+- [`0213bf7`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/0213bf7c23df9d896b83c6d43241a48d360068a8) - **frontend**: Landing page conversation text glitch when disappearing *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :zap: Performance Improvements
+- [`48e88bf`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/48e88bfe8fe7bbc64bfbc7e536242b6e77eb53da) - **frontend**: Some UI improvement in questionnaire page *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
 ## [v2.0.0] - 2023-06-11
 ### :sparkles: New Features
 - [`09cf966`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/09cf96628a5b4231bc4fa93f136574ee810a8d29) - **frontend**: Make questions appear one at a time. Add progress bar *(commit by [@marklcrns](https://github.com/marklcrns))*
@@ -167,3 +175,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.4.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.3.1...v1.4.0
 [v1.4.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.4.0...v1.4.1
 [v2.0.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.4.1...v2.0.0
+[v2.1.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v2.0.0...v2.1.0
