@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.0] - 2023-06-11
+### :sparkles: New Features
+- [`09cf966`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/09cf96628a5b4231bc4fa93f136574ee810a8d29) - **frontend**: Make questions appear one at a time. Add progress bar *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :recycle: Refactors
+- [`7d4934f`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/7d4934feeac16f71ad6a2a31c50d0cb0471564f5) - **frontend**: Animate progress bar in questionnaire page *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
 ## [v1.4.1] - 2023-06-11
 ### :bug: Bug Fixes
 - [`90f54ca`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/90f54cafbe2ee381f8a240d5cbe5520ff7ce268f) - Noodles result properly showing right image *(commit by [@marklcrns](https://github.com/marklcrns))*
@@ -158,3 +166,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.3.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.3.0...v1.3.1
 [v1.4.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.3.1...v1.4.0
 [v1.4.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.4.0...v1.4.1
+[v2.0.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.4.1...v2.0.0
