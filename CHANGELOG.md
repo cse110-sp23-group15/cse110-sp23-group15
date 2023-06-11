@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.4.1] - 2023-06-11
+### :bug: Bug Fixes
+- [`90f54ca`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/90f54cafbe2ee381f8a240d5cbe5520ff7ce268f) - Noodles result properly showing right image *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :white_check_mark: Tests
+- [`a3061d8`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/a3061d82aa14c9f87942d953710cd88f10eed1a6) - add tests for checking quiz taken *(commit by [@Henri-XYu02](https://github.com/Henri-XYu02))*
+
+
 ## [v1.4.0] - 2023-06-10
 ### :bug: Bug Fixes
 - [`aa50cef`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/aa50cef9df66e79a9ae3297816b42922079210be) - **frontend**: Noodles result UI *(commit by [@marklcrns](https://github.com/marklcrns))*
@@ -149,3 +157,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.3.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.2.0...v1.3.0
 [v1.3.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.3.0...v1.3.1
 [v1.4.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.3.1...v1.4.0
+[v1.4.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.4.0...v1.4.1
