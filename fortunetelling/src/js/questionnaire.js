@@ -33,6 +33,10 @@ function resetQuestionnare() {
 	questions[0].style.display = 'block';
 	questions[0].classList.add('fade-in');
 	questions[0].classList.remove('fade-out');
+
+	// Set the first question number to 1
+	questions[0].style.setProperty('--question-percent', "'0%'");
+
 	for (let i = 1; i < questions.length; i++) {
 		questions[i].style.display = 'none';
 
@@ -53,7 +57,7 @@ function resetQuestionnare() {
 	progressBar.style.display = 'block';
 
 	const progress = document.querySelector('#barStatus');
-	progress.style.width = '1%';
+	progress.style.width = '0%';
 
 	// Hide submit button
 	const submitButton = document.querySelector('#submit');
@@ -78,15 +82,6 @@ function questionsHandler() {
 				question.classList.add('fade-out');
 				question.style.display = 'none';
 
-				if (question.nextElementSibling) {
-					question.nextElementSibling.classList.add('fade-in');
-					question.nextElementSibling.style.display = 'block';
-
-					setTimeout(function () {
-						question.nextElementSibling.classList.remove('fade-in');
-					}, 500);
-				}
-
 				// Incrementally update progress bar for the questionnaire after each question is answered with animation.
 				const progress = document.querySelector('#barStatus');
 				const progressWidth = progress.style.width;
@@ -104,6 +99,20 @@ function questionsHandler() {
 						progress.style.width = progressWidthNum + '%';
 					}
 				}, 10);
+
+				if (question.nextElementSibling) {
+					question.nextElementSibling.classList.add('fade-in');
+					question.nextElementSibling.style.display = 'block';
+
+					question.nextElementSibling.style.setProperty(
+						'--question-percent',
+						"'" + newWidth + "%'"
+					);
+
+					setTimeout(function () {
+						question.nextElementSibling.classList.remove('fade-in');
+					}, 1000);
+				}
 			});
 		}
 	}
