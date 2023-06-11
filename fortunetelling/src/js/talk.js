@@ -155,6 +155,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		const characters = message.split('');
 		let currentIndex = 0;
 
+		userInputButton.addEventListener('click', () => {
+			clearInterval(animationInterval);
+		})
+
 		// Clear previous message
 		messageOutput.textContent = '';
 
@@ -166,10 +170,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				currentIndex++;
 			}
 		}, 20);
-		userInputButton.disabled = true;
-		setTimeout(() => {
-			userInputButton.disabled = false;
-		}, 1500);
+		// userInputButton.disabled = true;
+		// setTimeout(() => {
+		// 	userInputButton.disabled = false;
+		// }, 1500);
 	}
 
 	/**
