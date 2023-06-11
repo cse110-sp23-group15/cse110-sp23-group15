@@ -87,10 +87,23 @@ function questionsHandler() {
 					}, 500);
 				}
 
-				// Update progress bar for the questionnaire after each question is answered.
+				// Incrementally update progress bar for the questionnaire after each question is answered with animation.
 				const progress = document.querySelector('#barStatus');
-				const progressValue = (i + 1) / questions.length;
-				progress.style.width = progressValue * 100 + '%';
+				const progressWidth = progress.style.width;
+				let progressWidthNum = parseInt(
+					progressWidth.substring(0, progressWidth.length - 1)
+				);
+				const newWidth = progressWidthNum + 10;
+
+				const id = setInterval(function () {
+					if (progressWidthNum >= newWidth) {
+						clearInterval(id);
+					} else {
+						// Increase the speed of the progress bar like a car accelerating
+						progressWidthNum += 0.5;
+						progress.style.width = progressWidthNum + '%';
+					}
+				}, 10);
 			});
 		}
 	}
