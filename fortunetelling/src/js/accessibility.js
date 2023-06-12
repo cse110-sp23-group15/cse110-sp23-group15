@@ -124,6 +124,38 @@ function accessElement(speechify) {
 		}
 	}
 
+	// Enable speechify on span elements with innerHTML
+	const spans = document.querySelectorAll('span');
+	if (spans != null) {
+		for (let i = 0; i < spans.length; i++) {
+			spans[i].addEventListener('mouseover', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(spans[i]);
+			});
+
+			spans[i].addEventListener('click', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(spans[i]);
+			});
+		}
+	}
+
+	// Enable speechify on list elements with innerHTML
+	const lis = document.querySelectorAll('li');
+	if (lis != null) {
+		for (let i = 0; i < lis.length; i++) {
+			lis[i].addEventListener('mouseover', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(lis[i]);
+			});
+
+			lis[i].addEventListener('click', (_) => {
+				speechify.reset();
+				speechify.speechifyHighlight(lis[i]);
+			});
+		}
+	}
+
 	// Enable speechify on button elements
 	const buttons = document.querySelectorAll('button');
 	if (buttons != null) {
@@ -164,7 +196,7 @@ function accessElement(speechify) {
 	}
 
 	// Enable speechify on images on mouseover and click
-	const images = Array.from(document.querySelectorAll('img'));
+	const images = document.querySelectorAll('img');
 	if (images != null) {
 		for (let i = 0; i < images.length; i++) {
 			images[i].addEventListener('mouseover', (_) => {
