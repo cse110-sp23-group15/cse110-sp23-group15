@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.1] - 2023-06-12
+### :zap: Performance Improvements
+- [`b78bc72`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/b78bc7246c4561343049fc00085fbde707fe2b03) - **frontend**: Prefetch all asset files in every page *(commit by [@marklcrns](https://github.com/marklcrns))*
+- [`9c1e11b`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/9c1e11b9698961ef8f0854f9db24ed4c7366ca4e) - Add more read-aloud coverage. Some typo fixes *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :wrench: Chores
+- [`2e8395c`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/2e8395c8be196fa77eaf3ed1679d073708c8f4a1) - Clean up code docs and proper file renaming *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
 ## [v2.1.0] - 2023-06-11
 ### :bug: Bug Fixes
 - [`0213bf7`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/0213bf7c23df9d896b83c6d43241a48d360068a8) - **frontend**: Landing page conversation text glitch when disappearing *(commit by [@marklcrns](https://github.com/marklcrns))*
@@ -176,3 +185,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.4.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.4.0...v1.4.1
 [v2.0.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.4.1...v2.0.0
 [v2.1.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v2.0.0...v2.1.0
+[v2.1.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v2.1.0...v2.1.1
