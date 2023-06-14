@@ -1,4 +1,4 @@
-// Utility functions
+// Utility functions module
 
 // Make sure to document our code
 // See examples:

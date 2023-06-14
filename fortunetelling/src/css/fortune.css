@@ -67,34 +67,34 @@
 	width: 184px;
 	border: none;
 	display: none;
-	float: center;
 }
 
 .dropdown-content .noodleButton {
 	margin: auto;
-	width: 256px;
-	margin-right: 36px;
-	margin-left: -36px;
+	width: 7vw;
+	margin-left: 4px;
+	margin-right: 4px;
 	cursor: pointer;
-	outline: none;
-	border: none;
-	font-family: 'Montserrat';
-	font-size: 18px;
-	/* border-radius: 2px; */
-	background-color: #f9f9f9;
-	float: none;
-	color: black;
-	/* padding: 12px 16px; */
-	text-decoration: none;
 	display: block;
-	padding-top: 0%;
-	border-style: solid;
-	border-width: 1px;
-	border-color: black;
+	transition: width 0.3s ease;
+}
+
+.dropdown-content .noodleButton:hover {
+	width: 8vw;
+}
+
+.carousel-caption {
+	font-size: 15px;
+}
+
+.arrowButton {
+	display: none;
 }
 
 .show {
-	display: block;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 #noodle-image {
@@ -114,9 +114,35 @@
 	}
 
 	.dropdown-content .noodleButton {
-		width: 184px;
-		margin-left: 0%;
+		display: none;
 	}
+
+	.carousel-caption {
+		display: none;
+	}
+
+	.arrowButton {
+		display: inline-block;
+		width: 50px;
+		font-size: 25px;
+	}
+
+	#leftArrow {
+		margin-right: 50px;
+	}
+
+	#rightArrow {
+		margin-left: 50px;
+	}
+
+	#dropbtn {
+		display: none;
+	}
+}
+
+.smokeAnimation {
+	width: 100%;
+	height: auto;
 }
 
 @media screen and (min-width: 601px) and (max-width: 1000px) {

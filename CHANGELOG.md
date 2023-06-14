@@ -4,6 +4,66 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.1] - 2023-06-12
+### :zap: Performance Improvements
+- [`b78bc72`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/b78bc7246c4561343049fc00085fbde707fe2b03) - **frontend**: Prefetch all asset files in every page *(commit by [@marklcrns](https://github.com/marklcrns))*
+- [`9c1e11b`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/9c1e11b9698961ef8f0854f9db24ed4c7366ca4e) - Add more read-aloud coverage. Some typo fixes *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :wrench: Chores
+- [`2e8395c`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/2e8395c8be196fa77eaf3ed1679d073708c8f4a1) - Clean up code docs and proper file renaming *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
+## [v2.1.0] - 2023-06-11
+### :bug: Bug Fixes
+- [`0213bf7`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/0213bf7c23df9d896b83c6d43241a48d360068a8) - **frontend**: Landing page conversation text glitch when disappearing *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :zap: Performance Improvements
+- [`48e88bf`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/48e88bfe8fe7bbc64bfbc7e536242b6e77eb53da) - **frontend**: Some UI improvement in questionnaire page *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
+## [v2.0.0] - 2023-06-11
+### :sparkles: New Features
+- [`09cf966`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/09cf96628a5b4231bc4fa93f136574ee810a8d29) - **frontend**: Make questions appear one at a time. Add progress bar *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :recycle: Refactors
+- [`7d4934f`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/7d4934feeac16f71ad6a2a31c50d0cb0471564f5) - **frontend**: Animate progress bar in questionnaire page *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
+## [v1.4.1] - 2023-06-11
+### :bug: Bug Fixes
+- [`90f54ca`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/90f54cafbe2ee381f8a240d5cbe5520ff7ce268f) - Noodles result properly showing right image *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :white_check_mark: Tests
+- [`a3061d8`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/a3061d82aa14c9f87942d953710cd88f10eed1a6) - add tests for checking quiz taken *(commit by [@Henri-XYu02](https://github.com/Henri-XYu02))*
+
+
+## [v1.4.0] - 2023-06-10
+### :bug: Bug Fixes
+- [`aa50cef`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/aa50cef9df66e79a9ae3297816b42922079210be) - **frontend**: Noodles result UI *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
+## [v1.3.1] - 2023-06-10
+### :bug: Bug Fixes
+- [`9b1a09e`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/9b1a09e6e196a52f9eb619cd4a8fda3fc0be4f4f) - index styling and animation *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
+## [v1.3.0] - 2023-06-10
+### :sparkles: New Features
+- [`509d5fd`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/509d5fd66dbe3ae0db3900570dd4fb72d9ef41de) - Add bg music controller. Improve navbar and UI elements and more *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :bug: Bug Fixes
+- [`50439b7`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/50439b731fe02f318acdbee27c08cd705a4a9081) - **frontend**: landing page animation *(commit by [@marklcrns](https://github.com/marklcrns))*
+- [`d751e2b`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/d751e2b0447944d2e97bf721ecd6d8c6f31a9981) - **frontend**: about page missing image *(commit by [@marklcrns](https://github.com/marklcrns))*
+- [`7ec5b94`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/7ec5b944cefa2a910ae92243cdedadfe5cfc6c60) - **backend**: Accessibility button detection *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+### :zap: Performance Improvements
+- [`b52890e`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/b52890efcad7ea17647d6d5360af58014b815fe1) - extend accessibility coverage *(commit by [@YueSteveYin](https://github.com/YueSteveYin))*
+
+### :recycle: Refactors
+- [`fde4f86`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/fde4f8666f91009f4935701a12e01db4591a4590) - **backend**: Update accessibility to cover more common elements *(commit by [@marklcrns](https://github.com/marklcrns))*
+- [`626feb1`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/626feb16ade1a96f03169ebe9ce407f653b8d367) - Add button speechify on click back. Make about page speechify readable *(commit by [@marklcrns](https://github.com/marklcrns))*
+
+
 ## [v1.2.0] - 2023-06-08
 ### :boom: BREAKING CHANGES
 - due to [`c074342`](https://github.com/cse110-sp23-group15/cse110-sp23-group15/commit/c0743423735bcc785c6e4d737b49f47728eeb036) - Codebase restructure and some bug fixes. Update code docs *(commit by [@marklcrns](https://github.com/marklcrns))*:
@@ -119,3 +179,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.1.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.0.0...v1.1.0
 [v1.1.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.1.0...v1.1.1
 [v1.2.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.1.1...v1.2.0
+[v1.3.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.2.0...v1.3.0
+[v1.3.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.3.0...v1.3.1
+[v1.4.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.3.1...v1.4.0
+[v1.4.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.4.0...v1.4.1
+[v2.0.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v1.4.1...v2.0.0
+[v2.1.0]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v2.0.0...v2.1.0
+[v2.1.1]: https://github.com/cse110-sp23-group15/cse110-sp23-group15/compare/v2.1.0...v2.1.1
