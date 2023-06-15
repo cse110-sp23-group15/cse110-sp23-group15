@@ -12,6 +12,11 @@
 - [Magic 8 Ball](https://cse110-sp23-group15.github.io/cse110-sp23-group15/magic8ball/index.html)
   - [Docs](https://github.com/cse110-sp23-group15/cse110-sp23-group15/blob/main/magic8ball/README.md)
 
+## Demo
+
+- [Noodle Horoscope Demo - Public](https://www.youtube.com/watch?v=cSGBe7FjpaA)
+- [Noodle Horoscope Demo - Private](https://www.youtube.com/watch?v=Rku8LCxs8jo)
+
 ## Team
 
 [Meet the Team](https://github.com/cse110-sp23-group15/cse110-sp23-group15/blob/main/admin/team.md)

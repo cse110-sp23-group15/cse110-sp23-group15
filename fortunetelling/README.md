@@ -1,5 +1,12 @@
 # Noodle Horoscope
 
+Welcome to Noodle Horoscope! This is a web application that generates
+a horoscope based on your noodle profile inspired by zodiac signs. Our app
+offers carefully crafted daily horoscopes that are tailored to your unique
+noodle personality which is determined by your answers to our questionnaire.
+
+![Landing Page Demo](../admin/resources/fortunetelling-landing-demo.png "landing page demo")
+
 ## Dependencies
 
 - [node.js](https://nodejs.org/en/) (v18.\*)
@@ -86,11 +93,14 @@ npm install
     │   ├── genHoroscope.js
     │   ├── main.js
     │   └── ...
-    └── pages
-        ├── about.html
-        ├── profiles.html
-        ├── questionnaire.html
-        └── ...
+    ├── pages
+    │   ├── about.html
+    │   ├── profiles.html
+    │   ├── questionnaire.html
+    │   └── ...
+    └── sounds
+        ├── bg-music.wav
+        └── ...
 ```
 
 ### Code Linting
