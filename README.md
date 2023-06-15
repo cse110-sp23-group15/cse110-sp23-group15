@@ -32,3 +32,16 @@ this project.
 
 This project is licensed under the terms of the [MIT License](https://github.com/cse110-sp23-group15/cse110-sp23-group15/blob/main/LICENSE).
 
+## TODOs
+
+List of to-dos for future development.
+
+- [ ] User authentication (sign-in/sign-up system)
+- [ ] Localization (offline capabilities)
+- [ ] Better UI/UX
+- [ ] More Accessibility
+    - [ ] Light/Dart mode
+    - [ ] Keyboard navigation
+    - [X] Screen reader
+    - [ ] More language support
+
