@@ -23,6 +23,10 @@
 
 https://user-images.githubusercontent.com/52873993/233766082-68d85fb7-b46b-48c1-8f39-fa8417b70bdc.mp4
 
+## Final Video
+[Link](https://youtu.be/cSGBe7FjpaA)
+
+
 ## Contributing
 
 See [CONTRIBUTING.md](https://github.com/cse110-sp23-group15/cse110-sp23-group15/blob/main/CONTRIBUTING.md) for details on how to contribute to
