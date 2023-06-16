@@ -15,7 +15,7 @@
 ## Demo
 
 - [Noodle Horoscope Demo - Public](https://www.youtube.com/watch?v=cSGBe7FjpaA)
-- [Noodle Horoscope Demo - Private](https://www.youtube.com/watch?v=Rku8LCxs8jo)
+- [Noodle Horoscope Demo - Private](https://drive.google.com/file/d/1w2J7sb0XglbdGBHIu3Jy_VT-2_vl0nF4/view?usp=sharing)
 
 ## Team
 
